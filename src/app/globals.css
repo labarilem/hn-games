@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #1a1a1a;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+select, input {
+  color-scheme: dark;
+}
+
+/* Modal styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-content {
+  background-color: #242424;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 90%;
+  width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modal-appear 0.3s ease-out;
+}
+
+@keyframes modal-appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for the dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(15, 23, 42);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(51, 65, 85);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(71, 85, 105);
+}
+
+/* Custom styles for better UI */
+.card-hover-effect {
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+}
+
+.button-primary {
+  @apply px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 
+         transition-colors duration-200 font-medium;
+}
+
+.button-secondary {
+  @apply px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 
+         transition-colors duration-200 font-medium;
+}
+
+.input-primary {
+  @apply bg-gray-800 rounded-lg px-4 py-2 border border-gray-700 
+         focus:border-blue-500 focus:ring-1 focus:ring-blue-500 
+         outline-none transition-all duration-200;
+}
+
+.tag {
+  @apply px-2 py-1 bg-gray-700 rounded-full text-sm hover:bg-gray-600 
+         transition-colors duration-200;
+} 
