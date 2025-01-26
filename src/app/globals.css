@@ -41,7 +41,6 @@ select, input {
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
-  animation: modal-appear 0.3s ease-out;
 }
 
 @keyframes modal-appear {

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="128" fill="#646CFF"/>
+  
+  <!-- Game Controller Shape -->
+  <path d="M396 176H116C103.85 176 94 185.85 94 198V314C94 326.15 103.85 336 116 336H396C408.15 336 418 326.15 418 314V198C418 185.85 408.15 176 396 176Z" 
+        stroke="white" 
+        stroke-width="24" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        fill="#747BFF"/>
+  
+  <!-- D-Pad -->
+  <rect x="146" y="236" width="48" height="16" rx="8" fill="white"/>
+  <rect x="162" y="220" width="16" height="48" rx="8" fill="white"/>
+  
+  <!-- Action Buttons -->
+  <circle cx="318" cy="256" r="8" fill="white"/>
+  <circle cx="346" cy="256" r="8" fill="white"/>
+  <circle cx="332" cy="242" r="8" fill="white"/>
+  <circle cx="332" cy="270" r="8" fill="white"/>
+</svg> 

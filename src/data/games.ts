@@ -143,7 +143,7 @@ export const games: Game[] = [
     platforms: ["web", "desktop"],
     releaseDate: new Date("2024-03-01"),
     playerMode: "multi",
-    author: "dungeonmaster",
+    author: "dungeonmaker",
     genre: GameGenre.ROGUELIKE,
     hnUrl: "https://news.ycombinator.com/item?id=90123456",
     hnPoints: 821,
