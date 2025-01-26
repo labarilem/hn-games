@@ -2,12 +2,31 @@
 
 import { GameGenre } from "@/types/game";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useState } from "react";
+import { useCallback, useState, useEffect } from "react";
+
+// Custom debounce hook
+function useDebounce<T>(value: T, delay: number = 300): T {
+  const [debouncedValue, setDebouncedValue] = useState<T>(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
 
 export default function GameFilters() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isExpanded, setIsExpanded] = useState(false);
+  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') ?? '');
+  const debouncedSearchTerm = useDebounce(searchTerm, 300); // 300ms debounce delay
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
@@ -18,6 +37,11 @@ export default function GameFilters() {
     [searchParams]
   );
 
+  // Effect to handle debounced search term changes
+  useEffect(() => {
+    router.push(`/?${createQueryString('search', debouncedSearchTerm)}`);
+  }, [debouncedSearchTerm, createQueryString, router]);
+
   const activeFiltersCount = [
     searchParams.get('platform'),
     searchParams.get('genre'),
@@ -26,7 +50,7 @@ export default function GameFilters() {
     searchParams.get('sortBy'),
   ].filter(Boolean).length;
 
-  const hasSearch = Boolean(searchParams.get('search'));
+  const hasSearch = (searchParams.get('search') ?? '').length > 0;
 
   return (
     <div className="space-y-4 mb-8">
@@ -60,10 +84,8 @@ export default function GameFilters() {
               type="text"
               placeholder="Search games..."
               className="w-full bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={(e) => {
-                router.push(`/?${createQueryString('search', e.target.value)}`);
-              }}
-              defaultValue={searchParams.get('search') ?? ''}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
             />
             
             <select
@@ -139,10 +161,8 @@ export default function GameFilters() {
           type="text"
           placeholder="Search games..."
           className="bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-          onChange={(e) => {
-            router.push(`/?${createQueryString('search', e.target.value)}`);
-          }}
-          defaultValue={searchParams.get('search') ?? ''}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
         
         <select
