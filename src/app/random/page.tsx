@@ -38,7 +38,7 @@ export default function Random() {
     <div className="max-w-2xl mx-auto">
       <h1 className="text-4xl font-bold mb-4 text-center">Random Game</h1>
       <p className="text-gray-400 mb-8 text-center">
-        Discover a random free game that you can play directly in your web browser.
+        Discover a random free browser game.
       </p>
 
       <div className="flex justify-center mb-8">
