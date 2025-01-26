@@ -51,7 +51,7 @@ export default function RootLayout({
                   href="/submit" 
                   className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors"
                 >
-                  Submit Game
+                  Submit
                 </a>
               </div>
             </div>
