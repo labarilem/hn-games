@@ -41,9 +41,15 @@ export default function RootLayout({
                   HN Games
                 </a>
               </div>
-              <div className="flex items-center">
-                <a
-                  href="/submit"
+              <div className="flex items-center gap-4">
+                <a 
+                  href="/random" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Random
+                </a>
+                <a 
+                  href="/submit" 
                   className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors"
                 >
                   Submit Game
