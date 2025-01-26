@@ -29,7 +29,7 @@ export default function GameCard({ game }: GameCardProps) {
     <>
       <div 
         onClick={() => setIsModalOpen(true)}
-        className="bg-[#242424] rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer shadow-lg"
+        className="bg-[#242424] rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer shadow-lg flex flex-col h-full"
       >
         <div className="relative aspect-video">
           <img 
@@ -44,11 +44,11 @@ export default function GameCard({ game }: GameCardProps) {
           </div>
         </div>
         
-        <div className="p-4">
+        <div className="p-4 flex flex-col flex-grow">
           <h3 className="text-xl font-bold mb-2 text-white">{game.name}</h3>
-          <p className="text-gray-400 mb-4 line-clamp-2 text-sm">{game.description}</p>
+          <p className="text-gray-400 mb-4 line-clamp-2 flex-grow">{game.description}</p>
           
-          <div className="space-y-3">
+          <div className="space-y-3 mt-auto">
             <div className="flex flex-wrap gap-2">
               {game.platforms.map(platform => (
                 <button
@@ -78,9 +78,12 @@ export default function GameCard({ game }: GameCardProps) {
                   </button>
                 )}
               </div>
-              <span className="text-gray-400">
-                {new Date(game.releaseDate).getFullYear()}
-              </span>
+              <button
+                onClick={(e) => handleFilterClick('genre', game.genre, e)}
+                className="tag"
+              >
+                {game.genre}
+              </button>
             </div>
           </div>
         </div>
