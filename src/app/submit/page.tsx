@@ -3,10 +3,10 @@ export default function Submit() {
     <div className="max-w-2xl mx-auto">
       <h1 className="text-4xl font-bold mb-4">Submit a Game</h1>
       <p className="text-gray-400 mb-8">
-        Have you found or created a game that was featured on Hacker News? Help
-        us grow the catalog by submitting it!
+        Have you found or created a game that was featured on Hacker News?
+        <br></br>
+        Help us grow the catalog by submitting it!
       </p>
-
       <div className="bg-gray-800 rounded-lg p-6">
         <p className="mb-6">
           To submit a game, please fill out our{" "}
