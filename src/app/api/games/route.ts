@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
   // Pagination
   const page = parseInt(searchParams.get("page") || "1");
   const pageSize = Math.min(
-    parseInt(searchParams.get("pageSize") || "20"),
+    parseInt(searchParams.get("pageSize") || "9"), // Default to 9 items per page
     100
   );
 
@@ -21,8 +21,8 @@ export async function GET(request: NextRequest) {
   const businessModel = searchParams.get("businessModel") as BusinessModel;
   
   // Sorting
-  const sortBy = searchParams.get("sortBy") || "releaseDate";
-  const sortOrder = searchParams.get("sortOrder") || "desc";
+  const sortBy = searchParams.get("sortBy")?.split("-")[0] || "releaseDate";
+  const sortOrder = searchParams.get("sortBy")?.split("-")[1] || "desc";
 
   let filteredGames = [...games];
 
@@ -70,11 +70,12 @@ export async function GET(request: NextRequest) {
     return aValue < bValue ? 1 : -1;
   });
 
-  // Apply pagination
+  // Calculate pagination
   const totalGames = filteredGames.length;
   const totalPages = Math.ceil(totalGames / pageSize);
-  const offset = (page - 1) * pageSize;
-  const paginatedGames = filteredGames.slice(offset, offset + pageSize);
+  const startIndex = (page - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  const paginatedGames = filteredGames.slice(startIndex, endIndex);
 
   return NextResponse.json({
     games: paginatedGames,
@@ -83,6 +84,8 @@ export async function GET(request: NextRequest) {
       pageSize,
       totalPages,
       totalGames,
+      hasNextPage: page < totalPages,
+      hasPreviousPage: page > 1,
     },
   });
 } 

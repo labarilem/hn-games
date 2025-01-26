@@ -5,8 +5,15 @@ import { Game } from "@/types/game";
 async function getGames(searchParams: { [key: string]: string | string[] | undefined }) {
   const queryString = new URLSearchParams();
   
+  // Ensure page and pageSize are included in the query
+  queryString.set('page', (searchParams.page as string) || '1');
+  queryString.set('pageSize', '9'); // Fixed page size of 9 items
+  
+  // Add other search params
   Object.entries(searchParams).forEach(([key, value]) => {
-    if (value) queryString.append(key, value.toString());
+    if (value && key !== 'page' && key !== 'pageSize') {
+      queryString.append(key, value.toString());
+    }
   });
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/games?${queryString.toString()}`, {
@@ -46,21 +53,45 @@ export default async function Home({
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-center gap-2">
-        {Array.from({ length: pagination.totalPages }, (_, i) => i + 1).map((page) => (
-          <a
-            key={page}
-            href={`/?page=${page}`}
-            className={`px-4 py-2 rounded-lg transition-colors ${
-              currentPage === page
-                ? 'bg-[#646cff] text-white'
-                : 'bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white'
-            }`}
-          >
-            {page}
-          </a>
-        ))}
-      </div>
+      {pagination.totalPages > 1 && (
+        <div className="flex justify-center gap-2 mt-8">
+          {pagination.hasPreviousPage && (
+            <a
+              href={`/?page=${currentPage - 1}`}
+              className="px-4 py-2 rounded-lg bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white transition-colors"
+            >
+              Previous
+            </a>
+          )}
+          
+          {Array.from({ length: pagination.totalPages }, (_, i) => i + 1).map((page) => (
+            <a
+              key={page}
+              href={`/?page=${page}${searchParams.search ? `&search=${searchParams.search}` : ''}${
+                searchParams.platform ? `&platform=${searchParams.platform}` : ''
+              }${searchParams.genre ? `&genre=${searchParams.genre}` : ''}${
+                searchParams.sortBy ? `&sortBy=${searchParams.sortBy}` : ''
+              }`}
+              className={`px-4 py-2 rounded-lg transition-colors ${
+                currentPage === page
+                  ? 'bg-[#646cff] text-white'
+                  : 'bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white'
+              }`}
+            >
+              {page}
+            </a>
+          ))}
+
+          {pagination.hasNextPage && (
+            <a
+              href={`/?page=${currentPage + 1}`}
+              className="px-4 py-2 rounded-lg bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white transition-colors"
+            >
+              Next
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 } 
