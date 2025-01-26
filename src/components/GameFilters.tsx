@@ -55,9 +55,12 @@ export default function GameFilters() {
     searchParams.get("pricing"),
     searchParams.get("sortBy"),
     searchParams.get("search"),
+    searchParams.get("author"),
   ].filter(Boolean).length;
 
   const hasSearch = (searchParams.get("search") ?? "").length > 0;
+
+  const currentAuthor = searchParams.get("author");
 
   const handleClearFilters = () => {
     setSearchTerm("");
@@ -121,7 +124,7 @@ export default function GameFilters() {
         </div>
 
         {isExpanded && (
-          <div className="mt-2 space-y-2">
+          <div className="mt-2 flex flex-wrap gap-2">
             <input
               type="text"
               placeholder="Search games..."
@@ -130,22 +133,27 @@ export default function GameFilters() {
               onChange={(e) => setSearchTerm(e.target.value)}
             />
 
+            {currentAuthor && (
+              <div className="flex items-center gap-2 bg-[#242424] rounded-lg px-4 py-3 border border-[#363636]">
+                <span className="text-gray-300">Author: {currentAuthor}</span>
+              </div>
+            )}
+
             <select
-              className="w-full bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
               onChange={(e) => {
-                router.push(
-                  `/?${createQueryString("platform", e.target.value)}`
-                );
+                router.push(`/?${createQueryString("platform", e.target.value)}`);
               }}
               defaultValue={searchParams.get("platform") ?? ""}
             >
               <option value="">All Platforms</option>
               <option value="web">Web</option>
               <option value="desktop">Desktop</option>
+              <option value="console">Console</option>
             </select>
 
             <select
-              className="w-full bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
               onChange={(e) => {
                 router.push(`/?${createQueryString("genre", e.target.value)}`);
               }}
@@ -160,11 +168,9 @@ export default function GameFilters() {
             </select>
 
             <select
-              className="w-full bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
               onChange={(e) => {
-                router.push(
-                  `/?${createQueryString("playerMode", e.target.value)}`
-                );
+                router.push(`/?${createQueryString("playerMode", e.target.value)}`);
               }}
               defaultValue={searchParams.get("playerMode") ?? ""}
             >
@@ -174,11 +180,9 @@ export default function GameFilters() {
             </select>
 
             <select
-              className="w-full bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
               onChange={(e) => {
-                router.push(
-                  `/?${createQueryString("pricing", e.target.value)}`
-                );
+                router.push(`/?${createQueryString("pricing", e.target.value)}`);
               }}
               defaultValue={searchParams.get("pricing") ?? ""}
             >
@@ -190,7 +194,7 @@ export default function GameFilters() {
             <select
               ref={mobileSortRef}
               name="sortBy"
-              className="w-full bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
               onChange={(e) => {
                 router.push(`/?${createQueryString("sortBy", e.target.value)}`);
               }}
@@ -206,18 +210,24 @@ export default function GameFilters() {
       </div>
 
       {/* Desktop View */}
-      <div className="hidden lg:flex gap-4 items-start">
-        <div className="grid grid-cols-6 gap-4 flex-1">
+      <div className="hidden lg:block">
+        <div className="flex flex-wrap gap-2">
           <input
             type="text"
             placeholder="Search games..."
-            className="bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            className="flex-1 min-w-[200px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
 
+          {currentAuthor && (
+            <div className="flex items-center gap-2 bg-[#242424] rounded-lg px-4 py-3 border border-[#363636]">
+              <span className="text-gray-300">Author: {currentAuthor}</span>
+            </div>
+          )}
+
           <select
-            className="bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             onChange={(e) => {
               router.push(`/?${createQueryString("platform", e.target.value)}`);
             }}
@@ -230,7 +240,7 @@ export default function GameFilters() {
           </select>
 
           <select
-            className="bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             onChange={(e) => {
               router.push(`/?${createQueryString("genre", e.target.value)}`);
             }}
@@ -245,11 +255,9 @@ export default function GameFilters() {
           </select>
 
           <select
-            className="bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             onChange={(e) => {
-              router.push(
-                `/?${createQueryString("playerMode", e.target.value)}`
-              );
+              router.push(`/?${createQueryString("playerMode", e.target.value)}`);
             }}
             defaultValue={searchParams.get("playerMode") ?? ""}
           >
@@ -259,7 +267,7 @@ export default function GameFilters() {
           </select>
 
           <select
-            className="bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             onChange={(e) => {
               router.push(`/?${createQueryString("pricing", e.target.value)}`);
             }}
@@ -273,7 +281,7 @@ export default function GameFilters() {
           <select
             ref={desktopSortRef}
             name="sortBy"
-            className="bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            className="inline-block bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             onChange={(e) => {
               router.push(`/?${createQueryString("sortBy", e.target.value)}`);
             }}
@@ -284,15 +292,16 @@ export default function GameFilters() {
             <option value="hnPoints-desc">Most Popular</option>
             <option value="hnPoints-asc">Least Popular</option>
           </select>
+
+          {activeFiltersCount > 0 && (
+            <button
+              onClick={handleClearFilters}
+              className="bg-[#242424] text-gray-300 hover:text-white rounded-lg px-4 py-3 whitespace-nowrap transition-colors"
+            >
+              Clear
+            </button>
+          )}
         </div>
-        {activeFiltersCount > 0 && (
-          <button
-            onClick={handleClearFilters}
-            className="bg-[#242424] text-gray-300 hover:text-white rounded-lg px-4 py-3 whitespace-nowrap transition-colors"
-          >
-            Clear Filters
-          </button>
-        )}
       </div>
     </div>
   );
