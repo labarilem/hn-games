@@ -47,7 +47,7 @@ export default async function Home({
       </h1>
       <p className="text-gray-400 mb-8 text-center max-w-2xl mx-auto">
         Discover and explore games shared by the Hacker News community. A
-        curated collection of indie games, demos, and experiments.
+        curated collection of indie games, demos, and experiments made by fellow hackers.
       </p>
 
       <GameFilters />
