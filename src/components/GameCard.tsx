@@ -2,7 +2,7 @@
 
 import { Game } from "@/types/game";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import GameModal from "./GameModal";
 
 interface GameCardProps {
@@ -12,10 +12,17 @@ interface GameCardProps {
 export default function GameCard({ game }: GameCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const currentAuthor = searchParams.get('author');
 
   const handleFilterClick = (param: string, value: string, e: React.MouseEvent) => {
     e.stopPropagation();
     router.push(`/?${param}=${value}`);
+  };
+
+  const clearAuthorFilter = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    router.push('/');
   };
 
   return (
@@ -55,12 +62,22 @@ export default function GameCard({ game }: GameCardProps) {
             </div>
             
             <div className="flex justify-between items-center text-sm">
-              <button
-                onClick={(e) => handleFilterClick('author', game.author, e)}
-                className="text-[#646cff] hover:text-[#747bff] transition-colors"
-              >
-                by {game.author}
-              </button>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={(e) => handleFilterClick('author', game.author, e)}
+                  className="text-[#646cff] hover:text-[#747bff] transition-colors"
+                >
+                  by {game.author}
+                </button>
+                {currentAuthor === game.author && (
+                  <button
+                    onClick={clearAuthorFilter}
+                    className="text-xs px-2 py-1 rounded-full bg-[#1a1a1a] text-gray-400 hover:bg-[#646cff] hover:text-white transition-colors"
+                  >
+                    ✕ Clear
+                  </button>
+                )}
+              </div>
               <span className="text-gray-400">
                 {new Date(game.releaseDate).getFullYear()}
               </span>
