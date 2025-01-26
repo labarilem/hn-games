@@ -1,5 +1,5 @@
 import { games } from "@/data/games";
-import { GameGenre, Platform, PlayerMode, BusinessModel } from "@/types/game";
+import { GameGenre, Platform, PlayerMode, pricing } from "@/types/game";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
   const playerMode = searchParams.get("playerMode") as PlayerMode;
   const author = searchParams.get("author");
   const genre = searchParams.get("genre") as GameGenre;
-  const businessModel = searchParams.get("businessModel") as BusinessModel;
+  const pricing = searchParams.get("pricing") as pricing;
   
   // Sorting
   const sortBy = searchParams.get("sortBy")?.split("-")[0] || "releaseDate";
@@ -53,9 +53,9 @@ export async function GET(request: NextRequest) {
     filteredGames = filteredGames.filter(game => game.genre === genre);
   }
 
-  if (businessModel) {
+  if (pricing) {
     filteredGames = filteredGames.filter(
-      game => game.businessModel === businessModel
+      game => game.pricing === pricing
     );
   }
 

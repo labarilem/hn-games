@@ -1,6 +1,6 @@
-export type Platform = "web" | "desktop";
+export type Platform = 'desktop' | 'web' | 'console';
 export type PlayerMode = "single" | "multi";
-export type BusinessModel = "free" | "commercial";
+export type Pricing = 'free' | 'paid';
 
 export enum GameGenre {
   ACTION = "action",
@@ -25,6 +25,6 @@ export interface Game {
   hnUrl: string;
   hnPoints: number;
   playUrl: string;
-  businessModel: BusinessModel;
+  pricing: Pricing;
   imageUrl: string;
 } 

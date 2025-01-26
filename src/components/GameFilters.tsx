@@ -46,7 +46,7 @@ export default function GameFilters() {
     searchParams.get('platform'),
     searchParams.get('genre'),
     searchParams.get('playerMode'),
-    searchParams.get('businessModel'),
+    searchParams.get('pricing'),
     searchParams.get('sortBy'),
   ].filter(Boolean).length;
 
@@ -130,13 +130,13 @@ export default function GameFilters() {
             <select
               className="w-full bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
               onChange={(e) => {
-                router.push(`/?${createQueryString('businessModel', e.target.value)}`);
+                router.push(`/?${createQueryString('pricing', e.target.value)}`);
               }}
-              defaultValue={searchParams.get('businessModel') ?? ''}
+              defaultValue={searchParams.get('pricing') ?? ''}
             >
-              <option value="">All Business Models</option>
+              <option value="">All Pricing</option>
               <option value="free">Free</option>
-              <option value="commercial">Commercial</option>
+              <option value="paid">Paid</option>
             </select>
 
             <select
@@ -175,6 +175,7 @@ export default function GameFilters() {
           <option value="">All Platforms</option>
           <option value="web">Web</option>
           <option value="desktop">Desktop</option>
+          <option value="console">Console</option>
         </select>
 
         <select
@@ -207,13 +208,13 @@ export default function GameFilters() {
         <select
           className="bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
           onChange={(e) => {
-            router.push(`/?${createQueryString('businessModel', e.target.value)}`);
+            router.push(`/?${createQueryString('pricing', e.target.value)}`);
           }}
-          defaultValue={searchParams.get('businessModel') ?? ''}
+          defaultValue={searchParams.get('pricing') ?? ''}
         >
-          <option value="">All Business Models</option>
+          <option value="">All Pricing</option>
           <option value="free">Free</option>
-          <option value="commercial">Commercial</option>
+          <option value="paid">Paid</option>
         </select>
 
         <select

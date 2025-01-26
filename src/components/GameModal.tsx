@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
 import { Game } from "@/types/game";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import PlatformIcon from "./PlatformIcon";
 
 interface GameModalProps {
   game: Game;
@@ -15,17 +16,17 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     };
 
     if (isOpen) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
     };
   }, [isOpen, onClose]);
 
@@ -38,13 +39,26 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-content relative" onClick={e => e.stopPropagation()}>
+      <div
+        className="modal-content relative"
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="absolute top-4 right-4 z-10">
           <button
             onClick={onClose}
             className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-[#1a1a1a] transition-colors"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
@@ -53,8 +67,8 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
         <div className="space-y-6">
           <div className="relative -mx-6 -mt-6">
-            <img 
-              src={game.imageUrl} 
+            <img
+              src={game.imageUrl}
               alt={game.name}
               className="w-full h-64 object-cover"
             />
@@ -69,13 +83,14 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <h3 className="text-sm text-gray-400 mb-1">Platforms</h3>
-                <div className="flex gap-2">
-                  {game.platforms.map(platform => (
+                <div className="flex flex-wrap gap-2">
+                  {game.platforms.map((platform) => (
                     <button
                       key={platform}
-                      onClick={() => handleFilterClick('platform', platform)}
-                      className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
+                      onClick={() => handleFilterClick("platform", platform)}
+                      className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm flex items-center gap-1.5 hover:bg-[#646cff] hover:text-white transition-colors"
                     >
+                      <PlatformIcon platform={platform} className="w-4 h-4" />
                       {platform}
                     </button>
                   ))}
@@ -85,7 +100,7 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
               <div>
                 <h3 className="text-sm text-gray-400 mb-1">Genre</h3>
                 <button
-                  onClick={() => handleFilterClick('genre', game.genre)}
+                  onClick={() => handleFilterClick("genre", game.genre)}
                   className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
                 >
                   {game.genre}
@@ -95,34 +110,63 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
               <div>
                 <h3 className="text-sm text-gray-400 mb-1">Player Mode</h3>
                 <button
-                  onClick={() => handleFilterClick('playerMode', game.playerMode)}
+                  onClick={() =>
+                    handleFilterClick("playerMode", game.playerMode)
+                  }
                   className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
                 >
-                  {game.playerMode}
+                  {game.playerMode === "single"
+                    ? "single player"
+                    : "multiplayer"}
                 </button>
               </div>
 
               <div>
-                <h3 className="text-sm text-gray-400 mb-1">Business Model</h3>
+                <h3 className="text-sm text-gray-400 mb-1">Pricing</h3>
                 <button
-                  onClick={() => handleFilterClick('businessModel', game.businessModel)}
+                  onClick={() => handleFilterClick("pricing", game.pricing)}
                   className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
                 >
-                  {game.businessModel}
+                  {game.pricing}
                 </button>
               </div>
-            </div>
 
-            <div className="flex justify-between items-center">
-              <button
-                onClick={() => handleFilterClick('author', game.author)}
-                className="text-[#646cff] hover:text-[#747bff] transition-colors"
-              >
-                by {game.author}
-              </button>
-              <span className="text-gray-400">
-                {game.hnPoints} points on HN
-              </span>
+              <div>
+                <h3 className="text-sm text-gray-400 mb-1">Author</h3>
+                <button
+                  onClick={() => handleFilterClick("author", game.author)}
+                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
+                >
+                  {game.author}
+                </button>
+              </div>
+
+              <div>
+                <h3 className="text-sm text-gray-400 mb-1">Published</h3>
+                <div className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm inline-block">
+                  <span className="hidden sm:inline">
+                    {new Date(game.releaseDate).toLocaleDateString('en-US', {
+                      day: 'numeric',
+                      month: 'long',
+                      year: 'numeric'
+                    })}
+                  </span>
+                  <span className="sm:hidden">
+                    {new Date(game.releaseDate).toLocaleDateString('en-US', {
+                      day: '2-digit',
+                      month: '2-digit',
+                      year: 'numeric'
+                    })}
+                  </span>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-sm text-gray-400 mb-1">HN Points</h3>
+                <div className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm inline-block">
+                  {game.hnPoints}
+                </div>
+              </div>
             </div>
 
             <div className="flex gap-4 mt-6">
@@ -130,7 +174,7 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
                 href={game.playUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-[#646cff] text-white px-4 py-2 rounded text-center hover:bg-[#747bff] transition-colors"
+                className="flex-1 bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors flex items-center justify-center"
               >
                 Play Game
               </a>
@@ -148,4 +192,4 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
       </div>
     </div>
   );
-} 
+}

@@ -1,57 +1,29 @@
 import GameFilters from "@/components/GameFilters";
 import GameCard from "@/components/GameCard";
 import { Game } from "@/types/game";
-
-async function getGames(searchParams: {
-  [key: string]: string | string[] | undefined;
-}) {
-  const queryString = new URLSearchParams();
-
-  // Ensure page and pageSize are included in the query
-  queryString.set("page", (searchParams.page as string) || "1");
-  queryString.set("pageSize", "9"); // Fixed page size of 9 items
-
-  // Add other search params
-  Object.entries(searchParams).forEach(([key, value]) => {
-    if (value && key !== "page" && key !== "pageSize") {
-      queryString.append(key, value.toString());
-    }
-  });
-
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/games?${queryString.toString()}`,
-    {
-      cache: "no-store",
-    }
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch games");
-  }
-
-  return res.json();
-}
+import { getFilteredGames } from "@/lib/games";
 
 export default async function Home({
   searchParams,
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const { games, pagination } = await getGames(searchParams);
+  const { games, pagination } = await getFilteredGames(searchParams);
   const currentPage = Number(searchParams.page) || 1;
 
   return (
     <div className="max-w-[1280px] mx-auto">
       <h1 className="text-5xl font-bold mb-4 text-center bg-gradient-to-r from-[#646cff] to-[#747bff] text-transparent bg-clip-text py-2">
-        Hacker News Games
+        HN Games Catalog
       </h1>
       <p className="text-gray-400 mb-8 text-center max-w-2xl mx-auto">
-        A curated collection of games and experiments made by the HN community.
+        A curated catalog of games created by the Hacker News community. Browse,
+        play, and discover new games!
       </p>
 
       <GameFilters />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {games.map((game: Game) => (
           <GameCard key={game.id} game={game} />
         ))}
