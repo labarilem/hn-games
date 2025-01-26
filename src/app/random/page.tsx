@@ -1,15 +1,16 @@
 'use client';
 
 import { Game } from "@/types/game";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import GameCard from "@/components/GameCard";
 
 export default function Random() {
   const [game, setGame] = useState<Game | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const initialFetchDone = useRef(false);
 
-  const fetchRandomGame = async () => {
+  const fetchRandomGame = useCallback(async () => {
     setIsLoading(true);
     setError(null);
     try {
@@ -24,11 +25,14 @@ export default function Random() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
-    fetchRandomGame();
-  }, []);
+    if (!initialFetchDone.current) {
+      initialFetchDone.current = true;
+      fetchRandomGame();
+    }
+  }, [fetchRandomGame]);
 
   return (
     <div className="max-w-2xl mx-auto">
