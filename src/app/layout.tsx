@@ -6,7 +6,7 @@ import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hacker News Games",
+  title: "HN Games",
   description: "A curated catalog of games from Hacker News",
   icons: {
     icon: "/icon.svg",
