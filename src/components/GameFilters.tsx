@@ -1,34 +1,19 @@
 "use client";
 
 import { GameGenre } from "@/types/game";
+import debounce from 'lodash.debounce';
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
-
-// Custom debounce hook
-function useDebounce<T>(value: T, delay: number = 300): T {
-  const [debouncedValue, setDebouncedValue] = useState<T>(value);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedValue(value);
-    }, delay);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [value, delay]);
-
-  return debouncedValue;
-}
+import { useCallback, useRef, useState } from "react";
 
 export default function GameFilters() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
   const [searchTerm, setSearchTerm] = useState(
     searchParams.get("search") ?? ""
   );
-  const debouncedSearchTerm = useDebounce(searchTerm, 300); // 300ms debounce delay
+  const [resetKey, setResetKey] = useState(0);
 
   // Add refs for both mobile and desktop sort selects
   const mobileSortRef = useRef<HTMLSelectElement>(null);
@@ -43,10 +28,82 @@ export default function GameFilters() {
     [searchParams]
   );
 
-  // Effect to handle debounced search term changes
-  useEffect(() => {
-    router.push(`/?${createQueryString("search", debouncedSearchTerm)}`);
-  }, [debouncedSearchTerm, createQueryString, router]);
+  // Create a stable debounced navigation function
+  const debouncedNavigate = useCallback(
+    debounce((nextValue: string) => {
+      if (isNavigating) return;
+
+      const params = new URLSearchParams(searchParams.toString());
+
+      if (nextValue) {
+        params.set("search", nextValue);
+      } else {
+        params.delete("search");
+      }
+
+      const newSearch = params.toString();
+      const newPath = newSearch ? `/?${newSearch}` : "/";
+      const currentPath = window.location.pathname + window.location.search;
+
+      // Only navigate if path is different
+      if (newPath !== currentPath) {
+        router.push(newPath);
+      }
+    }, 300),
+    [] // Empty deps array ensures this is only created once
+  );
+
+  const handleSearchChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const nextValue = e.target.value;
+      setSearchTerm(nextValue);
+      debouncedNavigate(nextValue);
+    },
+    [debouncedNavigate]
+  );
+
+  const handleExpandToggle = useCallback(() => {
+    setIsExpanded((prev) => !prev);
+  }, []);
+
+  const handleClearFilters = useCallback(() => {
+    if (isNavigating) return;
+    setIsNavigating(true);
+
+    // Reset sort selects to default value first
+    if (mobileSortRef.current) mobileSortRef.current.value = "releaseDate-desc";
+    if (desktopSortRef.current)
+      desktopSortRef.current.value = "releaseDate-desc";
+
+    // Then reset all other select elements
+    const selects = document.querySelectorAll(
+      'select:not([name="sortBy"])'
+    ) as NodeListOf<HTMLSelectElement>;
+    selects.forEach((select) => {
+      select.value = "";
+    });
+
+    // Cancel any pending debounced navigations
+    debouncedNavigate.cancel();
+
+    // Reset all state in a single batch
+    setIsExpanded(false);
+    setSearchTerm("");
+    setResetKey((k) => k + 1);
+
+    // Only navigate if we're not already at root
+    if (window.location.pathname + window.location.search !== "/") {
+      router.push("/");
+    }
+    setIsNavigating(false);
+  }, [router, isNavigating, debouncedNavigate]);
+
+  const handleSelectChange = useCallback(
+    (name: string) => (e: React.ChangeEvent<HTMLSelectElement>) => {
+      router.push(`/?${createQueryString(name, e.target.value)}`);
+    },
+    [router, createQueryString]
+  );
 
   const activeFiltersCount = [
     searchParams.get("platform"),
@@ -62,33 +119,13 @@ export default function GameFilters() {
 
   const currentAuthor = searchParams.get("author");
 
-  const handleClearFilters = () => {
-    setSearchTerm("");
-    setIsExpanded(false);
-
-    // Reset sort selects to default value first
-    if (mobileSortRef.current) mobileSortRef.current.value = "releaseDate-desc";
-    if (desktopSortRef.current)
-      desktopSortRef.current.value = "releaseDate-desc";
-
-    // Then reset all other select elements
-    const selects = document.querySelectorAll(
-      'select:not([name="sortBy"])'
-    ) as NodeListOf<HTMLSelectElement>;
-    selects.forEach((select) => {
-      select.value = "";
-    });
-
-    router.push("/");
-  };
-
   return (
-    <div className="space-y-4 mb-8">
+    <div key={resetKey} className="space-y-4 mb-8">
       {/* Mobile View */}
       <div className="lg:hidden">
         <div className="flex gap-2">
           <button
-            onClick={() => setIsExpanded(!isExpanded)}
+            onClick={handleExpandToggle}
             className="flex-1 bg-[#242424] rounded-lg px-4 py-3 flex justify-between items-center text-left"
           >
             <span className="flex items-center gap-2">
@@ -130,7 +167,7 @@ export default function GameFilters() {
               placeholder="Search games..."
               className="w-full bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={handleSearchChange}
             />
 
             {currentAuthor && (
@@ -141,9 +178,7 @@ export default function GameFilters() {
 
             <select
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={(e) => {
-                router.push(`/?${createQueryString("platform", e.target.value)}`);
-              }}
+              onChange={handleSelectChange("platform")}
               defaultValue={searchParams.get("platform") ?? ""}
             >
               <option value="">All Platforms</option>
@@ -154,9 +189,7 @@ export default function GameFilters() {
 
             <select
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={(e) => {
-                router.push(`/?${createQueryString("genre", e.target.value)}`);
-              }}
+              onChange={handleSelectChange("genre")}
               defaultValue={searchParams.get("genre") ?? ""}
             >
               <option value="">All Genres</option>
@@ -169,9 +202,7 @@ export default function GameFilters() {
 
             <select
               className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={(e) => {
-                router.push(`/?${createQueryString("playerMode", e.target.value)}`);
-              }}
+              onChange={handleSelectChange("playerMode")}
               defaultValue={searchParams.get("playerMode") ?? ""}
             >
               <option value="">All Player Modes</option>
@@ -181,9 +212,7 @@ export default function GameFilters() {
 
             <select
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={(e) => {
-                router.push(`/?${createQueryString("pricing", e.target.value)}`);
-              }}
+              onChange={handleSelectChange("pricing")}
               defaultValue={searchParams.get("pricing") ?? ""}
             >
               <option value="">All Pricing</option>
@@ -195,9 +224,7 @@ export default function GameFilters() {
               ref={mobileSortRef}
               name="sortBy"
               className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={(e) => {
-                router.push(`/?${createQueryString("sortBy", e.target.value)}`);
-              }}
+              onChange={handleSelectChange("sortBy")}
               defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
             >
               <option value="releaseDate-desc">Newest First</option>
@@ -217,7 +244,7 @@ export default function GameFilters() {
             placeholder="Search games..."
             className="flex-1 min-w-[200px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={handleSearchChange}
           />
 
           {currentAuthor && (
@@ -228,9 +255,7 @@ export default function GameFilters() {
 
           <select
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={(e) => {
-              router.push(`/?${createQueryString("platform", e.target.value)}`);
-            }}
+            onChange={handleSelectChange("platform")}
             defaultValue={searchParams.get("platform") ?? ""}
           >
             <option value="">All Platforms</option>
@@ -241,9 +266,7 @@ export default function GameFilters() {
 
           <select
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={(e) => {
-              router.push(`/?${createQueryString("genre", e.target.value)}`);
-            }}
+            onChange={handleSelectChange("genre")}
             defaultValue={searchParams.get("genre") ?? ""}
           >
             <option value="">All Genres</option>
@@ -256,9 +279,7 @@ export default function GameFilters() {
 
           <select
             className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={(e) => {
-              router.push(`/?${createQueryString("playerMode", e.target.value)}`);
-            }}
+            onChange={handleSelectChange("playerMode")}
             defaultValue={searchParams.get("playerMode") ?? ""}
           >
             <option value="">All Player Modes</option>
@@ -268,9 +289,7 @@ export default function GameFilters() {
 
           <select
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={(e) => {
-              router.push(`/?${createQueryString("pricing", e.target.value)}`);
-            }}
+            onChange={handleSelectChange("pricing")}
             defaultValue={searchParams.get("pricing") ?? ""}
           >
             <option value="">All Pricing</option>
@@ -282,9 +301,7 @@ export default function GameFilters() {
             ref={desktopSortRef}
             name="sortBy"
             className="inline-block bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={(e) => {
-              router.push(`/?${createQueryString("sortBy", e.target.value)}`);
-            }}
+            onChange={handleSelectChange("sortBy")}
             defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
           >
             <option value="releaseDate-desc">Newest First</option>
