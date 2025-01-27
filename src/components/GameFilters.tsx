@@ -1,7 +1,7 @@
 "use client";
 
 import { GameGenre } from "@/types/game";
-import debounce from 'lodash.debounce';
+import debounce from "lodash.debounce";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
 
@@ -49,7 +49,7 @@ export default function GameFilters() {
       if (newPath !== currentPath) {
         router.push(newPath);
       }
-    }, 300),
+    }, 250),
     [] // Empty deps array ensures this is only created once
   );
 
@@ -75,13 +75,11 @@ export default function GameFilters() {
     if (desktopSortRef.current)
       desktopSortRef.current.value = "releaseDate-desc";
 
-    // Then reset all other select elements
+    // Reset all other select elements to their default values
     const selects = document.querySelectorAll(
       'select:not([name="sortBy"])'
     ) as NodeListOf<HTMLSelectElement>;
-    selects.forEach((select) => {
-      select.value = "";
-    });
+    selects.forEach((select) => (select.value = ""));
 
     // Cancel any pending debounced navigations
     debouncedNavigate.cancel();
@@ -116,7 +114,6 @@ export default function GameFilters() {
   ].filter(Boolean).length;
 
   const hasSearch = (searchParams.get("search") ?? "").length > 0;
-
   const currentAuthor = searchParams.get("author");
 
   return (
@@ -153,7 +150,7 @@ export default function GameFilters() {
           {activeFiltersCount > 0 && (
             <button
               onClick={handleClearFilters}
-              className="bg-[#242424] text-gray-300 hover:text-white rounded-lg px-4 py-3 transition-colors"
+              className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors"
             >
               Clear
             </button>
@@ -313,7 +310,7 @@ export default function GameFilters() {
           {activeFiltersCount > 0 && (
             <button
               onClick={handleClearFilters}
-              className="bg-[#242424] text-gray-300 hover:text-white rounded-lg px-4 py-3 whitespace-nowrap transition-colors"
+              className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors"
             >
               Clear
             </button>

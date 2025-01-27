@@ -72,7 +72,7 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
               <img
                 src={game.imageUrl}
                 alt={game.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-lg"
               />
             </div>
           </div>
