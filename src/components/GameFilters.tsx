@@ -15,7 +15,7 @@ export default function GameFilters() {
   );
   const [resetKey, setResetKey] = useState(0);
 
-  // Add refs for both mobile and desktop sort selects
+  // Refs for sort selects
   const mobileSortRef = useRef<HTMLSelectElement>(null);
   const desktopSortRef = useRef<HTMLSelectElement>(null);
 
@@ -50,7 +50,7 @@ export default function GameFilters() {
         router.push(newPath);
       }
     }, 250),
-    [] // Empty deps array ensures this is only created once
+    [isNavigating, router, searchParams]
   );
 
   const handleSearchChange = useCallback(
@@ -75,34 +75,25 @@ export default function GameFilters() {
     if (desktopSortRef.current)
       desktopSortRef.current.value = "releaseDate-desc";
 
-    // Reset all other select elements to their default values
-    const selects = document.querySelectorAll(
-      'select:not([name="sortBy"])'
-    ) as NodeListOf<HTMLSelectElement>;
-    selects.forEach((select) => (select.value = ""));
-
     // Cancel any pending debounced navigations
     debouncedNavigate.cancel();
 
-    // Reset all state in a single batch
+    // Reset state
     setIsExpanded(false);
     setSearchTerm("");
-    setResetKey((k) => k + 1);
 
-    // Only navigate if we're not already at root
+    // Navigate to root to clear all filters
     if (window.location.pathname + window.location.search !== "/") {
       router.push("/");
+    } else {
+      // If already at root, force a re-render by updating resetKey
+      setResetKey((k) => k + 1);
     }
+
     setIsNavigating(false);
   }, [router, isNavigating, debouncedNavigate]);
 
-  const handleSelectChange = useCallback(
-    (name: string) => (e: React.ChangeEvent<HTMLSelectElement>) => {
-      router.push(`/?${createQueryString(name, e.target.value)}`);
-    },
-    [router, createQueryString]
-  );
-
+  // Count active filters
   const activeFiltersCount = [
     searchParams.get("platform"),
     searchParams.get("genre"),
@@ -173,10 +164,16 @@ export default function GameFilters() {
               </div>
             )}
 
+            {/* Platform Select */}
             <select
+              name="platform"
+              value={searchParams.get("platform") ?? ""}
+              onChange={(e) =>
+                router.push(
+                  `/?${createQueryString("platform", e.target.value)}`
+                )
+              }
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={handleSelectChange("platform")}
-              defaultValue={searchParams.get("platform") ?? ""}
             >
               <option value="">All Platforms</option>
               <option value="web">Web</option>
@@ -184,10 +181,14 @@ export default function GameFilters() {
               <option value="console">Console</option>
             </select>
 
+            {/* Genre Select */}
             <select
+              name="genre"
+              value={searchParams.get("genre") ?? ""}
+              onChange={(e) =>
+                router.push(`/?${createQueryString("genre", e.target.value)}`)
+              }
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={handleSelectChange("genre")}
-              defaultValue={searchParams.get("genre") ?? ""}
             >
               <option value="">All Genres</option>
               {Object.values(GameGenre).map((genre) => (
@@ -197,32 +198,45 @@ export default function GameFilters() {
               ))}
             </select>
 
+            {/* Player Mode Select */}
             <select
+              name="playerMode"
+              value={searchParams.get("playerMode") ?? ""}
+              onChange={(e) =>
+                router.push(
+                  `/?${createQueryString("playerMode", e.target.value)}`
+                )
+              }
               className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={handleSelectChange("playerMode")}
-              defaultValue={searchParams.get("playerMode") ?? ""}
             >
               <option value="">All Player Modes</option>
               <option value="single">Single Player</option>
               <option value="multi">Multiplayer</option>
             </select>
 
+            {/* Pricing Select */}
             <select
+              name="pricing"
+              value={searchParams.get("pricing") ?? ""}
+              onChange={(e) =>
+                router.push(`/?${createQueryString("pricing", e.target.value)}`)
+              }
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={handleSelectChange("pricing")}
-              defaultValue={searchParams.get("pricing") ?? ""}
             >
               <option value="">All Pricing</option>
               <option value="free">Free</option>
               <option value="paid">Paid</option>
             </select>
 
+            {/* Sort By Select */}
             <select
               ref={mobileSortRef}
               name="sortBy"
-              className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-              onChange={handleSelectChange("sortBy")}
               defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
+              onChange={(e) =>
+                router.push(`/?${createQueryString("sortBy", e.target.value)}`)
+              }
+              className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             >
               <option value="releaseDate-desc">Newest First</option>
               <option value="releaseDate-asc">Oldest First</option>
@@ -250,10 +264,14 @@ export default function GameFilters() {
             </div>
           )}
 
+          {/* Platform Select */}
           <select
+            name="platform"
+            value={searchParams.get("platform") ?? ""}
+            onChange={(e) =>
+              router.push(`/?${createQueryString("platform", e.target.value)}`)
+            }
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={handleSelectChange("platform")}
-            defaultValue={searchParams.get("platform") ?? ""}
           >
             <option value="">All Platforms</option>
             <option value="web">Web</option>
@@ -261,10 +279,14 @@ export default function GameFilters() {
             <option value="console">Console</option>
           </select>
 
+          {/* Genre Select */}
           <select
+            name="genre"
+            value={searchParams.get("genre") ?? ""}
+            onChange={(e) =>
+              router.push(`/?${createQueryString("genre", e.target.value)}`)
+            }
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={handleSelectChange("genre")}
-            defaultValue={searchParams.get("genre") ?? ""}
           >
             <option value="">All Genres</option>
             {Object.values(GameGenre).map((genre) => (
@@ -274,32 +296,45 @@ export default function GameFilters() {
             ))}
           </select>
 
+          {/* Player Mode Select */}
           <select
+            name="playerMode"
+            value={searchParams.get("playerMode") ?? ""}
+            onChange={(e) =>
+              router.push(
+                `/?${createQueryString("playerMode", e.target.value)}`
+              )
+            }
             className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={handleSelectChange("playerMode")}
-            defaultValue={searchParams.get("playerMode") ?? ""}
           >
             <option value="">All Player Modes</option>
             <option value="single">Single Player</option>
             <option value="multi">Multiplayer</option>
           </select>
 
+          {/* Pricing Select */}
           <select
+            name="pricing"
+            value={searchParams.get("pricing") ?? ""}
+            onChange={(e) =>
+              router.push(`/?${createQueryString("pricing", e.target.value)}`)
+            }
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={handleSelectChange("pricing")}
-            defaultValue={searchParams.get("pricing") ?? ""}
           >
             <option value="">All Pricing</option>
             <option value="free">Free</option>
             <option value="paid">Paid</option>
           </select>
 
+          {/* Sort By Select */}
           <select
             ref={desktopSortRef}
             name="sortBy"
-            className="inline-block bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            onChange={handleSelectChange("sortBy")}
             defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
+            onChange={(e) =>
+              router.push(`/?${createQueryString("sortBy", e.target.value)}`)
+            }
+            className="inline-block bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
           >
             <option value="releaseDate-desc">Newest First</option>
             <option value="releaseDate-asc">Oldest First</option>
@@ -307,6 +342,7 @@ export default function GameFilters() {
             <option value="hnPoints-asc">Least Popular</option>
           </select>
 
+          {/* Clear Button */}
           {activeFiltersCount > 0 && (
             <button
               onClick={handleClearFilters}
