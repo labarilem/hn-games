@@ -14,7 +14,7 @@ export const games: Game[] = [
     hnPoints: 342,
     playUrl: "https://pixeldungeon.example.com",
     pricing: "free",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/640/360",
   },
   {
     id: "2",
@@ -29,7 +29,7 @@ export const games: Game[] = [
     hnPoints: 567,
     playUrl: "https://spacetraders.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/641/360",
   },
   {
     id: "3",
@@ -44,7 +44,7 @@ export const games: Game[] = [
     hnPoints: 289,
     playUrl: "https://puzzlequest.example.com",
     pricing: "free",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/642/360",
   },
   {
     id: "4",
@@ -59,7 +59,7 @@ export const games: Game[] = [
     hnPoints: 892,
     playUrl: "https://epicrpg.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/643/360",
   },
   {
     id: "5",
@@ -74,7 +74,7 @@ export const games: Game[] = [
     hnPoints: 654,
     playUrl: "https://strategycommander.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/644/360",
   },
   {
     id: "6",
@@ -89,7 +89,7 @@ export const games: Game[] = [
     hnPoints: 445,
     playUrl: "https://platformhero.example.com",
     pricing: "free",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/645/360",
   },
   {
     id: "7",
@@ -104,7 +104,7 @@ export const games: Game[] = [
     hnPoints: 723,
     playUrl: "https://adventurequest.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/646/360",
   },
   {
     id: "8",
@@ -119,7 +119,7 @@ export const games: Game[] = [
     hnPoints: 932,
     playUrl: "https://actionheroes.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/647/360",
   },
   {
     id: "9",
@@ -134,7 +134,7 @@ export const games: Game[] = [
     hnPoints: 567,
     playUrl: "https://citybuilderpro.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/648/360",
   },
   {
     id: "10",
@@ -149,7 +149,7 @@ export const games: Game[] = [
     hnPoints: 821,
     playUrl: "https://dungeonx.example.com",
     pricing: "free",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/649/360",
   },
   {
     id: "11",
@@ -164,7 +164,7 @@ export const games: Game[] = [
     hnPoints: 445,
     playUrl: "https://quantumquest.example.com",
     pricing: "free",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/650/360",
   },
   {
     id: "12",
@@ -179,7 +179,7 @@ export const games: Game[] = [
     hnPoints: 678,
     playUrl: "https://spacecolony.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/651/360",
   },
   {
     id: "13",
@@ -194,7 +194,7 @@ export const games: Game[] = [
     hnPoints: 890,
     playUrl: "https://cyberknights.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/652/360",
   },
   {
     id: "14",
@@ -209,7 +209,7 @@ export const games: Game[] = [
     hnPoints: 234,
     playUrl: "https://retroplatformer.example.com",
     pricing: "free",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/653/360",
   },
   {
     id: "15",
@@ -224,7 +224,7 @@ export const games: Game[] = [
     hnPoints: 567,
     playUrl: "https://strategymasters.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/654/360",
   },
   {
     id: "16",
@@ -239,7 +239,7 @@ export const games: Game[] = [
     hnPoints: 789,
     playUrl: "https://dungeondelver.example.com",
     pricing: "free",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/655/360",
   },
   {
     id: "17",
@@ -254,7 +254,7 @@ export const games: Game[] = [
     hnPoints: 345,
     playUrl: "https://mysteryisland.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/656/360",
   },
   {
     id: "18",
@@ -269,7 +269,7 @@ export const games: Game[] = [
     hnPoints: 912,
     playUrl: "https://battlearena.example.com",
     pricing: "free",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/657/360",
   },
   {
     id: "19",
@@ -284,7 +284,7 @@ export const games: Game[] = [
     hnPoints: 456,
     playUrl: "https://logicmasters.example.com",
     pricing: "paid",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/658/360",
   },
   {
     id: "20",
@@ -299,6 +299,6 @@ export const games: Game[] = [
     hnPoints: 678,
     playUrl: "https://pixelwarriors.example.com",
     pricing: "free",
-    imageUrl: "https://placehold.co/400x300",
+    imageUrl: "https://placecats.com/659/360",
   }
 ]; 
