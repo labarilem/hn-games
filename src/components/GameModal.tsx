@@ -68,11 +68,13 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
         <div className="space-y-6">
           <div className="relative -mx-6 -mt-6">
-            <img
-              src={game.imageUrl}
-              alt={game.name}
-              className="w-full h-64 object-cover"
-            />
+            <div className="aspect-video w-full">
+              <img
+                src={game.imageUrl}
+                alt={game.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
 
           <div className="space-y-6">
