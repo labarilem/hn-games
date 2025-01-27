@@ -1,5 +1,5 @@
 {
-  "name": "game-catalog",
+  "name": "hn-games",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "clean": "rm -rf .next"
   },
   "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
     "@vercel/og": "^0.6.5",
     "date-fns": "^3.3.1",
     "next": "^14.2.23",

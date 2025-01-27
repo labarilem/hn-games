@@ -14,11 +14,10 @@ export default async function Home({
   return (
     <div className="max-w-[1280px] mx-auto">
       <h1 className="text-5xl font-bold mb-4 text-center bg-gradient-to-r from-[#646cff] to-[#747bff] text-transparent bg-clip-text py-2">
-        HN Games Catalog
+        Hacker News Games
       </h1>
       <p className="text-gray-400 mb-8 text-center max-w-2xl mx-auto">
-        A curated catalog of games created by the Hacker News community. Browse,
-        play, and discover new games!
+        A curated catalog of games created by the Hacker News community.
       </p>
 
       <GameFilters />

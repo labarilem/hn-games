@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: "Hacker News Games",
   description: "A curated catalog of games from Hacker News",
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
   },
 };
 
