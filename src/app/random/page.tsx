@@ -1,13 +1,10 @@
 import GameCard from "@/components/GameCard";
-import { games } from "@/data/games";
+import { getRandomFreeWebGame } from "@/lib/games";
 
-export default function Random() {
-  // Filter games that are free and playable on web
-  const eligibleGames = games.filter(
-    game => game.pricing === 'free' && game.platforms.includes('web')
-  );
+export default async function Random() {
+  const randomGame = await getRandomFreeWebGame();
 
-  if (eligibleGames.length === 0) {
+  if (!randomGame) {
     return (
       <div className="max-w-2xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-4">Random Game</h1>
@@ -17,9 +14,6 @@ export default function Random() {
       </div>
     );
   }
-
-  // Pick a random game
-  const randomGame = eligibleGames[Math.floor(Math.random() * eligibleGames.length)];
 
   return (
     <div className="max-w-2xl mx-auto">

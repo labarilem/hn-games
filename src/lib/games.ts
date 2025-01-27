@@ -81,3 +81,18 @@ export async function getFilteredGames(searchParams: {
     },
   };
 }
+
+export async function getRandomFreeWebGame() {
+  // Filter games that are free and playable on web
+  const eligibleGames = games.filter(
+    game => game.pricing === 'free' && game.platforms.includes('web')
+  );
+
+  if (eligibleGames.length === 0) {
+    return null; // No eligible games
+  }
+
+  // Pick a random game
+  const randomGame = eligibleGames[Math.floor(Math.random() * eligibleGames.length)];
+  return randomGame;
+}
