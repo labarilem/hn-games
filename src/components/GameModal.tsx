@@ -46,7 +46,8 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
         <div className="absolute top-4 right-4 z-10">
           <button
             onClick={onClose}
-            className="p-2 text-gray-400 hover:text-white rounded-full hover:bg-[#1a1a1a] transition-colors"
+            className="p-2 bg-black/50 backdrop-blur-sm text-white hover:bg-black/70 rounded-full transition-colors shadow-lg"
+            aria-label="Close modal"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +56,7 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
