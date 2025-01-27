@@ -1,5 +1,5 @@
 import { games } from "@/data/games";
-import { GameGenre, Platform, PlayerMode, pricing } from "@/types/game";
+import { GameGenre, Platform, PlayerMode, Pricing } from "@/types/game";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
@@ -18,7 +18,7 @@ export async function GET(request: NextRequest) {
   const playerMode = searchParams.get("playerMode") as PlayerMode;
   const author = searchParams.get("author");
   const genre = searchParams.get("genre") as GameGenre;
-  const pricing = searchParams.get("pricing") as pricing;
+  const pricing = searchParams.get("pricing") as Pricing;
   
   // Sorting
   const sortBy = searchParams.get("sortBy")?.split("-")[0] || "releaseDate";

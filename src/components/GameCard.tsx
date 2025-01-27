@@ -1,7 +1,6 @@
 "use client";
 
 import { Game } from "@/types/game";
-import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 import GameModal from "./GameModal";
 import PlatformIcon from "./PlatformIcon";
@@ -12,8 +11,6 @@ interface GameCardProps {
 
 export default function GameCard({ game }: GameCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const searchParams = useSearchParams();
-  const currentAuthor = searchParams.get("author");
 
   const handleFilterClick = (
     param: string,
@@ -138,14 +135,6 @@ export default function GameCard({ game }: GameCardProps) {
                 >
                   by {game.author}
                 </button>
-                {currentAuthor === game.author && (
-                  <button
-                    onClick={clearAuthorFilter}
-                    className="text-xs px-2 py-1 rounded-full bg-[#1a1a1a] text-gray-400 hover:bg-[#646cff] hover:text-white transition-colors"
-                  >
-                    ✕ Clear
-                  </button>
-                )}
               </div>
               <span className="text-gray-400 text-sm">{publicationYear}</span>
             </div>
