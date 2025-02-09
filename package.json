@@ -9,7 +9,11 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
-    "clean": "rm -rf .next"
+    "clean": "rm -rf .next",
+    "scrape": "node scripts/scrape.js > log.txt",
+    "archive": "node scripts/archive.js > log.txt",
+    "compile": "node scripts/compile.js > log.txt",
+    "check-links": "node scripts/check-links.js > log.txt"
   },
   "dependencies": {
     "@vercel/og": "^0.6.5",
@@ -28,11 +32,14 @@
     "@typescript-eslint/eslint-plugin": "^6.20.0",
     "@typescript-eslint/parser": "^6.20.0",
     "autoprefixer": "^10.4.17",
+    "axios": "^1.7.9",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
+    "get-urls": "^12.1.0",
     "postcss": "^8.4.35",
     "prettier": "^3.2.5",
+    "string-strip-html": "^13.4.8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   },
