@@ -1,16 +1,27 @@
-export type Platform = 'desktop' | 'web' | 'console';
+export type Platform = 'desktop' | 'web' | 'console' | 'ios' | 'android';
 export type PlayerMode = "single" | "multi";
 export type Pricing = 'free' | 'paid';
 
+// all used
 export enum GameGenre {
+  WORD = "word",
+  ROGUELIKE = "roguelike",
   ACTION = "action",
   ADVENTURE = "adventure",
   PUZZLE = "puzzle",
-  STRATEGY = "strategy",
   RPG = "rpg",
-  SIMULATION = "simulation",
+  FITNESS = "fitness",
+  CODING = "coding",
+  STRATEGY = "strategy",
+  TYPING = "typing",
+  ARCADE = "arcade",
+  SURVIVAL = "survival",
   PLATFORMER = "platformer",
-  ROGUELIKE = "roguelike"
+  SPORT = "sport",
+  HORROR = "horror",
+  CARD = "card",
+  SIMULATION = "simulation",
+  EDUCATIONAL = "educational",
 }
 
 export interface Game {
@@ -27,4 +38,4 @@ export interface Game {
   playUrl: string;
   pricing: Pricing;
   imageUrl: string;
-} 
+}

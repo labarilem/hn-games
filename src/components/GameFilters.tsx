@@ -179,6 +179,8 @@ export default function GameFilters() {
               <option value="web">Web</option>
               <option value="desktop">Desktop</option>
               <option value="console">Console</option>
+              <option value="ios">iOS</option>
+              <option value="android">Android</option>
             </select>
 
             {/* Genre Select */}
@@ -277,6 +279,8 @@ export default function GameFilters() {
             <option value="web">Web</option>
             <option value="desktop">Desktop</option>
             <option value="console">Console</option>
+            <option value="ios">iOS</option>
+            <option value="android">Android</option>
           </select>
 
           {/* Genre Select */}

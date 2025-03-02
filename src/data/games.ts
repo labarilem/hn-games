@@ -2,19 +2,19 @@ import { Game, GameGenre } from "@/types/game";
 
 export const games: Game[] = [
   {
-    id: "1",
-    name: "Pixel Dungeon",
-    description: "A roguelike dungeon crawler with retro pixel graphics",
-    platforms: ["web", "desktop", "console"],
-    releaseDate: new Date("2023-01-15"),
+    id: "8787488",
+    name: "DeepLeap",
+    description: "A fast-paced time-wasting word game",
+    platforms: ["web", "ios", "android"],
+    releaseDate: new Date("2029-12-23T09:48:12.000Z"),
     playerMode: "single",
-    author: "watabou",
-    genre: GameGenre.ROGUELIKE,
-    hnUrl: "https://news.ycombinator.com/item?id=12345678",
-    hnPoints: 342,
-    playUrl: "https://pixeldungeon.example.com",
+    author: "yla92",
+    genre: GameGenre.WORD,
+    hnUrl: "https://news.ycombinator.com/item?id=8787488",
+    hnPoints: 1,
+    playUrl: "http://deepleap.org/",
     pricing: "free",
-    imageUrl: "https://placecats.com/640/360",
+    imageUrl: "/images/games/8657197.jpg",
   },
   {
     id: "2",
@@ -154,7 +154,8 @@ export const games: Game[] = [
   {
     id: "11",
     name: "Quantum Quest",
-    description: "A mind-bending puzzle game based on quantum mechanics principles",
+    description:
+      "A mind-bending puzzle game based on quantum mechanics principles",
     platforms: ["web"],
     releaseDate: new Date("2024-01-10"),
     playerMode: "single",
@@ -169,7 +170,8 @@ export const games: Game[] = [
   {
     id: "12",
     name: "Space Colony Sim",
-    description: "Build and manage your own space colony in this detailed simulation game",
+    description:
+      "Build and manage your own space colony in this detailed simulation game",
     platforms: ["desktop"],
     releaseDate: new Date("2024-02-05"),
     playerMode: "single",
@@ -300,5 +302,5 @@ export const games: Game[] = [
     playUrl: "https://pixelwarriors.example.com",
     pricing: "free",
     imageUrl: "https://placecats.com/659/360",
-  }
-]; 
+  },
+];

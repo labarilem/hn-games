@@ -72,7 +72,10 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
               <img
                 src={game.imageUrl}
                 alt={game.name}
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-fill rounded-lg"
+                fetchPriority="low"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -148,17 +151,17 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
                 <h3 className="text-sm text-gray-400 mb-1">Published</h3>
                 <div className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm inline-block">
                   <span className="hidden sm:inline">
-                    {new Date(game.releaseDate).toLocaleDateString('en-US', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric'
+                    {new Date(game.releaseDate).toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
                     })}
                   </span>
                   <span className="sm:hidden">
-                    {new Date(game.releaseDate).toLocaleDateString('en-US', {
-                      day: '2-digit',
-                      month: '2-digit',
-                      year: 'numeric'
+                    {new Date(game.releaseDate).toLocaleDateString("en-US", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
                     })}
                   </span>
                 </div>

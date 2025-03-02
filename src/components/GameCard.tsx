@@ -38,11 +38,14 @@ export default function GameCard({ game }: GameCardProps) {
           <img
             src={game.imageUrl}
             alt={game.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-fill"
+            fetchPriority="low"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute bottom-2 right-2 flex gap-2">
             <span className="bg-[#646cff] text-white px-3 py-1 rounded-full text-sm font-medium">
-              {game.hnPoints} points
+              {game.hnPoints} point{game.hnPoints === 1 ? "" : "s"}
             </span>
           </div>
           <div className="absolute top-2 left-2">

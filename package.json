@@ -11,6 +11,7 @@
     "format": "prettier --write .",
     "clean": "rm -rf .next",
     "scrape": "node scripts/scrape.js > log.txt",
+    "filter": "node scripts/filter.js",
     "archive": "node scripts/archive.js > log.txt",
     "compile": "node scripts/compile.js > log.txt",
     "check-links": "node scripts/check-links.js > log.txt"
