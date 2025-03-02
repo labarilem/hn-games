@@ -212,7 +212,7 @@ export default function GameFilters() {
               className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             >
               <option value="">All Player Modes</option>
-              <option value="single">Single Player</option>
+              <option value="single">Singleplayer</option>
               <option value="multi">Multiplayer</option>
             </select>
 
@@ -312,7 +312,7 @@ export default function GameFilters() {
             className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
           >
             <option value="">All Player Modes</option>
-            <option value="single">Single Player</option>
+            <option value="single">Singleplayer</option>
             <option value="multi">Multiplayer</option>
           </select>
 

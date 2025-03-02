@@ -6,7 +6,7 @@ import { FaSync } from "react-icons/fa";
 export const dynamic = "force-dynamic";
 
 export default async function Random() {
-  const randomGame = await getRandomFreeWebGame();
+  const randomGame = getRandomFreeWebGame();
 
   if (!randomGame) {
     return (

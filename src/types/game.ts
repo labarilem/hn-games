@@ -30,7 +30,7 @@ export interface Game {
   description: string;
   platforms: Platform[];
   releaseDate: Date;
-  playerMode: PlayerMode;
+  playerMode: PlayerMode[];  // Changed from PlayerMode to PlayerMode[]
   author: string;
   genre: GameGenre;
   hnUrl: string;

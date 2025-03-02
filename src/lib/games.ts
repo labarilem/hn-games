@@ -1,9 +1,10 @@
 import { games } from "@/data/games";
-import { Platform } from "../types/game";
+import { Platform, PlayerMode } from "../types/game";
 
-export async function getFilteredGames(searchParams: {
+// TODO: add types for searchParams and pagination
+export function getFilteredGames(searchParams: {
   [key: string]: string | string[] | undefined;
-}) {
+} & { playerMode?: PlayerMode }) {
   let filteredGames = [...games];
   const itemsPerPage = 9;
   const page = Number(searchParams.page) || 1;
@@ -37,8 +38,8 @@ export async function getFilteredGames(searchParams: {
   }
 
   if (searchParams.playerMode) {
-    filteredGames = filteredGames.filter(
-      (game) => game.playerMode === searchParams.playerMode
+    filteredGames = filteredGames.filter((game) =>
+      game.playerMode.includes(searchParams.playerMode!)
     );
   }
 
@@ -49,18 +50,24 @@ export async function getFilteredGames(searchParams: {
   }
 
   // Apply sorting
-  const sortBy = searchParams.sortBy || 'releaseDate-desc';
+  const sortBy = searchParams.sortBy || "releaseDate-desc";
   switch (sortBy) {
-    case 'releaseDate-desc':
-      filteredGames.sort((a, b) => new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime());
+    case "releaseDate-desc":
+      filteredGames.sort(
+        (a, b) =>
+          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+      );
       break;
-    case 'releaseDate-asc':
-      filteredGames.sort((a, b) => new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime());
+    case "releaseDate-asc":
+      filteredGames.sort(
+        (a, b) =>
+          new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime()
+      );
       break;
-    case 'hnPoints-desc':
+    case "hnPoints-desc":
       filteredGames.sort((a, b) => b.hnPoints - a.hnPoints);
       break;
-    case 'hnPoints-asc':
+    case "hnPoints-asc":
       filteredGames.sort((a, b) => a.hnPoints - b.hnPoints);
       break;
   }
@@ -82,10 +89,10 @@ export async function getFilteredGames(searchParams: {
   };
 }
 
-export async function getRandomFreeWebGame() {
+export function getRandomFreeWebGame() {
   // Filter games that are free and playable on web
   const eligibleGames = games.filter(
-    game => game.pricing === 'free' && game.platforms.includes('web')
+    (game) => game.pricing === "free" && game.platforms.includes("web")
   );
 
   if (eligibleGames.length === 0) {
@@ -93,6 +100,7 @@ export async function getRandomFreeWebGame() {
   }
 
   // Pick a random game
-  const randomGame = eligibleGames[Math.floor(Math.random() * eligibleGames.length)];
+  const randomGame =
+    eligibleGames[Math.floor(Math.random() * eligibleGames.length)];
   return randomGame;
 }

@@ -8,7 +8,7 @@ export default async function Home({
 }: {
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const { games, pagination } = await getFilteredGames(searchParams);
+  const { games, pagination } = getFilteredGames(searchParams);
   const currentPage = Number(searchParams.page) || 1;
 
   return (

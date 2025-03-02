@@ -115,16 +115,17 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
 
               <div>
                 <h3 className="text-sm text-gray-400 mb-1">Player Mode</h3>
-                <button
-                  onClick={() =>
-                    handleFilterClick("playerMode", game.playerMode)
-                  }
-                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
-                >
-                  {game.playerMode === "single"
-                    ? "single player"
-                    : "multiplayer"}
-                </button>
+                <div className="flex flex-wrap gap-2">
+                  {game.playerMode.map((mode) => (
+                    <button
+                      key={mode}
+                      onClick={() => handleFilterClick("playerMode", mode)}
+                      className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
+                    >
+                      {mode === "single" ? "singleplayer" : "multiplayer"}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div>
