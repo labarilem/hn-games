@@ -1,10 +1,12 @@
 import { games } from "@/data/games";
-import { Platform, PlayerMode } from "../types/game";
+import { Platform, PlayerMode, Pricing } from "../types/game";
 
 // TODO: add types for searchParams and pagination
-export function getFilteredGames(searchParams: {
-  [key: string]: string | string[] | undefined;
-} & { playerMode?: PlayerMode }) {
+export function getFilteredGames(
+  searchParams: {
+    [key: string]: string | string[] | undefined;
+  } & { playerMode?: PlayerMode }
+) {
   let filteredGames = [...games];
   const itemsPerPage = 9;
   const page = Number(searchParams.page) || 1;
@@ -92,7 +94,8 @@ export function getFilteredGames(searchParams: {
 export function getRandomFreeWebGame() {
   // Filter games that are free and playable on web
   const eligibleGames = games.filter(
-    (game) => game.pricing === "free" && game.platforms.includes("web")
+    (game) =>
+      game.pricing === Pricing.FREE && game.platforms.includes(Platform.WEB)
   );
 
   if (eligibleGames.length === 0) {

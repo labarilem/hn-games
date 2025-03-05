@@ -4,8 +4,6 @@ import getUrls from "get-urls";
 import { stripHtml } from "string-strip-html";
 import checkpoint from "./data/checkpoint.js";
 
-const beforeTimestamp = checkpoint.lastTimestampInSeconds;
-
 async function isValidGameUrl(url) {
   if (!url) return true; // Consider empty URLs as valid (they'll become empty strings in the entity)
 
@@ -39,6 +37,8 @@ async function scrapeGames() {
   try {
     // Fetch data from Algolia Hacker News API
     // docs https://hn.algolia.com/api#:~:text=%7D-,Search,-Sorted%20by%20relevance
+    const from = checkpoint.fromTimestampInSeconds;
+    const to = checkpoint.toTimestampInSeconds;
     const { data } = await axios.get(
       `https://hn.algolia.com/api/v1/search_by_date`,
       {
@@ -47,7 +47,8 @@ async function scrapeGames() {
           tags: "show_hn",
           page: 0,
           hitsPerPage: 1000, // max page size
-          numericFilters: `created_at_i<${beforeTimestamp}`,
+          numericFilters: `created_at_i>${from},created_at_i<${to}`,
+          // created_at_i>X
           // created_at_i>X,created_at_i<Y
         },
       }
@@ -89,6 +90,7 @@ async function scrapeGames() {
       "nfl game",
       "sdk",
       "level editor",
+      "plugin",
     ];
     const itemsValidations = preprocItems.map((item) => ({
       item,
@@ -113,16 +115,19 @@ async function scrapeGames() {
           (item.item.title === itemValidation.item.title &&
             item.item.author === itemValidation.item.author) ||
           // check for duplicate URLS
-          item.item.url === itemValidation.item.url
+          (item.item.url != null && item.item.url === itemValidation.item.url)
       );
       if (duplicate) {
         itemValidation.isValid = false;
+        const dupeInfo =
+          itemValidation.item.url ??
+          `${itemValidation.item.title} - ${itemValidation.item.author}`;
         console.log(`Duplicate item detected: ${itemValidation.item.url}`);
         continue;
       }
 
       // validate urls
-      const hasValidUrl = false;
+      let hasValidUrl = false;
       for (const urlInDesc of itemValidation.item.candidateGameUrls) {
         console.log(
           "Validating " + i + "/" + itemsValidations.length,

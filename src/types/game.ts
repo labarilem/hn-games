@@ -1,6 +1,20 @@
-export type Platform = 'desktop' | 'web' | 'console' | 'ios' | 'android';
-export type PlayerMode = "single" | "multi";
-export type Pricing = 'free' | 'paid';
+export enum Platform {
+  DESKTOP = "desktop",
+  WEB = "web",
+  CONSOLE = "console",
+  IOS = "ios",
+  ANDROID = "android",
+}
+
+export enum PlayerMode {
+  SINGLE = "single",
+  MULTI = "multi",
+}
+
+export enum Pricing {
+  FREE = "free",
+  PAID = "paid",
+}
 
 // all used
 export enum GameGenre {
@@ -30,7 +44,7 @@ export interface Game {
   description: string;
   platforms: Platform[];
   releaseDate: Date;
-  playerMode: PlayerMode[];  // Changed from PlayerMode to PlayerMode[]
+  playerMode: PlayerMode[];
   author: string;
   genre: GameGenre;
   hnUrl: string;

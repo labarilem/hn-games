@@ -1,0 +1,1340 @@
+[
+  {
+    "id": "8787488",
+    "name": "DeepLeap",
+    "description": "A fast-paced time-wasting word game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-12-23T09:48:12.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "yla92",
+    "genre": "word",
+    "hnUrl": "https://news.ycombinator.com/item?id=8787488",
+    "hnPoints": 1,
+    "playUrl": "http://deepleap.org/",
+    "pricing": "free",
+    "imageUrl": "/images/games/8787488.jpg"
+  },
+  {
+    "id": "8755777",
+    "name": "Flash Dive",
+    "description": "Cute reflex-based iPhone game",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2014-12-16T03:44:25.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "benolds",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=8755777",
+    "hnPoints": 1,
+    "playUrl": "https://itunes.apple.com/us/app/flash-dive/id912150323?ls=1&mt=8",
+    "pricing": "free",
+    "imageUrl": "/images/games/8755777.jpg"
+  },
+  {
+    "id": "8660641",
+    "name": "Oh My Giraffe",
+    "description": "A game about a giraffe eating fruit while being chased by lions",
+    "platforms": [
+      "ios",
+      "desktop"
+    ],
+    "releaseDate": "2014-11-26T00:33:47.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "kneeko",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=8660641",
+    "hnPoints": 8,
+    "playUrl": "http://www.ohmygiraffe.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/8660641.jpg"
+  },
+  {
+    "id": "8657197",
+    "name": "RPG MO",
+    "description": "Isometric MMORPG with tons of content",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-11-25T10:55:27.000Z",
+    "playerMode": [
+      "multi"
+    ],
+    "author": "marxdeveloper",
+    "genre": "rpg",
+    "hnUrl": "https://news.ycombinator.com/item?id=8657197",
+    "hnPoints": 9,
+    "playUrl": "http://rpg.mo.ee/",
+    "pricing": "free",
+    "imageUrl": "/images/games/8657197.jpg"
+  },
+  {
+    "id": "8615416",
+    "name": "SineRider",
+    "description": "A game inspired by the TI-86 calculator",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-11-16T21:03:14.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "SigmaEpsilonChi",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=8615416",
+    "hnPoints": 137,
+    "playUrl": "http://sineridergame.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/8615416.jpg"
+  },
+  {
+    "id": "8521467",
+    "name": "Wobble Wockets",
+    "description": "Escape the meteor shower with your wobble wocket",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-10-28T15:34:12.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "aith",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=8521467",
+    "hnPoints": 53,
+    "playUrl": "http://play.wobblewockets.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/8521467.jpg"
+  },
+  {
+    "id": "8472016",
+    "name": "Wokamon",
+    "description": "Step counter game for fitness",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2014-10-17T17:10:21.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "marspark",
+    "genre": "fitness",
+    "hnUrl": "https://news.ycombinator.com/item?id=8472016",
+    "hnPoints": 1,
+    "playUrl": "https://itunes.apple.com/us/app/wokamon-virtual-pet-pedometer/id686364904?mt=8",
+    "pricing": "free",
+    "imageUrl": "/images/games/8472016.jpg"
+  },
+  {
+    "id": "8464037",
+    "name": "DogeSweeper",
+    "description": "Minesweeper clone based on the Doge meme",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-10-16T09:04:47.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "hberg",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=8464037",
+    "hnPoints": 1,
+    "playUrl": "http://leonar15.github.io/dogesweeper/",
+    "pricing": "free",
+    "imageUrl": "/images/games/8464037.jpg"
+  },
+  {
+    "id": "8461141",
+    "name": "4x4x4 Tic-Tac-Toe",
+    "description": "A simple 3D tic-tac-toe game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-10-15T19:33:12.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "phenomnominal",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=8461141",
+    "hnPoints": 16,
+    "playUrl": "http://phenomnomnominal.github.io/tic-x-tac-x-toe/",
+    "pricing": "free",
+    "imageUrl": "/images/games/8461141.jpg"
+  },
+  {
+    "id": "8455393",
+    "name": "Deobfuscate.Me",
+    "description": "A JavaScript deobfuscation Game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-10-14T19:56:59.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "enderwigginz",
+    "genre": "coding",
+    "hnUrl": "https://news.ycombinator.com/item?id=8455393",
+    "hnPoints": 7,
+    "playUrl": "http://deobfuscate.me",
+    "pricing": "free",
+    "imageUrl": "/images/games/8455393.jpg"
+  },
+  {
+    "id": "8446273",
+    "name": "Binarize",
+    "description": "Choose a number, convert it to binary, and swipe it off the board",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-10-12T19:20:05.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "jpeggg",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=8446273",
+    "hnPoints": 2,
+    "playUrl": "https://itunes.apple.com/us/app/01-binary-training-game/id915723834?ls=1&mt=8",
+    "pricing": "free",
+    "imageUrl": "/images/games/8446273.jpg"
+  },
+  {
+    "id": "8377251",
+    "name": "Compact Conflict",
+    "description": "A turn-based map conquest game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-09-27T15:29:21.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "krajzeg",
+    "genre": "strategy",
+    "hnUrl": "https://news.ycombinator.com/item?id=8377251",
+    "hnPoints": 3,
+    "playUrl": "http://wasyl.eu/games/compact-conflict/play.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/8377251.jpg"
+  },
+  {
+    "id": "8372546",
+    "name": "Maze Unlimited",
+    "description": "First-person maze game",
+    "platforms": [
+      "android"
+    ],
+    "releaseDate": "2014-09-26T13:25:07.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "anywherenotes",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=8372546",
+    "hnPoints": 3,
+    "playUrl": "https://play.google.com/store/apps/details?id=com.mildspring.maze&hn=true",
+    "pricing": "free",
+    "imageUrl": "/images/games/8372546.jpg"
+  },
+  {
+    "id": "8281929",
+    "name": "Typing Champion",
+    "description": "Test your typing speed and claim the champion title on the leaderboard",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-09-07T18:20:55.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "tomd3v",
+    "genre": "typing",
+    "hnUrl": "https://news.ycombinator.com/item?id=8281929",
+    "hnPoints": 2,
+    "playUrl": "http://typingchampion.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/8281929.jpg"
+  },
+  {
+    "id": "8207781",
+    "name": "Pontos",
+    "description": "A partial clone of the Dots game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-08-21T15:25:26.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "vinicius",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=8207781",
+    "hnPoints": 8,
+    "playUrl": "http://viniciuspinto.github.io/pontos/",
+    "pricing": "free",
+    "imageUrl": "/images/games/8207781.jpg"
+  },
+  {
+    "id": "8189458",
+    "name": "Whistleblower",
+    "description": "Whistle-activated action game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-08-17T14:39:48.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "mattdesl",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=8189458",
+    "hnPoints": 14,
+    "playUrl": "http://mattdesl.github.io/whistleblower/demo/",
+    "pricing": "free",
+    "imageUrl": "/images/games/8189458.jpg"
+  },
+  {
+    "id": "8181800",
+    "name": "Sharkbeat",
+    "description": "Simple game made for Shark Week",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-08-15T12:16:43.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "gamemix",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=8181800",
+    "hnPoints": 6,
+    "playUrl": "http://www.sharkbeat.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/8181800.jpg"
+  },
+  {
+    "id": "8092392",
+    "name": "Termping",
+    "description": "Pong in your terminal",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2014-07-27T10:14:34.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "pravj",
+    "genre": "arcade",
+    "hnUrl": "https://news.ycombinator.com/item?id=8092392",
+    "hnPoints": 2,
+    "playUrl": "https://github.com/pravj/termping",
+    "pricing": "free",
+    "imageUrl": "/images/games/8092392.jpg"
+  },
+  {
+    "id": "8088223",
+    "name": "Hexiled",
+    "description": "Fast-paced word game",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2014-07-25T23:32:25.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "prawn",
+    "genre": "word",
+    "hnUrl": "https://news.ycombinator.com/item?id=8088223",
+    "hnPoints": 9,
+    "playUrl": "https://itunes.apple.com/us/app/hexiled/id881274996?ls=1&mt=8&at=11lJEM",
+    "pricing": "free",
+    "imageUrl": "/images/games/8088223.jpg"
+  },
+  {
+    "id": "8013267",
+    "name": "Dominus",
+    "description": "Gain vassals until you can overthrow your lord and climb the tree to become the Dominus.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-07-10T02:25:20.000Z",
+    "playerMode": [
+      "multi"
+    ],
+    "author": "dan335",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=8013267",
+    "hnPoints": 12,
+    "playUrl": "http://dominusgame.net",
+    "pricing": "free",
+    "imageUrl": "/images/games/8013267.jpg"
+  },
+  {
+    "id": "7988399",
+    "name": "Elven Blood",
+    "description": "A text-based dark fantasy RPG",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2014-07-04T12:04:40.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "luciuskyver",
+    "genre": "rpg",
+    "hnUrl": "https://news.ycombinator.com/item?id=7988399",
+    "hnPoints": 1,
+    "playUrl": "https://itunes.apple.com/us/app/elven-blood/id875760225?mt=8&ign-mpt=uo%3D4",
+    "pricing": "free",
+    "imageUrl": "/images/games/7988399.jpg"
+  },
+  {
+    "id": "7961770",
+    "name": "Math Machine",
+    "description": "A game based on the concept of a stack machine",
+    "platforms": [
+      "android"
+    ],
+    "releaseDate": "2014-06-29T17:34:47.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "aaronetz",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=7961770",
+    "hnPoints": 10,
+    "playUrl": "https://play.google.com/store/apps/details?id=com.woodencloset.mathmachine.android",
+    "pricing": "free",
+    "imageUrl": "/images/games/7961770.jpg"
+  },
+  {
+    "id": "7731543",
+    "name": "Eventhandler",
+    "description": "A game where you play by triggering browser events",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-05-12T07:32:43.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "sigvef",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=7731543",
+    "hnPoints": 26,
+    "playUrl": "http://arkt.is/eventhandler/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7731543.jpg"
+  },
+  {
+    "id": "7730520",
+    "name": "Floppy Bird - GoT Edition",
+    "description": "Flappy bird clone with a Game of Thrones theme",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-05-11T23:57:10.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "lukeweil",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=7730520",
+    "hnPoints": 1,
+    "playUrl": "http://lukeweil.github.io/floppybird-game-of-thrones/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7730520.jpg"
+  },
+  {
+    "id": "7729260",
+    "name": "Lurking",
+    "description": "Survival thriller game that uses echolocation",
+    "platforms": [
+      "desktop",
+      "console"
+    ],
+    "releaseDate": "2014-05-11T17:36:06.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "szhongmin",
+    "genre": "survival",
+    "hnUrl": "https://news.ycombinator.com/item?id=7729260",
+    "hnPoints": 41,
+    "playUrl": "http://lurking-game.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/7729260.jpg"
+  },
+  {
+    "id": "7677018",
+    "name": "Life Goes On",
+    "description": "A comical puzzle platformer where you must die to progress",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-04-30T22:51:58.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "erik",
+    "genre": "platformer",
+    "hnUrl": "https://news.ycombinator.com/item?id=7677018",
+    "hnPoints": 160,
+    "playUrl": "https://store.steampowered.com/app/250050/Life_Goes_On_Done_to_Death/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/7677018.jpg"
+  },
+  {
+    "id": "7656436",
+    "name": "2048 GoT Edition",
+    "description": "2048 clone with a Game of Thrones theme",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-04-27T19:30:45.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "lukeweil",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=7656436",
+    "hnPoints": 2,
+    "playUrl": "http://lukeweil.github.io/game-of-thrones-2048/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7656436.jpg"
+  },
+  {
+    "id": "7647962",
+    "name": "WDFAC",
+    "description": "A DotA-inspired game with a Rock-Paper-Scissors mechanic",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-04-25T17:47:10.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "bryanbibat",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=7647962",
+    "hnPoints": 3,
+    "playUrl": "http://datenshizero.github.io/wdfac/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7647962.jpg"
+  },
+  {
+    "id": "7642161",
+    "name": "4irpucks",
+    "description": "4-player air hockey game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-04-24T18:54:35.000Z",
+    "playerMode": [
+      "single",
+      "multi"
+    ],
+    "author": "jcgun",
+    "genre": "sport",
+    "hnUrl": "https://news.ycombinator.com/item?id=7642161",
+    "hnPoints": 3,
+    "playUrl": "http://www.4irpucks.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7642161.jpg"
+  },
+  {
+    "id": "7599448",
+    "name": "CasinoRPG",
+    "description": "MMO game based in a casino",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-04-16T18:12:07.000Z",
+    "playerMode": [
+      "multi"
+    ],
+    "author": "james33",
+    "genre": "rpg",
+    "hnUrl": "https://news.ycombinator.com/item?id=7599448",
+    "hnPoints": 4,
+    "playUrl": "http://crpg.me/c",
+    "pricing": "free",
+    "imageUrl": "/images/games/7599448.jpg"
+  },
+  {
+    "id": "7547942",
+    "name": "Untrusted",
+    "description": "A JavaScript adventure game you play by modifying its source",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-04-07T17:31:26.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "alnis",
+    "genre": "coding",
+    "hnUrl": "https://news.ycombinator.com/item?id=7547942",
+    "hnPoints": 555,
+    "playUrl": "http://alex.nisnevich.com/untrusted/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7547942.jpg"
+  },
+  {
+    "id": "7497575",
+    "name": "Tileswap",
+    "description": "A tile swapping puzzle game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-03-30T19:39:51.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "psuter",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=7497575",
+    "hnPoints": 1,
+    "playUrl": "https://psuter.net/tileswap/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7497575.jpg"
+  },
+  {
+    "id": "7436326",
+    "name": "The Three Hearts",
+    "description": "Explore the world and find the three hearts",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-03-20T15:57:31.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "codecondo",
+    "genre": "adventure",
+    "hnUrl": "https://news.ycombinator.com/item?id=7436326",
+    "hnPoints": 1,
+    "playUrl": "http://www.lessmilk.com/11/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7436326.jpg"
+  },
+  {
+    "id": "7434529",
+    "name": "2048-gb",
+    "description": "Gameboy port of 2048",
+    "platforms": [
+      "console"
+    ],
+    "releaseDate": "2014-03-20T09:20:57.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "sanqui",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=7434529",
+    "hnPoints": 7,
+    "playUrl": "https://github.com/Sanqui/2048-gb",
+    "pricing": "free",
+    "imageUrl": "/images/games/7434529.jpg"
+  },
+  {
+    "id": "7423894",
+    "name": "Vessel",
+    "description": "Steer the vessel to stay alive",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-03-18T18:24:20.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "lawrensm",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=7423894",
+    "hnPoints": 1,
+    "playUrl": "https://github.com/slawrence/vessel",
+    "pricing": "free",
+    "imageUrl": "/images/games/7423894.jpg"
+  },
+  {
+    "id": "7398353",
+    "name": "Eke",
+    "description": "Simple action platformer with guns",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-03-14T12:45:23.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "stjerdi",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=7398353",
+    "hnPoints": 4,
+    "playUrl": "http://eke.stereocrown.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7398353.jpg"
+  },
+  {
+    "id": "7386672",
+    "name": "Dark Blue",
+    "description": "Collect all coins and finish each level",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-03-12T16:41:05.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "lessmilk",
+    "genre": "platformer",
+    "hnUrl": "https://news.ycombinator.com/item?id=7386672",
+    "hnPoints": 362,
+    "playUrl": "http://www.lessmilk.com/10/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7386672.jpg"
+  },
+  {
+    "id": "7362089",
+    "name": "Numolition",
+    "description": "Math puzzle game for Nintendo Switch",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2014-03-07T19:10:37.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "primigenus",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=7362089",
+    "hnPoints": 2,
+    "playUrl": "https://numolition.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7362089.jpg"
+  },
+  {
+    "id": "7191187",
+    "name": "Eliss Lines",
+    "description": "A physics drawing puzzle that challenges your strategic thinking",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-02-06T16:34:32.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "phest",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=7191187",
+    "hnPoints": 214,
+    "playUrl": "http://www.toucheliss.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7191187.jpg"
+  },
+  {
+    "id": "7069852",
+    "name": "Free Rider HD",
+    "description": "Ride a bike through tracks drawn by other players",
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ],
+    "releaseDate": "2014-01-16T15:27:34.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "erichate",
+    "genre": "platformer",
+    "hnUrl": "https://news.ycombinator.com/item?id=7069852",
+    "hnPoints": 3,
+    "playUrl": "http://www.freeriderhd.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7069852.jpg"
+  },
+  {
+    "id": "7032700",
+    "name": "Box Jump",
+    "description": "Make the box jump at the right time and avoid all obstacles",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-01-09T19:48:26.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "lessmilk",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=7032700",
+    "hnPoints": 2,
+    "playUrl": "http://www.lessmilk.com/3",
+    "pricing": "free",
+    "imageUrl": "/images/games/7032700.jpg"
+  },
+  {
+    "id": "6897863",
+    "name": "Typerdick",
+    "description": "A fast-paced typing game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2013-12-12T22:55:42.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "windsurfer",
+    "genre": "typing",
+    "hnUrl": "https://news.ycombinator.com/item?id=6897863",
+    "hnPoints": 1,
+    "playUrl": "http://windsurfer.github.io/typerdick",
+    "pricing": "free",
+    "imageUrl": "/images/games/6897863.jpg"
+  },
+  {
+    "id": "6871515",
+    "name": "Colossal Cave Adventure",
+    "description": "Web port of the original text adventure game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2013-12-08T21:32:05.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "mmastrac",
+    "genre": "adventure",
+    "hnUrl": "https://news.ycombinator.com/item?id=6871515",
+    "hnPoints": 3,
+    "playUrl": "http://grack.com/adventure/",
+    "pricing": "free",
+    "imageUrl": "/images/games/6871515.jpg"
+  },
+  {
+    "id": "6751462",
+    "name": "Football Heroes",
+    "description": "Fight your way to the end zone and bring home the win",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2013-11-17T23:00:03.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "zachlatta",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=6751462",
+    "hnPoints": 7,
+    "playUrl": "https://itunes.apple.com/us/app/football-heroes/id543009156",
+    "pricing": "free",
+    "imageUrl": "/images/games/6751462.jpg"
+  },
+  {
+    "id": "6572228",
+    "name": "CodeCombat",
+    "description": "A game that teaches programming",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2013-10-18T16:28:27.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "gsaines",
+    "genre": "coding",
+    "hnUrl": "https://news.ycombinator.com/item?id=6572228",
+    "hnPoints": 2,
+    "playUrl": "http://codecombat.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/6572228.jpg"
+  },
+  {
+    "id": "6556129",
+    "name": "The Pond",
+    "description": "Become the biggest fish in the pond by eating you competitors",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2013-10-15T20:36:05.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "Zolmeister0",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=6556129",
+    "hnPoints": 14,
+    "playUrl": "http://www.zolmeister.com/2013/10/the-pond.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/6556129.jpg"
+  },
+  {
+    "id": "6411315",
+    "name": "Game of Bins",
+    "description": "Match patterns with items and bins",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2013-09-19T13:01:38.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "simpleglider",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=6411315",
+    "hnPoints": 15,
+    "playUrl": "http://www.gameofbins.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/6411315.jpg"
+  },
+  {
+    "id": "6386748",
+    "name": "Times Nine",
+    "description": "A math game for kids",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2013-09-14T19:28:52.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "onions",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=6386748",
+    "hnPoints": 1,
+    "playUrl": "https://itunes.apple.com/us/app/times-nine/id692971929",
+    "pricing": "paid",
+    "imageUrl": "/images/games/6386748.jpg"
+  },
+  {
+    "id": "5925408",
+    "name": "FunNode",
+    "description": "Collection of popular board and card games",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2013-06-22T22:38:09.000Z",
+    "playerMode": [
+      "single",
+      "multi"
+    ],
+    "author": "ravipatel",
+    "genre": "strategy",
+    "hnUrl": "https://news.ycombinator.com/item?id=5925408",
+    "hnPoints": 8,
+    "playUrl": "http://www.funnode.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/5925408.jpg"
+  },
+  {
+    "id": "5817221",
+    "name": "Descent Into Madness",
+    "description": "Web port of the original horror-adventure game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2013-06-04T01:45:28.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "parente",
+    "genre": "horror",
+    "hnUrl": "https://news.ycombinator.com/item?id=5817221",
+    "hnPoints": 2,
+    "playUrl": "http://dim.mindtrove.info",
+    "pricing": "free",
+    "imageUrl": "/images/games/5817221.jpg"
+  },
+  {
+    "id": "4777446",
+    "name": "Cato's Hike",
+    "description": "A game to teach kids how to program graphically",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2012-11-13T11:37:35.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "druidsbane",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=4777446",
+    "hnPoints": 1,
+    "playUrl": "https://apps.apple.com/us/app/catos-hike/id574335479",
+    "pricing": "free",
+    "imageUrl": "/images/games/4777446.jpg"
+  },
+  {
+    "id": "4722395",
+    "name": "Know Your Pixels?",
+    "description": "Resize your browser window as fast as possible to the presented width and height",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2012-10-31T12:08:19.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "pa7",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=4722395",
+    "hnPoints": 10,
+    "playUrl": "http://www.patrick-wied.at/projects/know-your-pixels/",
+    "pricing": "free",
+    "imageUrl": "/images/games/4722395.jpg"
+  },
+  {
+    "id": "4467131",
+    "name": "Dummy Defense",
+    "description": "Protect your dummy from explosions, boulders, spiked walls, and more",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2012-09-02T14:57:49.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "avgarrison",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=4467131",
+    "hnPoints": 1,
+    "playUrl": "https://apps.apple.com/us/app/dummy-defense/id460832678",
+    "pricing": "paid",
+    "imageUrl": "/images/games/4467131.jpg"
+  },
+  {
+    "id": "4440032",
+    "name": "Habitica",
+    "description": "A habit-building and productivity app that treats your real life like a game",
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ],
+    "releaseDate": "2012-08-27T18:15:42.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "lefnire",
+    "genre": "rpg",
+    "hnUrl": "https://news.ycombinator.com/item?id=4440032",
+    "hnPoints": 3,
+    "playUrl": "https://habitica.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/4440032.jpg"
+  },
+  {
+    "id": "3967810",
+    "name": "DoodleOrDie",
+    "description": "A game of telephone with doodles",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2012-05-13T18:32:12.000Z",
+    "playerMode": [
+      "multi"
+    ],
+    "author": "NTH",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=3967810",
+    "hnPoints": 25,
+    "playUrl": "http://doodleordie.com/play",
+    "pricing": "free",
+    "imageUrl": "/images/games/3967810.jpg"
+  },
+  {
+    "id": "3848798",
+    "name": "Go Fish",
+    "description": "Web version of the classic card game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2012-04-16T19:06:06.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "einaregilsson",
+    "genre": "card",
+    "hnUrl": "https://news.ycombinator.com/item?id=3848798",
+    "hnPoints": 1,
+    "playUrl": "http://www.gofish-cardgame.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/3848798.jpg"
+  },
+  {
+    "id": "3826663",
+    "name": "Infinite Flight Simulator",
+    "description": "Explore scenery in regions from around the world with different aircrafts",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2012-04-11T09:27:20.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "kpao",
+    "genre": "simulation",
+    "hnUrl": "https://news.ycombinator.com/item?id=3826663",
+    "hnPoints": 11,
+    "playUrl": "",
+    "pricing": "free",
+    "imageUrl": "/images/games/3826663.jpg"
+  },
+  {
+    "id": "3670384",
+    "name": "Lightbot",
+    "description": "Educational game about programming",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2012-03-06T10:15:01.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "Monokai",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=3670384",
+    "hnPoints": 2,
+    "playUrl": "http://www.lightbot.lu/",
+    "pricing": "free",
+    "imageUrl": "/images/games/3670384.jpg"
+  },
+  {
+    "id": "3586727",
+    "name": "Solitr",
+    "description": "A solitaire game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2012-02-13T18:27:54.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "joliss",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=3586727",
+    "hnPoints": 5,
+    "playUrl": "http://www.solitr.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/3586727.jpg"
+  },
+  {
+    "id": "3503758",
+    "name": "Color",
+    "description": "A color game playable by color blind players too",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2012-01-24T06:45:38.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "duopixel",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=3503758",
+    "hnPoints": 45,
+    "playUrl": "http://color.method.ac",
+    "pricing": "free",
+    "imageUrl": "/images/games/3503758.jpg"
+  },
+  {
+    "id": "3462683",
+    "name": "Spades",
+    "description": "Web version of the classic card game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2012-01-13T22:31:01.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "einaregilsson",
+    "genre": "card",
+    "hnUrl": "https://news.ycombinator.com/item?id=3462683",
+    "hnPoints": 2,
+    "playUrl": "http://www.spades-cardgame.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/3462683.jpg"
+  },
+  {
+    "id": "3402267",
+    "name": "Fabletop",
+    "description": "A virtual tabletop for roleplaying",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2011-12-29T02:12:46.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "jlesk",
+    "genre": "rpg",
+    "hnUrl": "https://news.ycombinator.com/item?id=3402267",
+    "hnPoints": 1,
+    "playUrl": "http://fabletop.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/3402267.jpg"
+  },
+  {
+    "id": "3086320",
+    "name": "KernType",
+    "description": "Match the spacing of presented fonts",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2011-10-07T22:50:05.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "duopixel",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=3086320",
+    "hnPoints": 268,
+    "playUrl": "http://type.method.ac",
+    "pricing": "free",
+    "imageUrl": "/images/games/3086320.jpg"
+  },
+  {
+    "id": "2872169",
+    "name": "Cardinal Quest",
+    "description": "An arcade-style dungeon-crawler",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2011-08-11T10:05:28.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "ido",
+    "genre": "rpg",
+    "hnUrl": "https://news.ycombinator.com/item?id=2872169",
+    "hnPoints": 97,
+    "playUrl": "http://www.cardinalquest.com/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/2872169.jpg"
+  },
+  {
+    "id": "2462941",
+    "name": "Coil",
+    "description": "Enclose the blue orbs before they explode",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2011-04-19T15:45:11.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "hakim",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=2462941",
+    "hnPoints": 10,
+    "playUrl": "http://hakim.se/experiments/html5/coil",
+    "pricing": "free",
+    "imageUrl": "/images/games/2462941.jpg"
+  },
+  {
+    "id": "2311111",
+    "name": "Child's Play",
+    "description": "Arithmetic game for 5-6 year olds",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2011-03-10T22:36:16.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "unavailable",
+    "genre": "educational",
+    "hnUrl": "https://news.ycombinator.com/item?id=2311111",
+    "hnPoints": 1,
+    "playUrl": "http://dunnmclean.com/app/childs-play/",
+    "pricing": "free",
+    "imageUrl": "/images/games/2311111.jpg"
+  },
+  {
+    "id": "2055808",
+    "name": "Maze Race",
+    "description": "Race through mazes generated using Eller's algorithm",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2010-12-31T17:07:55.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "robinhouston",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=2055808",
+    "hnPoints": 2,
+    "playUrl": "http://s3.boskent.com/mazes/race.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/2055808.jpg"
+  },
+  {
+    "id": "1359655",
+    "name": "CubeOut",
+    "description": "Remake of the classic game Blockout",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2010-05-19T00:40:36.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "bd",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=1359655",
+    "hnPoints": 2,
+    "playUrl": "http://alteredqualia.com/cubeout/",
+    "pricing": "free",
+    "imageUrl": "/images/games/1359655.jpg"
+  },
+  {
+    "id": "6072159",
+    "name": "GeoGuesser",
+    "description": "Street View location guessing game",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2013-07-19T18:56:22.000Z",
+    "playerMode": [
+      "single"
+    ],
+    "author": "smnl",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=6072159",
+    "hnPoints": 10,
+    "playUrl": "https://itunes.apple.com/us/app/geoguesser/id660070298?ls=1&mt=8",
+    "pricing": "paid",
+    "imageUrl": "/images/games/6072159.jpg"
+  },
+  {
+    "id": "4701966",
+    "name": "Gimbal",
+    "description": "Craft your ship, and then take to the skies with other pilots in real time combat",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2012-10-26T13:06:56.000Z",
+    "playerMode": [
+      "multi"
+    ],
+    "author": "colinshark",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=4701966",
+    "hnPoints": 2,
+    "playUrl": "http://www.gimbalgame.com",
+    "pricing": "paid",
+    "imageUrl": "/images/games/4701966.jpg"
+  }
+]
