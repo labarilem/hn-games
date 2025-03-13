@@ -1,11 +1,15 @@
 import { games } from "@/data/games";
 import { Platform, PlayerMode, Pricing } from "../types/game";
 
+export function getAllGamesCount() {
+  return games.length;
+}
+
 // TODO: add types for searchParams and pagination
 export function getFilteredGames(
   searchParams: {
     [key: string]: string | string[] | undefined;
-  } & { playerMode?: PlayerMode }
+  } & { playerModes?: PlayerMode }
 ) {
   let filteredGames = [...games];
   const itemsPerPage = 9;
@@ -39,9 +43,9 @@ export function getFilteredGames(
     );
   }
 
-  if (searchParams.playerMode) {
+  if (searchParams.playerModes) {
     filteredGames = filteredGames.filter((game) =>
-      game.playerMode.includes(searchParams.playerMode!)
+      game.playerModes.includes(searchParams.playerModes!)
     );
   }
 

@@ -36,6 +36,7 @@ export enum GameGenre {
   CARD = "card",
   SIMULATION = "simulation",
   EDUCATIONAL = "educational",
+  QUIZ = "quiz",
 }
 
 export interface Game {
@@ -44,7 +45,7 @@ export interface Game {
   description: string;
   platforms: Platform[];
   releaseDate: Date;
-  playerMode: PlayerMode[];
+  playerModes: PlayerMode[];
   author: string;
   genre: GameGenre;
   hnUrl: string;

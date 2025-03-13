@@ -8,7 +8,7 @@ type JsonGame = {
   description: string;
   platforms: string[];
   releaseDate: string;
-  playerMode: string[];
+  playerModes: string[];
   author: string;
   genre: string;
   hnUrl: string;
@@ -35,7 +35,7 @@ function convertJsonToTypescript(jsonGames: JsonGame[]): ToStrings<Game>[] {
     platforms: `[${game.platforms
       .map((p: string) => `Platform.${p.toUpperCase()}`)
       .join(", ")}]`,
-    playerMode: `[${game.playerMode
+    playerModes: `[${game.playerModes
       .map((p: string) => `PlayerMode.${p.toUpperCase()}`)
       .join(", ")}]`,
     genre: `GameGenre.${game.genre.toUpperCase()}`,

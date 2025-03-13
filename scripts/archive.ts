@@ -44,12 +44,12 @@ function validateGame(game: any): { isValid: boolean; error?: string } {
     return { isValid: false, error: "Invalid platforms" };
   }
 
-  // Validate playerMode array
+  // Validate playerModes array
   if (
-    !Array.isArray(game.playerMode) ||
-    !game.playerMode.every((p: any) => isValidEnum(PlayerMode, p))
+    !Array.isArray(game.playerModes) ||
+    !game.playerModes.every((p: any) => isValidEnum(PlayerMode, p))
   ) {
-    return { isValid: false, error: "Invalid playerMode" };
+    return { isValid: false, error: "Invalid playerModes" };
   }
 
   // Validate genre

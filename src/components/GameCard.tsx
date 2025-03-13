@@ -120,10 +120,10 @@ export default function GameCard({ game }: GameCardProps) {
               >
                 {game.genre}
               </button>
-              {game.playerMode.map((mode) => (
+              {game.playerModes.map((mode) => (
                 <button
                   key={mode}
-                  onClick={(e) => handleFilterClick("playerMode", mode, e)}
+                  onClick={(e) => handleFilterClick("playerModes", mode, e)}
                   className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
                 >
                   {mode === "single" ? "singleplayer" : "multiplayer"}

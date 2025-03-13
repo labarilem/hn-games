@@ -97,7 +97,7 @@ export default function GameFilters() {
   const activeFiltersCount = [
     searchParams.get("platform"),
     searchParams.get("genre"),
-    searchParams.get("playerMode"),
+    searchParams.get("playerModes"),
     searchParams.get("pricing"),
     searchParams.get("sortBy"),
     searchParams.get("search"),
@@ -202,11 +202,11 @@ export default function GameFilters() {
 
             {/* Player Mode Select */}
             <select
-              name="playerMode"
-              value={searchParams.get("playerMode") ?? ""}
+              name="playerModes"
+              value={searchParams.get("playerModes") ?? ""}
               onChange={(e) =>
                 router.push(
-                  `/?${createQueryString("playerMode", e.target.value)}`
+                  `/?${createQueryString("playerModes", e.target.value)}`
                 )
               }
               className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -302,11 +302,11 @@ export default function GameFilters() {
 
           {/* Player Mode Select */}
           <select
-            name="playerMode"
-            value={searchParams.get("playerMode") ?? ""}
+            name="playerModes"
+            value={searchParams.get("playerModes") ?? ""}
             onChange={(e) =>
               router.push(
-                `/?${createQueryString("playerMode", e.target.value)}`
+                `/?${createQueryString("playerModes", e.target.value)}`
               )
             }
             className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"

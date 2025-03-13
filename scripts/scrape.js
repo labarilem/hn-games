@@ -26,6 +26,12 @@ async function isValidGameUrl(url) {
       return false;
     }
 
+    const blacklist = ["Porkbun Marketplace"];
+    if (blacklist.some((b) => res.data.includes(b))) {
+      console.log(`Invalid URL (blacklisted content): ${url}`);
+      return false;
+    }
+
     return true;
   } catch (error) {
     console.log(`Invalid URL (${error.message}): ${url}`);
@@ -62,7 +68,7 @@ async function scrapeGames() {
       const story_text = stripHtml(item.story_text || "").result.trim();
       const candidateGameUrls = item.url
         ? [item.url]
-        : getUrls(story_text, { requireSchemeOrWww: true });
+        : getUrls(story_text, { requireSchemeOrWww: false });
       return {
         ...item,
         title,
@@ -78,6 +84,7 @@ async function scrapeGames() {
       "game editor",
       "games editor",
       "game collection",
+      "game maker",
       "board game",
       "card game",
       "game of life",
@@ -91,6 +98,7 @@ async function scrapeGames() {
       "sdk",
       "level editor",
       "plugin",
+      "game of thrones",
     ];
     const itemsValidations = preprocItems.map((item) => ({
       item,
@@ -159,7 +167,7 @@ async function scrapeGames() {
             playUrl
           ),
           releaseDate: new Date(item.created_at),
-          playerMode: determinePlayerMode(item.title, item.story_text || ""),
+          playerModes: determinePlayerModes(item.title, item.story_text || ""),
           author: item.author,
           genre: determineGenre(item.title, item.story_text || ""),
           hnUrl: `https://news.ycombinator.com/item?id=${item.objectID}`,
@@ -226,13 +234,13 @@ function determinePlatforms(title, description, playUrl) {
   return platforms.length ? platforms : ["web"];
 }
 
-function determinePlayerMode(title, description) {
+function determinePlayerModes(title, description) {
   const text = (title + " " + description).toLowerCase();
   return text.includes("multiplayer") ||
     text.includes("multi-player") ||
     text.includes("multi player")
-    ? "multi"
-    : "single";
+    ? ["multi"]
+    : ["single"];
 }
 
 function determineGenre(title, description) {

@@ -1,7 +1,7 @@
 import GameFilters from "@/components/GameFilters";
 import GameCard from "@/components/GameCard";
 import { Game } from "@/types/game";
-import { getFilteredGames } from "@/lib/games";
+import { getAllGamesCount, getFilteredGames } from "@/lib/games";
 
 export default async function Home({
   searchParams,
@@ -9,6 +9,7 @@ export default async function Home({
   searchParams: { [key: string]: string | string[] | undefined };
 }) {
   const { games, pagination } = getFilteredGames(searchParams);
+  const allGamesCount = getAllGamesCount();
   const currentPage = Number(searchParams.page) || 1;
 
   return (
@@ -17,7 +18,7 @@ export default async function Home({
         Hacker News Games
       </h1>
       <p className="text-gray-400 mb-8 text-center max-w-2xl mx-auto">
-        A curated catalog of games created by the Hacker News community.
+        A curated catalog of {allGamesCount} games created by the Hacker News community.
       </p>
 
       <GameFilters />
