@@ -1,5 +1,425 @@
 [
   {
+    "id": "13228978",
+    "name": "Brainilis",
+    "description": "Collection of brain teasers",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "releaseDate": "2016-12-21T13:43:28.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "appilis",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=13228978",
+    "hnPoints": 3,
+    "playUrl": "https://www.brainilis.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/13228978.jpg"
+  },
+  {
+    "id": "13225802",
+    "name": "NeonSnake",
+    "description": "A snake clone with neon graphics",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-12-21T00:43:18.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "smnplk",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=13225802",
+    "hnPoints": 3,
+    "playUrl": "https://smnplk.github.io/neon-snake/resources/public/live/index.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/13225802.jpg"
+  },
+  {
+    "id": "13096330",
+    "name": "MoneyGame",
+    "description": "Make as much virtual money as possible by founding and managing different types of companies",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-12-03T16:45:03.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "Gluten",
+    "genre": "simulation",
+    "hnUrl": "https://news.ycombinator.com/item?id=13096330",
+    "hnPoints": 7,
+    "playUrl": "http://moneyga.me",
+    "pricing": "free",
+    "imageUrl": "/images/games/13096330.jpg"
+  },
+  {
+    "id": "13009469",
+    "name": "Haze",
+    "description": "Get as many points as possible by gathering items in the maze while time is running out",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-11-21T21:39:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "Boom_Rang",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=13009469",
+    "hnPoints": 1,
+    "playUrl": "https://basile-henry.github.io/haze/",
+    "pricing": "free",
+    "imageUrl": "/images/games/13009469.jpg"
+  },
+  {
+    "id": "12872555",
+    "name": "Who'd You?",
+    "description": "A celebrity game of Who'd you rather?",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2016-11-04T13:55:58.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "jesselindsley",
+    "genre": "quiz",
+    "hnUrl": "https://news.ycombinator.com/item?id=12872555",
+    "hnPoints": 2,
+    "playUrl": "https://itunes.apple.com/us/app/whod-you/id1064206085?mt=8",
+    "pricing": "free",
+    "imageUrl": "/images/games/12872555.jpg"
+  },
+  {
+    "id": "12803535",
+    "name": "Can You Beat the Machine?",
+    "description": "Choose between two different bets to maximize your winnings",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-10-27T08:02:22.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "howbo_bby",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=12803535",
+    "hnPoints": 2,
+    "playUrl": "https://thundershotgames.github.io/CYBTM/",
+    "pricing": "free",
+    "imageUrl": "/images/games/12803535.jpg"
+  },
+  {
+    "id": "12786993",
+    "name": "SuRealEstate",
+    "description": "Game where you become a real estate investor",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-10-25T11:35:47.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mitenmit",
+    "genre": "simulation",
+    "hnUrl": "https://news.ycombinator.com/item?id=12786993",
+    "hnPoints": 15,
+    "playUrl": "https://mitenmit.github.io/surealestate/",
+    "pricing": "free",
+    "imageUrl": "/images/games/12786993.jpg"
+  },
+  {
+    "id": "12612791",
+    "name": "VimWarrior",
+    "description": "Avoid obstacles for as much time as possible by moving with hjkl",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-09-30T14:56:01.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "worms",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=12612791",
+    "hnPoints": 9,
+    "playUrl": "http://worms.io/vimwarrior/",
+    "pricing": "free",
+    "imageUrl": "/images/games/12612791.jpg"
+  },
+  {
+    "id": "12413144",
+    "name": "Curious Expedition",
+    "description": "Venture on expeditions to regions never explored before for fame, science and treasures",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2016-09-02T14:12:41.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "riadd",
+    "genre": "simulation",
+    "hnUrl": "https://news.ycombinator.com/item?id=12413144",
+    "hnPoints": 34,
+    "playUrl": "http://store.steampowered.com/app/358130",
+    "pricing": "paid",
+    "imageUrl": "/images/games/12413144.jpg"
+  },
+  {
+    "id": "12380434",
+    "name": "Set",
+    "description": "Web version of the card game Set",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-08-29T06:53:26.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "fka",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=12380434",
+    "hnPoints": 2,
+    "playUrl": "http://f.github.io/set",
+    "pricing": "free",
+    "imageUrl": "/images/games/12380434.jpg"
+  },
+  {
+    "id": "12372907",
+    "name": "Blind Ball",
+    "description": "Try to dodge the various walls and pillars and collect the coins",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-08-27T16:11:23.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "waldohatesyou",
+    "genre": "platformer",
+    "hnUrl": "https://news.ycombinator.com/item?id=12372907",
+    "hnPoints": 1,
+    "playUrl": "https://waldohatesyou.itch.io/blind-ball",
+    "pricing": "free",
+    "imageUrl": "/images/games/12372907.jpg"
+  },
+  {
+    "id": "12319661",
+    "name": "Posio",
+    "description": "Guess where the city is located on the map before time runs out",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-08-19T13:00:14.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "abrena",
+    "genre": "quiz",
+    "hnUrl": "https://news.ycombinator.com/item?id=12319661",
+    "hnPoints": 220,
+    "playUrl": "https://posio.abrenaut.com/cities",
+    "pricing": "free",
+    "imageUrl": "/images/games/12319661.jpg"
+  },
+  {
+    "id": "12186210",
+    "name": "Blocks",
+    "description": "Fill the block by combining the available shapes",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-07-29T11:47:56.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "versimos",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=12186210",
+    "hnPoints": 13,
+    "playUrl": "http://blocks.ovh/?game",
+    "pricing": "free",
+    "imageUrl": "/images/games/12186210.jpg"
+  },
+  {
+    "id": "12105946",
+    "name": "Sliding Blocks",
+    "description": "A little sliding puzzle game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-07-16T11:03:12.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sgentle",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=12105946",
+    "hnPoints": 2,
+    "playUrl": "https://demos.samgentle.com/sliding-blocks",
+    "pricing": "free",
+    "imageUrl": "/images/games/12105946.jpg"
+  },
+  {
+    "id": "11964648",
+    "name": "Endgame",
+    "description": "A multiplayer 3D chess game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-06-23T22:08:19.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "voithos",
+    "genre": "strategy",
+    "hnUrl": "https://news.ycombinator.com/item?id=11964648",
+    "hnPoints": 2,
+    "playUrl": "https://endgame-chess.firebaseapp.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/11964648.jpg"
+  },
+  {
+    "id": "11868130",
+    "name": "MineField",
+    "description": "Classic minesweeper game with a minimalist design",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2016-06-09T07:54:52.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "lonh",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=11868130",
+    "hnPoints": 3,
+    "playUrl": "https://itunes.apple.com/app/id1107852173",
+    "pricing": "free",
+    "imageUrl": "/images/games/11868130.jpg"
+  },
+  {
+    "id": "11651313",
+    "name": "Dr. Kodama",
+    "description": "Connect four dots of the same color to remove them",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2016-05-07T20:57:27.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "shiny",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=11651313",
+    "hnPoints": 1,
+    "playUrl": "https://itunes.apple.com/ug/app/dr.-kodama/id1060934796?mt=8",
+    "pricing": "free",
+    "imageUrl": "/images/games/11651313.jpg"
+  },
+  {
+    "id": "11488572",
+    "name": "Flexbox",
+    "description": "Learn CSS flexbox visually in Webflow",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-04-13T14:42:28.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "callmevlad",
+    "genre": "coding",
+    "hnUrl": "https://news.ycombinator.com/item?id=11488572",
+    "hnPoints": 7,
+    "playUrl": "https://www.flexboxgame.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/11488572.jpg"
+  },
+  {
+    "id": "11287440",
+    "name": "The Weather Man Game",
+    "description": "Choose the accurate weather forecaster",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-03-15T04:25:35.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "MiddleEndian",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=11287440",
+    "hnPoints": 1,
+    "playUrl": "http://www.miscbeef.com/weatherman",
+    "pricing": "free",
+    "imageUrl": "/images/games/11287440.jpg"
+  },
+  {
+    "id": "11286538",
+    "name": "Sakura Fly",
+    "description": "Fly over the Fuji mountain and follow the falling sakura flowers",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2016-03-15T00:07:51.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "lcllcl",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=11286538",
+    "hnPoints": 3,
+    "playUrl": "https://github.com/l800891/Sakura-Fly",
+    "pricing": "paid",
+    "imageUrl": "/images/games/11286538.jpg"
+  },
+  {
+    "id": "11276940",
+    "name": "Rogue AI Dungeon",
+    "description": "Write a javascript bot that crawls dungeons",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-03-13T09:16:06.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "cdubzzz",
+    "genre": "coding",
+    "hnUrl": "https://news.ycombinator.com/item?id=11276940",
+    "hnPoints": 17,
+    "playUrl": "http://bovard.github.io/raid/",
+    "pricing": "free",
+    "imageUrl": "/images/games/11276940.jpg"
+  },
+  {
+    "id": "11213475",
+    "name": "Flexbox Defense",
+    "description": "Learn CSS flexbox by playing a tower defense game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-03-02T22:16:22.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ChanningAllen",
+    "genre": "coding",
+    "hnUrl": "https://news.ycombinator.com/item?id=11213475",
+    "hnPoints": 243,
+    "playUrl": "http://www.flexboxdefense.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/11213475.jpg"
+  },
+  {
     "id": "10759019",
     "name": "Multichess",
     "description": "Play chess online vs bots or humans",

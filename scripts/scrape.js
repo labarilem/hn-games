@@ -99,6 +99,15 @@ async function scrapeGames() {
       "level editor",
       "plugin",
       "game of thrones",
+      "gamers",
+      "gamechanger",
+      "game-changer",
+      "gamestop",
+      "game development",
+      "game design",
+      "game theory",
+      "gameplay",
+      "emulator",
     ];
     const itemsValidations = preprocItems.map((item) => ({
       item,
