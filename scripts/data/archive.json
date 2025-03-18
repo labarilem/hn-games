@@ -1,5 +1,500 @@
 [
   {
+    "id": "16037002",
+    "name": "ShaderRocket",
+    "description": "Avoid asteroids and catch stars",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-12-30T19:33:03.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "antoineMoPa",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=16037002",
+    "hnPoints": 1,
+    "playUrl": "https://github.com/antoineMoPa/rocket_game",
+    "pricing": "free",
+    "imageUrl": "/images/games/16037002.jpg"
+  },
+  {
+    "id": "15941968",
+    "name": "Rainbrow",
+    "description": "Lift your eyebrows up to jump up and lower them to jump down. Dodge enemies, collect stars, and get a high score",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2017-12-16T20:43:50.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "nathangitter",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=15941968",
+    "hnPoints": 2,
+    "playUrl": "https://itunes.apple.com/app/id1312458558",
+    "pricing": "free",
+    "imageUrl": "/images/games/15941968.jpg"
+  },
+  {
+    "id": "15670355",
+    "name": "MoneyGame",
+    "description": "Make as much virtual money as possible by founding and managing different types of companies",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-11-10T15:14:00.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "Gluten",
+    "genre": "simulation",
+    "hnUrl": "https://news.ycombinator.com/item?id=15670355",
+    "hnPoints": 73,
+    "playUrl": "http://www.moneyga.me",
+    "pricing": "free",
+    "imageUrl": "/images/games/15670355.jpg"
+  },
+  {
+    "id": "15583602",
+    "name": "Invisilink",
+    "description": "The classic four-in-a-row game with invisible blocks",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-10-30T07:55:03.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sduff",
+    "genre": "strategy",
+    "hnUrl": "https://news.ycombinator.com/item?id=15583602",
+    "hnPoints": 2,
+    "playUrl": "https://simonduff.net/invisilink",
+    "pricing": "free",
+    "imageUrl": "/images/games/15583602.jpg"
+  },
+  {
+    "id": "15472470",
+    "name": "Resistor Colour Code Challenge",
+    "description": "A game to teach resistor colour codes",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-10-14T15:06:45.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "neotek",
+    "genre": "educational",
+    "hnUrl": "https://news.ycombinator.com/item?id=15472470",
+    "hnPoints": 2,
+    "playUrl": "http://sdmtr.github.io/rccc/",
+    "pricing": "free",
+    "imageUrl": "/images/games/15472470.jpg"
+  },
+  {
+    "id": "15023752",
+    "name": "Babbl",
+    "description": "A scrabble style game on an infinite board",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-08-15T23:38:22.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "reednj",
+    "genre": "word",
+    "hnUrl": "https://news.ycombinator.com/item?id=15023752",
+    "hnPoints": 2,
+    "playUrl": "https://babbl.xyz",
+    "pricing": "free",
+    "imageUrl": "/images/games/15023752.jpg"
+  },
+  {
+    "id": "14960734",
+    "name": "Prediction Game",
+    "description": "Press up/down arrows to create a sequence that the computer will try to predict",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-08-08T18:09:58.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "petters",
+    "genre": "strategy",
+    "hnUrl": "https://news.ycombinator.com/item?id=14960734",
+    "hnPoints": 1,
+    "playUrl": "https://www.strandmark.net/prediction.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/14960734.jpg"
+  },
+  {
+    "id": "14723348",
+    "name": "PrograMaze",
+    "description": "A machine code puzzle",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-07-08T00:27:14.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "hcs",
+    "genre": "coding",
+    "hnUrl": "https://news.ycombinator.com/item?id=14723348",
+    "hnPoints": 3,
+    "playUrl": "https://gashlin.net/games/programaze/",
+    "pricing": "free",
+    "imageUrl": "/images/games/14723348.jpg"
+  },
+  {
+    "id": "14719826",
+    "name": "Photon Rush",
+    "description": "Local multiplayer party game for up to 16 players",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2017-07-07T16:44:38.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "Gametroleum",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=14719826",
+    "hnPoints": 1,
+    "playUrl": "http://store.steampowered.com/app/667660/Photon_Rush/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/14719826.jpg"
+  },
+  {
+    "id": "14699016",
+    "name": "CodeYourRestaurant",
+    "description": "A multiplayer coding competition where players optimize restaurant management in JavaScript, with code evaluated every 15 minutes",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-07-04T23:40:44.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "oglimmer",
+    "genre": "coding",
+    "hnUrl": "https://news.ycombinator.com/item?id=14699016",
+    "hnPoints": 3,
+    "playUrl": "https://codeyourrestaurant.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/14699016.jpg"
+  },
+  {
+    "id": "14654108",
+    "name": "Left-Hand Path",
+    "description": "Learn arcane gestures to cast powerful spells in this VR game",
+    "platforms": [
+      "console"
+    ],
+    "releaseDate": "2017-06-28T13:58:27.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "thenomad",
+    "genre": "rpg",
+    "hnUrl": "https://news.ycombinator.com/item?id=14654108",
+    "hnPoints": 1,
+    "playUrl": "http://steamcommunity.com/games/488760/announcements/detail/1332352813804942839",
+    "pricing": "paid",
+    "imageUrl": "/images/games/14654108.jpg"
+  },
+  {
+    "id": "14459852",
+    "name": "Emoji Connect",
+    "description": "Match two identical emojis by connecting them with a path of no more than three lines to clear them from the board",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-06-01T13:00:15.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "harryngh",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=14459852",
+    "hnPoints": 1,
+    "playUrl": "https://emojiconnect.net",
+    "pricing": "free",
+    "imageUrl": "/images/games/14459852.jpg"
+  },
+  {
+    "id": "14432176",
+    "name": "QuantumGame",
+    "description": "A puzzle game with photons, superposition, entanglement and quantum measurement",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-05-27T22:10:28.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "stared",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=14432176",
+    "hnPoints": 86,
+    "playUrl": "http://quantumgame.io/",
+    "pricing": "free",
+    "imageUrl": "/images/games/14432176.jpg"
+  },
+  {
+    "id": "14411328",
+    "name": "Funkykarts",
+    "description": "A continuous motion platformer",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-05-24T16:41:34.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "rossisred",
+    "genre": "platformer",
+    "hnUrl": "https://news.ycombinator.com/item?id=14411328",
+    "hnPoints": 251,
+    "playUrl": "https://www.funkykarts.rocks/demo.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/14411328.jpg"
+  },
+  {
+    "id": "14407418",
+    "name": "Sudoblock",
+    "description": "Sudoku with fixed blocks of numbers to place in the grid",
+    "platforms": [
+      "web",
+      "desktop"
+    ],
+    "releaseDate": "2017-05-24T03:32:14.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "nathan_f77",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=14407418",
+    "hnPoints": 5,
+    "playUrl": "https://sudoblock.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/14407418.jpg"
+  },
+  {
+    "id": "14272657",
+    "name": "NoteTuning",
+    "description": "Make the note on the right sound like the note on the left",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-05-05T11:40:54.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "calflegal",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=14272657",
+    "hnPoints": 7,
+    "playUrl": "https://www.notetuning.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/14272657.jpg"
+  },
+  {
+    "id": "14271857",
+    "name": "Memory Journey",
+    "description": "A casual memory game, very easy to play",
+    "platforms": [
+      "android"
+    ],
+    "releaseDate": "2017-05-05T08:07:02.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "AleksaDj",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=14271857",
+    "hnPoints": 22,
+    "playUrl": "https://play.google.com/store/apps/details?id=com.softwavegames.memoryjourney",
+    "pricing": "free",
+    "imageUrl": "/images/games/14271857.jpg"
+  },
+  {
+    "id": "14200860",
+    "name": "Realmpusher",
+    "description": "Connect the blocks in the right way to find all the magic orbs",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-04-26T06:17:23.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "danbolt",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=14200860",
+    "hnPoints": 7,
+    "playUrl": "http://danbolt.itch.io/realmpusher",
+    "pricing": "free",
+    "imageUrl": "/images/games/14200860.jpg"
+  },
+  {
+    "id": "14090875",
+    "name": "Life in Code",
+    "description": "A game about software careers",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-04-11T18:18:03.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "KingAndCaroline",
+    "genre": "adventure",
+    "hnUrl": "https://news.ycombinator.com/item?id=14090875",
+    "hnPoints": 1,
+    "playUrl": "https://jeanrouch.itch.io/life-in-code",
+    "pricing": "free",
+    "imageUrl": "/images/games/14090875.jpg"
+  },
+  {
+    "id": "14085146",
+    "name": "Skiplit",
+    "description": "Swipe the ball to shoot it, bouncing it off of walls and around obstacles to get it into the goal",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2017-04-11T05:42:51.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "jojodmo",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=14085146",
+    "hnPoints": 11,
+    "playUrl": "https://apps.apple.com/us/app/skiplit/id1158577033",
+    "pricing": "free",
+    "imageUrl": "/images/games/14085146.jpg"
+  },
+  {
+    "id": "14042288",
+    "name": "BreakLock",
+    "description": "Guess the Android lock pattern",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-04-05T14:27:20.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "maxwellito",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=14042288",
+    "hnPoints": 4,
+    "playUrl": "https://maxwellito.github.io/breaklock/",
+    "pricing": "free",
+    "imageUrl": "/images/games/14042288.jpg"
+  },
+  {
+    "id": "14028678",
+    "name": "Sokoban in a Shader",
+    "description": "Web remake of the classic Sokoban game using a shader",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-04-04T00:59:11.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "QuadrupleA",
+    "genre": "puzzle",
+    "hnUrl": "https://news.ycombinator.com/item?id=14028678",
+    "hnPoints": 3,
+    "playUrl": "https://www.shadertoy.com/view/4djyRD",
+    "pricing": "free",
+    "imageUrl": "/images/games/14028678.jpg"
+  },
+  {
+    "id": "14024224",
+    "name": "Hyper Space!",
+    "description": "Destroy alien mines that have been planted near the asteroid belt",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2017-04-03T16:31:01.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "JorgeBriones",
+    "genre": "action",
+    "hnUrl": "https://news.ycombinator.com/item?id=14024224",
+    "hnPoints": 1,
+    "playUrl": "https://itunes.apple.com/us/app/hyper-space/id1207215160?mt=8",
+    "pricing": "free",
+    "imageUrl": "/images/games/14024224.jpg"
+  },
+  {
+    "id": "14012538",
+    "name": "Dawn of Crafting",
+    "description": "Minecraft meets Cookie Clicker: craft inventions and discover recipes",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2017-04-01T15:22:09.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "gok2",
+    "genre": "rpg",
+    "hnUrl": "https://news.ycombinator.com/item?id=14012538",
+    "hnPoints": 4,
+    "playUrl": "https://apps.apple.com/us/app/dawn-of-crafting/id1067104191",
+    "pricing": "free",
+    "imageUrl": "/images/games/14012538.jpg"
+  },
+  {
+    "id": "13838659",
+    "name": "Sleeping Beauty",
+    "description": "A 7-day ASCII roguelike game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2017-03-10T14:12:06.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ondras",
+    "genre": "roguelike",
+    "hnUrl": "https://news.ycombinator.com/item?id=13838659",
+    "hnPoints": 319,
+    "playUrl": "https://ondras.github.io/sleeping-beauty/",
+    "pricing": "free",
+    "imageUrl": "/images/games/13838659.jpg"
+  },
+  {
+    "id": "13678765",
+    "name": "Soul Searching",
+    "description": "A survival game about sailing away from your homeland",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2017-02-19T08:41:05.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ulasbilgen",
+    "genre": "survival",
+    "hnUrl": "https://news.ycombinator.com/item?id=13678765",
+    "hnPoints": 1,
+    "playUrl": "http://store.steampowered.com/app/586240/?ref=hackernews",
+    "pricing": "paid",
+    "imageUrl": "/images/games/13678765.jpg"
+  },
+  {
     "id": "13228978",
     "name": "Brainilis",
     "description": "Collection of brain teasers",

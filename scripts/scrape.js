@@ -108,6 +108,8 @@ async function scrapeGames() {
       "game theory",
       "gameplay",
       "emulator",
+      "games list",
+      "marketplace",
     ];
     const itemsValidations = preprocItems.map((item) => ({
       item,
@@ -230,7 +232,10 @@ function determinePlatforms(title, description, playUrl) {
   )
     platforms.push("console");
 
-  if (["android", "play store"].some((x) => text.includes(x)))
+  if (
+    ["android", "play store"].some((x) => text.includes(x)) ||
+    playUrl.includes("play.google.com")
+  )
     platforms.push("android");
 
   if (
