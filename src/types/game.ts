@@ -16,7 +16,6 @@ export enum Pricing {
   PAID = "paid",
 }
 
-// all used
 export enum GameGenre {
   WORD = "word",
   ROGUELIKE = "roguelike",

@@ -10,11 +10,11 @@
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "clean": "rm -rf .next",
-    "scrape": "node scripts/scrape.js > log.txt",
+    "scrape": "node scripts/scrape.js 2>&1 | tee log.txt",
     "filter": "node scripts/filter.js",
-    "archive": "tsx scripts/archive.ts > log.txt",
+    "archive": "tsx scripts/archive.ts 2>&1 | tee log.txt",
     "compile": "tsx scripts/compile.ts",
-    "check-links": "node scripts/check-links.js > log.txt"
+    "check-links": "node scripts/check-links.js 2>&1 | tee log.txt"
   },
   "dependencies": {
     "@vercel/og": "^0.6.5",
