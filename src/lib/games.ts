@@ -26,44 +26,41 @@ export function getFilteredGames(
     );
   }
 
-  if (searchParams.author) {
+  if (searchParams.author)
     filteredGames = filteredGames.filter(
       (game) => game.author === searchParams.author
     );
-  }
 
-  if (searchParams.platform) {
+  if (searchParams.platform)
     filteredGames = filteredGames.filter((game) =>
       game.platforms.includes(searchParams.platform as Platform)
     );
-  }
 
-  if (searchParams.genre) {
+  if (searchParams.genre)
     filteredGames = filteredGames.filter((game) =>
       game.genres.some((g) => g === searchParams.genre)
     );
-  }
 
-  if (searchParams.playerModes) {
+  if (searchParams.playerModes)
     filteredGames = filteredGames.filter((game) =>
       game.playerModes.includes(searchParams.playerModes!)
     );
-  }
 
-  if (searchParams.pricing) {
+  if (searchParams.pricing)
     filteredGames = filteredGames.filter(
       (game) => game.pricing === searchParams.pricing
     );
-  }
 
   // Apply sorting
   const sortBy = searchParams.sortBy || "releaseDate-desc";
   switch (sortBy) {
     case "releaseDate-desc":
-      filteredGames.sort(
-        (a, b) =>
-          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
-      );
+      // Games are already statically sorted by desc releaseDate  by the compiler
+      // so we don't need to sort them again
+      // filteredGames.sort(
+      //   (a, b) =>
+      //     new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+      // );
       break;
     case "releaseDate-asc":
       filteredGames.sort(

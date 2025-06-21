@@ -1,7 +1,8 @@
-import GameFilters from "@/components/GameFilters";
 import GameCard from "@/components/GameCard";
-import { Game } from "@/types/game";
+import GameFilters from "@/components/GameFilters";
+import Pagination from "@/components/Pagination";
 import { getAllGamesCount, getFilteredGames } from "@/lib/games";
+import { Game } from "@/types/game";
 
 export default async function Home({
   searchParams,
@@ -29,58 +30,7 @@ export default async function Home({
       ))}
       </div>
 
-      {/* Pagination */}
-      {pagination.totalPages > 1 && (
-      <div className="flex justify-center gap-2 mt-8">
-        {pagination.hasPreviousPage && (
-        <a
-          href={`/?page=${currentPage - 1}`}
-          className="px-4 py-2 rounded-lg bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white transition-colors flex items-center justify-center"
-          aria-label="Previous page"
-        >
-          {/* Left Arrow SVG */}
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-        </a>
-        )}
-
-        {Array.from({ length: pagination.totalPages }, (_, i) => i + 1).map(
-        (page) => (
-          <a
-          key={page}
-          href={`/?page=${page}${searchParams.search ? `&search=${searchParams.search}` : ""}${
-            searchParams.platform
-            ? `&platform=${searchParams.platform}`
-            : ""
-          }${searchParams.genre ? `&genre=${searchParams.genre}` : ""}${
-            searchParams.sortBy ? `&sortBy=${searchParams.sortBy}` : ""
-          }`}
-          className={`px-4 py-2 rounded-lg transition-colors ${
-            currentPage === page
-            ? "bg-[#646cff] text-white"
-            : "bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white"
-          }`}
-          >
-          {page}
-          </a>
-        )
-        )}
-
-        {pagination.hasNextPage && (
-        <a
-          href={`/?page=${currentPage + 1}`}
-          className="px-4 py-2 rounded-lg bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white transition-colors flex items-center justify-center"
-          aria-label="Next page"
-        >
-          {/* Right Arrow SVG */}
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-        )}
-      </div>
-      )}
+      <Pagination pagination={pagination} currentPage={currentPage} searchParams={searchParams} />
     </div>
   );
 }
