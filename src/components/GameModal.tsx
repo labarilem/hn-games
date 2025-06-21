@@ -104,13 +104,18 @@ export default function GameModal({ game, isOpen, onClose }: GameModalProps) {
               </div>
 
               <div>
-                <h3 className="text-sm text-gray-400 mb-1">Genre</h3>
-                <button
-                  onClick={() => handleFilterClick("genre", game.genre)}
-                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
-                >
-                  {game.genre}
-                </button>
+                <h3 className="text-sm text-gray-400 mb-1">Genres</h3>
+                <div className="flex flex-wrap gap-2">
+                  {game.genres.map((genre) => (
+                    <button
+                      key={genre}
+                      onClick={() => handleFilterClick("genre", genre)}
+                      className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
+                    >
+                      {genre}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div>

@@ -36,9 +36,13 @@ export enum GameGenre {
   SIMULATION = "simulation",
   EDUCATIONAL = "educational",
   QUIZ = "quiz",
+  MMO = "mmo",
+  IDLE = "idle",
+  INCREMENTAL = "incremental",
+  SHOOTER = "shooter",
 }
 
-export interface Game {
+export type Game = {
   id: string;
   name: string;
   description: string;
@@ -46,10 +50,10 @@ export interface Game {
   releaseDate: Date;
   playerModes: PlayerMode[];
   author: string;
-  genre: GameGenre;
+  genres: GameGenre[];
   hnUrl: string;
   hnPoints: number;
   playUrl: string;
   pricing: Pricing;
   imageUrl: string;
-}
+};

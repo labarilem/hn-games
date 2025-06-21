@@ -114,12 +114,15 @@ export default function GameCard({ game }: GameCardProps) {
             </div>
 
             <div className="flex flex-wrap gap-2">
-              <button
-                onClick={(e) => handleFilterClick("genre", game.genre, e)}
-                className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
-              >
-                {game.genre}
-              </button>
+              {game.genres.map((genre) => (
+                <button
+                  key={genre}
+                  onClick={(e) => handleFilterClick("genre", genre, e)}
+                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
+                >
+                  {genre}
+                </button>
+              ))}
               {game.playerModes.map((mode) => (
                 <button
                   key={mode}

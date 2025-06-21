@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit",
     "format": "prettier --write .",
     "clean": "rm -rf .next",
-    "scrape": "node scripts/scrape.js 2>&1 | tee log.txt",
+    "scrape": "tsx scripts/scrape.ts 2>&1 | tee log.txt",
     "filter": "node scripts/filter.js",
     "archive": "tsx scripts/archive.ts 2>&1 | tee log.txt",
     "compile": "tsx scripts/compile.ts",

@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Game } from "../src/types/game";
+import { Game, GameGenre } from "../src/types/game";
 
 type JsonGame = {
   id: string;
@@ -10,7 +10,7 @@ type JsonGame = {
   releaseDate: string;
   playerModes: string[];
   author: string;
-  genre: string;
+  genres: GameGenre[];
   hnUrl: string;
   hnPoints: number;
   playUrl: string;
@@ -38,7 +38,9 @@ function convertJsonToTypescript(jsonGames: JsonGame[]): ToStrings<Game>[] {
     playerModes: `[${game.playerModes
       .map((p: string) => `PlayerMode.${p.toUpperCase()}`)
       .join(", ")}]`,
-    genre: `GameGenre.${game.genre.toUpperCase()}`,
+    genres: `[${game.genres
+      .map((g: GameGenre) => `GameGenre.${g.toUpperCase()}`)
+      .join(", ")}]`,
     pricing: `Pricing.${game.pricing.toUpperCase()}`,
     releaseDate: `new Date("${game.releaseDate}")`,
   }));
