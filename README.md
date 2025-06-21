@@ -61,3 +61,11 @@ You can use a 16:9 custom device in Chrome webdev tools to make it easier.
 
 Image format must be JPEG.
 PNGs can be converted with this tool: https://png2jpg.com/ (max 20 images per batch)
+
+## Images checking
+
+Check all games have an image and viceversa:
+
+```bash
+npm run check-images
+```
