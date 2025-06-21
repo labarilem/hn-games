@@ -1,5 +1,6 @@
 import { games } from "@/data/games";
-import { GameGenre, Platform, PlayerMode, Pricing } from "../types/game";
+import { immediatelyPlayableGames } from "../data/immediatelyPlayableGames";
+import { GameGenre, Platform, PlayerMode } from "../types/game";
 
 export function getAllGamesCount() {
   return games.length;
@@ -95,19 +96,13 @@ export function getFilteredGames(
   };
 }
 
+// IDEA: provide a random game which can be immediately played
 export function getRandomFreeWebGame() {
-  // Filter games that are free and playable on web
-  const eligibleGames = games.filter(
-    (game) =>
-      game.pricing === Pricing.FREE && game.platforms.includes(Platform.WEB)
-  );
-
-  if (eligibleGames.length === 0) {
-    return null; // No eligible games
-  }
+  // No eligible games, shouldn't happen but just in case
+  if (immediatelyPlayableGames.length === 0) return null;
 
   // Pick a random game
-  const randomGame =
-    eligibleGames[Math.floor(Math.random() * eligibleGames.length)];
-  return randomGame;
+  return immediatelyPlayableGames[
+    Math.floor(Math.random() * immediatelyPlayableGames.length)
+  ];
 }
