@@ -40,6 +40,12 @@ export enum GameGenre {
   IDLE = "idle",
   INCREMENTAL = "incremental",
   SHOOTER = "shooter",
+  MEMORY = "memory",
+  KIDS = "kids",
+  MATH = "math",
+  TEXT = "text",
+  STEALTH = "stealth",
+  MUSIC = "music",
 }
 
 export type Game = {

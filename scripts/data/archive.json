@@ -102,7 +102,7 @@
     ],
     "author": "ben85ts",
     "genres": [
-      "simulation"
+      "simulation", "kids"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=21594436",
     "hnPoints": 256,
@@ -124,7 +124,7 @@
     ],
     "author": "matthewhartmans",
     "genres": [
-      "educational"
+      "educational", "kids"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=21543532",
     "hnPoints": 2,
@@ -166,7 +166,7 @@
     ],
     "author": "jzting",
     "genres": [
-      "word"
+      "word", "puzzle"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=21487741",
     "hnPoints": 1,
@@ -187,7 +187,7 @@
     ],
     "author": "ahmadbaracat",
     "genres": [
-      "puzzle"
+      "puzzle", "kids"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=21416947",
     "hnPoints": 3,
@@ -271,7 +271,7 @@
     ],
     "author": "quickthrower2",
     "genres": [
-      "quiz"
+      "quiz", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=21276632",
     "hnPoints": 2,
@@ -314,7 +314,7 @@
     ],
     "author": "fortenforge",
     "genres": [
-      "educational"
+      "educational", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=20814774",
     "hnPoints": 170,
@@ -399,7 +399,7 @@
     ],
     "author": "mfbx9da4",
     "genres": [
-      "educational"
+      "educational", "coding"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=20257840",
     "hnPoints": 7,
@@ -420,7 +420,7 @@
     ],
     "author": "maynman",
     "genres": [
-      "puzzle"
+      "puzzle", "memory"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=20180331",
     "hnPoints": 1,
@@ -508,7 +508,7 @@
     ],
     "author": "elquimico",
     "genres": [
-      "action"
+      "puzzle"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=20003988",
     "hnPoints": 2,
@@ -530,7 +530,7 @@
     ],
     "author": "chinchang",
     "genres": [
-      "coding"
+      "coding", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=19899242",
     "hnPoints": 1,
@@ -662,7 +662,7 @@
     ],
     "author": "ondras",
     "genres": [
-      "roguelike"
+      "roguelike", "text"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=19358979",
     "hnPoints": 6,
@@ -789,7 +789,7 @@
     ],
     "author": "mbforbes",
     "genres": [
-      "action"
+      "action", "adventure"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=18826916",
     "hnPoints": 6,
@@ -811,7 +811,8 @@
     ],
     "author": "emurph55",
     "genres": [
-      "quiz"
+      "quiz",
+      "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=18644560",
     "hnPoints": 112,
@@ -895,7 +896,7 @@
     ],
     "author": "zcanann",
     "genres": [
-      "puzzle"
+      "coding", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=18445748",
     "hnPoints": 123,
@@ -917,7 +918,7 @@
     ],
     "author": "gsurma",
     "genres": [
-      "puzzle"
+      "puzzle", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=18346988",
     "hnPoints": 2,
@@ -1005,7 +1006,7 @@
     ],
     "author": "gsurma",
     "genres": [
-      "action"
+      "strategy"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=18316124",
     "hnPoints": 1,
@@ -1047,7 +1048,7 @@
     ],
     "author": "dakom",
     "genres": [
-      "action"
+      "arcade"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=18214887",
     "hnPoints": 2,
@@ -1155,7 +1156,7 @@
     ],
     "author": "BSTRhino",
     "genres": [
-      "action"
+      "action", "shooter"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=17983325",
     "hnPoints": 66,
@@ -1176,7 +1177,7 @@
     ],
     "author": "slikts",
     "genres": [
-      "coding"
+      "coding", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=17956023",
     "hnPoints": 4,
@@ -1239,7 +1240,7 @@
     ],
     "author": "Tjorvens",
     "genres": [
-      "quiz"
+      "quiz", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=17696367",
     "hnPoints": 152,
@@ -1260,7 +1261,7 @@
     ],
     "author": "ioninja14",
     "genres": [
-      "action"
+      "action", "shooter"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=17651338",
     "hnPoints": 1,
@@ -1302,7 +1303,7 @@
     ],
     "author": "vnglst",
     "genres": [
-      "educational"
+      "word", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=17394117",
     "hnPoints": 9,
@@ -1345,12 +1346,12 @@
     ],
     "author": "riadd",
     "genres": [
-      "simulation"
+      "roguelike", "simulation"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=17080985",
     "hnPoints": 458,
     "playUrl": "http://store.steampowered.com/app/358130",
-    "pricing": "free",
+    "pricing": "paid",
     "imageUrl": "/images/games/17080985.jpg"
   },
   {
@@ -1366,7 +1367,7 @@
     ],
     "author": "leonylyner",
     "genres": [
-      "action"
+      "action", "shooter"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=17007283",
     "hnPoints": 1,
@@ -1387,7 +1388,7 @@
     ],
     "author": "danbolt",
     "genres": [
-      "action"
+      "action", "stealth"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=16962461",
     "hnPoints": 2,
@@ -1471,7 +1472,7 @@
     ],
     "author": "yangcliu",
     "genres": [
-      "action"
+      "action", "shooter"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=16597386",
     "hnPoints": 5,
@@ -1555,7 +1556,7 @@
     ],
     "author": "erebuswolf",
     "genres": [
-      "puzzle"
+      "puzzle", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=16524003",
     "hnPoints": 2,
@@ -1639,7 +1640,7 @@
     ],
     "author": "vitomd",
     "genres": [
-      "educational"
+      "educational", "puzzle"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=16231781",
     "hnPoints": 1,
@@ -1702,7 +1703,7 @@
     ],
     "author": "Gluten",
     "genres": [
-      "simulation"
+      "simulation", "strategy"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=15670355",
     "hnPoints": 73,
@@ -1870,7 +1871,7 @@
     ],
     "author": "thenomad",
     "genres": [
-      "rpg"
+      "rpg", "action"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=14654108",
     "hnPoints": 1,
@@ -1891,7 +1892,7 @@
     ],
     "author": "harryngh",
     "genres": [
-      "action"
+      "puzzle"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=14459852",
     "hnPoints": 1,
@@ -1912,7 +1913,7 @@
     ],
     "author": "stared",
     "genres": [
-      "puzzle"
+      "puzzle", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=14432176",
     "hnPoints": 86,
@@ -1976,7 +1977,7 @@
     ],
     "author": "calflegal",
     "genres": [
-      "puzzle"
+      "puzzle", "music"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=14272657",
     "hnPoints": 7,
@@ -1997,7 +1998,7 @@
     ],
     "author": "AleksaDj",
     "genres": [
-      "puzzle"
+      "puzzle", "memory"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=14271857",
     "hnPoints": 22,
@@ -2123,7 +2124,7 @@
     ],
     "author": "JorgeBriones",
     "genres": [
-      "action"
+      "action", "arcade"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=14024224",
     "hnPoints": 1,
@@ -2165,7 +2166,7 @@
     ],
     "author": "ondras",
     "genres": [
-      "roguelike"
+      "roguelike", "text"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=13838659",
     "hnPoints": 319,
@@ -2208,7 +2209,7 @@
     ],
     "author": "appilis",
     "genres": [
-      "puzzle"
+      "puzzle", "memory"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=13228978",
     "hnPoints": 3,
@@ -2293,7 +2294,7 @@
     ],
     "author": "howbo_bby",
     "genres": [
-      "puzzle"
+      "puzzle", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=12803535",
     "hnPoints": 2,
@@ -2314,7 +2315,7 @@
     ],
     "author": "mitenmit",
     "genres": [
-      "simulation"
+      "simulation", "strategy"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=12786993",
     "hnPoints": 15,
@@ -2356,7 +2357,7 @@
     ],
     "author": "fka",
     "genres": [
-      "puzzle"
+      "card"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=12380434",
     "hnPoints": 2,
@@ -2398,7 +2399,7 @@
     ],
     "author": "abrena",
     "genres": [
-      "quiz"
+      "quiz", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=12319661",
     "hnPoints": 220,
@@ -2440,7 +2441,7 @@
     ],
     "author": "sgentle",
     "genres": [
-      "puzzle"
+      "puzzle", "word"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=12105946",
     "hnPoints": 2,
@@ -2524,7 +2525,7 @@
     ],
     "author": "callmevlad",
     "genres": [
-      "coding"
+      "coding", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=11488572",
     "hnPoints": 7,
@@ -2608,7 +2609,7 @@
     ],
     "author": "ChanningAllen",
     "genres": [
-      "coding"
+      "coding", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=11213475",
     "hnPoints": 243,
@@ -2694,7 +2695,7 @@
     ],
     "author": "DanghisKhan",
     "genres": [
-      "quiz"
+      "quiz", "music"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=10508071",
     "hnPoints": 1,
@@ -2757,7 +2758,7 @@
     ],
     "author": "franck",
     "genres": [
-      "rpg"
+      "rpg", "action"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=10221869",
     "hnPoints": 2,
@@ -2799,7 +2800,7 @@
     ],
     "author": "mkagenius",
     "genres": [
-      "puzzle"
+      "puzzle", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=9830062",
     "hnPoints": 6,
@@ -2862,7 +2863,7 @@
     ],
     "author": "sharkdp",
     "genres": [
-      "coding"
+      "coding", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=9644324",
     "hnPoints": 121,
@@ -2883,7 +2884,7 @@
     ],
     "author": "valryon",
     "genres": [
-      "action"
+      "action", "shooter"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=9568558",
     "hnPoints": 1,
@@ -2904,7 +2905,7 @@
     ],
     "author": "Nagnazul",
     "genres": [
-      "action"
+      "action", "music"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=9568244",
     "hnPoints": 1,
@@ -3010,7 +3011,7 @@
     ],
     "author": "clarky07",
     "genres": [
-      "puzzle"
+      "puzzle", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=9095650",
     "hnPoints": 15,
@@ -3221,7 +3222,7 @@
     ],
     "author": "SigmaEpsilonChi",
     "genres": [
-      "puzzle"
+      "puzzle", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=8615416",
     "hnPoints": 137,
@@ -3347,7 +3348,7 @@
     ],
     "author": "jpeggg",
     "genres": [
-      "puzzle"
+      "puzzle", "math", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=8446273",
     "hnPoints": 2,
@@ -3410,7 +3411,7 @@
     ],
     "author": "tomd3v",
     "genres": [
-      "typing"
+      "typing", "word"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=8281929",
     "hnPoints": 2,
@@ -3452,7 +3453,7 @@
     ],
     "author": "mattdesl",
     "genres": [
-      "action"
+      "action", "music"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=8189458",
     "hnPoints": 14,
@@ -3536,7 +3537,7 @@
     ],
     "author": "dan335",
     "genres": [
-      "action"
+      "strategy"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=8013267",
     "hnPoints": 12,
@@ -3557,7 +3558,7 @@
     ],
     "author": "luciuskyver",
     "genres": [
-      "rpg"
+      "rpg", "text"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=7988399",
     "hnPoints": 1,
@@ -3578,7 +3579,7 @@
     ],
     "author": "aaronetz",
     "genres": [
-      "puzzle"
+      "puzzle", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=7961770",
     "hnPoints": 10,
@@ -3599,7 +3600,7 @@
     ],
     "author": "sigvef",
     "genres": [
-      "action"
+      "action", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=7731543",
     "hnPoints": 26,
@@ -3769,7 +3770,7 @@
     ],
     "author": "alnis",
     "genres": [
-      "coding"
+      "coding", "text"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=7547942",
     "hnPoints": 555,
@@ -3832,7 +3833,7 @@
     ],
     "author": "sanqui",
     "genres": [
-      "action"
+      "puzzle"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=7434529",
     "hnPoints": 7,
@@ -3874,7 +3875,7 @@
     ],
     "author": "stjerdi",
     "genres": [
-      "action"
+      "action", "platformer"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=7398353",
     "hnPoints": 4,
@@ -3916,7 +3917,7 @@
     ],
     "author": "primigenus",
     "genres": [
-      "puzzle"
+      "puzzle", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=7362089",
     "hnPoints": 2,
@@ -3937,7 +3938,7 @@
     ],
     "author": "phest",
     "genres": [
-      "puzzle"
+      "puzzle", "math"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=7191187",
     "hnPoints": 214,
@@ -3981,7 +3982,7 @@
     ],
     "author": "lessmilk",
     "genres": [
-      "action"
+      "platformer"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=7032700",
     "hnPoints": 2,
@@ -4002,7 +4003,7 @@
     ],
     "author": "windsurfer",
     "genres": [
-      "typing"
+      "typing", "word"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=6897863",
     "hnPoints": 1,
@@ -4023,7 +4024,7 @@
     ],
     "author": "mmastrac",
     "genres": [
-      "adventure"
+      "adventure", "text"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=6871515",
     "hnPoints": 3,
@@ -4044,7 +4045,7 @@
     ],
     "author": "zachlatta",
     "genres": [
-      "action"
+      "action", "sport"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=6751462",
     "hnPoints": 7,
@@ -4065,7 +4066,7 @@
     ],
     "author": "gsaines",
     "genres": [
-      "coding"
+      "coding", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=6572228",
     "hnPoints": 2,
@@ -4128,7 +4129,7 @@
     ],
     "author": "onions",
     "genres": [
-      "action"
+      "math", "puzzle", "kids"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=6386748",
     "hnPoints": 1,
@@ -4149,7 +4150,7 @@
     ],
     "author": "smnl",
     "genres": [
-      "action"
+      "puzzle", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=6072159",
     "hnPoints": 10,
@@ -4171,7 +4172,7 @@
     ],
     "author": "ravipatel",
     "genres": [
-      "strategy"
+      "card", "strategy"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=5925408",
     "hnPoints": 8,
@@ -4192,7 +4193,7 @@
     ],
     "author": "parente",
     "genres": [
-      "horror"
+      "horror", "text"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=5817221",
     "hnPoints": 2,
@@ -4213,7 +4214,7 @@
     ],
     "author": "druidsbane",
     "genres": [
-      "action"
+      "coding", "educational", "kids"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=4777446",
     "hnPoints": 1,
@@ -4255,7 +4256,7 @@
     ],
     "author": "colinshark",
     "genres": [
-      "action"
+      "action", "shooter"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=4701966",
     "hnPoints": 2,
@@ -4383,7 +4384,7 @@
     ],
     "author": "Monokai",
     "genres": [
-      "action"
+      "coding", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=3670384",
     "hnPoints": 2,
@@ -4404,7 +4405,7 @@
     ],
     "author": "joliss",
     "genres": [
-      "action"
+      "card"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=3586727",
     "hnPoints": 5,
@@ -4488,7 +4489,7 @@
     ],
     "author": "duopixel",
     "genres": [
-      "puzzle"
+      "puzzle", "educational"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=3086320",
     "hnPoints": 268,
@@ -4551,7 +4552,7 @@
     ],
     "author": "unavailable",
     "genres": [
-      "educational"
+      "educational", "math", "kids"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=2311111",
     "hnPoints": 1,
