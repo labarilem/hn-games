@@ -21,24 +21,19 @@ export default function GameCard({ game }: GameCardProps) {
     window.location.href = `/?${param}=${value}`;
   };
 
-  const clearAuthorFilter = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    window.location.href = "/";
-  };
-
   const publicationYear = new Date(game.releaseDate).getFullYear();
 
   return (
     <>
       <div
         onClick={() => setIsModalOpen(true)}
-        className="bg-[#242424] rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer shadow-lg flex flex-col h-full"
+        className="bg-[#242424] rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer shadow-lg flex flex-col h-full w-full"
       >
-        <div className="relative aspect-video">
+        <div className="relative aspect-video w-full min-w-0 flex-shrink-0">
           <img
             src={game.imageUrl}
             alt={game.name}
-            className="w-full h-full object-fill"
+            className="block w-full h-full object-fill"
             fetchPriority="low"
             loading="lazy"
             decoding="async"

@@ -1187,7 +1187,7 @@
   {
     "id": "17867209",
     "name": "13Kars",
-    "description": "Simple and silly car game for JS13K",
+    "description": "Go against incoming traffic without crashing into other cars",
     "platforms": [
       "web"
     ],
