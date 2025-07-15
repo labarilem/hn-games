@@ -2,8 +2,8 @@ import axios from "axios";
 import { promises as fs } from "fs";
 import getUrls from "get-urls";
 import { stripHtml } from "string-strip-html";
-import checkpoint from "./data/checkpoint.js";
 import { GameGenre } from "../src/types/game.js";
+import checkpoint from "./data/checkpoint.js";
 
 async function isValidGameUrl(url: string) {
   if (!url) return true; // Consider empty URLs as valid (they'll become empty strings in the entity)
@@ -42,6 +42,97 @@ async function isValidGameUrl(url: string) {
     console.log(`Invalid URL (${msg}): ${url}`);
     return false;
   }
+}
+
+function cleanTitle(title: string) {
+  // Remove "Show HN:" prefix and clean up the title
+  return title
+    .replace(/^Show HN:?\s*/i, "")
+    .replace(/^\s*["-]\s*/, "")
+    .trim();
+}
+
+/**
+ * @param {string} title
+ * @param {string} description
+ * @param {string} playUrl
+ */
+function determinePlatforms(
+  title: string,
+  description: string,
+  playUrl: string
+) {
+  const platforms = [];
+  const text = (title + " " + description).toLowerCase();
+
+  if (["web", "html", "browser"].some((x) => text.includes(x)))
+    platforms.push("web");
+
+  if (["desktop", "windows", "mac", "linux"].some((x) => text.includes(x)))
+    platforms.push("desktop");
+
+  if (
+    ["console", "xbox", "playstation", "game boy", "gameboy"].some((x) =>
+      text.includes(x)
+    )
+  )
+    platforms.push("console");
+
+  if (
+    ["android", "play store"].some((x) => text.includes(x)) ||
+    playUrl.includes("play.google.com")
+  )
+    platforms.push("android");
+
+  if (
+    [" ios", "app store", "iphone", "ipad"].some((x) => text.includes(x)) ||
+    playUrl.includes("apple.com")
+  )
+    platforms.push("ios");
+
+  // Default to web if no platform detected
+  return platforms.length ? platforms : ["web"];
+}
+
+function determinePlayerModes(title: string, description: string) {
+  const text = (title + " " + description).toLowerCase();
+  const multiplayerKeywords = [
+    "multiplayer",
+    "multi-player",
+    "multi player",
+    "mmo",
+  ];
+  return multiplayerKeywords.some((x) => text.includes(x))
+    ? ["multi"]
+    : ["single"];
+}
+
+function determineGenres(title: string, description: string) {
+  const text = (title + " " + description).toLowerCase();
+  const genres = [];
+
+  for (const genre of Object.values(GameGenre))
+    if (text.includes(genre.toLowerCase())) genres.push(genre);
+
+  if (!genres.length) genres.push(GameGenre.ACTION);
+
+  return genres;
+}
+
+function determinePricing(title: string, description: string) {
+  const text = (title + " " + description).toLowerCase();
+  return text.includes("commercial") ||
+    text.includes("paid") ||
+    text.includes("buy")
+    ? "paid"
+    : "free";
+}
+
+function generateImageUrl(id: string) {
+  // Implement image URL extraction logic based on your needs
+  // This could involve fetching the page and extracting og:image meta tag
+  // For now, return empty string
+  return `/images/games/${id}.jpg`;
 }
 
 async function scrapeGames() {
@@ -91,8 +182,8 @@ async function scrapeGames() {
       "game collection",
       "game library",
       "game maker",
-      "board game",
-      "card game",
+      // "board game", might exclude some valid games
+      // "card game", might exclude some valid games
       "game of life",
       "tutorial",
       "ebook",
@@ -134,7 +225,7 @@ async function scrapeGames() {
         continue;
       }
 
-      // check for duplicates
+      // check for duplicates in this batch and archive
       const nextItems = itemsValidations.slice(i + 1);
       const duplicate = nextItems.find(
         (item: any) =>
@@ -146,9 +237,6 @@ async function scrapeGames() {
       );
       if (duplicate) {
         itemValidation.isValid = false;
-        const dupeInfo =
-          itemValidation.item.url ??
-          `${itemValidation.item.title} - ${itemValidation.item.author}`;
         console.log(`Duplicate item detected: ${itemValidation.item.url}`);
         continue;
       }
@@ -208,92 +296,6 @@ async function scrapeGames() {
   } catch (error) {
     console.error("Error scraping games: ", error);
   }
-}
-
-function cleanTitle(title: string) {
-  // Remove "Show HN:" prefix and clean up the title
-  return title
-    .replace(/^Show HN:?\s*/i, "")
-    .replace(/^\s*["-]\s*/, "")
-    .trim();
-}
-
-/**
- * @param {string} title
- * @param {string} description
- * @param {string} playUrl
- */
-function determinePlatforms(
-  title: string,
-  description: string,
-  playUrl: string
-) {
-  const platforms = [];
-  const text = (title + " " + description).toLowerCase();
-
-  if (["web", "html", "browser"].some((x) => text.includes(x)))
-    platforms.push("web");
-
-  if (["desktop", "windows", "mac", "linux"].some((x) => text.includes(x)))
-    platforms.push("desktop");
-
-  if (
-    ["console", "xbox", "playstation", "game boy", "gameboy"].some((x) =>
-      text.includes(x)
-    )
-  )
-    platforms.push("console");
-
-  if (
-    ["android", "play store"].some((x) => text.includes(x)) ||
-    playUrl.includes("play.google.com")
-  )
-    platforms.push("android");
-
-  if (
-    [" ios", "app store", "iphone", "ipad"].some((x) => text.includes(x)) ||
-    playUrl.includes("apple.com")
-  )
-    platforms.push("ios");
-
-  // Default to web if no platform detected
-  return platforms.length ? platforms : ["web"];
-}
-
-function determinePlayerModes(title: string, description: string) {
-  const text = (title + " " + description).toLowerCase();
-  const multiplayerKeywords = ["multiplayer", "multi-player", "multi player", "mmo"];
-  return multiplayerKeywords.some((x) => text.includes(x))
-    ? ["multi"]
-    : ["single"];
-}
-
-function determineGenres(title: string, description: string) {
-  const text = (title + " " + description).toLowerCase();
-  const genres = [];
-
-  for (const genre of Object.values(GameGenre))
-    if (text.includes(genre.toLowerCase())) genres.push(genre);
-
-  if (!genres.length) genres.push(GameGenre.ACTION);
-
-  return genres;
-}
-
-function determinePricing(title: string, description: string) {
-  const text = (title + " " + description).toLowerCase();
-  return text.includes("commercial") ||
-    text.includes("paid") ||
-    text.includes("buy")
-    ? "paid"
-    : "free";
-}
-
-function generateImageUrl(id: string) {
-  // Implement image URL extraction logic based on your needs
-  // This could involve fetching the page and extracting og:image meta tag
-  // For now, return empty string
-  return `/images/games/${id}.jpg`;
 }
 
 // Run the scraper

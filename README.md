@@ -44,7 +44,7 @@ results are saved in `scripts/data/new.json`.
    npm run compile
    ```
 
-## Link checking
+## Link checking (TODO)
 
 Check all links:
 
@@ -64,10 +64,22 @@ PNGs can be converted with this tool: https://png2jpg.com/ (max 20 images per ba
 
 Images can be made 16:9 with this tool: https://imagy.app/change-image-to-16x9-aspect-ratio/
 
+Screenshots can be captured in 16:9 format using ShareX with the fixed region option.
+
+Keep images size below 200kB to improve page loading speed.
+
 ## Images checking
 
 Check all games have an image and viceversa:
 
 ```bash
 npm run check-images
+```
+
+## Ids checking
+
+Check ids consistency with other game props like hnUrl and imageUrl:
+
+```bash
+npm run check-ids
 ```

@@ -46,6 +46,9 @@ export enum GameGenre {
   TEXT = "text",
   STEALTH = "stealth",
   MUSIC = "music",
+  BOARD = "board",
+  TOWER_DEFENSE = "tower_defense",
+  COOPERATIVE = "cooperative",
 }
 
 export type Game = {

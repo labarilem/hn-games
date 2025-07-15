@@ -15,6 +15,7 @@
     "archive": "tsx scripts/archive.ts 2>&1 | tee log.txt",
     "compile": "tsx scripts/compile.ts",
     "check-images": "tsx scripts/check-images.ts",
+    "check-ids": "tsx scripts/check-ids.ts",
     "check-links": "node scripts/check-links.js 2>&1 | tee log.txt"
   },
   "dependencies": {
