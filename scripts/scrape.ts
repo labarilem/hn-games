@@ -1,9 +1,17 @@
 import axios from "axios";
-import { promises as fs } from "fs";
+import { promises as fs, readFileSync } from "fs";
 import getUrls from "get-urls";
 import { stripHtml } from "string-strip-html";
 import { GameGenre } from "../src/types/game.js";
 import checkpoint from "./data/checkpoint.js";
+import path from "path";
+import { Game } from "../src/types/game.js";
+
+// Paths
+const ARCHIVE_PATH = path.join(__dirname, "data/archive.json");
+
+// Load archive.json
+const archive: Game[] = JSON.parse(readFileSync(ARCHIVE_PATH, "utf-8"));
 
 async function isValidGameUrl(url: string) {
   if (!url) return true; // Consider empty URLs as valid (they'll become empty strings in the entity)
@@ -227,13 +235,22 @@ async function scrapeGames() {
 
       // check for duplicates in this batch and archive
       const nextItems = itemsValidations.slice(i + 1);
-      const duplicate = nextItems.find(
-        (item: any) =>
+      const existingGames: Array<Pick<Game, "name" | "author" | "playUrl">> =
+        nextItems
+          .map((item: any) => ({
+            name: item.item.title,
+            author: item.item.author,
+            playUrl: item.item.url,
+          }))
+          .concat(archive.map);
+
+      const duplicate = existingGames.find(
+        (game) =>
           // check for duplicate (title, author batches) pairs
-          (item.item.title === itemValidation.item.title &&
-            item.item.author === itemValidation.item.author) ||
+          (game.name === itemValidation.item.title &&
+            game.author === itemValidation.item.author) ||
           // check for duplicate URLS
-          (item.item.url != null && item.item.url === itemValidation.item.url)
+          (game.playUrl != null && game.playUrl === itemValidation.item.url)
       );
       if (duplicate) {
         itemValidation.isValid = false;
