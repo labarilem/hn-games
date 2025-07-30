@@ -1,5 +1,1193 @@
 [
   {
+    "id": "29343841",
+    "name": "The Setting Sun",
+    "description": "Unscramble tiles to help the Sun set below the horizon",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2021-11-25T18:47:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sci_prog",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=29343841",
+    "hnPoints": 2,
+    "playUrl": "https://apps.apple.com/pl/app/the-setting-sun-block-puzzle/id1588174839",
+    "pricing": "free",
+    "imageUrl": "/images/games/29343841.jpg"
+  },
+  {
+    "id": "29170613",
+    "name": "The exit is near",
+    "description": "Find the exit by controlling 3 colored boxes which can only open doors of the same color",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-11-10T03:06:47.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "nassimsoftware",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=29170613",
+    "hnPoints": 2,
+    "playUrl": "https://nassims8.itch.io/the-exit-is-near",
+    "pricing": "free",
+    "imageUrl": "/images/games/29170613.jpg"
+  },
+  {
+    "id": "29167580",
+    "name": "Slingshot Effect",
+    "description": "Swing and jump your way through danger in this one-tap endless jumper",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2021-11-09T21:14:47.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "bananabat",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=29167580",
+    "hnPoints": 985,
+    "playUrl": "https://apps.apple.com/us/app/slingshot-effect/id1537916631",
+    "pricing": "paid",
+    "imageUrl": "/images/games/29167580.jpg"
+  },
+  {
+    "id": "29078248",
+    "name": "Multiplication Kingdom",
+    "description": "Pixel styled battle game to learn times tables",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-11-02T07:50:36.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sandoche",
+    "genres": [
+      "educational",
+      "math"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=29078248",
+    "hnPoints": 2,
+    "playUrl": "https://multiplicationkingdom.learn.uno/",
+    "pricing": "free",
+    "imageUrl": "/images/games/29078248.jpg"
+  },
+  {
+    "id": "28786238",
+    "name": "Rocket Jump",
+    "description": "Become a jumping rocket and try to get as high as possible",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2021-10-07T13:51:18.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "TreektusPL",
+    "genres": [
+      "arcade",
+      "platformer"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28786238",
+    "hnPoints": 3,
+    "playUrl": "https://store.steampowered.com/app/1747440/Rocket_Jump/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/28786238.jpg"
+  },
+  {
+    "id": "28654350",
+    "name": "Serverless tic-tac-toe",
+    "description": "A 5-in-a-row tic-tac-toe multiplayer game without any backend",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-09-25T16:27:06.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "anvaka",
+    "genres": [
+      "strategy",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28654350",
+    "hnPoints": 2,
+    "playUrl": "https://anvaka.github.io/go-mo-ku/",
+    "pricing": "free",
+    "imageUrl": "/images/games/28654350.jpg"
+  },
+  {
+    "id": "28603818",
+    "name": "Blank",
+    "description": "A text-based escape room adventure",
+    "platforms": [
+      "web",
+      "android"
+    ],
+    "releaseDate": "2021-09-21T11:07:13.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "matthewhartmans",
+    "genres": [
+      "adventure",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28603818",
+    "hnPoints": 4,
+    "playUrl": "https://playblankgame.com/1/",
+    "pricing": "free",
+    "imageUrl": "/images/games/28603818.jpg"
+  },
+  {
+    "id": "28519894",
+    "name": "Orakyubu",
+    "description": "Sokoban-like game where the map is spread over a 3D cube",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-09-14T03:30:20.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "peterlavigne",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28519894",
+    "hnPoints": 9,
+    "playUrl": "https://peterlavigne.itch.io/orakyubu",
+    "pricing": "free",
+    "imageUrl": "/images/games/28519894.jpg"
+  },
+  {
+    "id": "28382568",
+    "name": "Dance of Cubes",
+    "description": "Cellular automata puzzle game",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2021-09-01T17:05:50.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "hvidevold",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28382568",
+    "hnPoints": 3,
+    "playUrl": "https://store.steampowered.com/app/1744620/Dance_of_Cubes/",
+    "pricing": "free",
+    "imageUrl": "/images/games/28382568.jpg"
+  },
+  {
+    "id": "28323105",
+    "name": "Cofounder Quest",
+    "description": "An MS-DOS style game to find the author's next cofounder",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-08-27T01:01:04.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "djbaskin",
+    "genres": [
+      "text",
+      "adventure"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28323105",
+    "hnPoints": 7,
+    "playUrl": "https://cofounder.quest",
+    "pricing": "free",
+    "imageUrl": "/images/games/28323105.jpg"
+  },
+  {
+    "id": "28249468",
+    "name": "FreeBoardGames",
+    "description": "Collection of free and open source board games",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-08-20T18:14:52.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "flamecoals",
+    "genres": [
+      "board",
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28249468",
+    "hnPoints": 33,
+    "playUrl": "https://www.freeboardgames.org/",
+    "pricing": "free",
+    "imageUrl": "/images/games/28249468.jpg"
+  },
+  {
+    "id": "28105241",
+    "name": "Adventure Cards",
+    "description": "A tactical roguelite deck builder with turn-based action",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2021-08-08T09:06:56.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "henhrk",
+    "genres": [
+      "strategy",
+      "card"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28105241",
+    "hnPoints": 4,
+    "playUrl": "https://lakeisbetter.itch.io/adventure-cards",
+    "pricing": "free",
+    "imageUrl": "/images/games/28105241.jpg"
+  },
+  {
+    "id": "28043715",
+    "name": "Last Colony",
+    "description": "Run your colony after the collapse of society",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2021-08-02T22:55:10.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "MichaelEstes",
+    "genres": [
+      "action",
+      "strategy",
+      "shooter"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28043715",
+    "hnPoints": 1,
+    "playUrl": "https://www.scrim.tv/",
+    "pricing": "free",
+    "imageUrl": "/images/games/28043715.jpg"
+  },
+  {
+    "id": "28038959",
+    "name": "Paper Trader",
+    "description": "A tiny browser game where you have 45 seconds to trade a fake stock",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-08-02T16:36:04.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "davjhan",
+    "genres": [
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28038959",
+    "hnPoints": 34,
+    "playUrl": "https://paper-trader.davjhan.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/28038959.jpg"
+  },
+  {
+    "id": "28023145",
+    "name": "FitSaga",
+    "description": "Walk to unfold a thriller story",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2021-08-01T02:06:52.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "vibin1arav",
+    "genres": [
+      "fitness",
+      "adventure"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=28023145",
+    "hnPoints": 2,
+    "playUrl": "https://apps.apple.com/us/app/fitsaga/id1386537914",
+    "pricing": "free",
+    "imageUrl": "/images/games/28023145.jpg"
+  },
+  {
+    "id": "27995014",
+    "name": "Knights of the Flexbox Table",
+    "description": "A browser game to learn Tailwind CSS",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-07-29T10:57:23.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mpociot",
+    "genres": [
+      "educational",
+      "coding"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27995014",
+    "hnPoints": 2,
+    "playUrl": "https://knightsoftheflexboxtable.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/27995014.jpg"
+  },
+  {
+    "id": "27966764",
+    "name": "The Space War",
+    "description": "Space battle themed card game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-07-26T23:25:17.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "agge",
+    "genres": [
+      "card",
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27966764",
+    "hnPoints": 3,
+    "playUrl": "https://play.thespacewar.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/27966764.jpg"
+  },
+  {
+    "id": "27894903",
+    "name": "WrittenRealms",
+    "description": "Collection of text adventure games",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-07-20T15:26:23.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "teebes",
+    "genres": [
+      "text",
+      "adventure"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27894903",
+    "hnPoints": 200,
+    "playUrl": "https://writtenrealms.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/27894903.jpg"
+  },
+  {
+    "id": "27858820",
+    "name": "Ghost Game",
+    "description": "Keep the word growing by adding more letters to it in every turn",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-07-16T17:35:22.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "rorquals",
+    "genres": [
+      "word",
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27858820",
+    "hnPoints": 4,
+    "playUrl": "https://ghostgame.io",
+    "pricing": "free",
+    "imageUrl": "/images/games/27858820.jpg"
+  },
+  {
+    "id": "27532194",
+    "name": "Green With Energy",
+    "description": "A power grid engineering puzzle game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-06-16T19:02:52.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "cameronbrown",
+    "genres": [
+      "puzzle",
+      "simulation"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27532194",
+    "hnPoints": 3,
+    "playUrl": "http://store.steampowered.com/app/890890/Green_With_Energy/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/27532194.jpg"
+  },
+  {
+    "id": "27393878",
+    "name": "JollyWorld",
+    "description": "Ride your vehicle in this ragdoll platformer to complete tracks as fast as possible",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-06-04T14:21:25.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "smerik",
+    "genres": [
+      "platformer",
+      "sandbox"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27393878",
+    "hnPoints": 1,
+    "playUrl": "https://jollyworld.app",
+    "pricing": "free",
+    "imageUrl": "/images/games/27393878.jpg"
+  },
+  {
+    "id": "27391415",
+    "name": "Trivia Maze",
+    "description": "Make and play online trivia games",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-06-04T07:17:45.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "jbandela1",
+    "genres": [
+      "quiz",
+      "sandbox"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27391415",
+    "hnPoints": 1,
+    "playUrl": "https://triviamaze.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/27391415.jpg"
+  },
+  {
+    "id": "27365961",
+    "name": "Yare",
+    "description": "Control your units to gather energy and attack your opponent",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-06-02T07:33:28.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "levmiseri",
+    "genres": [
+      "strategy",
+      "coding"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27365961",
+    "hnPoints": 233,
+    "playUrl": "https://yare.io",
+    "pricing": "free",
+    "imageUrl": "/images/games/27365961.jpg"
+  },
+  {
+    "id": "27317763",
+    "name": "Guess the Year",
+    "description": "A small browser game where you have to guess the year things happened",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-05-28T16:55:44.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "davjhan",
+    "genres": [
+      "quiz",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27317763",
+    "hnPoints": 4,
+    "playUrl": "https://guess-the-year.davjhan.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/27317763.jpg"
+  },
+  {
+    "id": "27254177",
+    "name": "SNKRX",
+    "description": "Control a snake of heroes that automatically attack nearby enemies",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2021-05-23T11:17:43.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "adnzzzzZ",
+    "genres": [
+      "action",
+      "roguelike"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27254177",
+    "hnPoints": 496,
+    "playUrl": "https://store.steampowered.com/app/915310/SNKRX/",
+    "pricing": "free",
+    "imageUrl": "/images/games/27254177.jpg"
+  },
+  {
+    "id": "27159320",
+    "name": "Gamesroom.io",
+    "description": "Collection of board games with video chat",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-05-14T20:26:57.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "mjt58",
+    "genres": [
+      "board",
+      "memory"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27159320",
+    "hnPoints": 11,
+    "playUrl": "https://gamesroom.io",
+    "pricing": "free",
+    "imageUrl": "/images/games/27159320.jpg"
+  },
+  {
+    "id": "27068461",
+    "name": "Knights of San Francisco",
+    "description": "An open world RPG that uses NLG to render game state in prose",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-05-06T20:07:03.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "filiph",
+    "genres": [
+      "rpg",
+      "adventure"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27068461",
+    "hnPoints": 1,
+    "playUrl": "https://egamebook.com/knights/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/27068461.jpg"
+  },
+  {
+    "id": "27052611",
+    "name": "Dogecoin Simulator",
+    "description": "Incremental game where you mine and trade dogecoins",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-05-05T17:08:33.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "theobr",
+    "genres": [
+      "incremental",
+      "simulation"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27052611",
+    "hnPoints": 11,
+    "playUrl": "http://doge.t3.gg/",
+    "pricing": "free",
+    "imageUrl": "/images/games/27052611.jpg"
+  },
+  {
+    "id": "27000720",
+    "name": "Royalur.net",
+    "description": "A board game from before 2600 BC brought to the web",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-04-30T23:08:22.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "sothatsit",
+    "genres": [
+      "board",
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=27000720",
+    "hnPoints": 4,
+    "playUrl": "https://royalur.net",
+    "pricing": "free",
+    "imageUrl": "/images/games/27000720.jpg"
+  },
+  {
+    "id": "26977757",
+    "name": "Dragon PvP",
+    "description": "Control a dragon and try to defeat your opponent",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-04-29T05:29:50.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "shanshaji",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26977757",
+    "hnPoints": 3,
+    "playUrl": "https://shanshaji.itch.io/dragon-pvp",
+    "pricing": "free",
+    "imageUrl": "/images/games/26977757.jpg"
+  },
+  {
+    "id": "26900079",
+    "name": "Money Simulator",
+    "description": "A Windows-XP styled game to help with financial planning",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-04-22T08:01:48.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "pattle",
+    "genres": [
+      "simulation",
+      "sandbox",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26900079",
+    "hnPoints": 409,
+    "playUrl": "https://simulator.money/",
+    "pricing": "free",
+    "imageUrl": "/images/games/26900079.jpg"
+  },
+  {
+    "id": "26825724",
+    "name": "Offside Or Not",
+    "description": "Test your offside decision-making skills against VAR",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-04-15T20:29:06.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "truetaurus",
+    "genres": [
+      "quiz",
+      "sport"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26825724",
+    "hnPoints": 61,
+    "playUrl": "https://offsideornot.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/26825724.jpg"
+  },
+  {
+    "id": "26728222",
+    "name": "Tripods",
+    "description": "Manoeuvre the tripod to the landing spots in as few moves as possible",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-04-07T17:44:18.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "donbrae",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26728222",
+    "hnPoints": 2,
+    "playUrl": "https://tripodsgame.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/26728222.jpg"
+  },
+  {
+    "id": "26495059",
+    "name": "Fontemon",
+    "description": "A mini pokemon-like game implemented as a web font",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-03-17T18:29:32.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ghub-mmulet",
+    "genres": [
+      "rpg",
+      "adventure"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26495059",
+    "hnPoints": 605,
+    "playUrl": "https://www.coderelay.io/fontemon.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/26495059.jpg"
+  },
+  {
+    "id": "26448711",
+    "name": "Kingdom of Numbers",
+    "description": "Simple arithmethic game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-03-13T18:30:59.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "deviance",
+    "genres": [
+      "educational",
+      "math",
+      "kids"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26448711",
+    "hnPoints": 2,
+    "playUrl": "https://curiousowl.itch.io/kingdom-of-numbers",
+    "pricing": "free",
+    "imageUrl": "/images/games/26448711.jpg"
+  },
+  {
+    "id": "26407031",
+    "name": "Mathtown Alley",
+    "description": "Arrange the animals to make the math correct",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-03-10T02:22:34.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mimixco",
+    "genres": [
+      "educational",
+      "math",
+      "kids"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26407031",
+    "hnPoints": 1,
+    "playUrl": "https://makecode.com/_RumP0f75ke2E",
+    "pricing": "free",
+    "imageUrl": "/images/games/26407031.jpg"
+  },
+  {
+    "id": "26398420",
+    "name": "Knight and Queen",
+    "description": "A chess minigame with a knight and a queen",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-03-09T13:08:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "Trufa",
+    "genres": [
+      "strategy",
+      "puzzle",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26398420",
+    "hnPoints": 2,
+    "playUrl": "https://knight-queen-game.netlify.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/26398420.jpg"
+  },
+  {
+    "id": "26390545",
+    "name": "Farmhand",
+    "description": "A resource management game that puts a farm in your hand",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-03-08T19:44:20.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "jckahn",
+    "genres": [
+      "strategy",
+      "simulation"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26390545",
+    "hnPoints": 16,
+    "playUrl": "https://jeremyckahn.github.io/farmhand/",
+    "pricing": "free",
+    "imageUrl": "/images/games/26390545.jpg"
+  },
+  {
+    "id": "26385015",
+    "name": "Quizado",
+    "description": "Compete in teams and try to guess the answer like in a quiz show",
+    "platforms": [
+      "desktop",
+      "android",
+      "ios"
+    ],
+    "releaseDate": "2021-03-08T12:35:27.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ewelina_fym",
+    "genres": [
+      "quiz",
+      "text",
+      "sandbox"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26385015",
+    "hnPoints": 18,
+    "playUrl": "https://quizado.com/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/26385015.jpg"
+  },
+  {
+    "id": "26338744",
+    "name": "Ship Investor",
+    "description": "Practise your bet sizing intuition",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-03-04T04:48:47.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "kqr",
+    "genres": [
+      "strategy",
+      "math"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26338744",
+    "hnPoints": 12,
+    "playUrl": "https://static.loop54.com/ship-investor.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/26338744.jpg"
+  },
+  {
+    "id": "26307029",
+    "name": "Defragged",
+    "description": "Move meetings in a caledar to free up time for focused work",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-03-01T19:24:02.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "raphael_damico",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26307029",
+    "hnPoints": 21,
+    "playUrl": "https://www.getclockwise.com/defragged",
+    "pricing": "free",
+    "imageUrl": "/images/games/26307029.jpg"
+  },
+  {
+    "id": "26303398",
+    "name": "Peco Peco",
+    "description": "Put together giant, colorful, animated 3D jigsaw puzzles in VR",
+    "platforms": [
+      "console"
+    ],
+    "releaseDate": "2021-03-01T15:06:59.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "juliendorra",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26303398",
+    "hnPoints": 6,
+    "playUrl": "https://www.meta.com/en-gb/experiences/peco-peco/3443173935805435",
+    "pricing": "paid",
+    "imageUrl": "/images/games/26303398.jpg"
+  },
+  {
+    "id": "26229630",
+    "name": "Recursive",
+    "description": "A puzzle game about recursion, patterns, and programming",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2021-02-22T19:51:37.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "chaabani",
+    "genres": [
+      "puzzle",
+      "coding"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26229630",
+    "hnPoints": 10,
+    "playUrl": "https://apps.apple.com/app/recursive/id1550504475",
+    "pricing": "paid",
+    "imageUrl": "/images/games/26229630.jpg"
+  },
+  {
+    "id": "26135892",
+    "name": "IFML",
+    "description": "Web port of the original IFML game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-02-14T20:23:09.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "TeaVMFan",
+    "genres": [
+      "text",
+      "adventure"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26135892",
+    "hnPoints": 6,
+    "playUrl": "https://frequal.com/ifml",
+    "pricing": "free",
+    "imageUrl": "/images/games/26135892.jpg"
+  },
+  {
+    "id": "26119218",
+    "name": "MazeBall",
+    "description": "Simultaneously move red balls to collapse them into a single ball and reach the exit",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-02-12T22:23:35.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ryan-duve",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26119218",
+    "hnPoints": 3,
+    "playUrl": "https://ryan-duve.github.io/mazeball.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/26119218.jpg"
+  },
+  {
+    "id": "26105761",
+    "name": "Finger Pool",
+    "description": "Simple pool game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-02-11T19:08:46.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "atum47",
+    "genres": [
+      "sport"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26105761",
+    "hnPoints": 1,
+    "playUrl": "https://github.com/victorqribeiro/fingerPool",
+    "pricing": "free",
+    "imageUrl": "/images/games/26105761.jpg"
+  },
+  {
+    "id": "26040489",
+    "name": "Block Out",
+    "description": "Tetris-like game where each block has lines you need to connect",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-02-05T19:56:53.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "chilledpanda",
+    "genres": [
+      "arcade"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26040489",
+    "hnPoints": 11,
+    "playUrl": "https://blockoutunity.github.io/",
+    "pricing": "free",
+    "imageUrl": "/images/games/26040489.jpg"
+  },
+  {
+    "id": "26025319",
+    "name": "Game of Pegs",
+    "description": "Remove pegs by jumping them to leave as few pegs as you can at the end",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-02-04T13:56:30.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "maverik",
+    "genres": [
+      "puzzle",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=26025319",
+    "hnPoints": 1,
+    "playUrl": "https://gameofpegs.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/26025319.jpg"
+  },
+  {
+    "id": "25994507",
+    "name": "Flipon",
+    "description": "",
+    "platforms": [
+      "web",
+      "desktop",
+      "console",
+      "android",
+      "ios"
+    ],
+    "releaseDate": "2021-02-01T21:51:38.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "valryon",
+    "genres": [
+      "arcade",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=25994507",
+    "hnPoints": 2,
+    "playUrl": "https://github.com/valryon/flipon-tiny",
+    "pricing": "paid",
+    "imageUrl": "/images/games/25994507.jpg"
+  },
+  {
+    "id": "25892889",
+    "name": "Sokyokuban",
+    "description": "Remake of the classic Sokoban in a non-Euclidian world",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-01-24T15:42:09.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "jaspervdj",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=25892889",
+    "hnPoints": 184,
+    "playUrl": "https://sokyokuban.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/25892889.jpg"
+  },
+  {
+    "id": "25806089",
+    "name": "Fleet.io",
+    "description": "Control and upgrade your spaceship to fight enemy ships",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-01-16T22:24:54.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "grog454",
+    "genres": [
+      "action",
+      "shooter"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=25806089",
+    "hnPoints": 4,
+    "playUrl": "https://fleet.simgames.io",
+    "pricing": "free",
+    "imageUrl": "/images/games/25806089.jpg"
+  },
+  {
+    "id": "25647392",
+    "name": "Hill Runner",
+    "description": "Conquer the never-ending hill by avoiding bombs",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2021-01-05T16:49:29.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "steveybrown",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=25647392",
+    "hnPoints": 10,
+    "playUrl": "https://apps.apple.com/us/app/hill-runner/id1547112554",
+    "pricing": "free",
+    "imageUrl": "/images/games/25647392.jpg"
+  },
+  {
+    "id": "25621540",
+    "name": "Eat the Donut",
+    "description": "Use as few bites as possible to eat the donut",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-01-03T13:05:57.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "gitgud",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=25621540",
+    "hnPoints": 3,
+    "playUrl": "https://benwinding.com/eat-the-donut.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/25621540.jpg"
+  },
+  {
+    "id": "25614537",
+    "name": "Anemoiapolis: Chapter 1",
+    "description": "Escape for your life in scenery filled with midwestern architecture",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2021-01-02T17:39:57.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "q_andrew",
+    "genres": [
+      "horror"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=25614537",
+    "hnPoints": 22,
+    "playUrl": "https://store.steampowered.com/app/1522960/Anemoiapolis_Chapter_1/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/25614537.jpg"
+  },
+  {
     "id": "25531162",
     "name": "PacMan: Hot Pursuit",
     "description": "Chase each other in this 2-players shared keyboard version of PacMan",

@@ -217,6 +217,7 @@ async function scrapeGames() {
       "emulator",
       "games list",
       "marketplace",
+      "toolkit"
     ];
     const itemsValidations = preprocItems.map((item: any) => ({
       item,
@@ -234,7 +235,7 @@ async function scrapeGames() {
       }
 
       // check for duplicates in this batch and archive
-      const nextItems = itemsValidations.slice(i + 1);
+      const nextItems = itemsValidations.slice(i + 1) as Array<any>;
       const existingGames: Array<Pick<Game, "name" | "author" | "playUrl">> =
         nextItems
           .map((item: any) => ({
@@ -242,7 +243,7 @@ async function scrapeGames() {
             author: item.item.author,
             playUrl: item.item.url,
           }))
-          .concat(archive.map);
+          .concat(archive);
 
       const duplicate = existingGames.find(
         (game) =>

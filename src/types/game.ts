@@ -49,6 +49,7 @@ export enum GameGenre {
   BOARD = "board",
   TOWER_DEFENSE = "tower_defense",
   COOPERATIVE = "cooperative",
+  SANDBOX = "sandbox",
 }
 
 export type Game = {
