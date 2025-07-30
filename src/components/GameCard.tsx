@@ -1,8 +1,7 @@
 "use client";
 
 import { Game } from "@/types/game";
-import { useState } from "react";
-import GameModal from "./GameModal";
+import Link from "next/link";
 import PlatformIcon from "./PlatformIcon";
 
 interface GameCardProps {
@@ -10,8 +9,6 @@ interface GameCardProps {
 }
 
 export default function GameCard({ game }: GameCardProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   const handleFilterClick = (
     param: string,
     value: string,
@@ -25,130 +22,123 @@ export default function GameCard({ game }: GameCardProps) {
 
   return (
     <>
-      <div
-        onClick={() => setIsModalOpen(true)}
-        className="bg-[#242424] rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer shadow-lg flex flex-col h-full w-full"
-      >
-        <div className="relative aspect-video w-full min-w-0 flex-shrink-0">
-          <img
-            src={game.imageUrl}
-            alt={game.name}
-            className="block w-full h-full object-fill"
-            fetchPriority="low"
-            loading="lazy"
-            decoding="async"
-          />
-          <div className="absolute bottom-2 right-2 flex gap-2">
-            <span className="bg-[#646cff] text-white px-3 py-1 rounded-full text-sm font-medium">
-              {game.hnPoints} point{game.hnPoints === 1 ? "" : "s"}
-            </span>
+      <div className="bg-[#242424] rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 shadow-lg flex flex-col h-full w-full">
+        <Link href={`/game/${game.id}`} className="block">
+          <div className="relative aspect-video w-full min-w-0 flex-shrink-0">
+            <img
+              src={game.imageUrl}
+              alt={game.name}
+              className="block w-full h-full object-fill"
+              fetchPriority="low"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="absolute bottom-2 right-2 flex gap-2">
+              <span className="bg-[#646cff] text-white px-3 py-1 rounded-full text-sm font-medium">
+                {game.hnPoints} point{game.hnPoints === 1 ? "" : "s"}
+              </span>
+            </div>
+            <div className="absolute top-2 left-2">
+              <span
+                className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1.5
+                  ${
+                    game.pricing === "free"
+                      ? "bg-emerald-500/90 text-white"
+                      : "bg-amber-500/90 text-white"
+                  }`}
+              >
+                {game.pricing === "free" ? (
+                  <>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    Free
+                  </>
+                ) : (
+                  <>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    Paid
+                  </>
+                )}
+              </span>
+            </div>
           </div>
-          <div className="absolute top-2 left-2">
-            <span
-              className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1.5
-                ${
-                  game.pricing === "free"
-                    ? "bg-emerald-500/90 text-white"
-                    : "bg-amber-500/90 text-white"
-                }`}
-            >
-              {game.pricing === "free" ? (
-                <>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  Free
-                </>
-              ) : (
-                <>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  Paid
-                </>
-              )}
-            </span>
+          <div className="p-4">
+            <h2 className="text-xl font-bold mb-2">{game.name}</h2>
+            <p className="text-gray-300 mb-4">{game.description}</p>
           </div>
-        </div>
+        </Link>
 
-        <div className="p-4 flex flex-col flex-1">
-          <h2 className="text-xl font-bold mb-2">{game.name}</h2>
-          <p className="text-gray-300 mb-4 flex-1">{game.description}</p>
-          <div className="space-y-3">
-            <div className="flex flex-wrap gap-2">
-              {game.platforms.map((platform) => (
-                <button
-                  key={platform}
-                  onClick={(e) => handleFilterClick("platform", platform, e)}
-                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors flex items-center gap-1.5"
-                >
-                  <PlatformIcon platform={platform} className="w-4 h-4" />
-                  {platform}
-                </button>
-              ))}
-            </div>
+        <div className="px-4 pb-4 space-y-3">
+          <div className="flex flex-wrap gap-2">
+            {game.platforms.map((platform) => (
+              <button
+                key={platform}
+                onClick={(e) => handleFilterClick("platform", platform, e)}
+                className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors flex items-center gap-1.5"
+              >
+                <PlatformIcon platform={platform} className="w-4 h-4" />
+                {platform}
+              </button>
+            ))}
+          </div>
 
-            <div className="flex flex-wrap gap-2">
-              {game.genres.map((genre) => (
-                <button
-                  key={genre}
-                  onClick={(e) => handleFilterClick("genre", genre, e)}
-                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
-                >
-                  {genre}
-                </button>
-              ))}
-              {game.playerModes.map((mode) => (
-                <button
-                  key={mode}
-                  onClick={(e) => handleFilterClick("playerModes", mode, e)}
-                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
-                >
-                  {mode === "single" ? "singleplayer" : "multiplayer"}
-                </button>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-2">
+            {game.genres.map((genre) => (
+              <button
+                key={genre}
+                onClick={(e) => handleFilterClick("genre", genre, e)}
+                className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
+              >
+                {genre}
+              </button>
+            ))}
+            {game.playerModes.map((mode) => (
+              <button
+                key={mode}
+                onClick={(e) => handleFilterClick("playerModes", mode, e)}
+                className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
+              >
+                {mode === "single" ? "singleplayer" : "multiplayer"}
+              </button>
+            ))}
+          </div>
 
-            <div className="flex items-center justify-between gap-2 text-sm">
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={(e) => handleFilterClick("author", game.author, e)}
-                  className="text-[#646cff] hover:text-[#747bff] transition-colors"
-                >
-                  by {game.author}
-                </button>
-              </div>
-              <span className="text-gray-400 text-sm">{publicationYear}</span>
+          <div className="flex items-center justify-between gap-2 text-sm">
+            <div className="flex items-center gap-2">
+              <button
+                onClick={(e) => handleFilterClick("author", game.author, e)}
+                className="text-[#646cff] hover:text-[#747bff] transition-colors"
+              >
+                by {game.author}
+              </button>
             </div>
+            <span className="text-gray-400 text-sm">{publicationYear}</span>
           </div>
         </div>
       </div>
-
-      <GameModal
-        game={game}
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-      />
     </>
   );
 }

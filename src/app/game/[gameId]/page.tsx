@@ -33,7 +33,7 @@ export default async function GamePage({ params }: GamePageProps) {
             <p className="text-gray-300">{game.description}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
             <div>
               <h2 className="text-sm text-gray-400 mb-1">Platforms</h2>
               <div className="flex flex-wrap gap-2">
@@ -134,7 +134,7 @@ export default async function GamePage({ params }: GamePageProps) {
                 href={game.playUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-[#646cff] text-white px-4 py-2.5 rounded hover:bg-[#747bff] transition-colors flex items-center justify-center min-w-[120px]"
+                className="w-full sm:flex-1 bg-[#646cff] text-white px-4 py-2.5 rounded hover:bg-[#747bff] transition-colors flex items-center justify-center"
               >
                 Play Game
               </a>
@@ -142,7 +142,7 @@ export default async function GamePage({ params }: GamePageProps) {
                 href={game.hnUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-[#1a1a1a] text-white px-4 py-2.5 rounded text-center hover:bg-[#2a2a2a] transition-colors border border-[#363636] min-w-[120px]"
+                className="flex-1 bg-[#1a1a1a] text-white px-4 py-2.5 rounded text-center hover:bg-[#2a2a2a] transition-colors border border-[#363636]"
               >
                 View on HN
               </a>
@@ -150,7 +150,7 @@ export default async function GamePage({ params }: GamePageProps) {
                 href={`https://github.com/labarilem/hn-games/issues/new?title=Report: ${encodeURIComponent(game.name)}&body=Game URL: ${encodeURIComponent(game.playUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-red-900/30 text-red-400 px-4 py-2.5 rounded text-center hover:bg-red-900/40 transition-colors border border-red-900 min-w-[120px]"
+                className="flex-1 bg-red-900/30 text-red-400 px-4 py-2.5 rounded text-center hover:bg-red-900/40 transition-colors border border-red-900"
               >
                 Report
               </a>
