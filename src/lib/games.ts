@@ -1,9 +1,13 @@
 import { games } from "@/data/games";
 import { immediatelyPlayableGames } from "../data/immediatelyPlayableGames";
-import { GameGenre, Platform, PlayerMode } from "../types/game";
+import { Game, GameGenre, Platform, PlayerMode } from "../types/game";
 
 export function getAllGamesCount() {
   return games.length;
+}
+
+export function getGameById(id: string): Game | undefined {
+  return games.find(game => game.id === id);
 }
 
 // TODO: add types for searchParams and pagination
