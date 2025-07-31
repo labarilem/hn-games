@@ -1,6 +1,6 @@
 "use client";
 
-import { Game } from "@/types/game";
+import { Game, Pricing } from "@/types/game";
 import Link from "next/link";
 import PlatformIcon from "./PlatformIcon";
 
@@ -9,22 +9,13 @@ interface GameCardProps {
 }
 
 export default function GameCard({ game }: GameCardProps) {
-  const handleFilterClick = (
-    param: string,
-    value: string,
-    e: React.MouseEvent
-  ) => {
-    e.stopPropagation();
-    window.location.href = `/?${param}=${value}`;
-  };
-
   const publicationYear = new Date(game.releaseDate).getFullYear();
 
   return (
     <>
-      <div className="bg-[#242424] rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300 shadow-lg flex flex-col h-full w-full">
+      <div className="bg-[#242424] rounded-lg overflow-hidden shadow-lg flex flex-col h-full w-full">
         <Link href={`/game/${game.id}`} className="block">
-          <div className="relative aspect-video w-full min-w-0 flex-shrink-0">
+          <div className="relative aspect-video w-full min-w-0 flex-shrink-0 cursor-pointer">
             <img
               src={game.imageUrl}
               alt={game.name}
@@ -42,12 +33,12 @@ export default function GameCard({ game }: GameCardProps) {
               <span
                 className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1.5
                   ${
-                    game.pricing === "free"
+                    game.pricing === Pricing.FREE
                       ? "bg-emerald-500/90 text-white"
                       : "bg-amber-500/90 text-white"
                   }`}
               >
-                {game.pricing === "free" ? (
+                {game.pricing === Pricing.FREE ? (
                   <>
                     <svg
                       className="w-4 h-4"
@@ -85,57 +76,74 @@ export default function GameCard({ game }: GameCardProps) {
               </span>
             </div>
           </div>
-          <div className="p-4">
-            <h2 className="text-xl font-bold mb-2">{game.name}</h2>
-            <p className="text-gray-300 mb-4">{game.description}</p>
-          </div>
         </Link>
+        
+        <div className="p-4">
+          <Link href={`/game/${game.id}`} className="block mb-2">
+            <h2 className="text-xl font-bold hover:text-[#646cff] transition-colors cursor-pointer">{game.name}</h2>
+          </Link>
+          <p className="text-gray-300 mb-4">{game.description}</p>
+        </div>
 
-        <div className="px-4 pb-4 space-y-3">
-          <div className="flex flex-wrap gap-2">
-            {game.platforms.map((platform) => (
-              <button
-                key={platform}
-                onClick={(e) => handleFilterClick("platform", platform, e)}
-                className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors flex items-center gap-1.5"
-              >
-                <PlatformIcon platform={platform} className="w-4 h-4" />
-                {platform}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex flex-wrap gap-2">
-            {game.genres.map((genre) => (
-              <button
-                key={genre}
-                onClick={(e) => handleFilterClick("genre", genre, e)}
-                className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
-              >
-                {genre}
-              </button>
-            ))}
-            {game.playerModes.map((mode) => (
-              <button
-                key={mode}
-                onClick={(e) => handleFilterClick("playerModes", mode, e)}
-                className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
-              >
-                {mode === "single" ? "singleplayer" : "multiplayer"}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex items-center justify-between gap-2 text-sm">
-            <div className="flex items-center gap-2">
-              <button
-                onClick={(e) => handleFilterClick("author", game.author, e)}
-                className="text-[#646cff] hover:text-[#747bff] transition-colors"
-              >
-                by {game.author}
-              </button>
+        <div className="px-4 pb-4 flex flex-col">
+          <div className="space-y-3 flex-grow">
+            <div className="flex flex-wrap gap-2">
+              {game.platforms.map((platform) => (
+                <Link
+                  key={platform}
+                  href={`/?platform=${platform}`}
+                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors flex items-center gap-1.5"
+                >
+                  <PlatformIcon platform={platform} className="w-4 h-4" />
+                  {platform}
+                </Link>
+              ))}
             </div>
-            <span className="text-gray-400 text-sm">{publicationYear}</span>
+
+            <div className="flex flex-wrap gap-2">
+              {game.genres.map((genre) => (
+                <Link
+                  key={genre}
+                  href={`/?genre=${genre}`}
+                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
+                >
+                  {genre}
+                </Link>
+              ))}
+              {game.playerModes.map((mode) => (
+                <Link
+                  key={mode}
+                  href={`/?playerModes=${mode}`}
+                  className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
+                >
+                  {mode === "single" ? "singleplayer" : "multiplayer"}
+                </Link>
+              ))}
+            </div>
+
+            <div className="flex items-center justify-between gap-2 text-sm">
+              <div className="flex items-center gap-2">
+                <Link
+                  href={`/?author=${game.author}`}
+                  className="text-[#646cff] hover:text-[#747bff] transition-colors"
+                >
+                  by {game.author}
+                </Link>
+              </div>
+              <span className="text-gray-400 text-sm">{publicationYear}</span>
+            </div>
+          </div>
+
+          <div className="mt-4 pt-3">
+            <a
+              href={game.playUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="block w-full bg-[#646cff] text-white px-4 py-2 rounded-md text-center font-medium hover:bg-[#747bff] transition-colors"
+            >
+              Play
+            </a>
           </div>
         </div>
       </div>
