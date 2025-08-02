@@ -1,10 +1,19 @@
 import axios from "axios";
-import { promises as fs } from "fs";
+import { promises as fs, readFileSync } from "fs";
 import getUrls from "get-urls";
 import { stripHtml } from "string-strip-html";
+import { GameGenre } from "../src/types/game.js";
 import checkpoint from "./data/checkpoint.js";
+import path from "path";
+import { Game } from "../src/types/game.js";
 
-async function isValidGameUrl(url) {
+// Paths
+const ARCHIVE_PATH = path.join(__dirname, "data/archive.json");
+
+// Load archive.json
+const archive: Game[] = JSON.parse(readFileSync(ARCHIVE_PATH, "utf-8"));
+
+async function isValidGameUrl(url: string) {
   if (!url) return true; // Consider empty URLs as valid (they'll become empty strings in the entity)
 
   const headers = {
@@ -34,178 +43,16 @@ async function isValidGameUrl(url) {
 
     return true;
   } catch (error) {
-    console.log(`Invalid URL (${error.message}): ${url}`);
+    const msg =
+      error && typeof error === "object" && "message" in error
+        ? error.message
+        : "Unknown error";
+    console.log(`Invalid URL (${msg}): ${url}`);
     return false;
   }
 }
 
-async function scrapeGames() {
-  try {
-    // Fetch data from Algolia Hacker News API
-    // docs https://hn.algolia.com/api#:~:text=%7D-,Search,-Sorted%20by%20relevance
-    const from = checkpoint.fromTimestampInSeconds;
-    const to = checkpoint.toTimestampInSeconds;
-    const { data } = await axios.get(
-      `https://hn.algolia.com/api/v1/search_by_date`,
-      {
-        params: {
-          query: "game",
-          tags: "show_hn",
-          page: 0,
-          hitsPerPage: 1000, // max page size
-          numericFilters: `created_at_i>${from},created_at_i<${to}`,
-          // created_at_i>X
-          // created_at_i>X,created_at_i<Y
-        },
-      }
-    );
-
-    // preprocess data in response
-    const preprocItems = data.hits.map((item) => {
-      const title = stripHtml(item.title || "")
-        .result.replace(/–/g, "-")
-        .trim();
-      const story_text = stripHtml(item.story_text || "").result.trim();
-      const candidateGameUrls = item.url
-        ? [item.url]
-        : getUrls(story_text, { requireSchemeOrWww: false });
-      return {
-        ...item,
-        title,
-        story_text,
-        candidateGameUrls,
-      };
-    });
-
-    // Validate all items before processing
-    console.log("Validating stories...");
-    const blacklist = [
-      "game engine",
-      "game editor",
-      "games editor",
-      "game collection",
-      "game library",
-      "game maker",
-      "board game",
-      "card game",
-      "game of life",
-      "tutorial",
-      "ebook",
-      "course",
-      "framework",
-      "football game",
-      "for video game",
-      "nfl game",
-      "nhl game",
-      "sdk",
-      "level editor",
-      "plugin",
-      "game of thrones",
-      "games of thrones",
-      "gamers",
-      "gamechanger",
-      "game-changer",
-      "gamestop",
-      "game development",
-      "game design",
-      "game theory",
-      "gameplay",
-      "emulator",
-      "games list",
-      "marketplace",
-    ];
-    const itemsValidations = preprocItems.map((item) => ({
-      item,
-      isValid: true,
-    }));
-    for (let i = 0; i < itemsValidations.length; i++) {
-      const itemValidation = itemsValidations[i];
-
-      // validate against words blacklist
-      const lowTitle = itemValidation.item.title.toLowerCase();
-      if (blacklist.some((word) => lowTitle.includes(word))) {
-        itemValidation.isValid = false;
-        console.log(`Blacklist match: ${lowTitle}`);
-        continue;
-      }
-
-      // check for duplicates
-      const nextItems = itemsValidations.slice(i + 1);
-      const duplicate = nextItems.find(
-        (item) =>
-          // check for duplicate (title, author batches) pairs
-          (item.item.title === itemValidation.item.title &&
-            item.item.author === itemValidation.item.author) ||
-          // check for duplicate URLS
-          (item.item.url != null && item.item.url === itemValidation.item.url)
-      );
-      if (duplicate) {
-        itemValidation.isValid = false;
-        const dupeInfo =
-          itemValidation.item.url ??
-          `${itemValidation.item.title} - ${itemValidation.item.author}`;
-        console.log(`Duplicate item detected: ${itemValidation.item.url}`);
-        continue;
-      }
-
-      // validate urls
-      let hasValidUrl = false;
-      for (const urlInDesc of itemValidation.item.candidateGameUrls) {
-        console.log(
-          "Validating " + i + "/" + itemsValidations.length,
-          urlInDesc
-        );
-        // filter out items with invalid URLs
-        if (await isValidGameUrl(urlInDesc)) {
-          hasValidUrl = true;
-          break;
-        }
-        await new Promise((resolve) => setTimeout(resolve, 200));
-      }
-      itemValidation.isValid = hasValidUrl;
-    }
-
-    //  transform into Game entities
-    const games = itemsValidations
-      .filter(({ isValid }) => isValid)
-      .map(({ item }) => {
-        const id = item.objectID;
-        const playUrl = item.candidateGameUrls[0] || "";
-        return {
-          id,
-          name: cleanTitle(item.title),
-          description: item.story_text || "",
-          platforms: determinePlatforms(
-            item.title,
-            item.story_text || "",
-            playUrl
-          ),
-          releaseDate: new Date(item.created_at),
-          playerModes: determinePlayerModes(item.title, item.story_text || ""),
-          author: item.author,
-          genre: determineGenre(item.title, item.story_text || ""),
-          hnUrl: `https://news.ycombinator.com/item?id=${item.objectID}`,
-          hnPoints: item.points || 0,
-          playUrl,
-          pricing: determinePricing(item.title, item.story_text || ""),
-          imageUrl: generateImageUrl(id) || "",
-        };
-      });
-
-    // Write to new.json
-    const outputPath = "./scripts/data/new.json";
-    await fs.writeFile(outputPath, JSON.stringify(games, null, 2));
-
-    console.log(`Successfully scraped ${itemsValidations.length} games`);
-    console.log(
-      `Filtered out ${itemsValidations.filter(({ isValid }) => !isValid).length} items`
-    );
-  } catch (error) {
-    console.error("Error scraping games: ", error);
-  }
-}
-
-function cleanTitle(title) {
+function cleanTitle(title: string) {
   // Remove "Show HN:" prefix and clean up the title
   return title
     .replace(/^Show HN:?\s*/i, "")
@@ -218,7 +65,11 @@ function cleanTitle(title) {
  * @param {string} description
  * @param {string} playUrl
  */
-function determinePlatforms(title, description, playUrl) {
+function determinePlatforms(
+  title: string,
+  description: string,
+  playUrl: string
+) {
   const platforms = [];
   const text = (title + " " + description).toLowerCase();
 
@@ -251,32 +102,32 @@ function determinePlatforms(title, description, playUrl) {
   return platforms.length ? platforms : ["web"];
 }
 
-function determinePlayerModes(title, description) {
+function determinePlayerModes(title: string, description: string) {
   const text = (title + " " + description).toLowerCase();
-  return text.includes("multiplayer") ||
-    text.includes("multi-player") ||
-    text.includes("multi player")
+  const multiplayerKeywords = [
+    "multiplayer",
+    "multi-player",
+    "multi player",
+    "mmo",
+  ];
+  return multiplayerKeywords.some((x) => text.includes(x))
     ? ["multi"]
     : ["single"];
 }
 
-function determineGenre(title, description) {
+function determineGenres(title: string, description: string) {
   const text = (title + " " + description).toLowerCase();
+  const genres = [];
 
-  if (text.includes("word")) return "word";
-  if (text.includes("puzzle")) return "puzzle";
-  if (text.includes("action")) return "action";
-  if (text.includes("rpg")) return "rpg";
-  if (text.includes("strategy")) return "strategy";
-  if (text.includes("adventure")) return "adventure";
-  if (text.includes("simulation")) return "simulation";
-  if (text.includes("platformer")) return "platformer";
-  if (text.includes("roguelike")) return "roguelike";
+  for (const genre of Object.values(GameGenre))
+    if (text.includes(genre.toLowerCase())) genres.push(genre);
 
-  return "action"; // Default genre
+  if (!genres.length) genres.push(GameGenre.ACTION);
+
+  return genres;
 }
 
-function determinePricing(title, description) {
+function determinePricing(title: string, description: string) {
   const text = (title + " " + description).toLowerCase();
   return text.includes("commercial") ||
     text.includes("paid") ||
@@ -285,11 +136,184 @@ function determinePricing(title, description) {
     : "free";
 }
 
-function generateImageUrl(id) {
+function generateImageUrl(id: string) {
   // Implement image URL extraction logic based on your needs
   // This could involve fetching the page and extracting og:image meta tag
   // For now, return empty string
   return `/images/games/${id}.jpg`;
+}
+
+async function scrapeGames() {
+  try {
+    // Fetch data from Algolia Hacker News API
+    // docs https://hn.algolia.com/api#:~:text=%7D-,Search,-Sorted%20by%20relevance
+    const from = checkpoint.fromTimestampInSeconds;
+    const to = checkpoint.toTimestampInSeconds;
+    const { data } = await axios.get(
+      `https://hn.algolia.com/api/v1/search_by_date`,
+      {
+        params: {
+          query: "game",
+          tags: "show_hn",
+          page: 0,
+          hitsPerPage: 1000, // max page size
+          numericFilters: `created_at_i>${from},created_at_i<${to}`,
+          // created_at_i>X
+          // created_at_i>X,created_at_i<Y
+        },
+      }
+    );
+
+    // preprocess data in response
+    const preprocItems = data.hits.map((item: any) => {
+      const title = stripHtml(item.title || "")
+        .result.replace(/–/g, "-")
+        .trim();
+      const story_text = stripHtml(item.story_text || "").result.trim();
+      const candidateGameUrls = item.url
+        ? [item.url]
+        : getUrls(story_text, { requireSchemeOrWww: false });
+      return {
+        ...item,
+        title,
+        story_text,
+        candidateGameUrls,
+      };
+    });
+
+    // Validate all items before processing
+    console.log("Validating stories...");
+    const blacklist = [
+      "game engine",
+      "game editor",
+      "games editor",
+      "game collection",
+      "game library",
+      "game maker",
+      // "board game", might exclude some valid games
+      // "card game", might exclude some valid games
+      "game of life",
+      "tutorial",
+      "ebook",
+      "course",
+      "framework",
+      "football game",
+      "for video game",
+      "nfl game",
+      "nhl game",
+      "sdk",
+      "editor",
+      "plugin",
+      "game of thrones",
+      "games of thrones",
+      "gamers",
+      "gamechanger",
+      "game-changer",
+      "gamestop",
+      "game development",
+      "game design",
+      "game theory",
+      "gameplay",
+      "emulator",
+      "games list",
+      "marketplace",
+      "toolkit"
+    ];
+    const itemsValidations = preprocItems.map((item: any) => ({
+      item,
+      isValid: true,
+    }));
+    for (let i = 0; i < itemsValidations.length; i++) {
+      const itemValidation = itemsValidations[i];
+
+      // validate against words blacklist
+      const lowTitle = itemValidation.item.title.toLowerCase();
+      if (blacklist.some((word) => lowTitle.includes(word))) {
+        itemValidation.isValid = false;
+        console.log(`Blacklist match: ${lowTitle}`);
+        continue;
+      }
+
+      // check for duplicates in this batch and archive
+      const nextItems = itemsValidations.slice(i + 1) as Array<any>;
+      const existingGames: Array<Pick<Game, "name" | "author" | "playUrl">> =
+        nextItems
+          .map((item: any) => ({
+            name: item.item.title,
+            author: item.item.author,
+            playUrl: item.item.url,
+          }))
+          .concat(archive);
+
+      const duplicate = existingGames.find(
+        (game) =>
+          // check for duplicate (title, author batches) pairs
+          (game.name === itemValidation.item.title &&
+            game.author === itemValidation.item.author) ||
+          // check for duplicate URLS
+          (game.playUrl != null && game.playUrl === itemValidation.item.url)
+      );
+      if (duplicate) {
+        itemValidation.isValid = false;
+        console.log(`Duplicate item detected: ${itemValidation.item.url}`);
+        continue;
+      }
+
+      // validate urls
+      let hasValidUrl = false;
+      for (const urlInDesc of itemValidation.item.candidateGameUrls) {
+        console.log(
+          "Validating " + i + "/" + itemsValidations.length,
+          urlInDesc
+        );
+        // filter out items with invalid URLs
+        if (await isValidGameUrl(urlInDesc)) {
+          hasValidUrl = true;
+          break;
+        }
+        await new Promise((resolve) => setTimeout(resolve, 200));
+      }
+      itemValidation.isValid = hasValidUrl;
+    }
+
+    //  transform into Game entities
+    const games = itemsValidations
+      .filter(({ isValid }: any) => isValid)
+      .map(({ item }: any) => {
+        const id = item.objectID;
+        const playUrl = item.candidateGameUrls[0] || "";
+        return {
+          id,
+          name: cleanTitle(item.title),
+          description: item.story_text || "",
+          platforms: determinePlatforms(
+            item.title,
+            item.story_text || "",
+            playUrl
+          ),
+          releaseDate: new Date(item.created_at),
+          playerModes: determinePlayerModes(item.title, item.story_text || ""),
+          author: item.author,
+          genres: determineGenres(item.title, item.story_text || ""),
+          hnUrl: `https://news.ycombinator.com/item?id=${item.objectID}`,
+          hnPoints: item.points || 0,
+          playUrl,
+          pricing: determinePricing(item.title, item.story_text || ""),
+          imageUrl: generateImageUrl(id) || "",
+        };
+      });
+
+    // Write to new.json
+    const outputPath = "./scripts/data/new.json";
+    await fs.writeFile(outputPath, JSON.stringify(games, null, 2));
+
+    console.log(`Successfully scraped ${itemsValidations.length} games`);
+    console.log(
+      `Filtered out ${itemsValidations.filter(({ isValid }: any) => !isValid).length} items`
+    );
+  } catch (error) {
+    console.error("Error scraping games: ", error);
+  }
 }
 
 // Run the scraper

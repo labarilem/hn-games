@@ -19,10 +19,13 @@ export default function GameFilters() {
   const mobileSortRef = useRef<HTMLSelectElement>(null);
   const desktopSortRef = useRef<HTMLSelectElement>(null);
 
-  const createQueryString = useCallback(
+  // Helper to always reset page to 1 when a filter changes
+  const createQueryStringWithPageReset = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams.toString());
       params.set(name, value);
+      // Always reset page to 1 if changing a filter (not if changing page itself)
+      if (name !== "page") params.set("page", "1");
       return params.toString();
     },
     [searchParams]
@@ -170,7 +173,7 @@ export default function GameFilters() {
               value={searchParams.get("platform") ?? ""}
               onChange={(e) =>
                 router.push(
-                  `/?${createQueryString("platform", e.target.value)}`
+                  `/?${createQueryStringWithPageReset("platform", e.target.value)}`
                 )
               }
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -188,7 +191,9 @@ export default function GameFilters() {
               name="genre"
               value={searchParams.get("genre") ?? ""}
               onChange={(e) =>
-                router.push(`/?${createQueryString("genre", e.target.value)}`)
+                router.push(
+                  `/?${createQueryStringWithPageReset("genre", e.target.value)}`
+                )
               }
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             >
@@ -206,7 +211,7 @@ export default function GameFilters() {
               value={searchParams.get("playerModes") ?? ""}
               onChange={(e) =>
                 router.push(
-                  `/?${createQueryString("playerModes", e.target.value)}`
+                  `/?${createQueryStringWithPageReset("playerModes", e.target.value)}`
                 )
               }
               className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -221,7 +226,9 @@ export default function GameFilters() {
               name="pricing"
               value={searchParams.get("pricing") ?? ""}
               onChange={(e) =>
-                router.push(`/?${createQueryString("pricing", e.target.value)}`)
+                router.push(
+                  `/?${createQueryStringWithPageReset("pricing", e.target.value)}`
+                )
               }
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             >
@@ -236,7 +243,9 @@ export default function GameFilters() {
               name="sortBy"
               defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
               onChange={(e) =>
-                router.push(`/?${createQueryString("sortBy", e.target.value)}`)
+                router.push(
+                  `/?${createQueryStringWithPageReset("sortBy", e.target.value)}`
+                )
               }
               className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             >
@@ -271,7 +280,9 @@ export default function GameFilters() {
             name="platform"
             value={searchParams.get("platform") ?? ""}
             onChange={(e) =>
-              router.push(`/?${createQueryString("platform", e.target.value)}`)
+              router.push(
+                `/?${createQueryStringWithPageReset("platform", e.target.value)}`
+              )
             }
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
           >
@@ -288,7 +299,9 @@ export default function GameFilters() {
             name="genre"
             value={searchParams.get("genre") ?? ""}
             onChange={(e) =>
-              router.push(`/?${createQueryString("genre", e.target.value)}`)
+              router.push(
+                `/?${createQueryStringWithPageReset("genre", e.target.value)}`
+              )
             }
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
           >
@@ -306,7 +319,7 @@ export default function GameFilters() {
             value={searchParams.get("playerModes") ?? ""}
             onChange={(e) =>
               router.push(
-                `/?${createQueryString("playerModes", e.target.value)}`
+                `/?${createQueryStringWithPageReset("playerModes", e.target.value)}`
               )
             }
             className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -321,7 +334,9 @@ export default function GameFilters() {
             name="pricing"
             value={searchParams.get("pricing") ?? ""}
             onChange={(e) =>
-              router.push(`/?${createQueryString("pricing", e.target.value)}`)
+              router.push(
+                `/?${createQueryStringWithPageReset("pricing", e.target.value)}`
+              )
             }
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
           >
@@ -336,7 +351,9 @@ export default function GameFilters() {
             name="sortBy"
             defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
             onChange={(e) =>
-              router.push(`/?${createQueryString("sortBy", e.target.value)}`)
+              router.push(
+                `/?${createQueryStringWithPageReset("sortBy", e.target.value)}`
+              )
             }
             className="inline-block bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
           >

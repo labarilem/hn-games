@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Game } from "../src/types/game";
+import { Game, GameGenre, PlayerMode } from "../src/types/game";
 
 type JsonGame = {
   id: string;
@@ -8,9 +8,9 @@ type JsonGame = {
   description: string;
   platforms: string[];
   releaseDate: string;
-  playerModes: string[];
+  playerModes: PlayerMode[];
   author: string;
-  genre: string;
+  genres: GameGenre[];
   hnUrl: string;
   hnPoints: number;
   playUrl: string;
@@ -21,6 +21,13 @@ type ToStrings<T> = { [K in keyof T]: string };
 
 const ARCHIVE_PATH = path.join(__dirname, "data/archive.json");
 const GAMES_TS_PATH = path.join(__dirname, "../src/data/games.ts");
+
+function sortSingleBeforeMulti(a: string, b: string) {
+    if (a === b) return 0; // no change if both are the same
+    if (a === PlayerMode.SINGLE) return -1; // single player comes first
+    if (b === PlayerMode.SINGLE) return 1;
+    return a.localeCompare(b); // sort alphabetically otherwise
+  }
 
 function convertJsonToTypescript(jsonGames: JsonGame[]): ToStrings<Game>[] {
   return jsonGames.map((game) => ({
@@ -36,9 +43,12 @@ function convertJsonToTypescript(jsonGames: JsonGame[]): ToStrings<Game>[] {
       .map((p: string) => `Platform.${p.toUpperCase()}`)
       .join(", ")}]`,
     playerModes: `[${game.playerModes
+      .sort(sortSingleBeforeMulti)
       .map((p: string) => `PlayerMode.${p.toUpperCase()}`)
       .join(", ")}]`,
-    genre: `GameGenre.${game.genre.toUpperCase()}`,
+    genres: `[${game.genres
+      .map((g: GameGenre) => `GameGenre.${g.toUpperCase()}`)
+      .join(", ")}]`,
     pricing: `Pricing.${game.pricing.toUpperCase()}`,
     releaseDate: `new Date("${game.releaseDate}")`,
   }));

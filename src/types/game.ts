@@ -36,9 +36,23 @@ export enum GameGenre {
   SIMULATION = "simulation",
   EDUCATIONAL = "educational",
   QUIZ = "quiz",
+  MMO = "mmo",
+  IDLE = "idle",
+  INCREMENTAL = "incremental",
+  SHOOTER = "shooter",
+  MEMORY = "memory",
+  KIDS = "kids",
+  MATH = "math",
+  TEXT = "text",
+  STEALTH = "stealth",
+  MUSIC = "music",
+  BOARD = "board",
+  TOWER_DEFENSE = "tower_defense",
+  COOPERATIVE = "cooperative",
+  SANDBOX = "sandbox",
 }
 
-export interface Game {
+export type Game = {
   id: string;
   name: string;
   description: string;
@@ -46,10 +60,10 @@ export interface Game {
   releaseDate: Date;
   playerModes: PlayerMode[];
   author: string;
-  genre: GameGenre;
+  genres: GameGenre[];
   hnUrl: string;
   hnPoints: number;
   playUrl: string;
   pricing: Pricing;
   imageUrl: string;
-}
+};

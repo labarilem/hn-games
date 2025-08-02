@@ -53,8 +53,9 @@ function validateGame(game: any): { isValid: boolean; error?: string } {
   }
 
   // Validate genre
-  if (!isValidEnum(GameGenre, game.genre)) {
-    return { isValid: false, error: "Invalid genre" };
+  for (const genre of game.genres) {
+    if (!isValidEnum(GameGenre, genre))
+      return { isValid: false, error: "Invalid genre: " + genre };
   }
 
   // Validate pricing
