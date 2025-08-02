@@ -252,7 +252,8 @@
     "author": "henhrk",
     "genres": [
       "strategy",
-      "card"
+      "card",
+      "roguelike"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=28105241",
     "hnPoints": 4,
@@ -4903,7 +4904,8 @@
     ],
     "author": "cdubzzz",
     "genres": [
-      "coding"
+      "coding",
+      "roguelike"
     ],
     "hnUrl": "https://news.ycombinator.com/item?id=11276940",
     "hnPoints": 17,

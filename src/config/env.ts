@@ -1,0 +1,1 @@
+export const basePublicUrl = "https://hackernews.games/";

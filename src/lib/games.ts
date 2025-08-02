@@ -2,27 +2,32 @@ import { games } from "@/data/games";
 import { immediatelyPlayableGames } from "../data/immediatelyPlayableGames";
 import { Game, GameGenre, Platform, PlayerMode } from "../types/game";
 
-export function getAllGamesCount() {
+export function getAllGamesCount(): number {
   return games.length;
 }
 
 export function getGameById(id: string): Game | undefined {
-  return games.find(game => game.id === id);
+  return games.find((game) => game.id === id);
 }
 
-// TODO: add types for searchParams and pagination
-export function getFilteredGames(
-  searchParams: {
-    [key: string]: string | string[] | undefined;
-  } & { playerModes?: PlayerMode; genre?: GameGenre }
-) {
+export type GameSearchParams = {
+  page?: string;
+  search?: string;
+  author?: string;
+  platform?: Platform;
+  genre?: GameGenre;
+  playerModes?: PlayerMode;
+  pricing?: string;
+  sortBy?: string;
+};
+export function getFilteredGames(searchParams: GameSearchParams) {
   let filteredGames = [...games];
   const itemsPerPage = 9;
-  const page = Number(searchParams.page) || 1;
+  const page = searchParams.page ? parseInt(searchParams.page) : 1;
 
   // Apply filters
   if (searchParams.search) {
-    const searchTerm = searchParams.search.toString().toLowerCase();
+    const searchTerm = searchParams.search.toLowerCase();
     filteredGames = filteredGames.filter(
       (game) =>
         game.name.toLowerCase().includes(searchTerm) ||

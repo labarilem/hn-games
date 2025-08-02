@@ -1,8 +1,9 @@
+import GameImageModal from "@/components/GameImageModal";
 import PlatformIcon from "@/components/PlatformIcon";
 import { getGameById } from "@/lib/games";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { createReportUrl } from "../../../lib/issues";
 
 interface GamePageProps {
   params: { gameId: string };
@@ -16,16 +17,7 @@ export default async function GamePage({ params }: GamePageProps) {
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
       <div className="bg-[#242424] rounded-lg overflow-hidden shadow-lg w-full">
-        <div className="aspect-video w-full">
-          <Image
-            src={game.imageUrl}
-            alt={game.name}
-            className="w-full h-full object-fill"
-            priority
-            width={1280}
-            height={720}
-          />
-        </div>
+        <GameImageModal imageUrl={game.imageUrl} name={game.name} />
 
         <div className="p-8 space-y-8">
           <div>
@@ -147,7 +139,7 @@ export default async function GamePage({ params }: GamePageProps) {
                 View on HN
               </a>
               <a
-                href={`https://github.com/labarilem/hn-games/issues/new?title=Report: ${encodeURIComponent(game.name)}&body=Game URL: ${encodeURIComponent(game.playUrl)}`}
+                href={createReportUrl(game.id)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-red-900/30 text-red-400 px-4 py-2.5 rounded text-center hover:bg-red-900/40 transition-colors border border-red-900"
