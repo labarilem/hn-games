@@ -1,23 +1,33 @@
 import { games } from "@/data/games";
-import { Platform, PlayerMode, Pricing } from "../types/game";
+import { immediatelyPlayableGames } from "../data/immediatelyPlayableGames";
+import { Game, GameGenre, Platform, PlayerMode } from "../types/game";
 
-export function getAllGamesCount() {
+export function getAllGamesCount(): number {
   return games.length;
 }
 
-// TODO: add types for searchParams and pagination
-export function getFilteredGames(
-  searchParams: {
-    [key: string]: string | string[] | undefined;
-  } & { playerModes?: PlayerMode }
-) {
+export function getGameById(id: string): Game | undefined {
+  return games.find((game) => game.id === id);
+}
+
+export type GameSearchParams = {
+  page?: string;
+  search?: string;
+  author?: string;
+  platform?: Platform;
+  genre?: GameGenre;
+  playerModes?: PlayerMode;
+  pricing?: string;
+  sortBy?: string;
+};
+export function getFilteredGames(searchParams: GameSearchParams) {
   let filteredGames = [...games];
   const itemsPerPage = 9;
-  const page = Number(searchParams.page) || 1;
+  const page = searchParams.page ? parseInt(searchParams.page) : 1;
 
   // Apply filters
   if (searchParams.search) {
-    const searchTerm = searchParams.search.toString().toLowerCase();
+    const searchTerm = searchParams.search.toLowerCase();
     filteredGames = filteredGames.filter(
       (game) =>
         game.name.toLowerCase().includes(searchTerm) ||
@@ -25,44 +35,41 @@ export function getFilteredGames(
     );
   }
 
-  if (searchParams.author) {
+  if (searchParams.author)
     filteredGames = filteredGames.filter(
       (game) => game.author === searchParams.author
     );
-  }
 
-  if (searchParams.platform) {
+  if (searchParams.platform)
     filteredGames = filteredGames.filter((game) =>
       game.platforms.includes(searchParams.platform as Platform)
     );
-  }
 
-  if (searchParams.genre) {
-    filteredGames = filteredGames.filter(
-      (game) => game.genre === searchParams.genre
+  if (searchParams.genre)
+    filteredGames = filteredGames.filter((game) =>
+      game.genres.some((g) => g === searchParams.genre)
     );
-  }
 
-  if (searchParams.playerModes) {
+  if (searchParams.playerModes)
     filteredGames = filteredGames.filter((game) =>
       game.playerModes.includes(searchParams.playerModes!)
     );
-  }
 
-  if (searchParams.pricing) {
+  if (searchParams.pricing)
     filteredGames = filteredGames.filter(
       (game) => game.pricing === searchParams.pricing
     );
-  }
 
   // Apply sorting
   const sortBy = searchParams.sortBy || "releaseDate-desc";
   switch (sortBy) {
     case "releaseDate-desc":
-      filteredGames.sort(
-        (a, b) =>
-          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
-      );
+      // Games are already statically sorted by desc releaseDate  by the compiler
+      // so we don't need to sort them again
+      // filteredGames.sort(
+      //   (a, b) =>
+      //     new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+      // );
       break;
     case "releaseDate-asc":
       filteredGames.sort(
@@ -95,19 +102,13 @@ export function getFilteredGames(
   };
 }
 
+// IDEA: provide a random game which can be immediately played
 export function getRandomFreeWebGame() {
-  // Filter games that are free and playable on web
-  const eligibleGames = games.filter(
-    (game) =>
-      game.pricing === Pricing.FREE && game.platforms.includes(Platform.WEB)
-  );
-
-  if (eligibleGames.length === 0) {
-    return null; // No eligible games
-  }
+  // No eligible games, shouldn't happen but just in case
+  if (immediatelyPlayableGames.length === 0) return null;
 
   // Pick a random game
-  const randomGame =
-    eligibleGames[Math.floor(Math.random() * eligibleGames.length)];
-  return randomGame;
+  return immediatelyPlayableGames[
+    Math.floor(Math.random() * immediatelyPlayableGames.length)
+  ];
 }

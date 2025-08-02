@@ -3,8 +3,8 @@
  */
 // converted with https://www.epochconverter.com/
 export default {
-  // Monday, January 1, 2018 12:00:00 AM
-  fromTimestampInSeconds: 1514764800,
-  // Tuesday, January 1, 2019 12:00:00 AM
-  toTimestampInSeconds: 1546300800,
+  // Friday, January 1, 2021 12:00:00 AM
+  fromTimestampInSeconds: 1609459200,
+  // Saturday, January 1, 2022 12:00:00 AM
+  toTimestampInSeconds: 1640995200,
 };

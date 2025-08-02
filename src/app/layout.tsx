@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 import Analytics from "@/components/Analytics";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} min-h-screen bg-[#1a1a1a]`}>
+      <body
+        className={`${inter.className} min-h-screen bg-[#1a1a1a] flex flex-col`}
+      >
         <Analytics />
         <nav className="bg-[#242424] shadow-md">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,7 +62,8 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
-        <main className="container mx-auto px-4 py-8">{children}</main>
+        <main className="container mx-auto px-4 py-8 flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );
