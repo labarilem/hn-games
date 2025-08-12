@@ -1,0 +1,56 @@
+{
+  "name": "hn-games",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write .",
+    "clean": "rm -rf .next",
+    "scrape": "tsx scripts/scrape.ts 2>&1 | tee log.txt",
+    "filter": "node scripts/filter.js",
+    "archive": "tsx scripts/archive.ts 2>&1 | tee log.txt",
+    "compile": "tsx scripts/compile.ts",
+    "check-images": "tsx scripts/check-images.ts",
+    "check-ids": "tsx scripts/check-ids.ts",
+    "check-links": "node scripts/check-links.js 2>&1 | tee log.txt"
+  },
+  "dependencies": {
+    "@vercel/og": "^0.6.5",
+    "chart.js": "^4.5.0",
+    "date-fns": "^3.3.1",
+    "lodash.debounce": "^4.0.8",
+    "new-github-issue-url": "^1.1.0",
+    "next": "^14.2.26",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.52",
+    "@types/react-dom": "^18.2.18",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "autoprefixer": "^10.4.17",
+    "axios": "^1.8.2",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "get-urls": "^12.1.0",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "string-strip-html": "^13.4.8",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.3",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}
