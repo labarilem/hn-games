@@ -4,6 +4,7 @@ import { GameGenre } from "@/types/game";
 import debounce from "lodash.debounce";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
+import { formatGenre, formatGenreForFilter } from "@/lib/formatters";
 
 export default function GameFilters() {
   const router = useRouter();
@@ -210,7 +211,7 @@ export default function GameFilters() {
               <option value="">All Genres</option>
               {Object.values(GameGenre).map((genre) => (
                 <option key={genre} value={genre}>
-                  {genre.charAt(0).toUpperCase() + genre.slice(1)}
+                  {formatGenreForFilter(genre)}
                 </option>
               ))}
             </select>
@@ -318,7 +319,7 @@ export default function GameFilters() {
             <option value="">All Genres</option>
             {Object.values(GameGenre).map((genre) => (
               <option key={genre} value={genre}>
-                {genre.charAt(0).toUpperCase() + genre.slice(1)}
+                {formatGenreForFilter(genre)}
               </option>
             ))}
           </select>

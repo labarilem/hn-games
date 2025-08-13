@@ -1,5 +1,6 @@
 import GameImageModal from "@/components/GameImageModal";
 import PlatformIcon from "@/components/PlatformIcon";
+import { formatGenre } from "@/lib/formatters";
 import { getGameById } from "@/lib/games";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -51,7 +52,7 @@ export default async function GamePage({ params }: GamePageProps) {
                     href={`/?genre=${genre}`}
                     className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors cursor-pointer"
                   >
-                    {genre}
+                    {formatGenre(genre)}
                   </Link>
                 ))}
               </div>

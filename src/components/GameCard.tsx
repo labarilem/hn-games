@@ -3,6 +3,7 @@
 import { Game, Pricing } from "@/types/game";
 import Link from "next/link";
 import PlatformIcon from "./PlatformIcon";
+import { formatGenre } from "@/lib/formatters";
 
 interface GameCardProps {
   game: Game;
@@ -109,7 +110,7 @@ export default function GameCard({ game }: GameCardProps) {
                   href={`/?genre=${genre}`}
                   className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors"
                 >
-                  {genre}
+                  {formatGenre(genre)}
                 </Link>
               ))}
               {game.playerModes.map((mode) => (
