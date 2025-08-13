@@ -2,7 +2,21 @@
     import { Game, GameGenre, Platform, PlayerMode, Pricing } from "@/types/game";
     
     export const games: Game[] = [
-        {id: "34160801",
+        {id: "44878044",
+name: "Hit21",
+description: "Play classic Blackjack 21 against the dealer with a provably fair system",
+author: "pompeii",
+hnPoints: 2,
+hnUrl: "https://news.ycombinator.com/item?id=44878044",
+imageUrl: "/images/games/44878044.jpg",
+playUrl: "https://apps.apple.com/us/app/hit21-blackjack-game/id6740510784",
+platforms: [Platform.IOS],
+playerModes: [PlayerMode.SINGLE],
+genres: [GameGenre.CARD, GameGenre.STRATEGY],
+pricing: Pricing.FREE,
+releaseDate: new Date("2025-08-12T15:55:59.000Z"),
+isActive: true,},
+{id: "34160801",
 name: "Listen To The Ocean",
 description: "Catch harmful waste before fisehs eat it",
 author: "neontomo",

@@ -12,19 +12,25 @@ npm run dev
 
 ## Scraping
 
-1. Scrape new games:
+1. Scrape new games based on time range checkpoints:
 
    ```bash
-   npm run scrape
+      npm run scrape
    ```
 
-   results are saved in `scripts/data/new.json`.
+   or scrape a single game by id:
+
+   ```bash
+   npm run scrape-single -- --id XXXXXXXX
+   ```
+
+results are saved in `scripts/data/new.json`.
 
 2. Manually filter the new games:
 
-```bash
-npm run filter
-```
+   ```bash
+   npm run filter
+   ```
 
 results are saved in `scripts/data/new.json`.
 

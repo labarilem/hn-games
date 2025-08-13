@@ -11,6 +11,7 @@
     "format": "prettier --write .",
     "clean": "rm -rf .next",
     "scrape": "tsx scripts/scrape.ts 2>&1 | tee log.txt",
+    "scrape-single": "tsx scripts/scrape.ts",
     "filter": "node scripts/filter.js",
     "archive": "tsx scripts/archive.ts 2>&1 | tee log.txt",
     "compile": "tsx scripts/compile.ts",
