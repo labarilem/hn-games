@@ -76,7 +76,7 @@ function compileToTs(
   jsonPath: string,
   tsPath: string,
   opts: { isActive: boolean }
-): void {
+): Game[] {
   // Read archive.json
   const jsonContent = fs.readFileSync(jsonPath, "utf-8");
   const jsonGames = JSON.parse(jsonContent);
@@ -88,14 +88,44 @@ function compileToTs(
   console.log(
     `Compiled ${typescriptGames.length} games from ${path.basename(jsonPath)} to ${path.basename(tsPath)}`
   );
+  return jsonGames;
+}
+
+function compileStatsToTs(games: Game[], ripGames: Game[], tsPath: string) {
+  // base stats
+  let compiledStats = `
+import { games } from "./games";
+import { games as ripGames } from "./ripGames";
+
+export const totalGamesCount = games.length;
+export const totalRipGamesCount = ripGames.length;
+    
+`;
+
+  // games count by year
+  const gamesCountByYear = games.reduce(
+    (acc: { [key: string]: number }, game) => {
+      const year = new Date(game.releaseDate).getFullYear();
+      acc[year] = (acc[year] || 0) + 1;
+      return acc;
+    },
+    {}
+  );
+  compiledStats += `export const gamesCountByYear = ${JSON.stringify(gamesCountByYear)};`;
+
+  fs.writeFileSync(tsPath, compiledStats);
+  console.log(`Compiled stats to ${path.basename(tsPath)}`);
 }
 
 function main() {
+  let games: Game[] = [];
+  let ripGames: Game[] = [];
+
   // archive
   try {
     const ARCHIVE_PATH = path.join(__dirname, "data/archive.json");
     const GAMES_TS_PATH = path.join(__dirname, "../src/data/games.ts");
-    compileToTs(ARCHIVE_PATH, GAMES_TS_PATH, { isActive: true });
+    games = compileToTs(ARCHIVE_PATH, GAMES_TS_PATH, { isActive: true });
   } catch (error) {
     console.error("Error compiling games:", error);
     process.exit(1);
@@ -105,9 +135,18 @@ function main() {
   try {
     const RIP_PATH = path.join(__dirname, "data/rip.json");
     const RIP_TS_PATH = path.join(__dirname, "../src/data/ripGames.ts");
-    compileToTs(RIP_PATH, RIP_TS_PATH, { isActive: false });
+    ripGames = compileToTs(RIP_PATH, RIP_TS_PATH, { isActive: false });
   } catch (error) {
     console.error("Error compiling RIP games:", error);
+    process.exit(1);
+  }
+
+  // stats
+  try {
+    const STATS_PATH = path.join(__dirname, "../src/data/stats.ts");
+    compileStatsToTs(games, ripGames, STATS_PATH);
+  } catch (error) {
+    console.error("Error compiling stats:", error);
     process.exit(1);
   }
 }
