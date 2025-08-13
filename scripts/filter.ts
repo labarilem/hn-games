@@ -3,15 +3,15 @@
  * The filtered games are saved back to the same file.
  */
 
-const fs = require("fs").promises;
-const readline = require("readline");
+import * as fs from "fs/promises";
+import readline from "readline/promises";
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-async function filterGames(jsonPath) {
+async function filterGames(jsonPath: string) {
   try {
     // Read and parse the JSON file
     const data = await fs.readFile(jsonPath, "utf8");
@@ -33,11 +33,9 @@ async function filterGames(jsonPath) {
       process.stdout.write(`[${i + 1}/${totalGames}] ${game.name}\n`);
 
       // Get user input
-      const answer = await new Promise((resolve) => {
-        rl.question("Keep this game? [Y/n]: ", (answer) =>
-          resolve(answer.toLowerCase())
-        );
-      });
+      const answer = (
+        await rl.question("Keep this game? [Y/n]: ")
+      ).toLowerCase();
 
       // Keep game if response is Y or empty
       if (answer === "" || answer === "y") {
