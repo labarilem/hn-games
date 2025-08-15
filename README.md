@@ -90,6 +90,14 @@ Check ids consistency with other game props like hnUrl and imageUrl:
 npm run check-ids
 ```
 
+## Update points 
+
+Update points of HN posts submitted in the last month:
+
+```bash
+npm run update-points
+```
+
 ## Licenses
 
 Source code license: `CODE_LICENSE.txt`

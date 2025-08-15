@@ -17,7 +17,8 @@
     "compile": "tsx scripts/compile.ts",
     "check-images": "tsx scripts/check-images.ts",
     "check-ids": "tsx scripts/check-ids.ts",
-    "check-links": "node scripts/check-links.js 2>&1 | tee log.txt"
+    "check-links": "tsx scripts/check-links.ts 2>&1 | tee log.txt",
+    "update-points": "tsx scripts/update-points.ts"
   },
   "dependencies": {
     "@vercel/og": "^0.6.5",
