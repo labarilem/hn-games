@@ -50,7 +50,7 @@ results are saved in `scripts/data/new.json`.
    npm run compile
    ```
 
-## Link checking (TODO)
+## Link checking
 
 Check all links:
 
