@@ -1,7 +1,13 @@
 import { games } from "@/data/games";
 import { games as ripGames } from "@/data/ripGames";
 import { immediatelyPlayableGames } from "../data/immediatelyPlayableGames";
-import { Game, GameGenre, Platform, PlayerMode } from "../types/game";
+import {
+  Game,
+  GameGenre,
+  LicenseType,
+  Platform,
+  PlayerMode,
+} from "../types/game";
 
 export function getGameById(id: string): Game | undefined {
   return games.find((g) => g.id === id) || ripGames.find((g) => g.id === id);
@@ -15,6 +21,7 @@ export type GameSearchParams = {
   genre?: GameGenre;
   playerModes?: PlayerMode;
   pricing?: string;
+  license?: LicenseType;
   sortBy?: string;
 };
 
@@ -57,6 +64,13 @@ export function filterGames(gamesList: Game[], searchParams: GameSearchParams) {
   if (searchParams.pricing)
     filteredGames = filteredGames.filter(
       (game) => game.pricing === searchParams.pricing
+    );
+
+  if (searchParams.license)
+    filteredGames = filteredGames.filter((game) =>
+      searchParams.license === LicenseType.OPEN
+        ? game.sourceCodeUrl !== null
+        : game.sourceCodeUrl === null
     );
 
   // Apply sorting

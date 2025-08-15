@@ -13,42 +13,45 @@ const OUTPUT_PATH = "./scripts/data/new.json";
 // Load archive.json
 const archive: Game[] = JSON.parse(readFileSync(ARCHIVE_PATH, "utf-8"));
 
-async function isValidGameUrl(url: string) {
-  if (!url) return true; // Consider empty URLs as valid (they'll become empty strings in the entity)
-
-  const headers = {
-    "User-Agent":
-      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
-  };
+async function isValidGameUrl(
+  url: string
+): Promise<{ isValid: boolean; responseText: string }> {
+  if (!url) return { isValid: true, responseText: "" }; // Consider empty URLs as valid (they'll become empty strings in the entity)
 
   try {
     // NOTE: cloudflare filter is hard to implement, so we'll just ignore it for now
     const res = await axios.get(url, {
-      headers,
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
+      },
       timeout: 5000, // 5 seconds
       maxRedirects: 5,
       validateStatus: (status) => status >= 200 && status < 400, // Consider 2xx and 3xx as valid
     });
-    res;
+
     if (!res.data) {
       console.log(`Invalid URL (empty response body): ${url}`);
-      return false;
+      return { isValid: false, responseText: "" };
     }
 
-    const blacklist = ["Porkbun Marketplace"];
-    if (blacklist.some((b) => res.data.includes(b))) {
+    const responseText =
+      typeof res.data === "string" ? res.data : JSON.stringify(res.data);
+
+    const parkedDomainsBlacklist = ["Porkbun Marketplace"];
+    if (parkedDomainsBlacklist.some((b) => responseText.includes(b))) {
       console.log(`Invalid URL (blacklisted content): ${url}`);
-      return false;
+      return { isValid: false, responseText };
     }
 
-    return true;
+    return { isValid: true, responseText };
   } catch (error) {
     const msg =
       error && typeof error === "object" && "message" in error
         ? error.message
         : "Unknown error";
     console.log(`Invalid URL (${msg}): ${url}`);
-    return false;
+    return { isValid: false, responseText: "" };
   }
 }
 
@@ -143,6 +146,43 @@ function generateImageUrl(id: string) {
   return `/images/games/${id}.jpg`;
 }
 
+function getSourceCodeUrl(item: any, playUrl: string, responseText: string) {
+  let sourceCodeUrl = null;
+
+  // check urls
+  sourceCodeUrl =
+    item.candidateGameUrls.find(
+      (x: string) => x.includes("github.com") || x.includes("gitlab.com")
+    ) || null;
+  if (sourceCodeUrl) return sourceCodeUrl;
+
+  // check story text
+  if (item.story_text) {
+    const lowerStoryText = item.story_text.toLowerCase();
+    const indicators = ["github", "gitlab", "source", "open"];
+    const isOs = indicators.some((indicator) =>
+      lowerStoryText.includes(indicator)
+    );
+    if (isOs) return true;
+  }
+
+  // check response text
+  if (responseText) {
+    const lowerResponseText = responseText.toLowerCase();
+    const positiveIndicators = ["open source", "open-source", "source code"];
+    const negativeIndicators = [
+      "closed source",
+      "not open source",
+      "not open-source",
+    ];
+    const isOs =  positiveIndicators.some((indicator) => lowerResponseText.includes(indicator)) &&
+      !negativeIndicators.some((indicator) => lowerResponseText.includes(indicator));
+    if (isOs) return true;
+  }
+
+  return sourceCodeUrl;
+}
+
 async function scrapeSingleGame(gameId: string) {
   try {
     // Fetch single item from Algolia Hacker News API
@@ -187,10 +227,15 @@ async function scrapeGames(apiItems: any[]) {
     const title = stripHtml(item.title || "")
       .result.replace(/–/g, "-")
       .trim();
-    const story_text = stripHtml(item.story_text || item.text || "").result.trim();
+    const story_text = stripHtml(
+      item.story_text || item.text || ""
+    ).result.trim();
+    const urlsInText = Array.from(
+      getUrls(story_text, { requireSchemeOrWww: false })
+    );
     const candidateGameUrls = item.url
-      ? [item.url]
-      : Array.from(getUrls(story_text, { requireSchemeOrWww: false }));
+      ? [item.url].concat(urlsInText)
+      : urlsInText;
     return {
       ...item,
       title,
@@ -240,6 +285,8 @@ async function scrapeGames(apiItems: any[]) {
   const itemsValidations = preprocItems.map((item: any) => ({
     item,
     isValid: true,
+    responseText: "",
+    validUrl: "",
   }));
   for (let i = 0; i < itemsValidations.length; i++) {
     const itemValidation = itemsValidations[i];
@@ -279,11 +326,14 @@ async function scrapeGames(apiItems: any[]) {
 
     // validate urls
     let hasValidUrl = false;
+    // item is considered valid if at least one URL is valid
     for (const urlInDesc of itemValidation.item.candidateGameUrls) {
       console.log("Validating " + i + "/" + itemsValidations.length, urlInDesc);
       // filter out items with invalid URLs
-      if (await isValidGameUrl(urlInDesc)) {
+      const urlValidation = await isValidGameUrl(urlInDesc);
+      if (urlValidation.isValid) {
         hasValidUrl = true;
+        itemValidation.validUrl = urlInDesc;
         break;
       }
       await new Promise((resolve) => setTimeout(resolve, 200));
@@ -294,9 +344,9 @@ async function scrapeGames(apiItems: any[]) {
   //  transform into Game entities
   const games = itemsValidations
     .filter(({ isValid }: any) => isValid)
-    .map(({ item }: any) => {
+    .map(({ item, validUrl, responseText }: any) => {
       const id = item.story_id.toString();
-      const playUrl = item.candidateGameUrls[0] || "";
+      const playUrl = validUrl || "";
       return {
         id,
         name: cleanTitle(item.title),
@@ -310,11 +360,12 @@ async function scrapeGames(apiItems: any[]) {
         playerModes: determinePlayerModes(item.title, item.story_text || ""),
         author: item.author,
         genres: determineGenres(item.title, item.story_text || ""),
-        hnUrl: `https://news.ycombinator.com/item?id=${item.id}`,
+        hnUrl: `https://news.ycombinator.com/item?id=${id}`,
         hnPoints: item.points || 0,
         playUrl,
         pricing: determinePricing(item.title, item.story_text || ""),
         imageUrl: generateImageUrl(id) || "",
+        sourceCodeUrl: getSourceCodeUrl(item, playUrl, responseText),
       };
     });
 

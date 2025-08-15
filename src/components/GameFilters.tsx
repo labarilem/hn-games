@@ -1,10 +1,10 @@
 "use client";
 
+import { formatGenreForFilter } from "@/lib/formatters";
 import { GameGenre } from "@/types/game";
 import debounce from "lodash.debounce";
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback, useRef, useState } from "react";
-import { formatGenre, formatGenreForFilter } from "@/lib/formatters";
 
 export default function GameFilters() {
   const router = useRouter();
@@ -113,6 +113,7 @@ export default function GameFilters() {
     searchParams.get("genre"),
     searchParams.get("playerModes"),
     searchParams.get("pricing"),
+    searchParams.get("license"),
     searchParams.get("sortBy"),
     searchParams.get("search"),
     searchParams.get("author"),
@@ -184,7 +185,9 @@ export default function GameFilters() {
               value={searchParams.get("platform") ?? ""}
               onChange={(e) =>
                 router.push(
-                  createNavigationPath(createQueryStringWithPageReset("platform", e.target.value))
+                  createNavigationPath(
+                    createQueryStringWithPageReset("platform", e.target.value)
+                  )
                 )
               }
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -203,7 +206,9 @@ export default function GameFilters() {
               value={searchParams.get("genre") ?? ""}
               onChange={(e) =>
                 router.push(
-                  createNavigationPath(createQueryStringWithPageReset("genre", e.target.value))
+                  createNavigationPath(
+                    createQueryStringWithPageReset("genre", e.target.value)
+                  )
                 )
               }
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -222,7 +227,12 @@ export default function GameFilters() {
               value={searchParams.get("playerModes") ?? ""}
               onChange={(e) =>
                 router.push(
-                  createNavigationPath(createQueryStringWithPageReset("playerModes", e.target.value))
+                  createNavigationPath(
+                    createQueryStringWithPageReset(
+                      "playerModes",
+                      e.target.value
+                    )
+                  )
                 )
               }
               className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -238,14 +248,34 @@ export default function GameFilters() {
               value={searchParams.get("pricing") ?? ""}
               onChange={(e) =>
                 router.push(
-                  createNavigationPath(createQueryStringWithPageReset("pricing", e.target.value))
+                  createNavigationPath(
+                    createQueryStringWithPageReset("pricing", e.target.value)
+                  )
                 )
               }
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             >
-              <option value="">All Pricing</option>
+              <option value="">Any Pricing</option>
               <option value="free">Free</option>
               <option value="paid">Paid</option>
+            </select>
+
+            {/* License Select */}
+            <select
+              name="license"
+              value={searchParams.get("license") ?? ""}
+              onChange={(e) =>
+                router.push(
+                  createNavigationPath(
+                    createQueryStringWithPageReset("license", e.target.value)
+                  )
+                )
+              }
+              className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            >
+              <option value="">Any License</option>
+              <option value="open">Open Source</option>
+              <option value="closed">Closed Source</option>
             </select>
 
             {/* Sort By Select */}
@@ -255,7 +285,9 @@ export default function GameFilters() {
               defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
               onChange={(e) =>
                 router.push(
-                  createNavigationPath(createQueryStringWithPageReset("sortBy", e.target.value))
+                  createNavigationPath(
+                    createQueryStringWithPageReset("sortBy", e.target.value)
+                  )
                 )
               }
               className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -292,7 +324,9 @@ export default function GameFilters() {
             value={searchParams.get("platform") ?? ""}
             onChange={(e) =>
               router.push(
-                createNavigationPath(createQueryStringWithPageReset("platform", e.target.value))
+                createNavigationPath(
+                  createQueryStringWithPageReset("platform", e.target.value)
+                )
               )
             }
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -311,7 +345,9 @@ export default function GameFilters() {
             value={searchParams.get("genre") ?? ""}
             onChange={(e) =>
               router.push(
-                createNavigationPath(createQueryStringWithPageReset("genre", e.target.value))
+                createNavigationPath(
+                  createQueryStringWithPageReset("genre", e.target.value)
+                )
               )
             }
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -330,7 +366,9 @@ export default function GameFilters() {
             value={searchParams.get("playerModes") ?? ""}
             onChange={(e) =>
               router.push(
-                createNavigationPath(createQueryStringWithPageReset("playerModes", e.target.value))
+                createNavigationPath(
+                  createQueryStringWithPageReset("playerModes", e.target.value)
+                )
               )
             }
             className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
@@ -346,14 +384,34 @@ export default function GameFilters() {
             value={searchParams.get("pricing") ?? ""}
             onChange={(e) =>
               router.push(
-                createNavigationPath(createQueryStringWithPageReset("pricing", e.target.value))
+                createNavigationPath(
+                  createQueryStringWithPageReset("pricing", e.target.value)
+                )
               )
             }
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
           >
-            <option value="">All Pricing</option>
+            <option value="">Any Pricing</option>
             <option value="free">Free</option>
             <option value="paid">Paid</option>
+          </select>
+
+          {/* License Select */}
+          <select
+            name="license"
+            value={searchParams.get("license") ?? ""}
+            onChange={(e) =>
+              router.push(
+                createNavigationPath(
+                  createQueryStringWithPageReset("license", e.target.value)
+                )
+              )
+            }
+            className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+          >
+            <option value="">Any License</option>
+            <option value="open">Open Source</option>
+            <option value="closed">Closed Source</option>
           </select>
 
           {/* Sort By Select */}
@@ -363,7 +421,9 @@ export default function GameFilters() {
             defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
             onChange={(e) =>
               router.push(
-                createNavigationPath(createQueryStringWithPageReset("sortBy", e.target.value))
+                createNavigationPath(
+                  createQueryStringWithPageReset("sortBy", e.target.value)
+                )
               )
             }
             className="inline-block bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"

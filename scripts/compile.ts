@@ -16,6 +16,7 @@ type JsonGame = {
   playUrl: string;
   pricing: string;
   imageUrl: string;
+  sourceCodeUrl: string | null;
 };
 type ToStrings<T> = { [K in keyof T]: string };
 
@@ -52,6 +53,9 @@ function convertJsonToTypescript(
     pricing: `Pricing.${game.pricing.toUpperCase()}`,
     releaseDate: `new Date("${game.releaseDate}")`,
     isActive: isActive.toString(),
+    sourceCodeUrl: game.sourceCodeUrl
+      ? `"${game.sourceCodeUrl}"`
+      : "null",
   }));
 }
 

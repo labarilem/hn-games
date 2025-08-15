@@ -12,6 +12,23 @@
     "hnPoints": 1,
     "playUrl": "https://itunes.apple.com/us/app/achi-strategy-game/id1393799957?ls=1&mt=8",
     "pricing": "paid",
-    "imageUrl": "/images/games/18316124.jpg"
+    "imageUrl": "/images/games/18316124.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "7191187",
+    "name": "Eliss Lines",
+    "description": "A physics drawing puzzle that challenges your strategic thinking",
+    "platforms": ["web"],
+    "releaseDate": "2014-02-06T16:34:32.000Z",
+    "playerModes": ["single"],
+    "author": "phest",
+    "genres": ["puzzle", "math"],
+    "hnUrl": "https://news.ycombinator.com/item?id=7191187",
+    "hnPoints": 214,
+    "playUrl": "http://www.toucheliss.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7191187.jpg",
+    "sourceCodeUrl": null
   }
 ]

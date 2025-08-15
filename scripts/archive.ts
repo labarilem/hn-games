@@ -82,6 +82,11 @@ function validateGame(game: any): { isValid: boolean; error?: string } {
     return { isValid: false, error: "Missing image file" };
   }
 
+  // Validate sourceCodeUrl
+  if (game.sourceCodeUrl !== null && typeof game.sourceCodeUrl !== "string") {
+    return { isValid: false, error: "Invalid sourceCodeUrl" };
+  }
+
   return { isValid: true };
 }
 

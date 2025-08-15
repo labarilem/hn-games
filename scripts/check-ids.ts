@@ -4,9 +4,13 @@ import { Game } from "../src/types/game";
 
 // Paths
 const ARCHIVE_PATH = path.join(__dirname, "data/archive.json");
+const RIP_PATH = path.join(__dirname, "data/rip.json");
 
 // Load archive.json
 const archive: Game[] = JSON.parse(fs.readFileSync(ARCHIVE_PATH, "utf-8"));
+
+// Load rip.json
+const rip: Game[] = JSON.parse(fs.readFileSync(RIP_PATH, "utf-8"));
 
 function getIdFromImageUrl(imageUrl: string): string | null {
   const filename = path.basename(imageUrl);
@@ -25,7 +29,7 @@ function getIdFromHnUrl(hnUrl: string): string | null {
 const inconsistencies: { game: Game; issue: string }[] = [];
 
 // Check each game for consistency
-archive.forEach((game) => {
+archive.concat(rip).forEach((game) => {
   // Check image URL consistency
   const imageId = getIdFromImageUrl(game.imageUrl);
   if (imageId !== game.id) {

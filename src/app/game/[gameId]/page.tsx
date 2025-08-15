@@ -141,6 +141,16 @@ export default async function GamePage({ params }: GamePageProps) {
               >
                 View on HN
               </a>
+              {game.sourceCodeUrl && (
+                <a
+                  href={game.sourceCodeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 bg-[#1a1a1a] text-white px-4 py-2.5 rounded text-center hover:bg-[#2a2a2a] transition-colors border border-[#363636]"
+                >
+                  Source Code
+                </a>
+              )}
               <a
                 href={createReportUrl(game.id)}
                 target="_blank"

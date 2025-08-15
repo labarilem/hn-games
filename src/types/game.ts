@@ -16,6 +16,11 @@ export enum Pricing {
   PAID = "paid",
 }
 
+export enum LicenseType {
+  OPEN = "open",
+  CLOSED = "closed"
+}
+
 export enum GameGenre {
   WORD = "word",
   ROGUELIKE = "roguelike",
@@ -69,4 +74,5 @@ export type Game = {
   pricing: Pricing;
   imageUrl: string;
   isActive: boolean;
+  sourceCodeUrl: string | null;
 };
