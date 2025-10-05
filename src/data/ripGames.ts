@@ -2,7 +2,22 @@
     import { Game, GameGenre, Platform, PlayerMode, Pricing } from "@/types/game";
     
     export const games: Game[] = [
-        {id: "18316124",
+        {id: "31555772",
+name: "Geography Game",
+description: "Guess where the nation is on the world map",
+author: "artperkitny",
+hnPoints: 1,
+hnUrl: "https://news.ycombinator.com/item?id=31555772",
+imageUrl: "/images/games/31555772.jpg",
+playUrl: "https://www.geography-game.com",
+platforms: [Platform.WEB],
+playerModes: [PlayerMode.SINGLE],
+genres: [GameGenre.QUIZ, GameGenre.EDUCATIONAL, GameGenre.GEOGRAPHY],
+pricing: Pricing.FREE,
+releaseDate: new Date("2022-05-30T05:39:50.000Z"),
+isActive: false,
+sourceCodeUrl: null,},
+{id: "18316124",
 name: "Achi",
 description: "Tic-tac-toe with a twist",
 author: "gsurma",

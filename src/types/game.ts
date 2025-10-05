@@ -57,6 +57,7 @@ export enum GameGenre {
   SANDBOX = "sandbox",
   DRIVING = "driving",
   DAILY = "daily",
+  GEOGRAPHY = "geography",
 }
 
 export type Game = {

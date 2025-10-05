@@ -1,5 +1,21 @@
 [
   {
+    "id": "31555772",
+    "name": "Geography Game",
+    "description": "Guess where the nation is on the world map",
+    "platforms": ["web"],
+    "releaseDate": "2022-05-30T05:39:50.000Z",
+    "playerModes": ["single"],
+    "author": "artperkitny",
+    "genres": ["quiz", "educational", "geography"],
+    "hnUrl": "https://news.ycombinator.com/item?id=31555772",
+    "hnPoints": 1,
+    "playUrl": "https://www.geography-game.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/31555772.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "18316124",
     "name": "Achi",
     "description": "Tic-tac-toe with a twist",
