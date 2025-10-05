@@ -19,6 +19,24 @@ const Pagination: React.FC<PaginationProps> = ({
 }) => {
   const pathname = usePathname();
   const [maxPages, setMaxPages] = useState(10);
+
+  // Helper function to build URL with all search parameters preserved
+  const buildPageUrl = (pageNumber: number) => {
+    const params = new URLSearchParams();
+    params.set('page', pageNumber.toString());
+    
+    // Preserve all existing search parameters
+    if (searchParams.search) params.set('search', searchParams.search as string);
+    if (searchParams.platform) params.set('platform', searchParams.platform as string);
+    if (searchParams.genre) params.set('genre', searchParams.genre as string);
+    if (searchParams.sortBy) params.set('sortBy', searchParams.sortBy as string);
+    if (searchParams.playerModes) params.set('playerModes', searchParams.playerModes as string);
+    if (searchParams.pricing) params.set('pricing', searchParams.pricing as string);
+    if (searchParams.license) params.set('license', searchParams.license as string);
+    if (searchParams.author) params.set('author', searchParams.author as string);
+    
+    return `${pathname}?${params.toString()}`;
+  };
   useEffect(() => {
     const checkMobile = () => {
       setMaxPages(window.innerWidth < 768 ? 1 : 10);
@@ -58,7 +76,7 @@ const Pagination: React.FC<PaginationProps> = ({
     <div className="flex justify-center gap-2 mt-8">
       {pagination.hasPreviousPage && (
         <a
-          href={`${pathname}?page=${currentPage - 1}`}
+          href={buildPageUrl(currentPage - 1)}
           className="px-4 py-2 rounded-lg bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white transition-colors flex items-center justify-center"
           aria-label="Previous page"
         >
@@ -82,11 +100,7 @@ const Pagination: React.FC<PaginationProps> = ({
         typeof page === "number" ? (
           <a
             key={page}
-            href={`${pathname}?page=${page}${searchParams.search ? `&search=${searchParams.search}` : ""}${
-              searchParams.platform ? `&platform=${searchParams.platform}` : ""
-            }${searchParams.genre ? `&genre=${searchParams.genre}` : ""}${
-              searchParams.sortBy ? `&sortBy=${searchParams.sortBy}` : ""
-            }`}
+            href={buildPageUrl(page)}
             className={`px-4 py-2 rounded-lg transition-colors ${
               currentPage === page
                 ? "bg-[#646cff] text-white"
@@ -106,7 +120,7 @@ const Pagination: React.FC<PaginationProps> = ({
       )}
       {pagination.hasNextPage && (
         <a
-          href={`${pathname}?page=${currentPage + 1}`}
+          href={buildPageUrl(currentPage + 1)}
           className="px-4 py-2 rounded-lg bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white transition-colors flex items-center justify-center"
           aria-label="Next page"
         >
