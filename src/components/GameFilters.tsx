@@ -214,11 +214,13 @@ export default function GameFilters() {
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             >
               <option value="">All Genres</option>
-              {Object.values(GameGenre).sort((a,b) => a.localeCompare(b)).map((genre) => (
-                <option key={genre} value={genre}>
-                  {formatGenreForFilter(genre)}
-                </option>
-              ))}
+              {Object.values(GameGenre)
+                .sort((a, b) => a.localeCompare(b))
+                .map((genre) => (
+                  <option key={genre} value={genre}>
+                    {formatGenreForFilter(genre)}
+                  </option>
+                ))}
             </select>
 
             {/* Player Mode Select */}
@@ -256,8 +258,9 @@ export default function GameFilters() {
               className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
             >
               <option value="">Any Pricing</option>
-              <option value="free">Free</option>
-              <option value="paid">Paid</option>
+              <option value={Pricing.FREE}>Free</option>
+              <option value={Pricing.FREEMIUM}>Freemium</option>
+              <option value={Pricing.PAID}>Paid</option>
             </select>
 
             {/* License Select */}
@@ -353,11 +356,13 @@ export default function GameFilters() {
             className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
           >
             <option value="">All Genres</option>
-            {Object.values(GameGenre).sort((a,b) => a.localeCompare(b)).map((genre) => (
-              <option key={genre} value={genre}>
-                {formatGenreForFilter(genre)}
-              </option>
-            ))}
+            {Object.values(GameGenre)
+              .sort((a, b) => a.localeCompare(b))
+              .map((genre) => (
+                <option key={genre} value={genre}>
+                  {formatGenreForFilter(genre)}
+                </option>
+              ))}
           </select>
 
           {/* Player Mode Select */}
