@@ -140,10 +140,16 @@ async function checkGameLinks() {
 
       // Remove invalid games from archive
       const invalidGameIds = new Set(allInvalidGames.map(g => g.id));
-      const updatedArchiveGames = archiveGames.filter(game => !invalidGameIds.has(game.id));
+      const updatedArchiveGames = archiveGames.filter(game => !invalidGameIds.has(game.id)).sort(
+        (a, b) =>
+          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+      );
 
       // Add invalid games to RIP
-      const updatedRipGames = [...ripGames, ...allInvalidGames];
+      const updatedRipGames = [...ripGames, ...allInvalidGames].sort(
+        (a, b) =>
+          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+      );
 
       // Write updated files
       console.log("💾 Updating archive.json...");

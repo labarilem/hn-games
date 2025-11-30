@@ -58,7 +58,7 @@ Check all links:
 npm run check-links
 ```
 
-the results are saved in `scripts/data/invalid-links.json`.
+games with invalid links will be moved to RIP games.
 
 ## Images
 

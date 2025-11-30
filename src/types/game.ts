@@ -14,6 +14,7 @@ export enum PlayerMode {
 export enum Pricing {
   FREE = "free",
   PAID = "paid",
+  FREEMIUM = "freemium"
 }
 
 export enum LicenseType {

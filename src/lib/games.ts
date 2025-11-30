@@ -7,6 +7,7 @@ import {
   LicenseType,
   Platform,
   PlayerMode,
+  Pricing,
 } from "../types/game";
 
 export function getGameById(id: string): Game | undefined {
@@ -20,7 +21,7 @@ export type GameSearchParams = {
   platform?: Platform;
   genre?: GameGenre;
   playerModes?: PlayerMode;
-  pricing?: string;
+  pricing?: Pricing;
   license?: LicenseType;
   sortBy?: string;
 };

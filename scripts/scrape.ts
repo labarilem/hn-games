@@ -93,7 +93,9 @@ function determinePricing(title: string, description: string) {
   const text = (title + " " + description).toLowerCase();
   return text.includes("commercial") ||
     text.includes("paid") ||
-    text.includes("buy")
+    text.includes("buy") ||
+    text.includes("purchase") ||
+    text.includes("sold")
     ? "paid"
     : "free";
 }
@@ -111,7 +113,12 @@ function getSourceCodeUrl(item: any, playUrl: string, responseText: string) {
   // check urls
   sourceCodeUrl =
     item.candidateGameUrls.find(
-      (x: string) => x.includes("github.com") || x.includes("gitlab.com")
+      (x: string) =>
+        x.includes("github.com") ||
+        x.includes("gitlab.com") ||
+        x.includes("sourcehut.org") ||
+        x.includes("bitbucket.org") ||
+        x.includes("codeberg.org")
     ) || null;
   if (sourceCodeUrl) return sourceCodeUrl;
 
@@ -134,8 +141,13 @@ function getSourceCodeUrl(item: any, playUrl: string, responseText: string) {
       "not open source",
       "not open-source",
     ];
-    const isOs =  positiveIndicators.some((indicator) => lowerResponseText.includes(indicator)) &&
-      !negativeIndicators.some((indicator) => lowerResponseText.includes(indicator));
+    const isOs =
+      positiveIndicators.some((indicator) =>
+        lowerResponseText.includes(indicator)
+      ) &&
+      !negativeIndicators.some((indicator) =>
+        lowerResponseText.includes(indicator)
+      );
     if (isOs) return true;
   }
 
@@ -326,7 +338,10 @@ async function scrapeGames(apiItems: any[]) {
         imageUrl: generateImageUrl(id) || "",
         sourceCodeUrl: getSourceCodeUrl(item, playUrl, responseText),
       };
-    });
+    })
+    // sort by release date ASC to simplify image renaming in IDE
+    // (newest last in the files treeview)
+    .sort((a, b) => a.releaseDate.getTime() - b.releaseDate.getTime());
 
   // Write to new.json
   await fs.writeFile(OUTPUT_PATH, JSON.stringify(games, null, 2));

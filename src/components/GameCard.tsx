@@ -11,6 +11,19 @@ interface GameCardProps {
 
 export default function GameCard({ game }: GameCardProps) {
   const publicationYear = new Date(game.releaseDate).getFullYear();
+  const pricingBadgeClass =
+    game.pricing === Pricing.FREE
+      ? "bg-emerald-500/90 text-white"
+      : game.pricing === Pricing.FREEMIUM
+      ? "bg-violet-500/90 text-white"
+      : "bg-amber-500/90 text-white";
+
+  const pricingLabel = 
+    game.pricing === Pricing.FREE
+      ? "Free"
+      : game.pricing === Pricing.FREEMIUM
+      ? "Freemium"
+      : "Paid";
 
   return (
     <>
@@ -32,48 +45,22 @@ export default function GameCard({ game }: GameCardProps) {
             </div>
             <div className="absolute top-2 left-2">
               <span
-                className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1.5
-                  ${
-                    game.pricing === Pricing.FREE
-                      ? "bg-emerald-500/90 text-white"
-                      : "bg-amber-500/90 text-white"
-                  }`}
+                className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1.5 ${pricingBadgeClass}`}
               >
-                {game.pricing === Pricing.FREE ? (
-                  <>
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    Free
-                  </>
-                ) : (
-                  <>
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    Paid
-                  </>
-                )}
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                {pricingLabel}
               </span>
             </div>
           </div>
