@@ -18,7 +18,8 @@
     "check-images": "tsx scripts/check-images.ts",
     "check-ids": "tsx scripts/check-ids.ts",
     "check-links": "tsx scripts/check-links.ts 2>&1 | tee log.txt",
-    "update-points": "tsx scripts/update-points.ts"
+    "update-points": "tsx scripts/update-points.ts",
+    "sort": "tsx scripts/sort.ts"
   },
   "dependencies": {
     "@vercel/og": "^0.6.5",

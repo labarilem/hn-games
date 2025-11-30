@@ -98,6 +98,14 @@ Update points of HN posts submitted in the last month:
 npm run update-points
 ```
 
+## Sort games
+
+Sort games in archive and RIP collections:
+
+```bash
+npm run sort
+```
+
 ## Licenses
 
 Source code license: `CODE_LICENSE.txt`
