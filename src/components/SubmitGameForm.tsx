@@ -44,19 +44,19 @@ export function SubmitGameForm() {
       }}
       className="w-full"
     >
-      <div className="flex items-center gap-4">
+      <div className="flex flex-col sm:flex-row items-center gap-4 w-full">
         <input
           type="url"
           name="hnUrl"
           placeholder="https://news.ycombinator.com/item?id=..."
           pattern="https://news\.ycombinator\.com/item\?id=\d+"
           required
-          className="flex-1 px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none min-w-0"
+          className="flex-1 w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none min-w-0"
         />
         <button
           type="submit"
           disabled={isLoading}
-          className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors disabled:opacity-50 disabled:cursor-not-allowed relative"
+          className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors disabled:opacity-50 disabled:cursor-not-allowed relative w-full sm:w-auto mt-2 sm:mt-0"
         >
           {isLoading ? (
             <>

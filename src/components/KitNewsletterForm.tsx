@@ -46,7 +46,7 @@ export default function KitNewsletterForm() {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="flex items-center gap-4 w-full"
+          className="flex flex-col sm:flex-row items-center gap-4 w-full"
         >
           <input
             type="email"
@@ -56,13 +56,13 @@ export default function KitNewsletterForm() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none min-w-0"
+            className="flex-1 w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none min-w-0"
           />
 
           <button
             type="submit"
             disabled={status === "loading"}
-            className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors disabled:opacity-50 disabled:cursor-not-allowed relative"
+            className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors disabled:opacity-50 disabled:cursor-not-allowed relative w-full sm:w-auto mt-2 sm:mt-0"
           >
             {status === "loading" ? (
               <>
