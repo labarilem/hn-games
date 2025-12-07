@@ -3,8 +3,9 @@ import { NextResponse } from "next/server";
 
 export async function GET(
   request: Request,
-  { params }: { params: { gameId: string } }
+  props: { params: Promise<{ gameId: string }> }
 ) {
+  const params = await props.params;
   if (!params.gameId || !/^\d+$/.test(params.gameId))
     return new NextResponse("Invalid gameId", { status: 400 });
 

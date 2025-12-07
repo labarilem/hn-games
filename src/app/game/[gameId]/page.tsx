@@ -7,10 +7,11 @@ import { notFound } from "next/navigation";
 import { createReportUrl } from "../../../lib/issues";
 
 interface GamePageProps {
-  params: { gameId: string };
+  params: Promise<{ gameId: string }>;
 }
 
-export default async function GamePage({ params }: GamePageProps) {
+export default async function GamePage(props: GamePageProps) {
+  const params = await props.params;
   const game = getGameById(params.gameId);
 
   if (!game) notFound();

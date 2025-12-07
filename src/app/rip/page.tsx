@@ -2,11 +2,10 @@ import GamesListing from "@/components/GamesListing";
 import { games as ripGames } from "@/data/ripGames";
 import { GameSearchParams, filterGames } from "@/lib/games";
 
-export default async function RipPage({
-  searchParams,
-}: {
-  searchParams: GameSearchParams;
+export default async function RipPage(props: {
+  searchParams: Promise<GameSearchParams>;
 }) {
+  const searchParams = await props.searchParams;
   const { games: filteredGames, pagination } = filterGames(
     ripGames,
     searchParams
