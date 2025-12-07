@@ -11,7 +11,7 @@ export default function Submit() {
       </p>
       <div className="bg-[#242424] rounded-lg p-6">
         <SubmitGameForm />
-        <p className="mt-6 text-gray-400">
+        <p className="mt-6 text-gray-400 text-sm">
           We'll review your submission and add it to the catalog if it meets our{" "}
           <a href="/about" className="text-blue-400 hover:text-blue-300">criteria</a>.
         </p>

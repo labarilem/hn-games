@@ -4,7 +4,7 @@ import { createSubmitUrl } from "@/lib/issues";
 import { useState } from "react";
 
 export function SubmitGameForm() {
-  const [error, setError] = useState<string>("");
+  const [errorMsg, setError] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
   return (
@@ -42,33 +42,38 @@ export function SubmitGameForm() {
           }
         }
       }}
-      className="flex flex-col items-center gap-4"
+      className="w-full"
     >
-      <input
-        type="url"
-        name="hnUrl"
-        placeholder="https://news.ycombinator.com/item?id=..."
-        pattern="https://news\.ycombinator\.com/item\?id=\d+"
-        required
-        className="w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none"
-      />
-      <button
-        type="submit"
-        disabled={isLoading}
-        className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors disabled:opacity-50 disabled:cursor-not-allowed relative"
-      >
-        {isLoading ? (
-          <>
-            <span className="opacity-0">Submit New Game</span>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-            </div>
-          </>
-        ) : (
-          "Submit New Game"
-        )}
-      </button>
-      {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
+      <div className="flex items-center gap-4">
+        <input
+          type="url"
+          name="hnUrl"
+          placeholder="https://news.ycombinator.com/item?id=..."
+          pattern="https://news\.ycombinator\.com/item\?id=\d+"
+          required
+          className="flex-1 px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none min-w-0"
+        />
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors disabled:opacity-50 disabled:cursor-not-allowed relative"
+        >
+          {isLoading ? (
+            <>
+              <span className="opacity-0">Submit</span>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              </div>
+            </>
+          ) : (
+            "Submit"
+          )}
+        </button>
+      </div>
+
+      {errorMsg && (
+        <p className="mt-2 text-red-400 text-sm">{errorMsg}</p>
+      )}
     </form>
   );
 }

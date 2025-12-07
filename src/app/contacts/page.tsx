@@ -25,7 +25,7 @@ export default function ContactsPage() {
           </li>
           <li>
             <span className="font-semibold">Email: </span>
-            <span >hackernewsgames at Googe's email provider dot com</span>
+            <span >hackernewsgames at Google's email provider dot com</span>
           </li>
           <li>
             <span className="font-semibold">GitHub Issues: </span>
