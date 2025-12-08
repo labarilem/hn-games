@@ -182,6 +182,7 @@ export default function GameFilters() {
             {/* Platform Select */}
             <select
               name="platform"
+              aria-label="Platform"
               value={searchParams.get("platform") ?? ""}
               onChange={(e) =>
                 router.push(
@@ -203,6 +204,7 @@ export default function GameFilters() {
             {/* Genre Select */}
             <select
               name="genre"
+              aria-label="Genre"
               value={searchParams.get("genre") ?? ""}
               onChange={(e) =>
                 router.push(
@@ -226,6 +228,7 @@ export default function GameFilters() {
             {/* Player Mode Select */}
             <select
               name="playerModes"
+              aria-label="Player Modes"
               value={searchParams.get("playerModes") ?? ""}
               onChange={(e) =>
                 router.push(
@@ -247,6 +250,7 @@ export default function GameFilters() {
             {/* Pricing Select */}
             <select
               name="pricing"
+              aria-label="Pricing"
               value={searchParams.get("pricing") ?? ""}
               onChange={(e) =>
                 router.push(
@@ -266,6 +270,7 @@ export default function GameFilters() {
             {/* License Select */}
             <select
               name="license"
+              aria-label="License"
               value={searchParams.get("license") ?? ""}
               onChange={(e) =>
                 router.push(
@@ -285,6 +290,7 @@ export default function GameFilters() {
             <select
               ref={mobileSortRef}
               name="sortBy"
+              aria-label="Sort By"
               defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
               onChange={(e) =>
                 router.push(
@@ -324,6 +330,7 @@ export default function GameFilters() {
           {/* Platform Select */}
           <select
             name="platform"
+            aria-label="Platform"
             value={searchParams.get("platform") ?? ""}
             onChange={(e) =>
               router.push(
@@ -345,6 +352,7 @@ export default function GameFilters() {
           {/* Genre Select */}
           <select
             name="genre"
+            aria-label="Genre"
             value={searchParams.get("genre") ?? ""}
             onChange={(e) =>
               router.push(
@@ -368,6 +376,7 @@ export default function GameFilters() {
           {/* Player Mode Select */}
           <select
             name="playerModes"
+            aria-label="Player Modes"
             value={searchParams.get("playerModes") ?? ""}
             onChange={(e) =>
               router.push(
@@ -386,6 +395,7 @@ export default function GameFilters() {
           {/* Pricing Select */}
           <select
             name="pricing"
+            aria-label="Pricing"
             value={searchParams.get("pricing") ?? ""}
             onChange={(e) =>
               router.push(
@@ -405,6 +415,7 @@ export default function GameFilters() {
           {/* License Select */}
           <select
             name="license"
+            aria-label="License"
             value={searchParams.get("license") ?? ""}
             onChange={(e) =>
               router.push(
@@ -424,6 +435,7 @@ export default function GameFilters() {
           <select
             ref={desktopSortRef}
             name="sortBy"
+            aria-label="Sort By"
             defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
             onChange={(e) =>
               router.push(
