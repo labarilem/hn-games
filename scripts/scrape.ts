@@ -4,12 +4,12 @@ import getUrls from "get-urls";
 import path from "path";
 import { stripHtml } from "string-strip-html";
 import { Game, GameGenre } from "../src/types/game";
-import checkpoint from "./data/checkpoint";
 import { isValidGameUrl } from "./lib/url";
 
 // Paths
 const ARCHIVE_PATH = path.join(__dirname, "data/archive.json");
 const OUTPUT_PATH = "./scripts/data/new.json";
+const CHECKPOINT_PATH = "./scripts/data/checkpoint.json";
 
 // Load archive.json
 const archive: Game[] = JSON.parse(readFileSync(ARCHIVE_PATH, "utf-8"));
@@ -168,10 +168,17 @@ async function scrapeSingleGame(gameId: string) {
 
 async function scrapeInTimeRange() {
   try {
+    const checkpoint = JSON.parse(
+      await fs.readFile(CHECKPOINT_PATH, "utf8")
+    ) as {
+      fromDay: string;
+      toDay: string;
+    };
+    const from = Math.floor(new Date(checkpoint.fromDay).getTime() / 1000);
+    const to = Math.floor(new Date(checkpoint.toDay).getTime() / 1000);
+
     // Fetch data from Algolia Hacker News API
     // docs https://hn.algolia.com/api#:~:text=%7D-,Search,-Sorted%20by%20relevance
-    const from = checkpoint.fromTimestampInSeconds;
-    const to = checkpoint.toTimestampInSeconds;
     const { data } = await axios.get(
       `https://hn.algolia.com/api/v1/search_by_date`,
       {
@@ -267,31 +274,6 @@ async function scrapeGames(apiItems: any[]) {
     if (blacklist.some((word) => lowTitle.includes(word))) {
       itemValidation.isValid = false;
       console.log(`Blacklist match: ${lowTitle}`);
-      continue;
-    }
-
-    // check for duplicates in this batch and archive
-    const nextItems = itemsValidations.slice(i + 1) as Array<any>;
-    const existingGames: Array<Pick<Game, "name" | "author" | "playUrl">> =
-      nextItems
-        .map((item: any) => ({
-          name: item.item.title,
-          author: item.item.author,
-          playUrl: item.item.url,
-        }))
-        .concat(archive);
-
-    const duplicate = existingGames.find(
-      (game) =>
-        // check for duplicate (title, author batches) pairs
-        (game.name === itemValidation.item.title &&
-          game.author === itemValidation.item.author) ||
-        // check for duplicate URLS
-        (game.playUrl != null && game.playUrl === itemValidation.item.url)
-    );
-    if (duplicate) {
-      itemValidation.isValid = false;
-      console.log(`Duplicate item detected: ${itemValidation.item.url}`);
       continue;
     }
 

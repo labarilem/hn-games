@@ -98,6 +98,14 @@ Update points of HN posts submitted in the last month:
 npm run update-points
 ```
 
+### Check for duplicates
+
+Check for duplicates across archive.json, rip.json and new.json:
+
+```bash
+npm run check-duplicates
+```
+
 ## Sort games
 
 Sort games in archive and RIP collections:

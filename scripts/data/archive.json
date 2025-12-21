@@ -23,6 +23,306 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "39194866",
+    "name": "Maori - The Game",
+    "description": "Arrange masks in a specific order, blending elements of puzzles and memory games",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-30T19:57:42.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "belgogames",
+    "genres": [
+      "puzzle",
+      "memory"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39194866",
+    "hnPoints": 2,
+    "playUrl": "https://www.maori-game.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39194866.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39174475",
+    "name": "Jugglin Jesper",
+    "description": "Destroy bricks while keeping the ball from falling",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-29T09:40:45.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "joemanaco",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39174475",
+    "hnPoints": 2,
+    "playUrl": "https://joemanaco.itch.io/jugglin-jesper",
+    "pricing": "free",
+    "imageUrl": "/images/games/39174475.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39159066",
+    "name": "Dead Horse",
+    "description": "An adventure that starts with the player impersonating a dead horse",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-27T19:41:04.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "gpxyz",
+    "genres": [
+      "adventure",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39159066",
+    "hnPoints": 5,
+    "playUrl": "https://deadhorse.eurydice.me/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39159066.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39136123",
+    "name": "Qwertle",
+    "description": "A Wordle-like where guesses are ranked by how close letters are on a QWERTY keyboard",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-25T22:14:34.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "b0r0phyll",
+    "genres": [
+      "word",
+      "board",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39136123",
+    "hnPoints": 103,
+    "playUrl": "https://qwertle.friedman.in",
+    "pricing": "free",
+    "imageUrl": "/images/games/39136123.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39113257",
+    "name": "Hex Math",
+    "description": "Simple game to practice hexidecimal addition",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-24T03:27:56.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "Numeric1137",
+    "genres": [
+      "math",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39113257",
+    "hnPoints": 1,
+    "playUrl": "https://matt-savvy.github.io/hex_math/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39113257.jpg",
+    "sourceCodeUrl": "https://github.com/matt-savvy/hex_math"
+  },
+  {
+    "id": "39112197",
+    "name": "SlideCross",
+    "description": "A combination of a crossword and Rubik's Cube",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-24T00:51:53.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mattmar96",
+    "genres": [
+      "word",
+      "board",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39112197",
+    "hnPoints": 3,
+    "playUrl": "https://slidecross.io",
+    "pricing": "free",
+    "imageUrl": "/images/games/39112197.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "38983878",
+    "name": "Startrek1971",
+    "description": "C port of the original Star Trek game, including WASM for browser/phone",
+    "platforms": [
+      "web",
+      "desktop"
+    ],
+    "releaseDate": "2024-01-13T19:55:58.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "busfahrer",
+    "genres": [
+      "strategy",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=38983878",
+    "hnPoints": 5,
+    "playUrl": "https://busfahrer.github.io/st71/",
+    "pricing": "free",
+    "imageUrl": "/images/games/38983878.jpg",
+    "sourceCodeUrl": "https://github.com/busfahrer/startrek1971/"
+  },
+  {
+    "id": "38968552",
+    "name": "AlgoShip",
+    "description": "Find the algorithm that makes the ship collect all stars",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-12T14:43:56.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "codigrade",
+    "genres": [
+      "puzzle",
+      "coding"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=38968552",
+    "hnPoints": 10,
+    "playUrl": "https://playalgoship.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/38968552.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "38913220",
+    "name": "Vim Sudoku",
+    "description": "Simple web version of Sudoku",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-08T15:23:10.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "alabhyajindal",
+    "genres": [
+      "puzzle",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=38913220",
+    "hnPoints": 40,
+    "playUrl": "https://sudoku-aj.netlify.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/38913220.jpg",
+    "sourceCodeUrl": "https://github.com/alabhyajindal/sudoku/blob/main/index.html"
+  },
+  {
+    "id": "38905590",
+    "name": "Math Crossword",
+    "description": "Drag and drop numbers to fill in the blanks and move on to the next level",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-07T21:59:21.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "xk4rim",
+    "genres": [
+      "puzzle",
+      "math"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=38905590",
+    "hnPoints": 165,
+    "playUrl": "https://scientific.place/math-crossword/",
+    "pricing": "free",
+    "imageUrl": "/images/games/38905590.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "38902399",
+    "name": "Falcon Lander - SpaceX edition",
+    "description": "A game that simulates SpaceX rocket landing",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2024-01-07T16:15:59.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "lpeancovschi",
+    "genres": [
+      "action",
+      "simulation"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=38902399",
+    "hnPoints": 3,
+    "playUrl": "https://apps.apple.com/us/app/falcon-lander-spacex-edition/id1041594750",
+    "pricing": "freemium",
+    "imageUrl": "/images/games/38902399.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "38879051",
+    "name": "Keysmash",
+    "description": "A simple game to improve typing speed",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-05T13:55:54.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "olekenneth",
+    "genres": [
+      "typing"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=38879051",
+    "hnPoints": 113,
+    "playUrl": "https://keysmash.no",
+    "pricing": "free",
+    "imageUrl": "/images/games/38879051.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "38849352",
+    "name": "Chomp",
+    "description": "Take turns biting chunks of chocolate off of a chocolate bar, avoiding a poison square",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-01-03T00:56:15.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "niknat",
+    "genres": [
+      "strategy",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=38849352",
+    "hnPoints": 7,
+    "playUrl": "https://play-chomp.netlify.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/38849352.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "38819219",
     "name": "Kobadoo",
     "description": "Memorize flags of the world in the correct order",
@@ -1656,30 +1956,6 @@
     "playUrl": "https://millionballs.app",
     "pricing": "free",
     "imageUrl": "/images/games/36064177.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "id": "36064168",
-    "name": "Squareword",
-    "description": "A puzzle of 5x5 letters containing 10 words, that need to be revealed by guessing 5 letter words",
-    "platforms": [
-      "web"
-    ],
-    "releaseDate": "2023-05-24T21:35:24.000Z",
-    "playerModes": [
-      "single"
-    ],
-    "author": "oliwary",
-    "genres": [
-      "word",
-      "puzzle",
-      "daily"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=36064168",
-    "hnPoints": 2,
-    "playUrl": "https://squareword.org",
-    "pricing": "free",
-    "imageUrl": "/images/games/36064168.jpg",
     "sourceCodeUrl": null
   },
   {
