@@ -15,7 +15,7 @@ npm run dev
 1. Scrape new games based on time range checkpoints:
 
    ```bash
-      npm run scrape
+   npm run scrape
    ```
 
    or scrape a single game by id:
@@ -112,6 +112,22 @@ Sort games in archive and RIP collections:
 
 ```bash
 npm run sort
+```
+
+## Replace games
+
+Replace a source game's data with a destination game's data:
+
+```bash
+npm run replace
+```
+
+## Count games
+
+Count games in all collections:
+
+```bash
+npm run count
 ```
 
 ## Licenses

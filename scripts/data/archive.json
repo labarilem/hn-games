@@ -23,6 +23,326 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "39540038",
+    "name": "Needledrop",
+    "description": "Guess the movie that features the song",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-28T16:21:44.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "wernah",
+    "genres": [
+      "quiz",
+      "music"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39540038",
+    "hnPoints": 1,
+    "playUrl": "https://www.needledrop.me/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39540038.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39512324",
+    "name": "Wordulo",
+    "description": "Enter a new word before the time runs out",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-26T15:25:28.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "palmturner",
+    "genres": [
+      "word"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39512324",
+    "hnPoints": 6,
+    "playUrl": "https://wordulo.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39512324.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39511747",
+    "name": "Atlas Fury",
+    "description": "Dodge, weave and blast your way through the stars in a survival style game that will test your reflexes and strategic skills",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "releaseDate": "2024-02-26T14:41:44.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "excsn",
+    "genres": [
+      "shooter",
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39511747",
+    "hnPoints": 1,
+    "playUrl": "https://www.excsn.com/apps/atlas_fury",
+    "pricing": "free",
+    "imageUrl": "/images/games/39511747.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39428646",
+    "name": "CaveRibbon",
+    "description": "SFCave web remake",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-19T11:32:37.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "memalign",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39428646",
+    "hnPoints": 17,
+    "playUrl": "https://memalign.github.io/m/cr/index.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/39428646.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39408949",
+    "name": "ANXRacers",
+    "description": "A 2D top-down time-attack spaceship racing game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-17T12:45:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "xeonax",
+    "genres": [
+      "action",
+      "driving"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39408949",
+    "hnPoints": 2,
+    "playUrl": "https://studios.aeonax.com/racers/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39408949.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39402142",
+    "name": "Driftmania",
+    "description": "An open source PICO-8 racing game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-16T19:55:59.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "frenchie14",
+    "genres": [
+      "action",
+      "driving"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39402142",
+    "hnPoints": 276,
+    "playUrl": "https://frenchie14.itch.io/driftmania",
+    "pricing": "free",
+    "imageUrl": "/images/games/39402142.jpg",
+    "sourceCodeUrl": "https://github.com/maxbize/PICO-8/tree/master/Driftmania"
+  },
+  {
+    "id": "39365135",
+    "name": "Athena Crisis",
+    "description": "Command 40+ infantry, ground, naval and air units in turn-based battles",
+    "platforms": [
+      "desktop"
+    ],
+    "releaseDate": "2024-02-14T01:13:56.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "cpojer",
+    "genres": [
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39365135",
+    "hnPoints": 276,
+    "playUrl": "https://athenacrisis.com",
+    "pricing": "paid",
+    "imageUrl": "/images/games/39365135.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39323511",
+    "name": "Unflip",
+    "description": "A puzzle game about XOR patterns of squares",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-10T04:11:10.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "bogdanoff_2",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39323511",
+    "hnPoints": 11,
+    "playUrl": "https://unflipgame.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39323511.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39321487",
+    "name": "Shengji",
+    "description": "A mobile version of the classic Chinese card game",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2024-02-09T22:53:01.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "herk",
+    "genres": [
+      "card"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39321487",
+    "hnPoints": 1,
+    "playUrl": "https://www.shengji.world/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39321487.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39318772",
+    "name": "Colorblind Curse",
+    "description": "A short game about playing games with colorblindness",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-09T18:53:41.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "jdestaz",
+    "genres": [
+      "puzzle",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39318772",
+    "hnPoints": 2,
+    "playUrl": "https://jdestaz.itch.io/colorblind-curse",
+    "pricing": "free",
+    "imageUrl": "/images/games/39318772.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39277608",
+    "name": "Summary",
+    "description": "Each letter is a unique number, can you make it all add up?",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-06T17:40:37.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "alizauf",
+    "genres": [
+      "word",
+      "puzzle",
+      "daily",
+      "math"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39277608",
+    "hnPoints": 2,
+    "playUrl": "https://www.auftup.com/summary",
+    "pricing": "free",
+    "imageUrl": "/images/games/39277608.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39264242",
+    "name": "Disorderly",
+    "description": "Daily puzzle game where you put items in the correct order",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-05T17:56:02.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "wes-ton",
+    "genres": [
+      "quiz",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39264242",
+    "hnPoints": 2,
+    "playUrl": "https://playdisorderly.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39264242.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39250344",
+    "name": "Mixstory",
+    "description": "Test your historical knowledge in this dates trivia game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-04T14:15:02.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "himmelattack",
+    "genres": [
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39250344",
+    "hnPoints": 1,
+    "playUrl": "https://mixstory.playcurious.games/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39250344.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39221066",
+    "name": "Pong",
+    "description": "Web clone of the classic game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-02-01T20:35:40.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "ramzi-abidi",
+    "genres": [
+      "arcade"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39221066",
+    "hnPoints": 12,
+    "playUrl": "https://pong-paddle-game.netlify.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39221066.jpg",
+    "sourceCodeUrl": "https://github.com/Ramzi-Abidi/Pong"
+  },
+  {
     "id": "39194866",
     "name": "Maori - The Game",
     "description": "Arrange masks in a specific order, blending elements of puzzles and memory games",
@@ -458,7 +778,7 @@
     "sourceCodeUrl": "https://github.com/wheybags/drilbert-pub"
   },
   {
-    "id": "38644691",
+    "id": "39232572",
     "name": "Minesweeper Twist",
     "description": "The classic Minesweeper on an irregular grid",
     "platforms": [
@@ -475,11 +795,11 @@
     "genres": [
       "puzzle"
     ],
-    "hnUrl": "https://news.ycombinator.com/item?id=38644691",
-    "hnPoints": 4,
+    "hnUrl": "https://news.ycombinator.com/item?id=39232572",
+    "hnPoints": 293,
     "playUrl": "https://polyreplay.com/minesweepertwist",
     "pricing": "free",
-    "imageUrl": "/images/games/38644691.jpg",
+    "imageUrl": "/images/games/39232572.jpg",
     "sourceCodeUrl": null
   },
   {
@@ -3692,7 +4012,7 @@
     "sourceCodeUrl": "https://github.com/thekakkun/speed-snek"
   },
   {
-    "id": "33164561",
+    "id": "39268439",
     "name": "Name That Nation",
     "description": "Guess the name of the country based on the outline of its map",
     "platforms": [
@@ -3707,11 +4027,11 @@
       "quiz",
       "geography"
     ],
-    "hnUrl": "https://news.ycombinator.com/item?id=33164561",
-    "hnPoints": 2,
+    "hnUrl": "https://news.ycombinator.com/item?id=39268439",
+    "hnPoints": 201,
     "playUrl": "https://www.namethatnation.com/",
     "pricing": "free",
-    "imageUrl": "/images/games/33164561.jpg",
+    "imageUrl": "/images/games/39268439.jpg",
     "sourceCodeUrl": null
   },
   {

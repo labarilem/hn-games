@@ -20,7 +20,9 @@
     "check-duplicates": "tsx scripts/check-duplicates.ts",
     "check-links": "tsx scripts/check-links.ts 2>&1 | tee log.txt",
     "update-points": "tsx scripts/update-points.ts",
-    "sort": "tsx scripts/sort.ts"
+    "sort": "tsx scripts/sort.ts",
+    "replace": "tsx scripts/replace.ts",
+    "count": "tsx scripts/count.ts"
   },
   "dependencies": {
     "@vercel/og": "^0.6.5",
