@@ -23,6 +23,260 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "39886442",
+    "name": "FocuMon",
+    "description": "An idle Pokemon-style game where you collect and evolve monsters by being productive while adventuring with friends in multiplayer mode",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-31T17:58:47.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "GodotX",
+    "genres": [
+      "incremental"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39886442",
+    "hnPoints": 89,
+    "playUrl": "https://www.focumon.com/landing",
+    "pricing": "free",
+    "imageUrl": "/images/games/39886442.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39882873",
+    "name": "Truncate",
+    "description": "A chess-flavored word game blending spatial reasoning and wordplay where you defeat opponents' words to take territory",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-31T09:58:26.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "liambigelow",
+    "genres": [
+      "puzzle",
+      "strategy",
+      "word"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39882873",
+    "hnPoints": 188,
+    "playUrl": "https://truncate.town/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39882873.jpg",
+    "sourceCodeUrl": "https://github.com/TruncateGame/Truncate"
+  },
+  {
+    "id": "39861525",
+    "name": "Lighthouse of Doom",
+    "description": "A retro adventure game written in Z80 assembly for CP/M and ZX Spectrum emulators, playable in your browser",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-29T07:36:45.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "stevekemp",
+    "genres": [
+      "adventure",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39861525",
+    "hnPoints": 63,
+    "playUrl": "https://steve.fi/software/lighthouse/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39861525.jpg",
+    "sourceCodeUrl": "https://github.com/skx/lighthouse-of-doom"
+  },
+  {
+    "id": "39783240",
+    "name": "HackMerlin",
+    "description": "A prompt injection challenge game where you train yourself in LLM security by bypassing AI safety systems",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-21T19:26:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "bgalek",
+    "genres": [
+      "puzzle",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39783240",
+    "hnPoints": 1,
+    "playUrl": "https://hackmerlin.io",
+    "pricing": "free",
+    "imageUrl": "/images/games/39783240.jpg",
+    "sourceCodeUrl": "https://github.com/bgalek/hackmerlin.io/tree/main"
+  },
+  {
+    "id": "39777252",
+    "name": "PawnPush",
+    "description": "Daily chess challenges with unique character bots, each with its own personality, preferred openings, and distinct play style",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-21T11:33:21.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ageitgey",
+    "genres": [
+      "strategy",
+      "daily",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39777252",
+    "hnPoints": 4,
+    "playUrl": "https://pawnpush.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39777252.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39755668",
+    "name": "Hypersplit",
+    "description": "Start with large concepts and split them down to atomic parts in this incremental clicker game built entirely with emojis and CSS",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-19T13:45:12.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "hopfog",
+    "genres": [
+      "incremental"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39755668",
+    "hnPoints": 61,
+    "playUrl": "https://lantto.github.io/hypersplit/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39755668.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39651482",
+    "name": "ZakuChess",
+    "description": "An open source fantasy-themed chess puzzles game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-09T13:33:50.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "rougemine",
+    "genres": [
+      "strategy",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39651482",
+    "hnPoints": 5,
+    "playUrl": "https://zakuchess.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/39651482.jpg",
+    "sourceCodeUrl": "https://github.com/olivierphi/zakuchess"
+  },
+  {
+    "id": "39611199",
+    "name": "Brick Break Anywhere",
+    "description": "Chrome extension that transforms any webpage into a brick-breaking game where you break blocks across any web page you visit",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-06T01:25:31.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "canalun",
+    "genres": [
+      "arcade",
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39611199",
+    "hnPoints": 1,
+    "playUrl": "https://chromewebstore.google.com/detail/brick-break-anywhere/lkbkphlgmknnachlgmbdmoepfnfdeckb",
+    "pricing": "free",
+    "imageUrl": "/images/games/39611199.jpg",
+    "sourceCodeUrl": "https://github.com/canalun/brick-break-anywhere"
+  },
+  {
+    "id": "39604232",
+    "name": "Gram Jam",
+    "description": "A spatial word game where you swap limited tiles to make words, featuring both daily challenges and endless arcade modes",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-05T14:58:29.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "jessecoleman",
+    "genres": [
+      "puzzle",
+      "daily",
+      "word"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39604232",
+    "hnPoints": 5,
+    "playUrl": "https://gramjam.app",
+    "pricing": "free",
+    "imageUrl": "/images/games/39604232.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39580484",
+    "name": "Stig",
+    "description": "A sokoban-style puzzle game where you navigate boxes and obstacles through increasingly challenging levels with minimalist design",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-03T12:47:30.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mirrish",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39580484",
+    "hnPoints": 4,
+    "playUrl": "https://lageb.itch.io/stig",
+    "pricing": "free",
+    "imageUrl": "/images/games/39580484.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39567084",
+    "name": "Daily Maze",
+    "description": "Navigate daily generated mazes and share your solution path and move count with others",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-01T21:36:47.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "AquiGorka",
+    "genres": [
+      "puzzle",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39567084",
+    "hnPoints": 1,
+    "playUrl": "https://maze.aquigorka.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39567084.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "39540038",
     "name": "Needledrop",
     "description": "Guess the movie that features the song",
