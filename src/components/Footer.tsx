@@ -45,13 +45,13 @@ export default function Footer() {
             >
               Contacts
             </a>
-            <span className="select-none">·</span>
+            {/* <span className="select-none">·</span>
             <a
               href="/newsletter"
               className="hover:text-[#646cff] transition-colors"
             >
               Newsletter
-            </a>
+            </a> */}
           </div>
           <div className="hover:text-[#646cff] transition-colors">
             <a

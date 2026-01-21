@@ -53,10 +53,10 @@ export default function RootLayout({
                   Random
                 </a>
                 <a
-                  href="/newsletter"
+                  href="/rip"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
-                  Newsletter
+                  RIP
                 </a>
               </div>
             </div>
