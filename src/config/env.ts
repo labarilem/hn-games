@@ -1,1 +1,1 @@
-export const basePublicUrl = "https://hackernews.games/";
+export const basePublicUrl = "https://hn-games.marcolabarile.me/";
