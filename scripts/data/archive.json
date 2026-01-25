@@ -23,6 +23,310 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "40157841",
+    "name": "Snatched",
+    "description": "A 3D browser game where you lure AI NPCs to your alien ship using voice commands",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-04-25T14:11:34.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "__cayenne__",
+    "genres": [
+      "adventure"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40157841",
+    "hnPoints": 13,
+    "playUrl": "https://playsnatched.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/40157841.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40146522",
+    "name": "10 Games",
+    "description": "Ten brain training games testing reactions, memory, and math with daily leaderboard competition",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2024-04-24T16:35:30.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "taiomi",
+    "genres": [
+      "puzzle",
+      "memory",
+      "math"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40146522",
+    "hnPoints": 1,
+    "playUrl": "https://apps.apple.com/gb/app/10-games-daily-brain-training/id6478441539",
+    "pricing": "free",
+    "imageUrl": "/images/games/40146522.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40091379",
+    "name": "Talk to Me Human",
+    "description": "Talk your way out of social situations using voice commands with AI-powered NPCs",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-04-19T20:03:45.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mbforbes",
+    "genres": [
+      "adventure",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40091379",
+    "hnPoints": 138,
+    "playUrl": "https://talktomehuman.com/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/40091379.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40054486",
+    "name": "Oregon Trail",
+    "description": "The classic Oregon Trail survival game adapted for Android with a mobile-friendly interface",
+    "platforms": [
+      "android"
+    ],
+    "releaseDate": "2024-04-16T17:04:41.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "userland_tech",
+    "genres": [
+      "simulation",
+      "text",
+      "adventure"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40054486",
+    "hnPoints": 6,
+    "playUrl": "https://play.google.com/store/apps/details?id=tech.ula.ogtrail",
+    "pricing": "paid",
+    "imageUrl": "/images/games/40054486.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40045805",
+    "name": "Trigram",
+    "description": "Guess the hidden word by finding all possible three-letter combinations in your weekly puzzle",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-04-15T21:26:59.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "niknat",
+    "genres": [
+      "word",
+      "daily",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40045805",
+    "hnPoints": 1,
+    "playUrl": "https://trigram.netlify.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40045805.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40041735",
+    "name": "Worchle",
+    "description": "Find hidden words in a grid as your daily word search puzzle",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-04-15T15:19:25.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "swiftsalary",
+    "genres": [
+      "word",
+      "puzzle",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40041735",
+    "hnPoints": 1,
+    "playUrl": "https://www.worchle.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40041735.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39999558",
+    "name": "Dungeon Rush",
+    "description": "A snake-inspired dungeon crawler",
+    "platforms": [
+      "web",
+      "desktop"
+    ],
+    "releaseDate": "2024-04-11T08:04:08.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "midzer",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39999558",
+    "hnPoints": 8,
+    "playUrl": "https://midzer.de/wasm/dungeonrush/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39999558.jpg",
+    "sourceCodeUrl": "https://github.com/rapiz1/DungeonRush"
+  },
+  {
+    "id": "39974639",
+    "name": "Pyramid",
+    "description": "Match pairs that add up to 13 to clear all cards from the pyramid in this classic solitaire",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-04-08T23:10:30.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mcyger",
+    "genres": [
+      "puzzle",
+      "card"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39974639",
+    "hnPoints": 4,
+    "playUrl": "https://pyramid.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39974639.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39944402",
+    "name": "Liar Game",
+    "description": "A social deduction game where one secret liar must blend in while others identify them",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "releaseDate": "2024-04-05T16:33:13.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "giaco_hendel",
+    "genres": [
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39944402",
+    "hnPoints": 1,
+    "playUrl": "https://sites.google.com/view/liargame/home",
+    "pricing": "free",
+    "imageUrl": "/images/games/39944402.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39930260",
+    "name": "CycleQuest",
+    "description": "Control a smart bike trainer through real-world routes with progressive difficulty and steering",
+    "platforms": [
+      "desktop",
+      "ios"
+    ],
+    "releaseDate": "2024-04-04T13:37:08.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "karol-sm",
+    "genres": [
+      "fitness",
+      "simulation"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39930260",
+    "hnPoints": 6,
+    "playUrl": "https://www.cyclequest.cc/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/39930260.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39929916",
+    "name": "Noctie",
+    "description": "A chess AI tutor for deliberate practice with feedback, custom exercises, and opening prep",
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ],
+    "releaseDate": "2024-04-04T13:08:02.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "MereGurudev",
+    "genres": [
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39929916",
+    "hnPoints": 13,
+    "playUrl": "https://noctie.ai/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39929916.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39907979",
+    "name": "Matatu",
+    "description": "A card game from East African tradition where players build trains and outsmart opponents",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-04-02T16:54:04.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "monyluakdev",
+    "genres": [
+      "card"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39907979",
+    "hnPoints": 1,
+    "playUrl": "https://www.matatu.pro/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39907979.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39897112",
+    "name": "Exponentile",
+    "description": "Merge tiles and combine numbers up to 13 with match-3 and 2048-style mechanics",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-04-01T18:04:41.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "MikeBellika",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39897112",
+    "hnPoints": 54,
+    "playUrl": "https://www.bellika.dk/exponentile",
+    "pricing": "free",
+    "imageUrl": "/images/games/39897112.jpg",
+    "sourceCodeUrl": "https://github.com/MikeBellika/tile-game"
+  },
+  {
     "id": "39886442",
     "name": "FocuMon",
     "description": "An idle Pokemon-style game where you collect and evolve monsters by being productive while adventuring with friends in multiplayer mode",

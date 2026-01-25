@@ -42,7 +42,7 @@ These rules guide the improvement of game metadata in `scripts/data/new.json` to
 - Missing concise problem statement and core mechanic
 
 **Improvement Rules:**
-- **Max 2 sentences, 300 characters**
+- **Max 2 sentences, Max 120 characters**
 - **Follow this structure**:
   1. What is the core mechanic/gameplay?
   2. What is the objective or unique twist?
@@ -50,6 +50,7 @@ These rules guide the improvement of game metadata in `scripts/data/new.json` to
   - ❌ Bad: "Me and my boyfriend are making a game together in our spare time..."
   - ✅ Good: "A sokoban-style puzzle game where you navigate boxes and obstacles"
 - **Remove meta-commentary**: No "we'd love feedback", "join the Discord", personal stories
+- **Remove redundant game genre info**: No "board puzzle game" if possible, to reduce text length
 - **Remove URLs and links** from description (they belong in other fields)
 - **Do not use dots as punctuation** whenever possible, nor to end the description
 
