@@ -3987,6 +3987,28 @@
     "sourceCodeUrl": "https://github.com/fayalalebrun/kapow"
   },
   {
+    "id": "34464865",
+    "name": "Andromeda Invaders: A retro-style game written in HTML5, Canvas, and Web Audio",
+    "description": "",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2023-01-21T08:28:39.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "susam",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=34464865",
+    "hnPoints": 167,
+    "playUrl": "https://susam.net/invaders.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/34464865.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "34461052",
     "name": "Linkagram",
     "description": "Find all the words on a 4x4 grid of letters",
@@ -6180,28 +6202,6 @@
     "playUrl": "https://apps.apple.com/us/app/kattam-the-box/id1605984718",
     "pricing": "paid",
     "imageUrl": "/images/games/30337323.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "id": "30321333",
-    "name": "Andromeda Invaders",
-    "description": "A 1980s-arcade-style simple shooter",
-    "platforms": [
-      "web"
-    ],
-    "releaseDate": "2022-02-13T12:39:37.000Z",
-    "playerModes": [
-      "single"
-    ],
-    "author": "susam",
-    "genres": [
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=30321333",
-    "hnPoints": 9,
-    "playUrl": "https://susam.net/invaders.html",
-    "pricing": "free",
-    "imageUrl": "/images/games/30321333.jpg",
     "sourceCodeUrl": null
   },
   {
