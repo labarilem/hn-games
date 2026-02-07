@@ -23,6 +23,423 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "40836703",
+    "name": "Haystack",
+    "description": "Find a single word hidden among scrambled letters from that word",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-30T11:59:14.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "dylanhouli",
+    "genres": [
+      "word",
+      "daily",
+      "puzzle",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40836703",
+    "hnPoints": 3,
+    "playUrl": "https://www.worchle.com/haystack/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40836703.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40835622",
+    "name": "SpeedBrain",
+    "description": "Quiz game with gamified learning through time-pressured questions and difficulty levels",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2024-06-30T07:13:18.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "dalemhurley",
+    "genres": [
+      "educational",
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40835622",
+    "hnPoints": 1,
+    "playUrl": "https://apps.apple.com/au/app/speed-brain-game/id6503993544",
+    "pricing": "free",
+    "imageUrl": "/images/games/40835622.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40821526",
+    "name": "Make To Ten",
+    "description": "Logic puzzle game where you aim to stack 10 items on each row",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-28T15:19:34.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "RomanPushkin",
+    "genres": [
+      "puzzle",
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40821526",
+    "hnPoints": 12,
+    "playUrl": "https://make210.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40821526.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40813451",
+    "name": "GPT Mafia",
+    "description": "Play the classic Mafia/Werewolf game against AI opponents",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-27T18:22:46.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "spronket_news",
+    "genres": [
+      "strategy",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40813451",
+    "hnPoints": 4,
+    "playUrl": "https://gptmafia.io",
+    "pricing": "free",
+    "imageUrl": "/images/games/40813451.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40811745",
+    "name": "Solhopper",
+    "description": "Capture solar flares as a ship captain traveling through space to develop star systems",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-27T15:46:34.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "hi",
+    "genres": [
+      "arcade",
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40811745",
+    "hnPoints": 5,
+    "playUrl": "https://www.solhopper.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40811745.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40768789",
+    "name": "Sumochess",
+    "description": "Chess variant where you push opponent pieces off the board instead of capturing them",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-23T16:53:06.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "pingou",
+    "genres": [
+      "strategy",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40768789",
+    "hnPoints": 3,
+    "playUrl": "https://sumochess.org",
+    "pricing": "free",
+    "imageUrl": "/images/games/40768789.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40740236",
+    "name": "Chronle",
+    "description": "Arrange historical events in chronological order in this daily challenge puzzle",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-20T16:03:17.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ajhenrydev",
+    "genres": [
+      "puzzle",
+      "daily",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40740236",
+    "hnPoints": 6,
+    "playUrl": "https://chronle.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40740236.jpg",
+    "sourceCodeUrl": "https://github.com/ajhenry/chronle.com"
+  },
+  {
+    "id": "40740021",
+    "name": "Coloring Game",
+    "description": "Learn math concepts about graph coloring and map coloring through interactive puzzles",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-20T15:45:19.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "MCSP",
+    "genres": [
+      "puzzle",
+      "math",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40740021",
+    "hnPoints": 1054,
+    "playUrl": "https://www.rahulilango.com/coloring/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40740021.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40722004",
+    "name": "Huezz",
+    "description": "Match colors and gradients in this minimalist hue-based puzzle game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-18T20:39:59.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "deejayy",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40722004",
+    "hnPoints": 6,
+    "playUrl": "https://huezz.cv.co.hu/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40722004.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40690121",
+    "name": "Virus Grid",
+    "description": "Fight off a spreading virus in a grid-based tactical strategy game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-15T14:42:39.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "antoineMoPa",
+    "genres": [
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40690121",
+    "hnPoints": 2,
+    "playUrl": "https://antoinemopa.github.io/grid/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40690121.jpg",
+    "sourceCodeUrl": "https://github.com/antoineMoPa/grid"
+  },
+  {
+    "id": "40673934",
+    "name": "Hacker News or Satire?",
+    "description": "Swipe left or right to guess whether a post is from Hacker News or a satire website",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-13T19:56:06.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ghaschel",
+    "genres": [
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40673934",
+    "hnPoints": 5,
+    "playUrl": "https://www.hackernewssatire.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40673934.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40655719",
+    "name": "Akari",
+    "description": "Solve light-up grid puzzles where bulbs illuminate rows and columns",
+    "platforms": [
+      "web",
+      "android",
+      "ios"
+    ],
+    "releaseDate": "2024-06-12T08:08:11.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "deshi-basara",
+    "genres": [
+      "puzzle",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40655719",
+    "hnPoints": 2,
+    "playUrl": "https://guriddo.app/akari",
+    "pricing": "free",
+    "imageUrl": "/images/games/40655719.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40640865",
+    "name": "NHCoin",
+    "description": "Mine cryptocurrency through blockchain-powered clicker mechanics",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-11T00:20:06.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "nhunter0",
+    "genres": [
+      "idle",
+      "incremental"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40640865",
+    "hnPoints": 3,
+    "playUrl": "https://nhunter0.github.io/NHCoinMiningGame/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40640865.jpg",
+    "sourceCodeUrl": "https://github.com/nHunter0/NHCoinMiningGame"
+  },
+  {
+    "id": "40639560",
+    "name": "Stock Tycoon",
+    "description": "Trade stocks with a nostalgic Bloomberg Terminal-style interface while optimizing your portfolio",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-10T21:47:30.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "thehorseofdoom",
+    "genres": [
+      "simulation",
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40639560",
+    "hnPoints": 1,
+    "playUrl": "https://tobylam.xyz/games/stockgame/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40639560.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40623877",
+    "name": "Mathic",
+    "description": "Find and solve hidden math equations in a grid puzzle with daily challenges",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-09T12:04:29.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "dylanhouli",
+    "genres": [
+      "math",
+      "puzzle",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40623877",
+    "hnPoints": 161,
+    "playUrl": "https://www.worchle.com/mathic/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40623877.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40604409",
+    "name": "Movie Guess",
+    "description": "Ask strategic questions to guess the movie the AI is thinking of",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-07T01:26:01.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "giovannipucci",
+    "genres": [
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40604409",
+    "hnPoints": 1,
+    "playUrl": "https://www.movieguess.com/en",
+    "pricing": "free",
+    "imageUrl": "/images/games/40604409.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40582357",
+    "name": "Paddle Arcade",
+    "description": "Simple retro pong game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-05T07:37:38.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "cypherpunk666",
+    "genres": [
+      "arcade"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40582357",
+    "hnPoints": 309,
+    "playUrl": "https://raould.github.io/pn0gstr0m/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40582357.jpg",
+    "sourceCodeUrl": "https://github.com/raould/pn0gstr0m"
+  },
+  {
+    "id": "40567010",
+    "name": "Metroidvania",
+    "description": "Explore interconnected levels and acquire new abilities to unlock hidden areas",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-06-03T20:14:32.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "JSLegendDev",
+    "genres": [
+      "platformer",
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40567010",
+    "hnPoints": 2,
+    "playUrl": "https://jslegend.itch.io/javascript-metroidvania",
+    "pricing": "free",
+    "imageUrl": "/images/games/40567010.jpg",
+    "sourceCodeUrl": "https://github.com/JSLegendDev/JavaScript-Metroidvania"
+  },
+  {
     "id": "40540006",
     "name": "Chess Twist",
     "description": "Chess played on an irregular hexagonal grid with new diagonals and strategic challenges",
@@ -72,7 +489,7 @@
     "sourceCodeUrl": null
   },
   {
-    "id": "40442164",
+    "id": "40571463",
     "name": "Huewords",
     "description": "A word logic puzzle game with color-coded clues to deduce the hidden words",
     "platforms": [
@@ -88,11 +505,11 @@
       "puzzle",
       "daily"
     ],
-    "hnUrl": "https://news.ycombinator.com/item?id=40442164",
-    "hnPoints": 3,
+    "hnUrl": "https://news.ycombinator.com/item?id=40571463",
+    "hnPoints": 114,
     "playUrl": "https://huewords.snellman.net/",
     "pricing": "free",
-    "imageUrl": "/images/games/40442164.jpg",
+    "imageUrl": "/images/games/40571463.jpg",
     "sourceCodeUrl": null
   },
   {

@@ -1,6 +1,6 @@
 # hn-games
 
-Hacker News Games website and data.
+Hacker News Games website and data. Live at https://hn-games.marcolabarile.me/
 
 ## Development
 
