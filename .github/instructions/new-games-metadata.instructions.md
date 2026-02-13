@@ -188,18 +188,7 @@ daily, geography
 
 ## URL Scraping Instructions
 
-When improving metadata, **scrape both hnUrl and playUrl** for comprehensive information:
-
-### Scrape hnUrl (HN Discussion):
-1. Visit the Hacker News discussion
-2. Extract:
-   - Exact game title from first comment/post
-   - Author information
-   - Community feedback about genres/mechanics
-   - Development context (is it open source?)
-   - Any platform mentions
-   - Links to source code repositories
-3. Note the submission date and points count
+When improving metadata, **scrape only the playUrl** for comprehensive information:
 
 ### Scrape playUrl (Game Website/Store):
 1. Visit the playable game or game page

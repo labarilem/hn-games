@@ -23,6 +23,375 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "41110158",
+    "name": "ExplainGame",
+    "description": "Get teammates to guess words using only clues in this real-time multiplayer party game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-30T15:33:18.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "pgt",
+    "genres": [
+      "word",
+      "board",
+      "cooperative"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41110158",
+    "hnPoints": 10,
+    "playUrl": "https://explaingame.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41110158.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41089368",
+    "name": "Letters",
+    "description": "Decompose letters into sub-shapes to solve abstract letter-based puzzles",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-27T21:10:56.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "shove",
+    "genres": [
+      "word",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41089368",
+    "hnPoints": 9,
+    "playUrl": "https://shovemedia.com/letters/puzzle-0001",
+    "pricing": "free",
+    "imageUrl": "/images/games/41089368.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41084206",
+    "name": "Graphs",
+    "description": "Guess what dataset each daily chart represents from three options",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-27T03:11:56.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ajigarjian",
+    "genres": [
+      "puzzle",
+      "educational",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41084206",
+    "hnPoints": 2,
+    "playUrl": "https://www.graphs.world",
+    "pricing": "free",
+    "imageUrl": "/images/games/41084206.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41080277",
+    "name": "Hyve Tile",
+    "description": "Rearrange scrambled tiles to form a complete picture",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-26T17:06:57.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "yunusefendi52",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41080277",
+    "hnPoints": 22,
+    "playUrl": "https://yunusefendi52.itch.io/hyve-tile",
+    "pricing": "free",
+    "imageUrl": "/images/games/41080277.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41078020",
+    "name": "Word Slicer",
+    "description": "Rearrange vertical slices to reveal five hidden words each day",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-26T12:24:48.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "NoArcher888",
+    "genres": [
+      "word",
+      "daily",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41078020",
+    "hnPoints": 85,
+    "playUrl": "https://wordslicer.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/41078020.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41053320",
+    "name": "GenZD",
+    "description": "A GZDoom engine port for iOS that runs classic Doom games and mods",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2024-07-24T03:13:45.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "harakari",
+    "genres": [
+      "shooter",
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41053320",
+    "hnPoints": 4,
+    "playUrl": "https://apps.apple.com/us/app/genzd/id6503916449",
+    "pricing": "paid",
+    "imageUrl": "/images/games/41053320.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40992063",
+    "name": "Glitch Game",
+    "description": "An AI-generated text adventure where you try to escape a digital world",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-18T02:47:17.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sabrina_ramonov",
+    "genres": [
+      "adventure",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40992063",
+    "hnPoints": 4,
+    "playUrl": "https://glitchgame.sabrina.dev/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40992063.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40969327",
+    "name": "Solve the Wall",
+    "description": "Climb virtual walls in VR by finding the right path among handholds and obstacles",
+    "platforms": [
+      "console"
+    ],
+    "releaseDate": "2024-07-15T16:34:29.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "johnhk",
+    "genres": [
+      "puzzle",
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40969327",
+    "hnPoints": 6,
+    "playUrl": "https://www.meta.com/en-gb/experiences/solve-the-wall/7922444141167517/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/40969327.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40968851",
+    "name": "Imagine Storiez",
+    "description": "Create short stories using five random words in under 60 seconds",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2024-07-15T15:39:55.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "appsDev",
+    "genres": [
+      "word",
+      "kids"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40968851",
+    "hnPoints": 3,
+    "playUrl": "https://apps.apple.com/us/app/imagine-storiez/id6497486404",
+    "pricing": "paid",
+    "imageUrl": "/images/games/40968851.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40963582",
+    "name": "Scrobburl",
+    "description": "Scrabble where game state is stored in the URL for instant sharing",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-14T22:12:27.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "jcparkyn",
+    "genres": [
+      "word"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40963582",
+    "hnPoints": 3,
+    "playUrl": "https://scrobburl.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40963582.jpg",
+    "sourceCodeUrl": "https://github.com/jcparkyn/scrobburl"
+  },
+  {
+    "id": "40962312",
+    "name": "Jep!",
+    "description": "Play Jeopardy with real-time competitive buzzing and team-based multiplayer",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-14T18:01:10.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "cnord",
+    "genres": [
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40962312",
+    "hnPoints": 7,
+    "playUrl": "https://whatis.club",
+    "pricing": "free",
+    "imageUrl": "/images/games/40962312.jpg",
+    "sourceCodeUrl": "https://github.com/cmnord/jep"
+  },
+  {
+    "id": "40942593",
+    "name": "T-Max",
+    "description": "A modern port of the classic Mac OS block-stacking game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-12T03:44:33.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "lubert",
+    "genres": [
+      "arcade",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40942593",
+    "hnPoints": 4,
+    "playUrl": "https://t-max.netlify.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40942593.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40937297",
+    "name": "One Word Prompt",
+    "description": "Guess what image an AI generated from a single word prompt",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-11T14:39:32.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sabrina_ramonov",
+    "genres": [
+      "puzzle",
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40937297",
+    "hnPoints": 1,
+    "playUrl": "https://onewordprompt.sabrina.dev/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40937297.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40898581",
+    "name": "Probabilistic Chess",
+    "description": "A chess variant where each square has a success probability affecting move outcomes",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-07T16:12:39.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "marcsto2",
+    "genres": [
+      "board",
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40898581",
+    "hnPoints": 2,
+    "playUrl": "https://marc.ai/probchess/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40898581.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40881016",
+    "name": "Flag Match",
+    "description": "Match country flags to their names in timed rounds with global leaderboards",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-07-05T08:55:22.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "kyrylo",
+    "genres": [
+      "geography",
+      "quiz",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40881016",
+    "hnPoints": 54,
+    "playUrl": "https://flagmatch.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40881016.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40843916",
+    "name": "Splash",
+    "description": "A colorful action game with eye-catching animations",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "releaseDate": "2024-07-01T09:06:33.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "b44rd",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40843916",
+    "hnPoints": 2,
+    "playUrl": "https://splashgame.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40843916.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "40836703",
     "name": "Haystack",
     "description": "Find a single word hidden among scrambled letters from that word",
