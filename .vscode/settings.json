@@ -1,3 +1,13 @@
 {
-    "typescript.tsdk": "node_modules\\typescript\\lib"
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "scripts/data/new.json",
+                "scripts/data/archive.json",
+                "scripts/data/rip.json"
+            ],
+            "url": "./.vscode/game-schema.json"
+        }
+    ]
 }

@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Game",
+  "description": "Schema for HN Games metadata",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "name",
+      "description",
+      "platforms",
+      "releaseDate",
+      "playerModes",
+      "author",
+      "genres",
+      "hnUrl",
+      "hnPoints",
+      "playUrl",
+      "pricing",
+      "imageUrl"
+    ],
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Unique identifier for the game (HN item ID)"
+      },
+      "name": {
+        "type": "string",
+        "description": "Game title (2-5 words, max 40 characters)",
+        "maxLength": 40
+      },
+      "description": {
+        "type": "string",
+        "description": "Game description (max 2 sentences, 300 characters)",
+        "maxLength": 300
+      },
+      "platforms": {
+        "type": "array",
+        "description": "Platforms where the game is available",
+        "items": {
+          "type": "string",
+          "enum": ["web", "desktop", "ios", "android", "console"]
+        },
+        "minItems": 1
+      },
+      "releaseDate": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Release date in ISO 8601 format"
+      },
+      "playerModes": {
+        "type": "array",
+        "description": "Supported player modes",
+        "items": {
+          "type": "string",
+          "enum": ["single", "multi"]
+        },
+        "minItems": 1
+      },
+      "author": {
+        "type": "string",
+        "description": "Game developer or creator name"
+      },
+      "genres": {
+        "type": "array",
+        "description": "Game genres (max 4, primary first)",
+        "items": {
+          "type": "string",
+          "enum": [
+            "word",
+            "roguelike",
+            "action",
+            "adventure",
+            "puzzle",
+            "rpg",
+            "fitness",
+            "coding",
+            "strategy",
+            "typing",
+            "arcade",
+            "survival",
+            "platformer",
+            "sport",
+            "horror",
+            "card",
+            "simulation",
+            "educational",
+            "quiz",
+            "mmo",
+            "idle",
+            "incremental",
+            "shooter",
+            "memory",
+            "kids",
+            "math",
+            "text",
+            "stealth",
+            "music",
+            "board",
+            "tower_defense",
+            "cooperative",
+            "sandbox",
+            "driving",
+            "daily",
+            "geography"
+          ]
+        },
+        "minItems": 1,
+        "maxItems": 4
+      },
+      "hnUrl": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https://news\\.ycombinator\\.com/item\\?id=\\d+$",
+        "description": "Hacker News discussion URL"
+      },
+      "hnPoints": {
+        "type": "integer",
+        "description": "Upvote count on Hacker News",
+        "minimum": 0
+      },
+      "playUrl": {
+        "type": "string",
+        "format": "uri",
+        "description": "URL to play the game (not repository)"
+      },
+      "pricing": {
+        "type": "string",
+        "enum": ["free", "paid", "freemium"],
+        "description": "Pricing model"
+      },
+      "imageUrl": {
+        "type": "string",
+        "description": "Path to game screenshot/preview image"
+      },
+      "sourceCodeUrl": {
+        "type": ["string", "null"],
+        "format": "uri",
+        "description": "Public repository URL or null if not available"
+      }
+    },
+    "additionalProperties": false
+  }
+}

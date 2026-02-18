@@ -23,6 +23,336 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "41378982",
+    "name": "Eleven Hundred",
+    "description": "Explain the daily word to an AI using only the 1,100 most common English words",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-28T12:59:28.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "thedeetch",
+    "genres": [
+      "word",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41378982",
+    "hnPoints": 5,
+    "playUrl": "https://elevenhundred.games",
+    "pricing": "free",
+    "imageUrl": "/images/games/41378982.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41366181",
+    "name": "One Million Checkboxes",
+    "description": "Click checkboxes on a shared grid with other players in real-time",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-27T11:01:02.000Z",
+    "playerModes": [
+      "multi",
+      "single"
+    ],
+    "author": "isoprophlex",
+    "genres": [
+      "cooperative",
+      "board",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41366181",
+    "hnPoints": 4,
+    "playUrl": "http://onemillioncheckboxes.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/41366181.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41333369",
+    "name": "Prove Humanity",
+    "description": "Compete against AI opponents in trivia while an AI judge tries to identify which players are bots based on answer patterns",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-23T21:43:14.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "cjcassar",
+    "genres": [
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41333369",
+    "hnPoints": 11,
+    "playUrl": "https://playandsurvive.vercel.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41333369.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41300814",
+    "name": "Defrag the Game",
+    "description": "Defragment virtual hard drives by organizing scattered disk fragments into contiguous blocks",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-20T15:14:09.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "v_b",
+    "genres": [
+      "puzzle",
+      "simulation",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41300814",
+    "hnPoints": 2,
+    "playUrl": "https://defrag-game.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/41300814.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41299446",
+    "name": "Anybody Problem",
+    "description": "A shooter with support for provably honest speedruns",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-20T12:29:54.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "okwme",
+    "genres": [
+      "daily",
+      "puzzle",
+      "action",
+      "shooter"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41299446",
+    "hnPoints": 5,
+    "playUrl": "https://anybody.gg",
+    "pricing": "free",
+    "imageUrl": "/images/games/41299446.jpg",
+    "sourceCodeUrl": "https://github.com/trifle-labs/anybody-problem"
+  },
+  {
+    "id": "41282050",
+    "name": "CubeRealm",
+    "description": "A Minecraft clone for the web where players explore and create in shared worlds",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-18T12:44:59.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "six_sides",
+    "genres": [
+      "sandbox",
+      "cooperative"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41282050",
+    "hnPoints": 2,
+    "playUrl": "https://cuberealm.io",
+    "pricing": "free",
+    "imageUrl": "/images/games/41282050.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41267834",
+    "name": "Baba Yaga",
+    "description": "A tiny beat-em-up arcade game inspired by John Wick",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-16T16:28:04.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "bubblicious",
+    "genres": [
+      "arcade",
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41267834",
+    "hnPoints": 5,
+    "playUrl": "https://gadgaming.itch.io/baba-yaga",
+    "pricing": "free",
+    "imageUrl": "/images/games/41267834.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41233783",
+    "name": "Tailwind Quiz",
+    "description": "Test your Tailwind CSS knowledge by answering questions about utility classes within a 30-second time limit",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-13T09:28:15.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "tommyjepsen",
+    "genres": [
+      "quiz",
+      "educational",
+      "coding"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41233783",
+    "hnPoints": 5,
+    "playUrl": "https://tailwindquiz.tommyjepsen.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41233783.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41217810",
+    "name": "Price Adapter",
+    "description": "An interactive game demonstrating Stripe's adaptive pricing feature through financial mechanics",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-11T17:31:17.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "a_crowbar",
+    "genres": [
+      "math",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41217810",
+    "hnPoints": 7,
+    "playUrl": "https://www.priceadapter.com/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/41217810.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41215086",
+    "name": "Game of 24",
+    "description": "Use four numbers to create equations that equal 24",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-11T09:50:40.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "walty8",
+    "genres": [
+      "puzzle",
+      "math"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41215086",
+    "hnPoints": 1,
+    "playUrl": "https://walty8.github.io/game-of-24/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41215086.jpg",
+    "sourceCodeUrl": "https://github.com/walty8/game-of-24"
+  },
+  {
+    "id": "41200179",
+    "name": "Sports Party",
+    "description": "Use camera-detected body movements to play fitness mini-games with music synchronization and daily calorie tracking goals",
+    "platforms": [
+      "ios",
+      "desktop"
+    ],
+    "releaseDate": "2024-08-09T09:23:05.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "all-appp_games",
+    "genres": [
+      "fitness",
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41200179",
+    "hnPoints": 2,
+    "playUrl": "https://all-appp.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41200179.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41161701",
+    "name": "Point Clicker",
+    "description": "Earn points by clicking to reach daily targets while managing upgrades",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-05T14:31:07.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "xk4rim",
+    "genres": [
+      "incremental",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41161701",
+    "hnPoints": 2,
+    "playUrl": "https://scientific.place/point-clicker/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41161701.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41161585",
+    "name": "Vampire Interrogation",
+    "description": "Question suspects at a checkpoint to determine if they are vampires before allowing entry",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-05T14:18:41.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sabrina_ramonov",
+    "genres": [
+      "quiz",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41161585",
+    "hnPoints": 3,
+    "playUrl": "https://vampire.sabrina.dev/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41161585.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41140072",
+    "name": "WordCraft",
+    "description": "Arrange words to craft target sentences horizontally or vertically",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-08-02T16:14:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "freediver",
+    "genres": [
+      "word",
+      "puzzle",
+      "kids",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41140072",
+    "hnPoints": 1,
+    "playUrl": "https://vladimir.prelovac.com/wordcraft.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/41140072.jpg",
+    "sourceCodeUrl": "https://github.com/vprelovac/wordcraft"
+  },
+  {
     "id": "41110158",
     "name": "ExplainGame",
     "description": "Get teammates to guess words using only clues in this real-time multiplayer party game",
