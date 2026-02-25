@@ -13,6 +13,7 @@ These rules guide the improvement of game metadata in `scripts/data/new.json` to
 - Information should be gathered from authoritative sources (game URLs, GitHub repos, etc.)
 - Descriptions should be **concise yet informative** (1-2 sentences maximum)
 - Do not use special characters if possible except for reasonable english language punctuation
+- **Use JSON Schema validation**: A JSON schema is configured in `.vscode/game-schema.json` and automatically validates `scripts/data/new.json` in VS Code, providing real-time autocomplete and error detection
 
 ---
 
@@ -123,11 +124,6 @@ daily, geography
 ### 6. **hnUrl** Field
 **Improvement Rules:**
 - **Verify format**: Must be `https://news.ycombinator.com/item?id=<id>`
-- **Scrape this URL** to:
-  - Validate the game exists and was discussed on HN
-  - Extract `hnPoints` (upvote count) if not already present
-  - Confirm game details from HN discussion
-  - Find community feedback about the game
 - **ID must match** the game's `id` field
 
 ---
@@ -212,17 +208,16 @@ When improving metadata, **scrape only the playUrl** for comprehensive informati
 
 Before considering a game entry complete, verify:
 
-- [ ] **name**: Concise, no redundant descriptors (2-5 words)
-- [ ] **description**: Max 2 sentences, 300 chars, no meta-commentary
-- [ ] **platforms**: Array of valid platform values, scraped and verified
-- [ ] **playerModes**: Array of valid mode values (single/multi), verified
-- [ ] **genres**: 2-4 genres maximum, accurate, primary first
-- [ ] **hnUrl**: Valid format, verified accessible, ID matches game id
-- [ ] **playUrl**: Points to playable game, not repository
-- [ ] **pricing**: One of: "free", "paid", "freemium" (verified from playUrl)
-- [ ] **sourceCodeUrl**: Valid repo URL or null (not empty string/boolean)
+- [ ] **Schema validation**: No red squiggles in VS Code (schema detects all errors automatically)
+- [ ] **name**: Concise, no redundant descriptors (2-5 words, schema enforces max 40 chars)
+- [ ] **description**: Max 2 sentences, no meta-commentary (schema enforces max 300 chars)
+- [ ] **platforms**: Array of valid platform values, scraped and verified (schema autocompletes)
+- [ ] **playerModes**: Array of valid mode values (single/multi), verified (schema autocompletes)
+- [ ] **genres**: 2-4 genres maximum, accurate, primary first (schema enforces max 4, autocompletes)
+- [ ] **playUrl**: Points to playable game, not repository (schema validates URL format)
+- [ ] **pricing**: One of: "free", "paid", "freemium" (schema autocompletes options)
+- [ ] **sourceCodeUrl**: Valid repo URL or null (not empty string/boolean, schema validates)
 - [ ] **author**: Matches actual developer name
-- [ ] **hnPoints**: Accurate (from hnUrl scrape)
 - [ ] **playUrl accessible**: Game is currently playable
 - [ ] **Consistency**: Matches style and quality of archive.json entries
 
@@ -284,6 +279,11 @@ Before considering a game entry complete, verify:
 ## Tools & References
 
 - **Game Type Definitions**: `src/types/game.ts` (Platform, PlayerMode, Pricing, GameGenre enums)
+- **JSON Schema**: `.vscode/game-schema.json` provides:
+  - Real-time autocomplete for enum values (`platforms`, `genres`, `playerModes`, `pricing`)
+  - Automatic validation of field lengths and formats
+  - Tooltips showing valid enum options when editing in VS Code
+  - Validation that URLs match expected patterns (e.g., `hnUrl` must match `https://news.ycombinator.com/item?id=*`)
 - **Quality Reference**: `scripts/data/archive.json` (use existing entries as style guide)
 - **Scraping URLs**: Use browser inspection, curl, or web scraping tools
 - **Validation**: Run `npm run check-duplicates`, `npm run count`, etc.
@@ -300,15 +300,15 @@ Before considering a game entry complete, verify:
 6. ❌ **Not verifying platforms**: Assume based on URL structure, verify by visiting game
 7. ❌ **Missing sourceCodeUrl when repo is public**: Always provide if available
 8. ❌ **Inconsistent casing/formatting**: Match archive.json style exactly
+9. ❌ **Using scripts to edit the file**: Always edit via the text editor, do not use external scripts to edit the JSON file
 
 ---
 
 ## Update Process
 
 1. **Pick a game** from new.json that needs improvement
-2. **Scrape both hnUrl and playUrl** for information
-3. **Update fields** according to rules above
-4. **Validate**: Ensure all values match enum types
-5. **Cross-check**: Compare with similar entries in archive.json
-6. **Test**: Run validation scripts to ensure no errors
-7. **Move to archive.json** once fully complete and validated
+2. **Open the file** in VS Code (JSON schema auto-loads and provides validation/autocomplete)
+3. **Scrape playUrl** for information
+4. **Update fields** according to rules above (use schema autocomplete for enum values)
+5. **Check for schema errors**: Look for red squiggles in VS Code indicating validation issues
+6. **Cross-check**: Compare with similar entries in archive.json

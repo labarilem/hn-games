@@ -23,6 +23,163 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "41682025",
+    "name": "Memory Cards",
+    "description": "Card memory matching game to exercise and improve your memory skills",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-09-28T18:22:43.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "vidzert",
+    "genres": [
+      "memory"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41682025",
+    "hnPoints": 9,
+    "playUrl": "https://vidzert.com/memory-cards",
+    "pricing": "free",
+    "imageUrl": "/images/games/41682025.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41623814",
+    "name": "King Thirteen",
+    "description": "2048-style puzzle game using chess pieces, built in vanilla JS under 13 KB",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-09-23T08:41:25.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "animuchan",
+    "genres": [
+      "puzzle",
+      "arcade"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41623814",
+    "hnPoints": 269,
+    "playUrl": "https://js13kgames.com/2024/games/king-thirteen",
+    "pricing": "free",
+    "imageUrl": "/images/games/41623814.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41593212",
+    "name": "Unicode.fun",
+    "description": "Minimalist deck-building slot machine using only emoji graphics",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-09-19T15:58:37.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "0xdada",
+    "genres": [
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41593212",
+    "hnPoints": 1,
+    "playUrl": "https://unicode.fun/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41593212.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41582128",
+    "name": "Chess Puzzle Bot",
+    "description": "Solve chess puzzles against Stockfish, with failed moves turning into games",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-09-18T16:37:59.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "1bit_e",
+    "genres": [
+      "puzzle",
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41582128",
+    "hnPoints": 3,
+    "playUrl": "https://www.chesspuzzlebot.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41582128.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41554872",
+    "name": "Guess the AI",
+    "description": "10-question quiz where you identify AI-generated content from real content",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-09-16T11:14:26.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "TheIndieBuilder",
+    "genres": [
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41554872",
+    "hnPoints": 2,
+    "playUrl": "https://usetopical.com/guess-the-ai/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41554872.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41466071",
+    "name": "Threesum",
+    "description": "Slide tiles to match sums in each row and column, inspired by Wordle and Sudoku",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-09-06T13:34:57.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "zacattk",
+    "genres": [
+      "puzzle",
+      "math"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41466071",
+    "hnPoints": 3,
+    "playUrl": "https://playthreesum.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/41466071.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "41415187",
+    "name": "Shehzadi in Peril",
+    "description": "Protect the Shehzadi from an onslaught of ants",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-09-01T08:19:35.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sh4jid",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=41415187",
+    "hnPoints": 112,
+    "playUrl": "https://shehzadi.vercel.app",
+    "pricing": "free",
+    "imageUrl": "/images/games/41415187.jpg",
+    "sourceCodeUrl": "https://github.com/shajidhasan/shehzadi-in-peril"
+  },
+  {
     "id": "41378982",
     "name": "Eleven Hundred",
     "description": "Explain the daily word to an AI using only the 1,100 most common English words",
