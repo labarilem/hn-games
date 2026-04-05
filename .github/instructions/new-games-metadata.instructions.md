@@ -286,7 +286,47 @@ Before considering a game entry complete, verify:
   - Validation that URLs match expected patterns (e.g., `hnUrl` must match `https://news.ycombinator.com/item?id=*`)
 - **Quality Reference**: `scripts/data/archive.json` (use existing entries as style guide)
 - **Scraping URLs**: Use browser inspection, curl, or web scraping tools
-- **Validation**: Run `npm run check-duplicates`, `npm run count`, etc.
+
+---
+
+## Autonomous Validation Command for LLM
+
+To identify games in `new.json` that need fixing, use the command:
+
+```bash
+npm run lint-new-games
+```
+
+**How to use:**
+1. Run the command above in the project root directory
+2. Output will be one of:
+   - `valid` — All games pass schema validation, exit code 0
+   - JSON array of error objects — Games with validation errors, exit code 1
+3. Parse the JSON error array to identify:
+   - Which game index needs fixing (from `instancePath`, e.g., `[15]` means index 15)
+   - What field has the error (from `instancePath`, e.g., `[15].name`)
+   - What the constraint violation is (from `message`, e.g., `must not be longer than 40 characters`)
+   - What valid values are allowed (from `params`, e.g., `allowedValues`, `limit`)
+
+**Example error output for invalid entries:**
+```json
+[
+  {
+    "instancePath": "[0].name",
+    "schemaPath": "#/items/properties/name/maxLength",
+    "keyword": "maxLength",
+    "params": { "limit": 40 },
+    "message": "must not be longer than 40 characters"
+  },
+  {
+    "instancePath": "[15].genres[4]",
+    "schemaPath": "#/items/properties/genres/items/enum",
+    "keyword": "enum",
+    "params": { "allowedValues": ["word", "puzzle", "action", ...] },
+    "message": "must be equal to one of the allowed values"
+  }
+]
+```
 
 ---
 
