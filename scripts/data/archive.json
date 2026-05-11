@@ -23,6 +23,715 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "42560933",
+    "name": "Connect Dots",
+    "description": "Connect dots without crossing any lines in minimalist spatial puzzles",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-31T19:00:58.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "vidzert",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42560933",
+    "hnPoints": 35,
+    "playUrl": "https://vidzert.com/connect-dots-without-crossing-lines",
+    "pricing": "free",
+    "imageUrl": "/images/games/42560933.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42557920",
+    "name": "Darklaga",
+    "description": "Classic shoot'em up remade 20 years later in TypeScript and WebGL",
+    "platforms": [
+      "web",
+      "desktop"
+    ],
+    "releaseDate": "2024-12-31T10:55:56.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "victorNicollet",
+    "genres": [
+      "action",
+      "shooter"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42557920",
+    "hnPoints": 106,
+    "playUrl": "https://nicollet.net/blog/darklaga/darklaga.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/42557920.jpg",
+    "sourceCodeUrl": "https://github.com/VictorNicollet/Darklaga"
+  },
+  {
+    "id": "42555590",
+    "name": "pizzzza.lol",
+    "description": "Catch pizzas and toppings to increase your score",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-31T01:50:43.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "kilroy123",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42555590",
+    "hnPoints": 11,
+    "playUrl": "https://pizzzza.lol",
+    "pricing": "free",
+    "imageUrl": "/images/games/42555590.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42501201",
+    "name": "Space Trader",
+    "description": "Trade goods between planets. Ported from classic Palm OS game to modern web",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-24T11:18:31.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "memalign",
+    "genres": [
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42501201",
+    "hnPoints": 8,
+    "playUrl": "https://memalign.github.io/m/spacetrader/index.html",
+    "pricing": "paid",
+    "imageUrl": "/images/games/42501201.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42450269",
+    "name": "Birdle",
+    "description": "Daily bird species guessing game. Identify birds from images. New puzzle every 24 hours",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "releaseDate": "2024-12-18T13:29:12.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "xandrius",
+    "genres": [
+      "daily",
+      "puzzle",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42450269",
+    "hnPoints": 8,
+    "playUrl": "https://birdle.us/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42450269.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42444897",
+    "name": "Trash",
+    "description": "Guide your character through surreal worlds to achieve astral ascension",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-17T20:22:08.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "doomlaser",
+    "genres": [
+      "adventure"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42444897",
+    "hnPoints": 2,
+    "playUrl": "https://doomlaser.itch.io/trash",
+    "pricing": "free",
+    "imageUrl": "/images/games/42444897.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42441704",
+    "name": "Subliminal Words",
+    "description": "Solve daily visual word puzzles with AI-generated artistic images",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2024-12-17T14:42:42.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "indest",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42441704",
+    "hnPoints": 1,
+    "playUrl": "https://apps.apple.com/us/app/subliminal-words/id6468366578",
+    "pricing": "free",
+    "imageUrl": "/images/games/42441704.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42430526",
+    "name": "Aldren Quest",
+    "description": "Browser RPG built in Blazer. Retro-style adventure with combat progression",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-16T12:50:16.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "varius",
+    "genres": [
+      "rpg",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42430526",
+    "hnPoints": 6,
+    "playUrl": "https://whimsicalwyrm.itch.io/aldrens-quest",
+    "pricing": "free",
+    "imageUrl": "/images/games/42430526.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42424508",
+    "name": "SmartHome",
+    "description": "Text adventure with point-and-click exploration. Puzzle and escape room elements",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-15T17:05:30.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "scyclow",
+    "genres": [
+      "adventure",
+      "puzzle",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42424508",
+    "hnPoints": 268,
+    "playUrl": "https://smarthome.steviep.xyz",
+    "pricing": "free",
+    "imageUrl": "/images/games/42424508.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42418572",
+    "name": "Bingo",
+    "description": "Bingo game with AI bot opponent using mathematical strategy selection",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-14T18:18:34.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "100daysofcode",
+    "genres": [
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42418572",
+    "hnPoints": 2,
+    "playUrl": "https://www.100daysofcode.io/projects/bingo",
+    "pricing": "free",
+    "imageUrl": "/images/games/42418572.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42411513",
+    "name": "JOBifAI",
+    "description": "Convince NPCs through natural language arguments with AI-generated images as clues",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-13T19:24:43.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "woolion",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42411513",
+    "hnPoints": 1,
+    "playUrl": "https://store.steampowered.com/app/3248650/JOBifAI/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42411513.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42378314",
+    "name": "WordGlyph",
+    "description": "Guess 6-letter words by building segments. Strategy and word knowledge combined",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "releaseDate": "2024-12-10T16:24:09.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "wordglyph",
+    "genres": [
+      "word",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42378314",
+    "hnPoints": 2,
+    "playUrl": "https://Wordglyph.xyz",
+    "pricing": "free",
+    "imageUrl": "/images/games/42378314.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42364776",
+    "name": "Cblix",
+    "description": "Navigate through procedurally generated puzzle levels",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-09T10:30:08.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "franze",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42364776",
+    "hnPoints": 4,
+    "playUrl": "https://cblix.franzai.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42364776.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42330215",
+    "name": "Fifty",
+    "description": "Match numbers strategically to clear the board",
+    "platforms": [
+      "web",
+      "android",
+      "ios"
+    ],
+    "releaseDate": "2024-12-05T17:18:35.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "cover",
+    "genres": [
+      "board",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42330215",
+    "hnPoints": 8,
+    "playUrl": "https://fiftygame.com/play",
+    "pricing": "free",
+    "imageUrl": "/images/games/42330215.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42322983",
+    "name": "Super Ball Brick Crusher",
+    "description": "Break bricks with a bouncing ball in this classic arcade style",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2024-12-04T22:58:59.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "lpeancovschi",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42322983",
+    "hnPoints": 3,
+    "playUrl": "https://apps.apple.com/us/app/super-ball-brick-crusher/id6736870504",
+    "pricing": "free",
+    "imageUrl": "/images/games/42322983.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42313592",
+    "name": "Echoes",
+    "description": "Navigate without touching the shadow that mirrors your movements",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-04T01:18:19.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mfkhalil",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42313592",
+    "hnPoints": 2,
+    "playUrl": "https://playechoes.vercel.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42313592.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42306492",
+    "name": "The Traveling Salesman Game",
+    "description": "Find the shortest route connecting all cities on an interactive map",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-12-03T14:37:46.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "tripgeo",
+    "genres": [
+      "puzzle",
+      "geography"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42306492",
+    "hnPoints": 1,
+    "playUrl": "https://www.tripgeo.com/geotripper/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42306492.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42275417",
+    "name": "Electrobillion",
+    "description": "Build power grids for expanding cities in this educational simulation",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-29T17:31:24.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "evrimoztamur",
+    "genres": [
+      "simulation",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42275417",
+    "hnPoints": 4,
+    "playUrl": "https://evrimzone.itch.io/electrobillion-alpha",
+    "pricing": "free",
+    "imageUrl": "/images/games/42275417.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42246769",
+    "name": "Pigeonholed",
+    "description": "Mailman-inspired letter sorting puzzle game with creative mechanics",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-26T15:50:00.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "holoflash",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42246769",
+    "hnPoints": 2,
+    "playUrl": "https://pigeonholed.onrender.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42246769.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42239872",
+    "name": "Wordazzle",
+    "description": "AI-powered word game showcasing creative possibilities with OpenAI",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-25T20:30:35.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "creature_x",
+    "genres": [
+      "word",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42239872",
+    "hnPoints": 1,
+    "playUrl": "https://wordazzle.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/42239872.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42222007",
+    "name": "Broski",
+    "description": "Ski downhill avoiding obstacles while escaping from the yeti",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-23T17:15:54.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "nightowl_games",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42222007",
+    "hnPoints": 115,
+    "playUrl": "https://broski.winterpixel.io/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42222007.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42183146",
+    "name": "VideoPuzzle",
+    "description": "Daily video unscrambling puzzle with 4x4 tiles",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-19T13:24:48.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "oliwary",
+    "genres": [
+      "puzzle",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42183146",
+    "hnPoints": 2,
+    "playUrl": "https://videopuzzle.org",
+    "pricing": "free",
+    "imageUrl": "/images/games/42183146.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42156400",
+    "name": "Android Dev Quest",
+    "description": "Puzzle game solvable using Android developer tools",
+    "platforms": [
+      "android"
+    ],
+    "releaseDate": "2024-11-16T13:49:53.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "richzad",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42156400",
+    "hnPoints": 85,
+    "playUrl": "https://play.google.com/store/apps/details?id=quest.androiddev",
+    "pricing": "free",
+    "imageUrl": "/images/games/42156400.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42129310",
+    "name": "Retail Mage",
+    "description": "Co-op game where AI NPCs observe, plan, and interact naturally with player input",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-13T19:57:21.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "jaaron",
+    "genres": [
+      "action",
+      "simulation",
+      "sandbox"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42129310",
+    "hnPoints": 4,
+    "playUrl": "https://store.steampowered.com/app/3224380/Retail_Mage/",
+    "pricing": "paid",
+    "imageUrl": "/images/games/42129310.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42126515",
+    "name": "GHQ",
+    "description": "Online multiplayer version of GHQ strategy board with bots and Elo ranking system",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-13T14:49:42.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "addcn",
+    "genres": [
+      "strategy",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42126515",
+    "hnPoints": 8,
+    "playUrl": "https://www.playghq.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/42126515.jpg",
+    "sourceCodeUrl": "https://github.com/acunniffe/ghq"
+  },
+  {
+    "id": "42124568",
+    "name": "Knight's Graph",
+    "description": "Knight's tour puzzle game. Create patterns on numbered grid using chess movements without repeats",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2024-11-13T09:53:29.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "GlebShalimov",
+    "genres": [
+      "puzzle",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42124568",
+    "hnPoints": 10,
+    "playUrl": "https://apps.apple.com/ru/app/knights-graph/id6737812039?l=en-GB",
+    "pricing": "free",
+    "imageUrl": "/images/games/42124568.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42087899",
+    "name": "4Circles",
+    "description": "Solve AI-generated daily trivia puzzles in four-choice format",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-08T16:08:56.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "svadrut_k",
+    "genres": [
+      "daily",
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42087899",
+    "hnPoints": 5,
+    "playUrl": "https://4circles.xyz",
+    "pricing": "free",
+    "imageUrl": "/images/games/42087899.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42087015",
+    "name": "ColorSum",
+    "description": "Daily math puzzle. Color grid squares following number patterns",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-08T14:17:31.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "zacattk",
+    "genres": [
+      "puzzle",
+      "math",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42087015",
+    "hnPoints": 1,
+    "playUrl": "https://playcolorsum.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42087015.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42044331",
+    "name": "GemSlide",
+    "description": "Sliding boxes puzzle game with 2.5 million levels",
+    "platforms": [
+      "android"
+    ],
+    "releaseDate": "2024-11-04T18:07:22.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "itarato",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42044331",
+    "hnPoints": 2,
+    "playUrl": "https://play.google.com/store/apps/details?id=com.PeterArato.GemSlide&hl=en_US",
+    "pricing": "free",
+    "imageUrl": "/images/games/42044331.jpg",
+    "sourceCodeUrl": "https://github.com/itarato/slider"
+  },
+  {
+    "id": "42021380",
+    "name": "Xtreme RPS",
+    "description": "Rock, Paper, Scissors roguelike with perk shop and solo/PvP modes",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-11-01T20:45:00.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "xtremerps",
+    "genres": [
+      "roguelike"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42021380",
+    "hnPoints": 39,
+    "playUrl": "https://xtremerps.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/42021380.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42016265",
+    "name": "Block Sort",
+    "description": "Offline-first PWA with random levels and QR code saves, no ads or tracking",
+    "platforms": [
+      "web",
+      "desktop"
+    ],
+    "releaseDate": "2024-11-01T12:26:12.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "thaisi",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42016265",
+    "hnPoints": 20,
+    "playUrl": "https://matthijsgroen.github.io/block-sort/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42016265.jpg",
+    "sourceCodeUrl": "https://github.com/matthijsgroen/block-sort"
+  },
+  {
     "id": "41995873",
     "name": "Unlimited Colorfle",
     "description": "Play unlimited rounds of color mixing puzzle game where you match target colors through blending",
