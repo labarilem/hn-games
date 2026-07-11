@@ -1,32 +1,26 @@
 export default function Footer() {
   return (
-    <footer className="bg-[#242424] mt-auto">
+    <footer className="bg-hn-surface border-t border-white/5 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           <div className="flex items-center flex-wrap justify-center gap-x-3 text-gray-400">
-            <a href="/about" className="hover:text-[#646cff] transition-colors">
+            <a href="/about" className="hn-footer-link">
               About
             </a>
             <span className="select-none">·</span>
-            <a
-              href="/submit"
-              className="hover:text-[#646cff] transition-colors"
-            >
+            <a href="/submit" className="hn-footer-link">
               Submit
             </a>
             <span className="select-none">·</span>
-            <a
-              href="/random"
-              className="hover:text-[#646cff] transition-colors"
-            >
+            <a href="/random" className="hn-footer-link">
               Random
             </a>
             <span className="select-none">·</span>
-            <a href="/rip" className="hover:text-[#646cff] transition-colors">
+            <a href="/rip" className="hn-footer-link">
               RIP
             </a>
             <span className="select-none">·</span>
-            <a href="/stats" className="hover:text-[#646cff] transition-colors">
+            <a href="/stats" className="hn-footer-link">
               Stats
             </a>
             <span className="select-none">·</span>
@@ -34,26 +28,16 @@ export default function Footer() {
               href="https://github.com/labarilem/hn-games"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-[#646cff] transition-colors"
+              className="hn-footer-link"
             >
               Source Code
             </a>
             <span className="select-none">·</span>
-            <a
-              href="/contacts"
-              className="hover:text-[#646cff] transition-colors"
-            >
+            <a href="/contacts" className="hn-footer-link">
               Contacts
             </a>
-            {/* <span className="select-none">·</span>
-            <a
-              href="/newsletter"
-              className="hover:text-[#646cff] transition-colors"
-            >
-              Newsletter
-            </a> */}
           </div>
-          <div className="hover:text-[#646cff] transition-colors">
+          <div className="hn-footer-link">
             <a
               href="https://marcolabarile.me"
               target="_blank"

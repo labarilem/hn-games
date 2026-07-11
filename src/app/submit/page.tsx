@@ -9,11 +9,11 @@ export default function Submit() {
         <br></br>
         Help us grow the catalog by submitting it!
       </p>
-      <div className="bg-[#242424] rounded-lg p-6">
+      <div className="hn-surface p-6">
         <SubmitGameForm />
         <p className="mt-6 text-gray-400 text-sm">
-          We'll review your submission and add it to the catalog if it meets our{" "}
-          <a href="/about" className="text-blue-400 hover:text-blue-300">criteria</a>.
+          We&apos;ll review your submission and add it to the catalog if it meets our{" "}
+          <a href="/about" className="hn-link underline underline-offset-2">criteria</a>.
         </p>
       </div>
     </div>

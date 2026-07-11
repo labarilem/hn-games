@@ -28,7 +28,12 @@ const Pagination: React.FC<PaginationProps> = ({
     // Preserve all existing search parameters
     if (searchParams.search) params.set('search', searchParams.search as string);
     if (searchParams.platform) params.set('platform', searchParams.platform as string);
-    if (searchParams.genre) params.set('genre', searchParams.genre as string);
+    if (searchParams.genre) {
+      const genres = Array.isArray(searchParams.genre)
+        ? searchParams.genre
+        : [searchParams.genre];
+      genres.forEach((genre) => params.append("genre", genre));
+    }
     if (searchParams.sortBy) params.set('sortBy', searchParams.sortBy as string);
     if (searchParams.playerModes) params.set('playerModes', searchParams.playerModes as string);
     if (searchParams.pricing) params.set('pricing', searchParams.pricing as string);
@@ -77,7 +82,7 @@ const Pagination: React.FC<PaginationProps> = ({
       {pagination.hasPreviousPage && (
         <a
           href={buildPageUrl(currentPage - 1)}
-          className="px-4 py-2 rounded-lg bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white transition-colors flex items-center justify-center"
+          className="px-4 py-2 rounded-lg bg-hn-surface border border-white/5 text-gray-300 hover:bg-hn-accent hover:text-white hover:border-transparent transition-colors flex items-center justify-center"
           aria-label="Previous page"
         >
           <svg
@@ -101,10 +106,10 @@ const Pagination: React.FC<PaginationProps> = ({
           <a
             key={page}
             href={buildPageUrl(page)}
-            className={`px-4 py-2 rounded-lg transition-colors ${
+            className={`px-4 py-2 rounded-lg border transition-colors ${
               currentPage === page
-                ? "bg-[#646cff] text-white"
-                : "bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white"
+                ? "bg-hn-accent border-hn-accent text-white"
+                : "bg-hn-surface border-white/5 text-gray-300 hover:bg-hn-accent hover:text-white hover:border-transparent"
             }`}
           >
             {page}
@@ -121,7 +126,7 @@ const Pagination: React.FC<PaginationProps> = ({
       {pagination.hasNextPage && (
         <a
           href={buildPageUrl(currentPage + 1)}
-          className="px-4 py-2 rounded-lg bg-[#242424] text-gray-300 hover:bg-[#646cff] hover:text-white transition-colors flex items-center justify-center"
+          className="px-4 py-2 rounded-lg bg-hn-surface border border-white/5 text-gray-300 hover:bg-hn-accent hover:text-white hover:border-transparent transition-colors flex items-center justify-center"
           aria-label="Next page"
         >
           <svg

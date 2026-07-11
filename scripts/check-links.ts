@@ -10,8 +10,10 @@ import { isValidGameUrl } from "./lib/url";
 
 const ARCHIVE_FILE_PATH = path.join(__dirname, "data", "archive.json");
 const RIP_FILE_PATH = path.join(__dirname, "data", "rip.json");
-const BATCH_SIZE = 5;
+const NUM_BATCHES = 5;
 const DELAY_MS = 500;
+const DRY_RUN =
+  process.env.DRY_RUN === "1" || process.argv.includes("--dry-run");
 
 interface Game {
   id: string;
@@ -110,25 +112,21 @@ async function checkGameLinks() {
     }
 
     // Split games into batches
-    const batchSize = Math.ceil(gamesWithUrls.length / BATCH_SIZE);
+    const batchSize = Math.ceil(gamesWithUrls.length / NUM_BATCHES);
     const batches = chunkArray(gamesWithUrls, batchSize);
 
     console.log(
       `\n📦 Split ${gamesWithUrls.length} games into ${batches.length} batches (≈${batchSize} games per batch)`
     );
 
-    // Process batches concurrently to check URLs faster
-    console.log("\n🚀 Starting concurrent batch processing...");
+    // Process batches sequentially to avoid rate-limiting store and CDN hosts
+    console.log("\n🚀 Starting batch processing...");
     const allInvalidGames: Game[] = [];
 
-    const batchResults = await Promise.all(
-      batches.map((batch, index) => processBatch(batch, index))
-    );
-
-    // Flatten all invalid games from all batches
-    batchResults.forEach(invalidGames => {
+    for (let index = 0; index < batches.length; index++) {
+      const invalidGames = await processBatch(batches[index], index);
       allInvalidGames.push(...invalidGames);
-    });
+    }
 
     console.log(`\n📊 URL checking complete:`);
     console.log(`  ❌ Invalid URLs found: ${allInvalidGames.length}`);
@@ -136,34 +134,40 @@ async function checkGameLinks() {
 
     // Move invalid games from archive to rip
     if (allInvalidGames.length > 0) {
-      console.log(`\n🔄 Moving ${allInvalidGames.length} games from archive to RIP...`);
+      if (DRY_RUN) {
+        console.log(
+          `\n🧪 Dry run: would move ${allInvalidGames.length} games from archive to RIP`
+        );
+      } else {
+        console.log(`\n🔄 Moving ${allInvalidGames.length} games from archive to RIP...`);
 
-      // Remove invalid games from archive
-      const invalidGameIds = new Set(allInvalidGames.map(g => g.id));
-      const updatedArchiveGames = archiveGames.filter(game => !invalidGameIds.has(game.id)).sort(
-        (a, b) =>
-          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
-      );
+        // Remove invalid games from archive
+        const invalidGameIds = new Set(allInvalidGames.map(g => g.id));
+        const updatedArchiveGames = archiveGames.filter(game => !invalidGameIds.has(game.id)).sort(
+          (a, b) =>
+            new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+        );
 
-      // Add invalid games to RIP
-      const updatedRipGames = [...ripGames, ...allInvalidGames].sort(
-        (a, b) =>
-          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
-      );
+        // Add invalid games to RIP
+        const updatedRipGames = [...ripGames, ...allInvalidGames].sort(
+          (a, b) =>
+            new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+        );
 
-      // Write updated files
-      console.log("💾 Updating archive.json...");
-      const updatedArchiveContent = JSON.stringify(updatedArchiveGames, null, 2);
-      fs.writeFileSync(ARCHIVE_FILE_PATH, updatedArchiveContent, "utf8");
-      console.log(`✅ archive.json updated (${updatedArchiveGames.length} games remaining)`);
+        // Write updated files
+        console.log("💾 Updating archive.json...");
+        const updatedArchiveContent = JSON.stringify(updatedArchiveGames, null, 2);
+        fs.writeFileSync(ARCHIVE_FILE_PATH, updatedArchiveContent, "utf8");
+        console.log(`✅ archive.json updated (${updatedArchiveGames.length} games remaining)`);
 
-      console.log("💾 Updating rip.json...");
-      const updatedRipContent = JSON.stringify(updatedRipGames, null, 2);
-      fs.writeFileSync(RIP_FILE_PATH, updatedRipContent, "utf8");
-      console.log(`✅ rip.json updated (${updatedRipGames.length} total games)`);
+        console.log("💾 Updating rip.json...");
+        const updatedRipContent = JSON.stringify(updatedRipGames, null, 2);
+        fs.writeFileSync(RIP_FILE_PATH, updatedRipContent, "utf8");
+        console.log(`✅ rip.json updated (${updatedRipGames.length} total games)`);
 
-      console.log("\n🎉 Successfully moved games with invalid URLs to RIP");
-      
+        console.log("\n🎉 Successfully moved games with invalid URLs to RIP");
+      }
+
       // Log moved games
       console.log("\n📋 Games moved to RIP:");
       allInvalidGames.forEach(game => {

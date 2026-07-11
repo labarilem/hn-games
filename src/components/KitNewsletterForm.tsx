@@ -31,7 +31,7 @@ export default function KitNewsletterForm() {
         setStatus("error");
         setErrorMsg(data?.message || "Something went wrong.");
       }
-    } catch (err) {
+    } catch {
       setStatus("error");
       setErrorMsg("Network error. Try again.");
     }
@@ -56,13 +56,13 @@ export default function KitNewsletterForm() {
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="flex-1 w-full px-4 py-2 rounded bg-gray-700 text-white border border-gray-600 focus:border-blue-500 focus:outline-none min-w-0"
+            className="hn-form-input flex-1"
           />
 
           <button
             type="submit"
             disabled={status === "loading"}
-            className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors disabled:opacity-50 disabled:cursor-not-allowed relative w-full sm:w-auto mt-2 sm:mt-0"
+            className="hn-btn-primary px-4 py-2 rounded disabled:opacity-50 disabled:cursor-not-allowed relative w-full sm:w-auto mt-2 sm:mt-0"
           >
             {status === "loading" ? (
               <>
@@ -81,7 +81,7 @@ export default function KitNewsletterForm() {
         <p className="mt-2 text-red-400 text-sm">{errorMsg}</p>
       )}
       <p className="mt-6 text-gray-400 text-sm">
-        If you don't see our emails in your inbox, please check your spam
+        If you don&apos;t see our emails in your inbox, please check your spam
         folder.
       </p>
 

@@ -18,20 +18,20 @@ export default function ContactsPage() {
             <span className="font-semibold">Website: </span>
             <Link
               href="https://marcolabarile.me/"
-              className="text-blue-400 hover:text-blue-300 underline"
+              className="hn-link underline underline-offset-2"
             >
               marcolabarile.me
             </Link>
           </li>
           <li>
             <span className="font-semibold">Email: </span>
-            <span >hackernewsgames at Google's email provider dot com</span>
+            <span >hackernewsgames at Google&apos;s email provider dot com</span>
           </li>
           <li>
             <span className="font-semibold">GitHub Issues: </span>
             <Link
               href="https://github.com/labarilem/hn-games/issues"
-              className="text-blue-400 hover:text-blue-300 underline"
+              className="hn-link underline underline-offset-2"
             >
               github.com/labarilem/hn-games/issues
             </Link>

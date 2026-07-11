@@ -37,14 +37,14 @@ export default function AboutPage() {
         </ul>
 
         <h3 className="text-l font-semibold mt-6 mb-3 text-white">
-          ❌ What We Don't Accept
+          ❌ What We Don&apos;t Accept
         </h3>
         <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-300">
           <li>Bug-ridden or unplayable games</li>
           <li>Unfinished, early-stage prototypes</li>
           <li>Games that need to be built from source</li>
           <li>
-            Games binaries hosted on platforms that don't scan for malware
+            Games binaries hosted on platforms that don&apos;t scan for malware
           </li>
           <li>NSFW games</li>
         </ul>
@@ -63,12 +63,12 @@ export default function AboutPage() {
           that meets our criteria, please{" "}
           <Link
             href="/submit"
-            className="text-[#646cff] hover:text-[#747bff] transition-colors"
+            className="hn-link underline underline-offset-2 transition-colors"
           >
             submit it
           </Link>
-          . Similarly, if you notice a game in our catalog that doesn't meet
-          these standards, let us know and we'll review it.
+          . Similarly, if you notice a game in our catalog that doesn&apos;t meet
+          these standards, let us know and we&apos;ll review it.
         </p>
         <p className="mb-4 text-gray-300">
           To encourage all kinds of contributions and give back to the HN
@@ -76,8 +76,7 @@ export default function AboutPage() {
           source code is available on{" "}
           <Link
             href="https://github.com/labarilem/hn-games"
-            className="text-[#646cff] hover:text-[#747bff] transition-colors
-            "
+            className="hn-link underline underline-offset-2 transition-colors"
           >
             GitHub
           </Link>

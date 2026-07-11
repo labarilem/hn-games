@@ -60,6 +60,22 @@ npm run check-links
 
 games with invalid links will be moved to RIP games.
 
+## Revive games
+
+Move a game from RIP back to the archive when it was moved by mistake:
+
+```bash
+npm run revive -- <game-id>
+```
+
+Then recompile the site data:
+
+```bash
+npm run compile
+```
+
+Use `--dry-run` to preview without writing changes.
+
 ## Images
 
 Screenshots should be as close as possible to the 16:9 format to look good in the app.

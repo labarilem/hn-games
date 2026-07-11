@@ -1,17 +1,20 @@
 "use client";
 
-import { formatGenreForFilter } from "@/lib/formatters";
 import { GameGenre, Pricing } from "@/types/game";
 import debounce from "lodash.debounce";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import FilterSelect from "./FilterSelect";
+import GenreMultiSelect from "./GenreMultiSelect";
+
+const filterSelectWrapper = "w-fit min-w-[120px]";
+const filterSelectWideWrapper = "w-fit min-w-[140px]";
 
 export default function GameFilters() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isNavigating, setIsNavigating] = useState(false);
   const [searchTerm, setSearchTerm] = useState(
     searchParams.get("search") ?? ""
   );
@@ -42,29 +45,38 @@ export default function GameFilters() {
   );
 
   // Create a stable debounced navigation function
-  const debouncedNavigate = useCallback(
-    debounce((nextValue: string) => {
-      if (isNavigating) return;
+  const debouncedNavigate = useMemo(
+    () =>
+      debounce((nextValue: string) => {
+        const params = new URLSearchParams(searchParams.toString());
 
-      const params = new URLSearchParams(searchParams.toString());
+        if (nextValue) {
+          params.set("search", nextValue);
+        } else {
+          params.delete("search");
+        }
+        params.set("page", "1");
 
-      if (nextValue) {
-        params.set("search", nextValue);
-      } else {
-        params.delete("search");
-      }
+        const newSearch = params.toString();
+        const newPath = createNavigationPath(newSearch);
+        const currentPath = window.location.pathname + window.location.search;
 
-      const newSearch = params.toString();
-      const newPath = createNavigationPath(newSearch);
-      const currentPath = window.location.pathname + window.location.search;
-
-      // Only navigate if path is different
-      if (newPath !== currentPath) {
-        router.push(newPath);
-      }
-    }, 250),
-    [isNavigating, router, searchParams, createNavigationPath]
+        if (newPath !== currentPath) {
+          router.push(newPath);
+        }
+      }, 250),
+    [router, searchParams, createNavigationPath]
   );
+
+  useEffect(() => {
+    return () => debouncedNavigate.cancel();
+  }, [debouncedNavigate]);
+
+  useEffect(() => {
+    // Sync input when URL changes via back/forward or clear filters
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional URL-to-input sync
+    setSearchTerm(searchParams.get("search") ?? "");
+  }, [searchParams]);
 
   const handleSearchChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -80,9 +92,6 @@ export default function GameFilters() {
   }, []);
 
   const handleClearFilters = useCallback(() => {
-    if (isNavigating) return;
-    setIsNavigating(true);
-
     // Reset sort selects to default value first
     if (mobileSortRef.current) mobileSortRef.current.value = "releaseDate-desc";
     if (desktopSortRef.current)
@@ -103,14 +112,25 @@ export default function GameFilters() {
       // If already at base path, force a re-render by updating resetKey
       setResetKey((k) => k + 1);
     }
+  }, [router, debouncedNavigate, pathname]);
 
-    setIsNavigating(false);
-  }, [router, isNavigating, debouncedNavigate, pathname]);
+  const handleGenreChange = useCallback(
+    (genres: GameGenre[]) => {
+      const params = new URLSearchParams(searchParams.toString());
+      params.delete("genre");
+      genres.forEach((genre) => params.append("genre", genre));
+      params.set("page", "1");
+      router.push(createNavigationPath(params.toString()));
+    },
+    [router, searchParams, createNavigationPath]
+  );
+
+  const selectedGenres = searchParams.getAll("genre") as GameGenre[];
 
   // Count active filters
   const activeFiltersCount = [
     searchParams.get("platform"),
-    searchParams.get("genre"),
+    selectedGenres.length > 0 ? "genre" : null,
     searchParams.get("playerModes"),
     searchParams.get("pricing"),
     searchParams.get("license"),
@@ -119,7 +139,6 @@ export default function GameFilters() {
     searchParams.get("author"),
   ].filter(Boolean).length;
 
-  const hasSearch = (searchParams.get("search") ?? "").length > 0;
   const currentAuthor = searchParams.get("author");
 
   return (
@@ -129,7 +148,7 @@ export default function GameFilters() {
         <div className="flex gap-2">
           <button
             onClick={handleExpandToggle}
-            className="flex-1 bg-[#242424] rounded-lg px-4 py-3 flex justify-between items-center text-left"
+            className="hn-filter-control flex-1 flex justify-between items-center text-left"
           >
             <span className="flex items-center gap-2">
               <svg
@@ -146,9 +165,9 @@ export default function GameFilters() {
                 />
               </svg>
               Filters
-              {(activeFiltersCount > 0 || hasSearch) && (
-                <span className="bg-[#646cff] text-white text-sm px-2 py-0.5 rounded-full">
-                  {activeFiltersCount + (hasSearch ? 1 : 0)}
+              {activeFiltersCount > 0 && (
+                <span className="bg-hn-accent text-white text-sm px-2 py-0.5 rounded-full">
+                  {activeFiltersCount}
                 </span>
               )}
             </span>
@@ -156,7 +175,7 @@ export default function GameFilters() {
           {activeFiltersCount > 0 && (
             <button
               onClick={handleClearFilters}
-              className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors"
+              className="hn-btn-primary px-4 py-2 rounded"
             >
               Clear
             </button>
@@ -164,23 +183,23 @@ export default function GameFilters() {
         </div>
 
         {isExpanded && (
-          <div className="mt-2 flex flex-wrap gap-2">
+          <div className="hn-surface mt-2 p-3 flex flex-wrap gap-2 animate-slide-up">
             <input
               type="text"
               placeholder="Search games..."
-              className="w-full bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              className="hn-filter-control w-full"
               value={searchTerm}
               onChange={handleSearchChange}
             />
 
             {currentAuthor && (
-              <div className="flex items-center gap-2 bg-[#242424] rounded-lg px-4 py-3 border border-[#363636]">
+              <div className="hn-filter-control flex items-center gap-2 w-fit">
                 <span className="text-gray-300">Author: {currentAuthor}</span>
               </div>
             )}
 
             {/* Platform Select */}
-            <select
+            <FilterSelect
               name="platform"
               aria-label="Platform"
               value={searchParams.get("platform") ?? ""}
@@ -191,7 +210,7 @@ export default function GameFilters() {
                   )
                 )
               }
-              className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              wrapperClassName={filterSelectWrapper}
             >
               <option value="">All Platforms</option>
               <option value="web">Web</option>
@@ -199,34 +218,17 @@ export default function GameFilters() {
               <option value="console">Console</option>
               <option value="ios">iOS</option>
               <option value="android">Android</option>
-            </select>
+            </FilterSelect>
 
-            {/* Genre Select */}
-            <select
-              name="genre"
-              aria-label="Genre"
-              value={searchParams.get("genre") ?? ""}
-              onChange={(e) =>
-                router.push(
-                  createNavigationPath(
-                    createQueryStringWithPageReset("genre", e.target.value)
-                  )
-                )
-              }
-              className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-            >
-              <option value="">All Genres</option>
-              {Object.values(GameGenre)
-                .sort((a, b) => a.localeCompare(b))
-                .map((genre) => (
-                  <option key={genre} value={genre}>
-                    {formatGenreForFilter(genre)}
-                  </option>
-                ))}
-            </select>
+            {/* Genre Multi-Select */}
+            <GenreMultiSelect
+              selectedGenres={selectedGenres}
+              onSelectionChange={handleGenreChange}
+              className="w-full sm:w-fit"
+            />
 
             {/* Player Mode Select */}
-            <select
+            <FilterSelect
               name="playerModes"
               aria-label="Player Modes"
               value={searchParams.get("playerModes") ?? ""}
@@ -240,15 +242,15 @@ export default function GameFilters() {
                   )
                 )
               }
-              className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              wrapperClassName={filterSelectWideWrapper}
             >
               <option value="">All Player Modes</option>
               <option value="single">Singleplayer</option>
               <option value="multi">Multiplayer</option>
-            </select>
+            </FilterSelect>
 
             {/* Pricing Select */}
-            <select
+            <FilterSelect
               name="pricing"
               aria-label="Pricing"
               value={searchParams.get("pricing") ?? ""}
@@ -259,16 +261,16 @@ export default function GameFilters() {
                   )
                 )
               }
-              className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              wrapperClassName={filterSelectWrapper}
             >
               <option value="">Any Pricing</option>
               <option value={Pricing.FREE}>Free</option>
               <option value={Pricing.FREEMIUM}>Freemium</option>
               <option value={Pricing.PAID}>Paid</option>
-            </select>
+            </FilterSelect>
 
             {/* License Select */}
-            <select
+            <FilterSelect
               name="license"
               aria-label="License"
               value={searchParams.get("license") ?? ""}
@@ -279,15 +281,15 @@ export default function GameFilters() {
                   )
                 )
               }
-              className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              wrapperClassName={filterSelectWideWrapper}
             >
               <option value="">Any License</option>
               <option value="open">Open Source</option>
               <option value="closed">Closed Source</option>
-            </select>
+            </FilterSelect>
 
             {/* Sort By Select */}
-            <select
+            <FilterSelect
               ref={mobileSortRef}
               name="sortBy"
               aria-label="Sort By"
@@ -299,36 +301,37 @@ export default function GameFilters() {
                   )
                 )
               }
-              className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+              wrapperClassName={filterSelectWideWrapper}
             >
               <option value="releaseDate-desc">Newest First</option>
               <option value="releaseDate-asc">Oldest First</option>
               <option value="hnPoints-desc">Most Popular</option>
               <option value="hnPoints-asc">Least Popular</option>
-            </select>
+            </FilterSelect>
           </div>
         )}
       </div>
 
       {/* Desktop View */}
       <div className="hidden lg:block">
-        <div className="flex flex-wrap gap-2">
+        <div className="hn-surface p-3">
+          <div className="flex flex-wrap gap-2 items-center">
           <input
             type="text"
             placeholder="Search games..."
-            className="flex-1 min-w-[200px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            className="hn-filter-control flex-1 min-w-[200px]"
             value={searchTerm}
             onChange={handleSearchChange}
           />
 
           {currentAuthor && (
-            <div className="flex items-center gap-2 bg-[#242424] rounded-lg px-4 py-3 border border-[#363636]">
+            <div className="hn-filter-control flex items-center gap-2 w-fit">
               <span className="text-gray-300">Author: {currentAuthor}</span>
             </div>
           )}
 
           {/* Platform Select */}
-          <select
+          <FilterSelect
             name="platform"
             aria-label="Platform"
             value={searchParams.get("platform") ?? ""}
@@ -339,7 +342,7 @@ export default function GameFilters() {
                 )
               )
             }
-            className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            wrapperClassName={filterSelectWrapper}
           >
             <option value="">All Platforms</option>
             <option value="web">Web</option>
@@ -347,34 +350,17 @@ export default function GameFilters() {
             <option value="console">Console</option>
             <option value="ios">iOS</option>
             <option value="android">Android</option>
-          </select>
+          </FilterSelect>
 
-          {/* Genre Select */}
-          <select
-            name="genre"
-            aria-label="Genre"
-            value={searchParams.get("genre") ?? ""}
-            onChange={(e) =>
-              router.push(
-                createNavigationPath(
-                  createQueryStringWithPageReset("genre", e.target.value)
-                )
-              )
-            }
-            className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
-          >
-            <option value="">All Genres</option>
-            {Object.values(GameGenre)
-              .sort((a, b) => a.localeCompare(b))
-              .map((genre) => (
-                <option key={genre} value={genre}>
-                  {formatGenreForFilter(genre)}
-                </option>
-              ))}
-          </select>
+          {/* Genre Multi-Select */}
+          <GenreMultiSelect
+            selectedGenres={selectedGenres}
+            onSelectionChange={handleGenreChange}
+            className="w-fit"
+          />
 
           {/* Player Mode Select */}
-          <select
+          <FilterSelect
             name="playerModes"
             aria-label="Player Modes"
             value={searchParams.get("playerModes") ?? ""}
@@ -385,15 +371,15 @@ export default function GameFilters() {
                 )
               )
             }
-            className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            wrapperClassName={filterSelectWideWrapper}
           >
             <option value="">All Player Modes</option>
             <option value="single">Singleplayer</option>
             <option value="multi">Multiplayer</option>
-          </select>
+          </FilterSelect>
 
           {/* Pricing Select */}
-          <select
+          <FilterSelect
             name="pricing"
             aria-label="Pricing"
             value={searchParams.get("pricing") ?? ""}
@@ -404,16 +390,16 @@ export default function GameFilters() {
                 )
               )
             }
-            className="w-fit min-w-[120px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            wrapperClassName={filterSelectWrapper}
           >
             <option value="">Any Pricing</option>
             <option value={Pricing.FREE}>Free</option>
             <option value={Pricing.FREEMIUM}>Freemium</option>
             <option value={Pricing.PAID}>Paid</option>
-          </select>
+          </FilterSelect>
 
           {/* License Select */}
-          <select
+          <FilterSelect
             name="license"
             aria-label="License"
             value={searchParams.get("license") ?? ""}
@@ -424,15 +410,15 @@ export default function GameFilters() {
                 )
               )
             }
-            className="w-fit min-w-[140px] bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            wrapperClassName={filterSelectWideWrapper}
           >
             <option value="">Any License</option>
             <option value="open">Open Source</option>
             <option value="closed">Closed Source</option>
-          </select>
+          </FilterSelect>
 
           {/* Sort By Select */}
-          <select
+          <FilterSelect
             ref={desktopSortRef}
             name="sortBy"
             aria-label="Sort By"
@@ -444,23 +430,24 @@ export default function GameFilters() {
                 )
               )
             }
-            className="inline-block bg-[#242424] rounded-lg px-4 py-3 border border-[#363636] focus:border-[#646cff] focus:ring-1 focus:ring-[#646cff] outline-none"
+            wrapperClassName={filterSelectWideWrapper}
           >
             <option value="releaseDate-desc">Newest First</option>
             <option value="releaseDate-asc">Oldest First</option>
             <option value="hnPoints-desc">Most Popular</option>
             <option value="hnPoints-asc">Least Popular</option>
-          </select>
+          </FilterSelect>
 
           {/* Clear Button */}
           {activeFiltersCount > 0 && (
             <button
               onClick={handleClearFilters}
-              className="bg-[#646cff] text-white px-4 py-2 rounded hover:bg-[#747bff] transition-colors"
+              className="hn-btn-primary px-4 py-2 rounded"
             >
               Clear
             </button>
           )}
+        </div>
         </div>
       </div>
     </div>

@@ -27,19 +27,27 @@ function sortSingleBeforeMulti(a: string, b: string) {
   return a.localeCompare(b); // sort alphabetically otherwise
 }
 
+function escapeTsString(value: string): string {
+  return value
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"')
+    .replace(/\n/g, "\\n")
+    .replace(/\r/g, "\\r");
+}
+
 function convertJsonToTypescript(
   jsonGames: JsonGame[],
   isActive: boolean
 ): ToStrings<Game>[] {
   return jsonGames.map((game) => ({
-    id: `"${game.id}"`,
-    name: `"${game.name}"`,
-    description: `"${game.description}"`,
-    author: `"${game.author}"`,
+    id: `"${escapeTsString(game.id)}"`,
+    name: `"${escapeTsString(game.name)}"`,
+    description: `"${escapeTsString(game.description)}"`,
+    author: `"${escapeTsString(game.author)}"`,
     hnPoints: `${game.hnPoints}`,
-    hnUrl: `"${game.hnUrl}"`,
-    imageUrl: `"${game.imageUrl}"`,
-    playUrl: `"${game.playUrl}"`,
+    hnUrl: `"${escapeTsString(game.hnUrl)}"`,
+    imageUrl: `"${escapeTsString(game.imageUrl)}"`,
+    playUrl: `"${escapeTsString(game.playUrl)}"`,
     platforms: `[${game.platforms
       .map((p: string) => `Platform.${p.toUpperCase()}`)
       .join(", ")}]`,
@@ -51,10 +59,10 @@ function convertJsonToTypescript(
       .map((g: GameGenre) => `GameGenre.${g.toUpperCase()}`)
       .join(", ")}]`,
     pricing: `Pricing.${game.pricing.toUpperCase()}`,
-    releaseDate: `new Date("${game.releaseDate}")`,
+    releaseDate: `new Date("${escapeTsString(game.releaseDate)}")`,
     isActive: isActive.toString(),
     sourceCodeUrl: game.sourceCodeUrl
-      ? `"${game.sourceCodeUrl}"`
+      ? `"${escapeTsString(game.sourceCodeUrl)}"`
       : "null",
   }));
 }

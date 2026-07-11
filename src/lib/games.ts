@@ -19,18 +19,30 @@ export type GameSearchParams = {
   search?: string;
   author?: string;
   platform?: Platform;
-  genre?: GameGenre;
+  genre?: GameGenre | GameGenre[];
   playerModes?: PlayerMode;
   pricing?: Pricing;
   license?: LicenseType;
   sortBy?: string;
 };
 
+export function getGenresFromSearchParams(
+  genre: GameGenre | GameGenre[] | undefined
+): GameGenre[] {
+  if (!genre) return [];
+  return Array.isArray(genre) ? genre : [genre];
+}
+
+export function parsePage(page?: string): number {
+  const parsed = page ? parseInt(page, 10) : 1;
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
+}
+
 // Generic function to filter any array of games
 export function filterGames(gamesList: Game[], searchParams: GameSearchParams) {
   let filteredGames = [...gamesList];
   const itemsPerPage = 9;
-  const page = searchParams.page ? parseInt(searchParams.page) : 1;
+  const page = parsePage(searchParams.page);
 
   // Apply filters
   if (searchParams.search) {
@@ -52,9 +64,10 @@ export function filterGames(gamesList: Game[], searchParams: GameSearchParams) {
       game.platforms.includes(searchParams.platform as Platform)
     );
 
-  if (searchParams.genre)
+  const selectedGenres = getGenresFromSearchParams(searchParams.genre);
+  if (selectedGenres.length > 0)
     filteredGames = filteredGames.filter((game) =>
-      game.genres.some((g) => g === searchParams.genre)
+      selectedGenres.every((genre) => game.genres.includes(genre))
     );
 
   if (searchParams.playerModes)
@@ -78,6 +91,11 @@ export function filterGames(gamesList: Game[], searchParams: GameSearchParams) {
   const sortBy = searchParams.sortBy || "releaseDate-desc";
   switch (sortBy) {
     case "releaseDate-desc":
+    default:
+      filteredGames.sort(
+        (a, b) =>
+          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+      );
       break;
     case "releaseDate-asc":
       filteredGames.sort(

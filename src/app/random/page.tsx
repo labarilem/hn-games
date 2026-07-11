@@ -30,7 +30,7 @@ export default async function Random() {
       <div className="flex justify-center mb-8">
         <a
           href="/random"
-          className="bg-[#646cff] text-white px-6 py-3 rounded-lg hover:bg-[#747bff] transition-colors flex items-center gap-2"
+          className="hn-btn-primary px-6 py-3 rounded-lg flex items-center gap-2"
         >
           <FaSync />
           Try Another Game

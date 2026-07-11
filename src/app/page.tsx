@@ -1,6 +1,6 @@
 import GamesListing from "@/components/GamesListing";
 import { games } from "@/data/games";
-import { filterGames, GameSearchParams } from "@/lib/games";
+import { filterGames, GameSearchParams, parsePage } from "@/lib/games";
 
 export default async function Home(props: {
   searchParams: Promise<GameSearchParams>;
@@ -8,7 +8,7 @@ export default async function Home(props: {
   const searchParams = await props.searchParams;
   const { games: filteredGames, pagination } = filterGames(games, searchParams);
   const allGamesCount = games.length;
-  const currentPage = searchParams.page ? parseInt(searchParams.page) : 1;
+  const currentPage = parsePage(searchParams.page);
 
   return (
     <GamesListing

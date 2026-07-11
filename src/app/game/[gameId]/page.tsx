@@ -18,13 +18,13 @@ export default async function GamePage(props: GamePageProps) {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="bg-[#242424] rounded-lg overflow-hidden shadow-lg w-full">
+      <div className="hn-surface w-full overflow-hidden">
         <GameImageModal imageUrl={game.imageUrl} name={game.name} />
 
         <div className="p-8 space-y-8">
           <div>
             <h1 className="text-3xl font-bold mb-3">{game.name}</h1>
-            <p className="text-gray-300">{game.description}</p>
+            <p className="text-gray-400 leading-relaxed">{game.description}</p>
           </div>
 
           <div className="grid grid-cols-2 gap-4 sm:gap-6">
@@ -34,8 +34,8 @@ export default async function GamePage(props: GamePageProps) {
                 {game.platforms.map((platform) => (
                   <Link
                     key={platform}
-                    href={`/?platform=${platform}`}
-                    className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm flex items-center gap-1.5 hover:bg-[#646cff] hover:text-white transition-colors cursor-pointer"
+                    href={`/?platform=${encodeURIComponent(platform)}`}
+                    className="hn-tag-platform"
                   >
                     <PlatformIcon platform={platform} className="w-4 h-4" />
                     {platform}
@@ -50,8 +50,8 @@ export default async function GamePage(props: GamePageProps) {
                 {game.genres.map((genre) => (
                   <Link
                     key={genre}
-                    href={`/?genre=${genre}`}
-                    className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors cursor-pointer"
+                    href={`/?genre=${encodeURIComponent(genre)}`}
+                    className="hn-tag-genre"
                   >
                     {formatGenre(genre)}
                   </Link>
@@ -65,8 +65,8 @@ export default async function GamePage(props: GamePageProps) {
                 {game.playerModes.map((mode) => (
                   <Link
                     key={mode}
-                    href={`/?playerModes=${mode}`}
-                    className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors cursor-pointer"
+                    href={`/?playerModes=${encodeURIComponent(mode)}`}
+                    className="hn-tag-mode"
                   >
                     {mode === "single" ? "singleplayer" : "multiplayer"}
                   </Link>
@@ -77,8 +77,8 @@ export default async function GamePage(props: GamePageProps) {
             <div>
               <h2 className="text-sm text-gray-400 mb-1">Pricing</h2>
               <Link
-                href={`/?pricing=${game.pricing}`}
-                className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors cursor-pointer inline-block"
+                href={`/?pricing=${encodeURIComponent(game.pricing)}`}
+                className="hn-tag-genre inline-block"
               >
                 {game.pricing}
               </Link>
@@ -87,8 +87,8 @@ export default async function GamePage(props: GamePageProps) {
             <div>
               <h2 className="text-sm text-gray-400 mb-1">Author</h2>
               <Link
-                href={`/?author=${game.author}`}
-                className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm hover:bg-[#646cff] hover:text-white transition-colors cursor-pointer inline-block"
+                href={`/?author=${encodeURIComponent(game.author)}`}
+                className="hn-tag-genre inline-block"
               >
                 {game.author}
               </Link>
@@ -96,7 +96,7 @@ export default async function GamePage(props: GamePageProps) {
 
             <div>
               <h2 className="text-sm text-gray-400 mb-1">Published</h2>
-              <div className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm inline-block">
+              <div className="hn-meta-pill">
                 <span className="hidden sm:inline">
                   {new Date(game.releaseDate).toLocaleDateString("en-US", {
                     day: "numeric",
@@ -116,20 +116,20 @@ export default async function GamePage(props: GamePageProps) {
 
             <div>
               <h2 className="text-sm text-gray-400 mb-1">HN Points</h2>
-              <div className="bg-[#1a1a1a] text-gray-300 px-3 py-1 rounded-full text-sm inline-block">
+              <div className="hn-meta-pill">
                 {game.hnPoints} point{game.hnPoints === 1 ? "" : "s"}
               </div>
             </div>
           </div>
 
-          <div className="border-t border-[#363636] pt-8 mt-8">
+          <div className="border-t border-white/5 pt-8 mt-8">
             <div className="flex flex-wrap gap-4">
               {game.isActive && (
                 <a
                   href={game.playUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:flex-1 bg-[#646cff] text-white px-4 py-2.5 rounded hover:bg-[#747bff] transition-colors flex items-center justify-center"
+                  className="w-full sm:flex-1 hn-btn-primary px-4 py-2.5 rounded flex items-center justify-center"
                 >
                   Play Game
                 </a>
@@ -138,7 +138,7 @@ export default async function GamePage(props: GamePageProps) {
                 href={game.hnUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-[#1a1a1a] text-white px-4 py-2.5 rounded text-center hover:bg-[#2a2a2a] transition-colors border border-[#363636]"
+                className="flex-1 hn-btn-secondary px-4 py-2.5"
               >
                 View on HN
               </a>
@@ -147,7 +147,7 @@ export default async function GamePage(props: GamePageProps) {
                   href={game.sourceCodeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 bg-[#1a1a1a] text-white px-4 py-2.5 rounded text-center hover:bg-[#2a2a2a] transition-colors border border-[#363636]"
+                  className="flex-1 hn-btn-secondary px-4 py-2.5"
                 >
                   Source Code
                 </a>

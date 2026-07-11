@@ -10,12 +10,71 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #1a1a1a;
+  background-color: theme("colors.hn.bg");
   color: rgba(255, 255, 255, 0.87);
 }
 
-select, input {
+select,
+input {
   color-scheme: dark;
+}
+
+@layer components {
+  .hn-surface {
+    @apply bg-hn-surface rounded-lg border border-white/5 shadow-lg;
+  }
+
+  .hn-filter-control {
+    @apply bg-hn-bg rounded-lg px-4 py-3 border border-hn-border text-white placeholder:text-gray-500 focus:border-hn-accent focus:ring-1 focus:ring-hn-accent outline-none transition-colors;
+  }
+
+  .hn-btn-primary {
+    @apply bg-hn-accent text-white rounded-lg font-medium hover:bg-hn-accent-hover transition-colors;
+  }
+
+  .hn-link {
+    @apply text-hn-accent hover:text-hn-accent-hover transition-colors;
+  }
+
+  .hn-nav-link {
+    @apply text-gray-300 hover:text-white underline-offset-4 transition-colors hover:underline;
+  }
+
+  .hn-nav-link-active {
+    @apply text-white underline;
+  }
+
+  .hn-footer-link {
+    @apply hover:text-hn-accent underline-offset-4 transition-colors hover:underline;
+  }
+
+  .hn-tag-platform {
+    @apply bg-sky-500/10 text-sky-300 border border-sky-500/20 px-3 py-1 rounded-full text-sm hover:bg-hn-accent hover:text-white hover:border-transparent transition-colors flex items-center gap-1.5;
+  }
+
+  .hn-tag-genre {
+    @apply bg-violet-500/10 text-violet-300 border border-violet-500/20 px-3 py-1 rounded-full text-sm hover:bg-hn-accent hover:text-white hover:border-transparent transition-colors;
+  }
+
+  .hn-tag-mode {
+    @apply bg-teal-500/10 text-teal-300 border border-teal-500/20 px-3 py-1 rounded-full text-sm hover:bg-hn-accent hover:text-white hover:border-transparent transition-colors;
+  }
+
+  .hn-card {
+    @apply hn-surface flex flex-col h-full w-full overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-xl hover:border-white/10;
+  }
+
+  .hn-form-input {
+    @apply w-full px-4 py-2 rounded-lg bg-hn-bg text-white border border-hn-border placeholder:text-gray-500 focus:border-hn-accent focus:ring-1 focus:ring-hn-accent outline-none transition-colors min-w-0;
+  }
+
+  .hn-btn-secondary {
+    @apply bg-hn-bg text-white rounded text-center hover:bg-hn-elevated transition-colors border border-hn-border;
+  }
+
+  .hn-meta-pill {
+    @apply bg-hn-bg text-gray-300 px-3 py-1 rounded-full text-sm inline-block border border-white/5;
+  }
 }
 
 /* Custom scrollbar for the dark theme */
@@ -25,14 +84,14 @@ select, input {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgb(15, 23, 42);
+  background: theme("colors.hn.bg");
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(51, 65, 85);
+  background: theme("colors.hn.border");
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(71, 85, 105);
+  background: theme("colors.hn.elevated");
 }

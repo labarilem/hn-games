@@ -29,7 +29,7 @@ export default function GamesListing({
 }: GamesListingProps) {
   return (
     <div className="max-w-[1280px] mx-auto">
-      <h1 className="text-5xl font-bold mb-4 text-center bg-gradient-to-r from-[#646cff] to-[#747bff] text-transparent bg-clip-text py-2">
+      <h1 className="text-5xl font-bold mb-4 text-center bg-gradient-to-r from-hn-accent to-hn-accent-hover text-transparent bg-clip-text py-2">
         {title}
       </h1>
       <p className="text-gray-400 mb-8 text-center max-w-2xl mx-auto">
@@ -38,7 +38,7 @@ export default function GamesListing({
 
       <GameFilters />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
         {games.map((game: Game) => (
           <GameCard key={game.id} game={game} />
         ))}

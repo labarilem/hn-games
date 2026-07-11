@@ -1,43 +1,228 @@
 import axios from "axios";
 
-export async function isValidGameUrl(
-  url: string
-): Promise<{ isValid: boolean; responseText: string }> {
-  if (!url) return { isValid: true, responseText: "" }; // Consider empty URLs as valid (they'll become empty strings in the entity)
+const BROWSER_HEADERS = {
+  "User-Agent":
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Safari/537.36",
+  Accept: "*/*",
+};
 
+const REQUEST_TIMEOUT_MS = 15000;
+const MAX_RETRIES = 3;
+const RETRY_DELAY_MS = 1000;
+
+// Host is reachable but blocks bots or rate-limits automated checks.
+const REACHABLE_BLOCKED_STATUSES = new Set([401, 403, 429]);
+
+// Resource is gone.
+const DEAD_STATUSES = new Set([404, 410]);
+
+const TRANSIENT_ERROR_PATTERNS = [
+  "eai_again",
+  "etimedout",
+  "econnreset",
+  "econnaborted",
+  "socket disconnected",
+  "timeout of",
+  "network timeout",
+];
+
+const PARKED_DOMAIN_MARKERS = ["Porkbun Marketplace"];
+
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+function getErrorMessage(error: unknown): string {
+  if (error && typeof error === "object" && "message" in error) {
+    return String(error.message);
+  }
+  return "Unknown error";
+}
+
+function isTransientError(message: string): boolean {
+  const lower = message.toLowerCase();
+  return TRANSIENT_ERROR_PATTERNS.some((pattern) => lower.includes(pattern));
+}
+
+function isTlsOrCertError(message: string): boolean {
+  const lower = message.toLowerCase();
+  return (
+    lower.includes("certificate") ||
+    lower.includes("altnames") ||
+    lower.includes("tls") ||
+    lower.includes("ssl")
+  );
+}
+
+function isCertHostnameMismatch(message: string): boolean {
+  return message.toLowerCase().includes("altnames");
+}
+
+function isExpiredCertificate(message: string): boolean {
+  return message.toLowerCase().includes("certificate has expired");
+}
+
+function normalizeUrl(url: string): string {
   try {
-    // NOTE: cloudflare filter is hard to implement, so we'll just ignore it for now
-    const res = await axios.get(url, {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
-      },
-      timeout: 5000, // 5 seconds
-      maxRedirects: 5,
-      validateStatus: (status) => status >= 200 && status < 400, // Consider 2xx and 3xx as valid
-    });
+    const parsed = new URL(url);
+    parsed.hash = "";
+    return parsed.href;
+  } catch {
+    return url.split("#")[0];
+  }
+}
 
-    if (!res.data) {
-      console.log(`Invalid URL (empty response body): ${url}`);
-      return { isValid: false, responseText: "" };
-    }
+function getUrlVariants(url: string): string[] {
+  const normalized = normalizeUrl(url);
+  const variants = [normalized];
+
+  if (normalized.startsWith("http://")) {
+    variants.push(normalized.replace("http://", "https://"));
+  }
+
+  return Array.from(new Set(variants));
+}
+
+function isParkedDomain(content: string): boolean {
+  return PARKED_DOMAIN_MARKERS.some((marker) => content.includes(marker));
+}
+
+type RequestResult =
+  | { ok: true; status: number; responseText: string }
+  | {
+      ok: false;
+      status?: number;
+      error: string;
+      transient: boolean;
+      tryNextVariant: boolean;
+    };
+
+async function requestUrl(url: string): Promise<RequestResult> {
+  try {
+    const res = await axios.get(url, {
+      headers: BROWSER_HEADERS,
+      timeout: REQUEST_TIMEOUT_MS,
+      maxRedirects: 5,
+      validateStatus: () => true,
+    });
 
     const responseText =
       typeof res.data === "string" ? res.data : JSON.stringify(res.data);
 
-    const parkedDomainsBlacklist = ["Porkbun Marketplace"];
-    if (parkedDomainsBlacklist.some((b) => responseText.includes(b))) {
-      console.log(`Invalid URL (blacklisted content): ${url}`);
-      return { isValid: false, responseText };
+    if (REACHABLE_BLOCKED_STATUSES.has(res.status)) {
+      return { ok: true, status: res.status, responseText };
     }
 
-    return { isValid: true, responseText };
+    if (DEAD_STATUSES.has(res.status)) {
+      return {
+        ok: false,
+        status: res.status,
+        error: `HTTP ${res.status}`,
+        transient: false,
+        tryNextVariant: false,
+      };
+    }
+
+    if (res.status >= 500) {
+      return {
+        ok: false,
+        status: res.status,
+        error: `HTTP ${res.status}`,
+        transient: res.status === 502 || res.status === 503 || res.status === 504,
+        tryNextVariant: false,
+      };
+    }
+
+    if (res.status >= 400) {
+      return {
+        ok: false,
+        status: res.status,
+        error: `HTTP ${res.status}`,
+        transient: false,
+        tryNextVariant: false,
+      };
+    }
+
+    if (!responseText) {
+      return {
+        ok: false,
+        error: "empty response body",
+        transient: false,
+        tryNextVariant: false,
+      };
+    }
+
+    if (isParkedDomain(responseText)) {
+      return {
+        ok: false,
+        error: "parked domain",
+        transient: false,
+        tryNextVariant: false,
+      };
+    }
+
+    return { ok: true, status: res.status, responseText };
   } catch (error) {
-    const msg =
-      error && typeof error === "object" && "message" in error
-        ? error.message
-        : "Unknown error";
-    console.log(`Invalid URL (${msg}): ${url}`);
-    return { isValid: false, responseText: "" };
+    const errorMsg = getErrorMessage(error);
+
+    if (isCertHostnameMismatch(errorMsg)) {
+      return {
+        ok: true,
+        status: 0,
+        responseText: "",
+      };
+    }
+
+    return {
+      ok: false,
+      error: errorMsg,
+      transient: isTransientError(errorMsg),
+      tryNextVariant: isTlsOrCertError(errorMsg),
+    };
   }
+}
+
+export async function isValidGameUrl(
+  url: string
+): Promise<{ isValid: boolean; responseText: string }> {
+  if (!url) return { isValid: true, responseText: "" };
+
+  const variants = getUrlVariants(url);
+  let lastError = "Unknown error";
+
+  for (const variant of variants) {
+    for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+      const result = await requestUrl(variant);
+
+      if (result.ok) {
+        return { isValid: true, responseText: result.responseText };
+      }
+
+      lastError = result.error;
+
+      if (isExpiredCertificate(result.error)) {
+        console.log(`Invalid URL (${result.error}): ${url}`);
+        return { isValid: false, responseText: "" };
+      }
+
+      if (result.status && DEAD_STATUSES.has(result.status)) {
+        console.log(`Invalid URL (${result.error}): ${url}`);
+        return { isValid: false, responseText: "" };
+      }
+
+      if (result.tryNextVariant) {
+        break;
+      }
+
+      if (result.transient && attempt < MAX_RETRIES - 1) {
+        await sleep(RETRY_DELAY_MS * (attempt + 1));
+        continue;
+      }
+
+      if (!result.transient) {
+        break;
+      }
+    }
+  }
+
+  console.log(`Invalid URL (${lastError}): ${url}`);
+  return { isValid: false, responseText: "" };
 }

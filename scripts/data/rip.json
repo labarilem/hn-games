@@ -1,5 +1,119 @@
 [
   {
+    "id": "42044331",
+    "name": "GemSlide",
+    "description": "Sliding boxes puzzle game with 2.5 million levels",
+    "platforms": [
+      "android"
+    ],
+    "releaseDate": "2024-11-04T18:07:22.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "itarato",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42044331",
+    "hnPoints": 2,
+    "playUrl": "https://play.google.com/store/apps/details?id=com.PeterArato.GemSlide&hl=en_US",
+    "pricing": "free",
+    "imageUrl": "/images/games/42044331.jpg",
+    "sourceCodeUrl": "https://github.com/itarato/slider"
+  },
+  {
+    "id": "40843916",
+    "name": "Splash",
+    "description": "A colorful action game with eye-catching animations",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "releaseDate": "2024-07-01T09:06:33.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "b44rd",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40843916",
+    "hnPoints": 2,
+    "playUrl": "https://splashgame.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40843916.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "40257192",
+    "name": "Wobble Wits",
+    "description": "An AI-powered party game for 2-5 players creating silly scenarios and fill-in-the-blank stories",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-05-04T09:36:00.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "surfknasen",
+    "genres": [
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=40257192",
+    "hnPoints": 1,
+    "playUrl": "https://wobblewits.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/40257192.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "39777252",
+    "name": "PawnPush",
+    "description": "Daily chess challenges with unique character bots, each with its own personality, preferred openings, and distinct play style",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2024-03-21T11:33:21.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ageitgey",
+    "genres": [
+      "strategy",
+      "daily",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=39777252",
+    "hnPoints": 4,
+    "playUrl": "https://pawnpush.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/39777252.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "38819219",
+    "name": "Kobadoo",
+    "description": "Memorize flags of the world in the correct order",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2023-12-30T21:13:47.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ferdinandis",
+    "genres": [
+      "memory",
+      "geography"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=38819219",
+    "hnPoints": 6,
+    "playUrl": "https://kobadoo.github.io/#/flags",
+    "pricing": "free",
+    "imageUrl": "/images/games/38819219.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "38708426",
     "name": "Li-Quoridor",
     "description": "A freeboard for the game Quoridor",
@@ -20,6 +134,31 @@
     "playUrl": "https://li-quoridor.vercel.app/",
     "pricing": "free",
     "imageUrl": "/images/games/38708426.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "37944912",
+    "name": "Basic Arabic Sentences",
+    "description": "A small game to practice essential Egyptian Arabic sentences",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2023-10-19T16:19:45.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "blackbrokkoli",
+    "genres": [
+      "educational",
+      "text",
+      "quiz",
+      "word"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=37944912",
+    "hnPoints": 2,
+    "playUrl": "https://basic-arabic-sentences.koljapluemer.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/37944912.jpg",
     "sourceCodeUrl": null
   },
   {
@@ -48,6 +187,148 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "36877668",
+    "name": "Emoji Exam",
+    "description": "Guess the movie based on a set of emojis",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2023-07-26T13:49:17.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "jeanmayer",
+    "genres": [
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=36877668",
+    "hnPoints": 1,
+    "playUrl": "https://www.emojiexam.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/36877668.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "36725856",
+    "name": "Stabilize Brazil",
+    "description": "Take control and guide Brazil's economy",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2023-07-14T16:01:06.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "jeanmayer",
+    "genres": [
+      "adventure",
+      "simulation",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=36725856",
+    "hnPoints": 2,
+    "playUrl": "https://www.stabilizebrazil.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/36725856.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "36676415",
+    "name": "Laser",
+    "description": "A turn based game similar to chess, with different piece movement rules, starting position, and win conditions",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2023-07-11T04:27:41.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "xgboop",
+    "genres": [
+      "board",
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=36676415",
+    "hnPoints": 218,
+    "playUrl": "https://playlaser.xyz",
+    "pricing": "free",
+    "imageUrl": "/images/games/36676415.jpg",
+    "sourceCodeUrl": "http://github.com/melgrove/laser"
+  },
+  {
+    "id": "35607060",
+    "name": "Quorbo",
+    "description": "A simple letter-revealing game where you get 6 turns to guess the day's quote",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2023-04-17T21:46:57.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "projectsforlife",
+    "genres": [
+      "word",
+      "text",
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=35607060",
+    "hnPoints": 9,
+    "playUrl": "https://quorbo.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/35607060.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "34553840",
+    "name": "ThriveMind",
+    "description": "A collection of brain games with photos of beautiful scenery",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2023-01-28T00:47:00.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "metamorphisized",
+    "genres": [
+      "puzzle",
+      "math",
+      "word",
+      "kids",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=34553840",
+    "hnPoints": 2,
+    "playUrl": "https://thrivemind.app/guest",
+    "pricing": "free",
+    "imageUrl": "/images/games/34553840.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "33941521",
+    "name": "Hanzi",
+    "description": "Wordle-inspired Chinese character guessing game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2022-12-11T09:05:25.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "quiltmoaste",
+    "genres": [
+      "text",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=33941521",
+    "hnPoints": 13,
+    "playUrl": "https://hanzi.gg",
+    "pricing": "free",
+    "imageUrl": "/images/games/33941521.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "31555772",
     "name": "Geography Game",
     "description": "Guess where the nation is on the world map",
@@ -69,6 +350,99 @@
     "playUrl": "https://www.geography-game.com",
     "pricing": "free",
     "imageUrl": "/images/games/31555772.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "30603317",
+    "name": "Numleet",
+    "description": "Derive the correct equation from an answer and a set of numbers",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2022-03-08T18:04:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "rosariom",
+    "genres": [
+      "math",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=30603317",
+    "hnPoints": 2,
+    "playUrl": "https://numleet.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/30603317.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "30337883",
+    "name": "DuoMoji",
+    "description": "A little memory game with 16 emojis",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2022-02-14T20:33:06.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mrtnkl",
+    "genres": [
+      "memory",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=30337883",
+    "hnPoints": 2,
+    "playUrl": "https://duomoji.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/30337883.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "30337323",
+    "name": "Kattam - The Box",
+    "description": "Keep your words from flying off the top in this Wordle-Tetris mashup",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2022-02-14T19:51:58.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ozarius",
+    "genres": [
+      "word",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=30337323",
+    "hnPoints": 2,
+    "playUrl": "https://apps.apple.com/us/app/kattam-the-box/id1605984718",
+    "pricing": "paid",
+    "imageUrl": "/images/games/30337323.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "30303789",
+    "name": "Bloozy",
+    "description": "Eliminate as many tiles as possible by connecting letters to form valid words",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2022-02-11T17:02:37.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "blueslurpee",
+    "genres": [
+      "word",
+      "puzzle",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=30303789",
+    "hnPoints": 2,
+    "playUrl": "https://www.bloozy.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/30303789.jpg",
     "sourceCodeUrl": null
   },
   {
@@ -275,6 +649,29 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "24819100",
+    "name": "Willow Patch Games",
+    "description": "Collection of online board games to play with friends and family",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2020-10-18T16:41:45.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "cipherboy",
+    "genres": [
+      "card",
+      "board"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=24819100",
+    "hnPoints": 39,
+    "playUrl": "https://willowpatchgames.com/#about",
+    "pricing": "free",
+    "imageUrl": "/images/games/24819100.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "23217887",
     "name": "Couchmoney trivia",
     "description": "Watch a short clip and guess which movie it is from",
@@ -295,6 +692,28 @@
     "playUrl": "https://couchmoneytrivia.tv",
     "pricing": "free",
     "imageUrl": "/images/games/23217887.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "22848721",
+    "name": "Egg Royale",
+    "description": "Virtual egg tapping Easter game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2020-04-12T15:10:39.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "akhudek",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=22848721",
+    "hnPoints": 18,
+    "playUrl": "https://eggroyale.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/22848721.jpg",
     "sourceCodeUrl": null
   },
   {
@@ -361,6 +780,30 @@
     "playUrl": "https://xojoc.pw/games2d/4snakes/",
     "pricing": "free",
     "imageUrl": "/images/games/21293827.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "20126332",
+    "name": "Heroes and Merchants",
+    "description": "A fantasy-crafting MMORPG in the style of the old browser games",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "releaseDate": "2019-06-07T16:35:28.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "Andrea3980",
+    "genres": [
+      "mmo",
+      "rpg"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=20126332",
+    "hnPoints": 2,
+    "playUrl": "https://www.heroes-and-merchants.com/heroes-and-merchants",
+    "pricing": "free",
+    "imageUrl": "/images/games/20126332.jpg",
     "sourceCodeUrl": null
   },
   {
@@ -457,6 +900,72 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "16567386",
+    "name": "Morse Taps",
+    "description": "Learn morse code by clicking with your mouse",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2018-03-12T11:19:53.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "madrox",
+    "genres": [
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=16567386",
+    "hnPoints": 3,
+    "playUrl": "https://morse.d8a.me/",
+    "pricing": "free",
+    "imageUrl": "/images/games/16567386.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "16521392",
+    "name": "Smooth Snake",
+    "description": "Classic snake game with hand-drawn graphics and smooth animations",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2018-03-05T14:54:41.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "m0meni",
+    "genres": [
+      "arcade"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=16521392",
+    "hnPoints": 2,
+    "playUrl": "https://www.aria.ai/snake.html",
+    "pricing": "free",
+    "imageUrl": "/images/games/16521392.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "12872555",
+    "name": "Who'd You?",
+    "description": "A celebrity game of Who'd you rather?",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2016-11-04T13:55:58.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "jesselindsley",
+    "genres": [
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=12872555",
+    "hnPoints": 2,
+    "playUrl": "https://itunes.apple.com/us/app/whod-you/id1064206085?mt=8",
+    "pricing": "free",
+    "imageUrl": "/images/games/12872555.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "11868130",
     "name": "MineField",
     "description": "Classic minesweeper game with a minimalist design",
@@ -479,6 +988,72 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "11287440",
+    "name": "The Weather Man Game",
+    "description": "Choose the accurate weather forecaster",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2016-03-15T04:25:35.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "MiddleEndian",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=11287440",
+    "hnPoints": 1,
+    "playUrl": "http://www.miscbeef.com/weatherman",
+    "pricing": "free",
+    "imageUrl": "/images/games/11287440.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "11286538",
+    "name": "Sakura Fly",
+    "description": "Fly over the Fuji mountain and follow the falling sakura flowers",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2016-03-15T00:07:51.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "lcllcl",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=11286538",
+    "hnPoints": 3,
+    "playUrl": "https://apps.apple.com/us/app/sakura-fly/id1019023051",
+    "pricing": "paid",
+    "imageUrl": "/images/games/11286538.jpg",
+    "sourceCodeUrl": "https://github.com/l800891/Sakura-Fly"
+  },
+  {
+    "id": "9814202",
+    "name": "Bomberbots",
+    "description": "Code a bot to play Bomberman against other bots",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2015-07-01T18:43:42.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "kronny",
+    "genres": [
+      "coding"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=9814202",
+    "hnPoints": 11,
+    "playUrl": "https://www.bomberbots.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/9814202.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "8755777",
     "name": "Flash Dive",
     "description": "Cute reflex-based iPhone game",
@@ -498,6 +1073,28 @@
     "playUrl": "https://itunes.apple.com/us/app/flash-dive/id912150323?ls=1&mt=8",
     "pricing": "free",
     "imageUrl": "/images/games/8755777.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "8372546",
+    "name": "Maze Unlimited",
+    "description": "First-person maze game",
+    "platforms": [
+      "android"
+    ],
+    "releaseDate": "2014-09-26T13:25:07.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "anywherenotes",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=8372546",
+    "hnPoints": 3,
+    "playUrl": "https://play.google.com/store/apps/details?id=com.mildspring.maze&hn=true",
+    "pricing": "free",
+    "imageUrl": "/images/games/8372546.jpg",
     "sourceCodeUrl": null
   },
   {
@@ -524,6 +1121,51 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "8207781",
+    "name": "Pontos",
+    "description": "A partial clone of the Dots game",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-08-21T15:25:26.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "vinicius",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=8207781",
+    "hnPoints": 8,
+    "playUrl": "http://viniciuspinto.github.io/pontos/",
+    "pricing": "free",
+    "imageUrl": "/images/games/8207781.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "7547942",
+    "name": "Untrusted",
+    "description": "A JavaScript adventure game you play by modifying its source",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2014-04-07T17:31:26.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "alnis",
+    "genres": [
+      "coding",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=7547942",
+    "hnPoints": 555,
+    "playUrl": "http://alex.nisnevich.com/untrusted/",
+    "pricing": "free",
+    "imageUrl": "/images/games/7547942.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "7191187",
     "name": "Eliss Lines",
     "description": "A physics drawing puzzle that challenges your strategic thinking",
@@ -544,6 +1186,51 @@
     "playUrl": "http://www.toucheliss.com/",
     "pricing": "free",
     "imageUrl": "/images/games/7191187.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "6751462",
+    "name": "Football Heroes",
+    "description": "Fight your way to the end zone and bring home the win",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2013-11-17T23:00:03.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "zachlatta",
+    "genres": [
+      "action",
+      "sport"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=6751462",
+    "hnPoints": 7,
+    "playUrl": "https://itunes.apple.com/us/app/football-heroes/id543009156",
+    "pricing": "free",
+    "imageUrl": "/images/games/6751462.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "3967810",
+    "name": "DoodleOrDie",
+    "description": "A game of telephone with doodles",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2012-05-13T18:32:12.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "NTH",
+    "genres": [
+      "action"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=3967810",
+    "hnPoints": 25,
+    "playUrl": "http://doodleordie.com/play",
+    "pricing": "free",
+    "imageUrl": "/images/games/3967810.jpg",
     "sourceCodeUrl": null
   }
 ]

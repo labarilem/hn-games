@@ -28,7 +28,9 @@ type GamesYearChartProps = {
 
 export default function GamesYearChart({ gamesCountByYear }: GamesYearChartProps) {
   // Sort years and create data for the chart
-  const years = Object.keys(gamesCountByYear).sort();
+  const years = Object.keys(gamesCountByYear).sort(
+    (a, b) => Number(a) - Number(b)
+  );
   const counts = years.map((year) => gamesCountByYear[year]);
 
   const chartData = {
@@ -87,7 +89,7 @@ export default function GamesYearChart({ gamesCountByYear }: GamesYearChartProps
   };
 
   return (
-    <div className="bg-gray-800 p-6 rounded-lg">
+    <div className="hn-surface p-6 rounded-lg">
       <Line options={options} data={chartData} />
     </div>
   );

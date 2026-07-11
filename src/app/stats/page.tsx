@@ -21,7 +21,7 @@ export default function StatsPage() {
             <StatsCard
               value={totalGamesCount}
               label="Active Games"
-              color="text-blue-400"
+              color="text-hn-accent"
             />
             <StatsCard
               value={totalRipGamesCount}
