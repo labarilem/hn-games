@@ -1,8 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { Fragment } from "react";
 import { usePathname } from "next/navigation";
 
-interface PaginationProps {
+export default function Pagination({
+  pagination,
+  currentPage,
+  searchParams,
+}: {
   pagination: {
     totalPages: number;
     hasPreviousPage: boolean;
@@ -10,143 +15,70 @@ interface PaginationProps {
   };
   currentPage: number;
   searchParams: { [key: string]: string | string[] | undefined };
-}
-
-const Pagination: React.FC<PaginationProps> = ({
-  pagination,
-  currentPage,
-  searchParams,
-}) => {
+}) {
   const pathname = usePathname();
-  const [maxPages, setMaxPages] = useState(10);
-
-  // Helper function to build URL with all search parameters preserved
-  const buildPageUrl = (pageNumber: number) => {
-    const params = new URLSearchParams();
-    params.set('page', pageNumber.toString());
-    
-    // Preserve all existing search parameters
-    if (searchParams.search) params.set('search', searchParams.search as string);
-    if (searchParams.platform) params.set('platform', searchParams.platform as string);
-    if (searchParams.genre) {
-      const genres = Array.isArray(searchParams.genre)
-        ? searchParams.genre
-        : [searchParams.genre];
-      genres.forEach((genre) => params.append("genre", genre));
-    }
-    if (searchParams.sortBy) params.set('sortBy', searchParams.sortBy as string);
-    if (searchParams.playerModes) params.set('playerModes', searchParams.playerModes as string);
-    if (searchParams.pricing) params.set('pricing', searchParams.pricing as string);
-    if (searchParams.license) params.set('license', searchParams.license as string);
-    if (searchParams.author) params.set('author', searchParams.author as string);
-    
-    return `${pathname}?${params.toString()}`;
-  };
-  useEffect(() => {
-    const checkMobile = () => {
-      setMaxPages(window.innerWidth < 768 ? 1 : 10);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   if (pagination.totalPages <= 1) return null;
-
-  const totalPages = pagination.totalPages;
-  const pages: (number | "...")[] = [];
-
-  if (totalPages <= maxPages) {
-    for (let i = 1; i <= totalPages; i++) pages.push(i);
-  } else {
-    const left = Math.max(1, currentPage - Math.floor((maxPages - 1) / 2));
-    const right = Math.min(totalPages, left + maxPages - 1);
-
-    if (left > 1) {
-      pages.push(1);
-      if (left > 2) pages.push("...");
-    }
-
-    for (let i = left; i <= right; i++) {
-      pages.push(i);
-    }
-
-    if (right < totalPages) {
-      if (right < totalPages - 1) pages.push("...");
-      pages.push(totalPages);
-    }
+  const pages = Array.from(
+    new Set([
+      1,
+      currentPage - 1,
+      currentPage,
+      currentPage + 1,
+      pagination.totalPages,
+    ]),
+  )
+    .filter((page) => page >= 1 && page <= pagination.totalPages)
+    .sort((a, b) => a - b);
+  function pageUrl(page: number) {
+    const next = new URLSearchParams();
+    Object.entries(searchParams).forEach(([key, value]) => {
+      if (key !== "page" && value)
+        (Array.isArray(value) ? value : [value]).forEach((entry) =>
+          next.append(key, entry),
+        );
+    });
+    next.set("page", String(page));
+    return `${pathname}?${next}#catalog`;
   }
-
   return (
-    <div className="flex justify-center gap-2 mt-8">
-      {pagination.hasPreviousPage && (
-        <a
-          href={buildPageUrl(currentPage - 1)}
-          className="px-4 py-2 rounded-lg bg-hn-surface border border-white/5 text-gray-300 hover:bg-hn-accent hover:text-white hover:border-transparent transition-colors flex items-center justify-center"
-          aria-label="Previous page"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </a>
+    <nav className="catalog-pagination" aria-label="Catalog pages">
+      {pagination.hasPreviousPage ? (
+        <Link href={pageUrl(currentPage - 1)} aria-label="Previous page">
+          ← <span>Previous</span>
+        </Link>
+      ) : (
+        <span className="page-disabled">
+          ← <span>Previous</span>
+        </span>
       )}
-      {pages.map((page, idx) =>
-        typeof page === "number" ? (
-          <a
-            key={page}
-            href={buildPageUrl(page)}
-            className={`px-4 py-2 rounded-lg border transition-colors ${
-              currentPage === page
-                ? "bg-hn-accent border-hn-accent text-white"
-                : "bg-hn-surface border-white/5 text-gray-300 hover:bg-hn-accent hover:text-white hover:border-transparent"
-            }`}
-          >
-            {page}
-          </a>
-        ) : (
-          <span
-            key={`ellipsis-${idx}`}
-            className="px-4 py-2 rounded-lg text-gray-400 select-none"
-          >
-            ...
-          </span>
-        )
+      <span className="page-position">
+        PAGE <strong>{currentPage}</strong> / {pagination.totalPages}
+      </span>
+      <div className="page-numbers">
+        {pages.map((page, index) => (
+          <Fragment key={page}>
+            {index > 0 && page - pages[index - 1] > 1 && (
+              <span aria-hidden="true">…</span>
+            )}
+            <Link
+              href={pageUrl(page)}
+              aria-label={`Page ${page}`}
+              aria-current={page === currentPage ? "page" : undefined}
+            >
+              {page}
+            </Link>
+          </Fragment>
+        ))}
+      </div>
+      {pagination.hasNextPage ? (
+        <Link href={pageUrl(currentPage + 1)} aria-label="Next page">
+          <span>Next</span> →
+        </Link>
+      ) : (
+        <span className="page-disabled">
+          <span>Next</span> →
+        </span>
       )}
-      {pagination.hasNextPage && (
-        <a
-          href={buildPageUrl(currentPage + 1)}
-          className="px-4 py-2 rounded-lg bg-hn-surface border border-white/5 text-gray-300 hover:bg-hn-accent hover:text-white hover:border-transparent transition-colors flex items-center justify-center"
-          aria-label="Next page"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </a>
-      )}
-    </div>
+    </nav>
   );
-};
-
-export default Pagination;
+}

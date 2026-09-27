@@ -1,25 +1,17 @@
-import Link from 'next/link';
-
+import Link from "next/link";
 export default function NotFound() {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center p-4 text-center">
-      <h1 className="text-4xl font-bold text-white mb-4">404 - Page Not Found</h1>
-      <p className="text-gray-400 text-lg mb-8">
-        Oops! Looks like this page got lost in an infinite game loop...
-      </p>
-      <div className="text-gray-400 text-md mb-8">
-        <p>Have you tried:</p>
-        <ul className="mt-2">
-          <li>↑ ↑ ↓ ↓ ← → ← → B A Start?</li>
-          <li>Blowing on the cartridge?</li>
-          <li>Buying the DLC?</li>
-        </ul>
+    <div className="editorial-page">
+      <p className="eyebrow">NOT IN THIS COLLECTION</p>
+      <div className="not-found-number" aria-hidden="true">
+        404
       </div>
-      <Link
-        href="/"
-        className="hn-btn-primary px-4 py-2 rounded"
-      >
-        Return to Home
+      <h1>This one got away.</h1>
+      <p>
+        The page may have moved, or the game may no longer be in the catalog.
+      </p>
+      <Link href="/" className="hn-btn-primary mt-6">
+        Back to discovering games ↗
       </Link>
     </div>
   );

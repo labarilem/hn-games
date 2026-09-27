@@ -8,7 +8,7 @@ export default async function RipPage(props: {
   const searchParams = await props.searchParams;
   const { games: filteredGames, pagination } = filterGames(
     ripGames,
-    searchParams
+    searchParams,
   );
   const allRipGamesCount = ripGames.length;
   const currentPage = parsePage(searchParams.page);
@@ -22,6 +22,7 @@ export default async function RipPage(props: {
       pagination={pagination}
       currentPage={currentPage}
       searchParams={searchParams}
+      archive
     />
   );
 }

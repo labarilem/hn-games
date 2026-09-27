@@ -10,13 +10,17 @@ const config: Config = {
     extend: {
       colors: {
         hn: {
-          bg: "#1a1a1a",
-          surface: "#242424",
-          elevated: "#2e2e2e",
-          border: "#363636",
-          accent: "#646cff",
-          "accent-hover": "#747bff",
+          bg: "#101110",
+          surface: "#191b19",
+          elevated: "#232623",
+          border: "#343934",
+          accent: "#ff8a4c",
+          "accent-hover": "#ffa775",
         },
+      },
+      fontFamily: {
+        display: ["var(--font-display)", "Impact", "sans-serif"],
+        mono: ["Consolas", "Liberation Mono", "monospace"],
       },
       animation: {
         "fade-in": "fadeIn 0.4s ease-out",

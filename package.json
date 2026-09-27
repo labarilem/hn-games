@@ -12,12 +12,19 @@
     "clean": "rm -rf .next",
     "scrape": "tsx scripts/scrape.ts 2>&1 | tee log.txt",
     "scrape-single": "tsx scripts/scrape.ts",
+    "setup-images": "playwright install chromium",
+    "scrape-images": "tsx scripts/scrape-images.ts",
+    "test:images": "tsx --test scripts/lib/images.test.ts",
+    "test:links": "tsx --test scripts/lib/url.test.ts",
     "filter": "tsx scripts/filter.ts",
     "archive": "tsx scripts/archive.ts 2>&1 | tee log.txt",
     "compile": "tsx scripts/compile.ts",
     "check-images": "tsx scripts/check-images.ts",
     "check-ids": "tsx scripts/check-ids.ts",
     "check-duplicates": "tsx scripts/check-duplicates.ts",
+    "review-games": "tsx scripts/review-games.ts",
+    "delete-game": "tsx scripts/delete-game.ts",
+    "test:detection": "tsx --test scripts/lib/detection.test.ts scripts/lib/genres.test.ts scripts/lib/metadata.test.ts",
     "check-links": "tsx scripts/check-links.ts 2>&1 | tee log.txt",
     "revive": "tsx scripts/revive.ts",
     "update-points": "tsx scripts/update-points.ts",
@@ -55,6 +62,7 @@
     "eslint-config-next": "^16.1.5",
     "eslint-config-prettier": "^9.1.0",
     "get-urls": "^12.1.0",
+    "playwright": "^1.63.0",
     "postcss": "^8.5.10",
     "prettier": "^3.2.5",
     "string-strip-html": "^13.4.8",
@@ -63,6 +71,6 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": ">=18.17.0"
+    "node": ">=20.9.0"
   }
 }

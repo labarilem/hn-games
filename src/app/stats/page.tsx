@@ -8,7 +8,7 @@ import {
 
 export default function StatsPage() {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="editorial-page">
       <h1 className="text-4xl font-bold mb-4 text-center">Statistics</h1>
 
       <p className="text-gray-400 text-center mb-8 px-4">

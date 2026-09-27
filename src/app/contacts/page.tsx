@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ContactsPage() {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="editorial-page">
       <h1 className="text-4xl font-bold mb-4 text-center">Contacts</h1>
 
       <p className="mb-4 text-gray-300">
@@ -25,7 +25,7 @@ export default function ContactsPage() {
           </li>
           <li>
             <span className="font-semibold">Email: </span>
-            <span >hackernewsgames at Google&apos;s email provider dot com</span>
+            <span>hackernewsgames at Google&apos;s email provider dot com</span>
           </li>
           <li>
             <span className="font-semibold">GitHub Issues: </span>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="editorial-page">
       <h1 className="text-4xl font-bold mb-4 text-center">About</h1>
       <p className="mb-4 text-gray-300">
         HN Games is a manually curated collection of games made by the HN
@@ -67,8 +67,8 @@ export default function AboutPage() {
           >
             submit it
           </Link>
-          . Similarly, if you notice a game in our catalog that doesn&apos;t meet
-          these standards, let us know and we&apos;ll review it.
+          . Similarly, if you notice a game in our catalog that doesn&apos;t
+          meet these standards, let us know and we&apos;ll review it.
         </p>
         <p className="mb-4 text-gray-300">
           To encourage all kinds of contributions and give back to the HN

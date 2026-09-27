@@ -5,7 +5,7 @@ import { GameGenre } from "@/types/game";
 import { useEffect, useId, useRef, useState } from "react";
 
 const SORTED_GENRES = Object.values(GameGenre).sort((a, b) =>
-  a.localeCompare(b)
+  a.localeCompare(b),
 );
 
 interface GenreMultiSelectProps {
@@ -21,6 +21,7 @@ export default function GenreMultiSelect({
 }: GenreMultiSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const listboxId = useId();
 
   useEffect(() => {
@@ -36,7 +37,10 @@ export default function GenreMultiSelect({
     };
 
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setIsOpen(false);
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        buttonRef.current?.focus();
+      }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -73,8 +77,9 @@ export default function GenreMultiSelect({
   return (
     <div ref={containerRef} className={`relative ${className}`}>
       <button
+        ref={buttonRef}
         type="button"
-        aria-haspopup="listbox"
+        aria-haspopup="dialog"
         aria-expanded={isOpen}
         aria-controls={listboxId}
         onClick={() => setIsOpen((prev) => !prev)}
@@ -100,10 +105,9 @@ export default function GenreMultiSelect({
       {isOpen && (
         <div
           id={listboxId}
-          role="listbox"
+          role="dialog"
           aria-label="Genre filter"
-          aria-multiselectable="true"
-          className="absolute z-50 mt-1 w-full min-w-[220px] max-h-[min(320px,50vh)] overflow-y-auto overscroll-contain bg-hn-surface border border-hn-border rounded-lg shadow-xl"
+          className="genre-popover absolute z-50 mt-1 w-full min-w-[220px] max-h-[min(320px,50vh)] overflow-y-auto overscroll-contain bg-hn-surface border border-hn-border rounded shadow-xl"
         >
           <div className="sticky top-0 z-10 flex items-center justify-between gap-2 px-3 py-2 border-b border-hn-border bg-hn-surface">
             <span className="text-sm text-gray-400">Select genres</span>
@@ -123,18 +127,16 @@ export default function GenreMultiSelect({
               const isSelected = selectedGenres.includes(genre);
               return (
                 <li key={genre} role="presentation">
-                  <label
-                    role="option"
-                    aria-selected={isSelected}
-                    className="flex items-center gap-3 px-4 py-2.5 cursor-pointer hover:bg-hn-elevated active:bg-hn-border select-none"
-                  >
+                  <label className="flex items-center gap-3 px-4 py-2.5 cursor-pointer hover:bg-hn-elevated active:bg-hn-border select-none">
                     <input
                       type="checkbox"
                       checked={isSelected}
                       onChange={() => toggleGenre(genre)}
                       className="w-4 h-4 shrink-0 accent-hn-accent"
                     />
-                    <span className="text-sm">{formatGenreForFilter(genre)}</span>
+                    <span className="text-sm">
+                      {formatGenreForFilter(genre)}
+                    </span>
                   </label>
                 </li>
               );

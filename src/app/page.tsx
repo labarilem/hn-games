@@ -1,5 +1,6 @@
 import GamesListing from "@/components/GamesListing";
 import { games } from "@/data/games";
+import { Game } from "@/types/game";
 import { filterGames, GameSearchParams, parsePage } from "@/lib/games";
 
 export default async function Home(props: {
@@ -19,6 +20,10 @@ export default async function Home(props: {
       pagination={pagination}
       currentPage={currentPage}
       searchParams={searchParams}
+      featured={games.reduce<Game | undefined>(
+        (best, game) => (!best || game.hnPoints > best.hnPoints ? game : best),
+        undefined,
+      )}
     />
   );
 }

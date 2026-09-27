@@ -2,7 +2,7 @@
 
 export default function Newsletter() {
   // return (
-  //   <div className="max-w-2xl mx-auto text-center">
+  //   <div className="editorial-page">
   //     <h1 className="text-4xl font-bold mb-4">Newsletter</h1>
   //     <p className="text-gray-400 mb-8">
   //       Subscribe to get notified about the latest games added to our catalog.
@@ -15,7 +15,7 @@ export default function Newsletter() {
   //   </div>
   // );
   return (
-    <div className="max-w-2xl mx-auto text-center">
+    <div className="editorial-page">
       <h1 className="text-4xl font-bold mb-4">Newsletter</h1>
       <p className="text-gray-400 mb-8">Newsletter has been removed.</p>
     </div>

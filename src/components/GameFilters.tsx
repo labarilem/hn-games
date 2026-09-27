@@ -1,454 +1,320 @@
 "use client";
 
-import { GameGenre, Pricing } from "@/types/game";
-import debounce from "lodash.debounce";
+import { GameGenre } from "@/types/game";
+import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ReactNode, useEffect, useRef, useState, useTransition } from "react";
 import FilterSelect from "./FilterSelect";
 import GenreMultiSelect from "./GenreMultiSelect";
 
-const filterSelectWrapper = "w-fit min-w-[120px]";
-const filterSelectWideWrapper = "w-fit min-w-[140px]";
+const filterOptions = [
+  {
+    key: "platform",
+    label: "Platform",
+    options: [
+      ["", "All platforms"],
+      ["web", "Browser"],
+      ["desktop", "Desktop"],
+      ["console", "Console"],
+      ["ios", "iOS"],
+      ["android", "Android"],
+    ],
+  },
+  {
+    key: "playerModes",
+    label: "Players",
+    options: [
+      ["", "Any player mode"],
+      ["single", "Single player"],
+      ["multi", "Multiplayer"],
+    ],
+  },
+  {
+    key: "pricing",
+    label: "Price",
+    options: [
+      ["", "Any price"],
+      ["free", "Free"],
+      ["freemium", "Freemium"],
+      ["paid", "Paid"],
+    ],
+  },
+  {
+    key: "license",
+    label: "Source code",
+    options: [
+      ["", "Any availability"],
+      ["open", "Open source"],
+      ["closed", "Closed source"],
+    ],
+  },
+];
 
-export default function GameFilters() {
+export default function GameFilters({
+  children,
+  resultCount,
+}: {
+  children: ReactNode;
+  resultCount: number;
+}) {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  const params = useSearchParams();
   const pathname = usePathname();
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [searchTerm, setSearchTerm] = useState(
-    searchParams.get("search") ?? ""
-  );
-  const [resetKey, setResetKey] = useState(0);
+  const [search, setSearch] = useState(params.get("search") ?? "");
+  const [expanded, setExpanded] = useState(false);
+  const [pending, startTransition] = useTransition();
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const searchRef = useRef(search);
+  const cancelSearch = () => {
+    if (timer.current) clearTimeout(timer.current);
+  };
 
-  // Refs for sort selects
-  const mobileSortRef = useRef<HTMLSelectElement>(null);
-  const desktopSortRef = useRef<HTMLSelectElement>(null);
-
-  // Helper to always reset page to 1 when a filter changes
-  const createQueryStringWithPageReset = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-      // Always reset page to 1 if changing a filter (not if changing page itself)
-      if (name !== "page") params.set("page", "1");
-      return params.toString();
+  useEffect(
+    () => () => {
+      if (timer.current) clearTimeout(timer.current);
     },
-    [searchParams]
+    [],
   );
-
-  // Helper to create the navigation path with current pathname
-  const createNavigationPath = useCallback(
-    (queryString: string) => {
-      return queryString ? `${pathname}?${queryString}` : pathname;
-    },
-    [pathname]
-  );
-
-  // Create a stable debounced navigation function
-  const debouncedNavigate = useMemo(
-    () =>
-      debounce((nextValue: string) => {
-        const params = new URLSearchParams(searchParams.toString());
-
-        if (nextValue) {
-          params.set("search", nextValue);
-        } else {
-          params.delete("search");
-        }
-        params.set("page", "1");
-
-        const newSearch = params.toString();
-        const newPath = createNavigationPath(newSearch);
-        const currentPath = window.location.pathname + window.location.search;
-
-        if (newPath !== currentPath) {
-          router.push(newPath);
-        }
-      }, 250),
-    [router, searchParams, createNavigationPath]
-  );
-
   useEffect(() => {
-    return () => debouncedNavigate.cancel();
-  }, [debouncedNavigate]);
+    const value = params.get("search") ?? "";
+    searchRef.current = value;
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- sync back/forward navigation with the visible input
+    setSearch(value);
+  }, [params]);
 
-  useEffect(() => {
-    // Sync input when URL changes via back/forward or clear filters
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional URL-to-input sync
-    setSearchTerm(searchParams.get("search") ?? "");
-  }, [searchParams]);
-
-  const handleSearchChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const nextValue = e.target.value;
-      setSearchTerm(nextValue);
-      debouncedNavigate(nextValue);
+  function navigate(next: URLSearchParams) {
+    cancelSearch();
+    if (searchRef.current) next.set("search", searchRef.current);
+    else next.delete("search");
+    next.delete("page");
+    startTransition(() =>
+      router.push(`${pathname}${next.size ? `?${next}` : ""}`, {
+        scroll: false,
+      }),
+    );
+  }
+  function setFilter(key: string, value: string) {
+    const next = new URLSearchParams(params);
+    if (value) next.set(key, value);
+    else next.delete(key);
+    navigate(next);
+  }
+  function clear() {
+    cancelSearch();
+    searchRef.current = "";
+    setSearch("");
+    startTransition(() => router.push(pathname, { scroll: false }));
+  }
+  const selectedGenres = params.getAll("genre") as GameGenre[];
+  const activeCount = [
+    "platform",
+    "playerModes",
+    "pricing",
+    "license",
+    "author",
+    "search",
+    "genre",
+  ].filter((key) => params.has(key) && params.get(key)).length;
+  const collections = [
+    { label: "All games", query: "", active: !activeCount },
+    {
+      label: "In your browser",
+      query: "platform=web",
+      active: params.get("platform") === "web",
     },
-    [debouncedNavigate]
-  );
-
-  const handleExpandToggle = useCallback(() => {
-    setIsExpanded((prev) => !prev);
-  }, []);
-
-  const handleClearFilters = useCallback(() => {
-    // Reset sort selects to default value first
-    if (mobileSortRef.current) mobileSortRef.current.value = "releaseDate-desc";
-    if (desktopSortRef.current)
-      desktopSortRef.current.value = "releaseDate-desc";
-
-    // Cancel any pending debounced navigations
-    debouncedNavigate.cancel();
-
-    // Reset state
-    setIsExpanded(false);
-    setSearchTerm("");
-
-    // Navigate to current pathname without query params to clear all filters
-    const currentFullPath = window.location.pathname + window.location.search;
-    if (currentFullPath !== pathname) {
-      router.push(pathname);
-    } else {
-      // If already at base path, force a re-render by updating resetKey
-      setResetKey((k) => k + 1);
-    }
-  }, [router, debouncedNavigate, pathname]);
-
-  const handleGenreChange = useCallback(
-    (genres: GameGenre[]) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.delete("genre");
-      genres.forEach((genre) => params.append("genre", genre));
-      params.set("page", "1");
-      router.push(createNavigationPath(params.toString()));
+    {
+      label: "Puzzles",
+      query: "genre=puzzle",
+      active: selectedGenres.includes(GameGenre.PUZZLE),
     },
-    [router, searchParams, createNavigationPath]
-  );
-
-  const selectedGenres = searchParams.getAll("genre") as GameGenre[];
-
-  // Count active filters
-  const activeFiltersCount = [
-    searchParams.get("platform"),
-    selectedGenres.length > 0 ? "genre" : null,
-    searchParams.get("playerModes"),
-    searchParams.get("pricing"),
-    searchParams.get("license"),
-    searchParams.get("sortBy"),
-    searchParams.get("search"),
-    searchParams.get("author"),
-  ].filter(Boolean).length;
-
-  const currentAuthor = searchParams.get("author");
+    {
+      label: "Multiplayer",
+      query: "playerModes=multi",
+      active: params.get("playerModes") === "multi",
+    },
+    {
+      label: "Open source",
+      query: "license=open",
+      active: params.get("license") === "open",
+    },
+  ];
 
   return (
-    <div key={resetKey} className="space-y-4 mb-8">
-      {/* Mobile View */}
-      <div className="lg:hidden">
-        <div className="flex gap-2">
-          <button
-            onClick={handleExpandToggle}
-            className="hn-filter-control flex-1 flex justify-between items-center text-left"
+    <div id="catalog">
+      <nav className="collection-nav" aria-label="Browse collections">
+        {collections.map(({ label, query, active }) => (
+          <Link
+            key={label}
+            href={`${pathname}${query ? `?${query}` : ""}`}
+            scroll={false}
+            onClick={cancelSearch}
+            className={active ? "is-active" : ""}
           >
-            <span className="flex items-center gap-2">
-              <svg
-                className={`w-5 h-5 transition-transform ${isExpanded ? "rotate-180" : ""}`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-              Filters
-              {activeFiltersCount > 0 && (
-                <span className="bg-hn-accent text-white text-sm px-2 py-0.5 rounded-full">
-                  {activeFiltersCount}
-                </span>
-              )}
-            </span>
+            {label}
+          </Link>
+        ))}
+      </nav>
+      <div className="catalog-layout">
+        <aside className="catalog-sidebar" aria-label="Catalog filters">
+          <div className="sidebar-heading">
+            <h2>Refine your search</h2>
+            {activeCount > 0 && <button onClick={clear}>Reset</button>}
+          </div>
+          <button
+            className="mobile-filter-toggle"
+            onClick={() => setExpanded(!expanded)}
+            aria-expanded={expanded}
+            aria-controls="catalog-filter-fields"
+          >
+            Filters {activeCount > 0 && `(${activeCount})`}
+            <span aria-hidden="true">{expanded ? "−" : "+"}</span>
           </button>
-          {activeFiltersCount > 0 && (
-            <button
-              onClick={handleClearFilters}
-              className="hn-btn-primary px-4 py-2 rounded"
-            >
-              Clear
-            </button>
-          )}
-        </div>
-
-        {isExpanded && (
-          <div className="hn-surface mt-2 p-3 flex flex-wrap gap-2 animate-slide-up">
-            <input
-              type="text"
-              placeholder="Search games..."
-              className="hn-filter-control w-full"
-              value={searchTerm}
-              onChange={handleSearchChange}
-            />
-
-            {currentAuthor && (
-              <div className="hn-filter-control flex items-center gap-2 w-fit">
-                <span className="text-gray-300">Author: {currentAuthor}</span>
+          <div
+            id="catalog-filter-fields"
+            className={`filter-fields ${expanded ? "is-expanded" : ""}`}
+          >
+            {filterOptions.slice(0, 1).map(({ key, label, options }) => (
+              <label className="filter-field" key={key}>
+                <span>{label}</span>
+                <FilterSelect
+                  name={key}
+                  aria-label={label}
+                  value={params.get(key) ?? ""}
+                  onChange={(e) => setFilter(key, e.target.value)}
+                >
+                  {options.map(([value, title]) => (
+                    <option key={value} value={value}>
+                      {title}
+                    </option>
+                  ))}
+                </FilterSelect>
+              </label>
+            ))}
+            <div className="filter-field">
+              <span>Genre</span>
+              <GenreMultiSelect
+                selectedGenres={selectedGenres}
+                onSelectionChange={(genres) => {
+                  const next = new URLSearchParams(params);
+                  next.delete("genre");
+                  genres.forEach((genre) => next.append("genre", genre));
+                  navigate(next);
+                }}
+              />
+            </div>
+            {filterOptions.slice(1).map(({ key, label, options }) => (
+              <label className="filter-field" key={key}>
+                <span>{label}</span>
+                <FilterSelect
+                  name={key}
+                  aria-label={label}
+                  value={params.get(key) ?? ""}
+                  onChange={(e) => setFilter(key, e.target.value)}
+                >
+                  {options.map(([value, title]) => (
+                    <option key={value} value={value}>
+                      {title}
+                    </option>
+                  ))}
+                </FilterSelect>
+              </label>
+            ))}
+            {params.get("author") && (
+              <div className="author-filter">
+                <span>By {params.get("author")}</span>
+                <button
+                  aria-label="Remove author filter"
+                  onClick={() => setFilter("author", "")}
+                >
+                  ×
+                </button>
               </div>
             )}
-
-            {/* Platform Select */}
+            {activeCount > 0 && (
+              <button className="clear-filters" onClick={clear}>
+                Clear all filters ↗
+              </button>
+            )}
+            <div className="sidebar-note">
+              <span aria-hidden="true">↳</span>
+              <p>
+                Every game starts with a{" "}
+                <a
+                  href="https://news.ycombinator.com/show"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hacker News story.
+                </a>
+              </p>
+            </div>
+          </div>
+        </aside>
+        <section
+          className="catalog-results"
+          aria-label="Games"
+          aria-busy={pending}
+        >
+          <div className="catalog-toolbar">
+            <div className="catalog-search">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                aria-hidden="true"
+              >
+                <circle cx="10.5" cy="10.5" r="6.5" />
+                <path d="m16 16 5 5" />
+              </svg>
+              <input
+                type="search"
+                aria-label="Search games"
+                placeholder="Search for your next game…"
+                value={search}
+                onChange={(event) => {
+                  const value = event.target.value;
+                  setSearch(value);
+                  searchRef.current = value;
+                  cancelSearch();
+                  timer.current = setTimeout(
+                    () => navigate(new URLSearchParams(params)),
+                    300,
+                  );
+                }}
+              />
+            </div>
             <FilterSelect
-              name="platform"
-              aria-label="Platform"
-              value={searchParams.get("platform") ?? ""}
-              onChange={(e) =>
-                router.push(
-                  createNavigationPath(
-                    createQueryStringWithPageReset("platform", e.target.value)
-                  )
-                )
-              }
-              wrapperClassName={filterSelectWrapper}
-            >
-              <option value="">All Platforms</option>
-              <option value="web">Web</option>
-              <option value="desktop">Desktop</option>
-              <option value="console">Console</option>
-              <option value="ios">iOS</option>
-              <option value="android">Android</option>
-            </FilterSelect>
-
-            {/* Genre Multi-Select */}
-            <GenreMultiSelect
-              selectedGenres={selectedGenres}
-              onSelectionChange={handleGenreChange}
-              className="w-full sm:w-fit"
-            />
-
-            {/* Player Mode Select */}
-            <FilterSelect
-              name="playerModes"
-              aria-label="Player Modes"
-              value={searchParams.get("playerModes") ?? ""}
-              onChange={(e) =>
-                router.push(
-                  createNavigationPath(
-                    createQueryStringWithPageReset(
-                      "playerModes",
-                      e.target.value
-                    )
-                  )
-                )
-              }
-              wrapperClassName={filterSelectWideWrapper}
-            >
-              <option value="">All Player Modes</option>
-              <option value="single">Singleplayer</option>
-              <option value="multi">Multiplayer</option>
-            </FilterSelect>
-
-            {/* Pricing Select */}
-            <FilterSelect
-              name="pricing"
-              aria-label="Pricing"
-              value={searchParams.get("pricing") ?? ""}
-              onChange={(e) =>
-                router.push(
-                  createNavigationPath(
-                    createQueryStringWithPageReset("pricing", e.target.value)
-                  )
-                )
-              }
-              wrapperClassName={filterSelectWrapper}
-            >
-              <option value="">Any Pricing</option>
-              <option value={Pricing.FREE}>Free</option>
-              <option value={Pricing.FREEMIUM}>Freemium</option>
-              <option value={Pricing.PAID}>Paid</option>
-            </FilterSelect>
-
-            {/* License Select */}
-            <FilterSelect
-              name="license"
-              aria-label="License"
-              value={searchParams.get("license") ?? ""}
-              onChange={(e) =>
-                router.push(
-                  createNavigationPath(
-                    createQueryStringWithPageReset("license", e.target.value)
-                  )
-                )
-              }
-              wrapperClassName={filterSelectWideWrapper}
-            >
-              <option value="">Any License</option>
-              <option value="open">Open Source</option>
-              <option value="closed">Closed Source</option>
-            </FilterSelect>
-
-            {/* Sort By Select */}
-            <FilterSelect
-              ref={mobileSortRef}
               name="sortBy"
-              aria-label="Sort By"
-              defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
-              onChange={(e) =>
-                router.push(
-                  createNavigationPath(
-                    createQueryStringWithPageReset("sortBy", e.target.value)
-                  )
-                )
-              }
-              wrapperClassName={filterSelectWideWrapper}
+              aria-label="Sort games"
+              wrapperClassName="sort-control"
+              value={params.get("sortBy") ?? "releaseDate-desc"}
+              onChange={(e) => setFilter("sortBy", e.target.value)}
             >
-              <option value="releaseDate-desc">Newest First</option>
-              <option value="releaseDate-asc">Oldest First</option>
-              <option value="hnPoints-desc">Most Popular</option>
-              <option value="hnPoints-asc">Least Popular</option>
+              <option value="releaseDate-desc">Newest first</option>
+              <option value="releaseDate-asc">Oldest first</option>
+              <option value="hnPoints-desc">Most HN points</option>
+              <option value="hnPoints-asc">Fewest HN points</option>
             </FilterSelect>
           </div>
-        )}
-      </div>
-
-      {/* Desktop View */}
-      <div className="hidden lg:block">
-        <div className="hn-surface p-3">
-          <div className="flex flex-wrap gap-2 items-center">
-          <input
-            type="text"
-            placeholder="Search games..."
-            className="hn-filter-control flex-1 min-w-[200px]"
-            value={searchTerm}
-            onChange={handleSearchChange}
-          />
-
-          {currentAuthor && (
-            <div className="hn-filter-control flex items-center gap-2 w-fit">
-              <span className="text-gray-300">Author: {currentAuthor}</span>
-            </div>
-          )}
-
-          {/* Platform Select */}
-          <FilterSelect
-            name="platform"
-            aria-label="Platform"
-            value={searchParams.get("platform") ?? ""}
-            onChange={(e) =>
-              router.push(
-                createNavigationPath(
-                  createQueryStringWithPageReset("platform", e.target.value)
-                )
-              )
+          <div className="results-caption" role="status" aria-live="polite">
+            <span>
+              {pending
+                ? "Finding games…"
+                : `${resultCount.toLocaleString("en-US")} ${resultCount === 1 ? "game" : "games"}${activeCount ? " found" : " in the collection"}`}
+            </span>
+            <span className="results-caption-note">MADE BY THE COMMUNITY</span>
+          </div>
+          <div
+            className={
+              pending ? "results-content is-loading" : "results-content"
             }
-            wrapperClassName={filterSelectWrapper}
           >
-            <option value="">All Platforms</option>
-            <option value="web">Web</option>
-            <option value="desktop">Desktop</option>
-            <option value="console">Console</option>
-            <option value="ios">iOS</option>
-            <option value="android">Android</option>
-          </FilterSelect>
-
-          {/* Genre Multi-Select */}
-          <GenreMultiSelect
-            selectedGenres={selectedGenres}
-            onSelectionChange={handleGenreChange}
-            className="w-fit"
-          />
-
-          {/* Player Mode Select */}
-          <FilterSelect
-            name="playerModes"
-            aria-label="Player Modes"
-            value={searchParams.get("playerModes") ?? ""}
-            onChange={(e) =>
-              router.push(
-                createNavigationPath(
-                  createQueryStringWithPageReset("playerModes", e.target.value)
-                )
-              )
-            }
-            wrapperClassName={filterSelectWideWrapper}
-          >
-            <option value="">All Player Modes</option>
-            <option value="single">Singleplayer</option>
-            <option value="multi">Multiplayer</option>
-          </FilterSelect>
-
-          {/* Pricing Select */}
-          <FilterSelect
-            name="pricing"
-            aria-label="Pricing"
-            value={searchParams.get("pricing") ?? ""}
-            onChange={(e) =>
-              router.push(
-                createNavigationPath(
-                  createQueryStringWithPageReset("pricing", e.target.value)
-                )
-              )
-            }
-            wrapperClassName={filterSelectWrapper}
-          >
-            <option value="">Any Pricing</option>
-            <option value={Pricing.FREE}>Free</option>
-            <option value={Pricing.FREEMIUM}>Freemium</option>
-            <option value={Pricing.PAID}>Paid</option>
-          </FilterSelect>
-
-          {/* License Select */}
-          <FilterSelect
-            name="license"
-            aria-label="License"
-            value={searchParams.get("license") ?? ""}
-            onChange={(e) =>
-              router.push(
-                createNavigationPath(
-                  createQueryStringWithPageReset("license", e.target.value)
-                )
-              )
-            }
-            wrapperClassName={filterSelectWideWrapper}
-          >
-            <option value="">Any License</option>
-            <option value="open">Open Source</option>
-            <option value="closed">Closed Source</option>
-          </FilterSelect>
-
-          {/* Sort By Select */}
-          <FilterSelect
-            ref={desktopSortRef}
-            name="sortBy"
-            aria-label="Sort By"
-            defaultValue={searchParams.get("sortBy") ?? "releaseDate-desc"}
-            onChange={(e) =>
-              router.push(
-                createNavigationPath(
-                  createQueryStringWithPageReset("sortBy", e.target.value)
-                )
-              )
-            }
-            wrapperClassName={filterSelectWideWrapper}
-          >
-            <option value="releaseDate-desc">Newest First</option>
-            <option value="releaseDate-asc">Oldest First</option>
-            <option value="hnPoints-desc">Most Popular</option>
-            <option value="hnPoints-asc">Least Popular</option>
-          </FilterSelect>
-
-          {/* Clear Button */}
-          {activeFiltersCount > 0 && (
-            <button
-              onClick={handleClearFilters}
-              className="hn-btn-primary px-4 py-2 rounded"
-            >
-              Clear
-            </button>
-          )}
-        </div>
-        </div>
+            {children}
+          </div>
+        </section>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export type GameSearchParams = {
 };
 
 export function getGenresFromSearchParams(
-  genre: GameGenre | GameGenre[] | undefined
+  genre: GameGenre | GameGenre[] | undefined,
 ): GameGenre[] {
   if (!genre) return [];
   return Array.isArray(genre) ? genre : [genre];
@@ -50,41 +50,41 @@ export function filterGames(gamesList: Game[], searchParams: GameSearchParams) {
     filteredGames = filteredGames.filter(
       (game) =>
         game.name.toLowerCase().includes(searchTerm) ||
-        game.description.toLowerCase().includes(searchTerm)
+        game.description.toLowerCase().includes(searchTerm),
     );
   }
 
   if (searchParams.author)
     filteredGames = filteredGames.filter(
-      (game) => game.author === searchParams.author
+      (game) => game.author === searchParams.author,
     );
 
   if (searchParams.platform)
     filteredGames = filteredGames.filter((game) =>
-      game.platforms.includes(searchParams.platform as Platform)
+      game.platforms.includes(searchParams.platform as Platform),
     );
 
   const selectedGenres = getGenresFromSearchParams(searchParams.genre);
   if (selectedGenres.length > 0)
     filteredGames = filteredGames.filter((game) =>
-      selectedGenres.every((genre) => game.genres.includes(genre))
+      selectedGenres.every((genre) => game.genres.includes(genre)),
     );
 
   if (searchParams.playerModes)
     filteredGames = filteredGames.filter((game) =>
-      game.playerModes.includes(searchParams.playerModes!)
+      game.playerModes.includes(searchParams.playerModes!),
     );
 
   if (searchParams.pricing)
     filteredGames = filteredGames.filter(
-      (game) => game.pricing === searchParams.pricing
+      (game) => game.pricing === searchParams.pricing,
     );
 
   if (searchParams.license)
     filteredGames = filteredGames.filter((game) =>
       searchParams.license === LicenseType.OPEN
         ? game.sourceCodeUrl !== null
-        : game.sourceCodeUrl === null
+        : game.sourceCodeUrl === null,
     );
 
   // Apply sorting
@@ -94,13 +94,13 @@ export function filterGames(gamesList: Game[], searchParams: GameSearchParams) {
     default:
       filteredGames.sort(
         (a, b) =>
-          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
+          new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime(),
       );
       break;
     case "releaseDate-asc":
       filteredGames.sort(
         (a, b) =>
-          new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime()
+          new Date(a.releaseDate).getTime() - new Date(b.releaseDate).getTime(),
       );
       break;
     case "hnPoints-desc":
@@ -121,6 +121,7 @@ export function filterGames(gamesList: Game[], searchParams: GameSearchParams) {
   return {
     games: paginatedGames,
     pagination: {
+      totalGames,
       totalPages,
       hasNextPage: page < totalPages,
       hasPreviousPage: page > 1,

@@ -10,7 +10,7 @@ export default async function Random() {
 
   if (!randomGame) {
     return (
-      <div className="max-w-2xl mx-auto">
+      <div className="editorial-page">
         <h1 className="text-4xl font-bold mb-4 text-center">Random Game</h1>
         <p className="text-gray-400 mb-8">
           No free web games available at the moment.
@@ -20,7 +20,7 @@ export default async function Random() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="editorial-page">
       <h1 className="text-4xl font-bold mb-4 text-center">Random Game</h1>
       <p className="text-gray-400 mb-8 text-center">
         Discover a random free game that you can play directly in your web
@@ -37,7 +37,7 @@ export default async function Random() {
         </a>
       </div>
 
-      <div className="max-w-sm mx-auto">
+      <div className="random-game-wrap">
         <GameCard game={randomGame} />
       </div>
     </div>

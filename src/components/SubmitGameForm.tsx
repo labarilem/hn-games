@@ -16,7 +16,7 @@ export function SubmitGameForm() {
 
         try {
           const input = e.currentTarget.elements.namedItem(
-            "hnUrl"
+            "hnUrl",
           ) as HTMLInputElement;
           const url = new URL(input.value);
           const id = url.searchParams.get("id") || "";
@@ -30,7 +30,7 @@ export function SubmitGameForm() {
           if (response.ok) {
             const existingGame = await response.json();
             setError(
-              `A game with ID ${id} already exists in the catalog. Name: ${existingGame.name}`
+              `A game with ID ${id} already exists in the catalog. Name: ${existingGame.name}`,
             );
             return;
           }
@@ -50,6 +50,7 @@ export function SubmitGameForm() {
         <input
           type="url"
           name="hnUrl"
+          aria-label="Hacker News post URL"
           placeholder="https://news.ycombinator.com/item?id=..."
           pattern="https://news\.ycombinator\.com/item\?id=\d+"
           required
@@ -73,9 +74,7 @@ export function SubmitGameForm() {
         </button>
       </div>
 
-      {errorMsg && (
-        <p className="mt-2 text-red-400 text-sm">{errorMsg}</p>
-      )}
+      {errorMsg && <p className="mt-2 text-red-400 text-sm">{errorMsg}</p>}
     </form>
   );
 }

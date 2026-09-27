@@ -1,151 +1,119 @@
-"use client";
 import { Game, Pricing } from "@/types/game";
 import Link from "next/link";
 import PlatformIcon from "./PlatformIcon";
 import { formatGenre } from "@/lib/formatters";
 
-interface GameCardProps {
+export default function GameCard({
+  game,
+  filterPath = "/",
+}: {
   game: Game;
-}
-
-export default function GameCard({ game }: GameCardProps) {
-  const publicationYear = new Date(game.releaseDate).getFullYear();
-
-  const pricingBadgeClass =
-    game.pricing === Pricing.FREE
-      ? "bg-emerald-500/90 text-white"
-      : game.pricing === Pricing.FREEMIUM
-        ? "bg-violet-500/90 text-white"
-        : "bg-amber-500/90 text-white";
-
-  const pricingLabel =
+  filterPath?: string;
+}) {
+  const pricing =
     game.pricing === Pricing.FREE
       ? "Free"
       : game.pricing === Pricing.FREEMIUM
         ? "Freemium"
         : "Paid";
-
   return (
-    <div className="hn-card group">
-      <Link href={`/game/${game.id}`} className="block">
-        <div className="relative aspect-video w-full min-w-0 flex-shrink-0 cursor-pointer overflow-hidden">
-          <img
-            src={game.imageUrl}
-            alt={game.name}
-            className="block w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-            fetchPriority="low"
-            loading="lazy"
-            decoding="async"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-
-          <div className="absolute bottom-2 right-2 flex gap-2">
-            <span className="bg-hn-accent/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium shadow-sm">
-              {game.hnPoints} point{game.hnPoints === 1 ? "" : "s"}
-            </span>
-          </div>
-
-          <div className="absolute top-2 left-2">
-            <span
-              className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1.5 shadow-sm backdrop-blur-sm ${pricingBadgeClass}`}
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-
-              {pricingLabel}
-            </span>
-          </div>
-        </div>
+    <article className="game-card">
+      <Link
+        href={`/game/${game.id}`}
+        className="game-art"
+        aria-label={`View ${game.name}`}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={game.imageUrl}
+          alt={`${game.name} screenshot`}
+          width={1280}
+          height={720}
+          loading="lazy"
+          decoding="async"
+        />
+        <span className="game-art-action" aria-hidden="true">
+          View game ↗
+        </span>
+        {!game.isActive && <span className="unavailable-label">Offline</span>}
       </Link>
-
-      <div className="p-4">
-        <Link href={`/game/${game.id}`} className="block mb-2">
-          <h2 className="text-xl font-bold text-white group-hover:text-hn-accent transition-colors cursor-pointer">
-            {game.name}
-          </h2>
-        </Link>
-
-        <p className="text-gray-400 text-sm leading-relaxed mb-4">
-          {game.description}
+      <div className="game-card-body">
+        <div className="game-card-heading">
+          <Link href={`/game/${game.id}`}>
+            <h2>{game.name}</h2>
+          </Link>
+          <Link
+            href={`${filterPath}?pricing=${game.pricing}`}
+            className={`game-price ${game.pricing === Pricing.FREE ? "is-free" : ""}`}
+          >
+            {pricing}
+          </Link>
+        </div>
+        <p className="game-description">
+          {game.description ||
+            "Discover this game from the Hacker News community."}
         </p>
-      </div>
-
-      <div className="px-4 pb-4 flex flex-col">
-        <div className="space-y-3 flex-grow">
-          <div className="flex flex-wrap gap-2">
+        <div className="game-genres">
+          {game.genres.map((genre) => (
+            <Link
+              key={genre}
+              href={`${filterPath}?genre=${encodeURIComponent(genre)}`}
+            >
+              {formatGenre(genre)}
+            </Link>
+          ))}
+        </div>
+        <div className="game-card-meta">
+          <div className="game-platforms">
             {game.platforms.map((platform) => (
               <Link
                 key={platform}
-                href={`/?platform=${encodeURIComponent(platform)}`}
-                className="hn-tag-platform"
+                href={`${filterPath}?platform=${platform}`}
+                title={platform === "web" ? "Browser" : platform}
+                aria-label={`Browse ${platform} games`}
               >
-                <PlatformIcon platform={platform} className="w-4 h-4" />
-
-                {platform}
+                <PlatformIcon platform={platform} className="w-3.5 h-3.5" />
               </Link>
             ))}
           </div>
-
-          <div className="flex flex-wrap gap-2">
-            {game.genres.map((genre) => (
-              <Link
-                key={genre}
-                href={`/?genre=${encodeURIComponent(genre)}`}
-                className="hn-tag-genre"
-              >
-                {formatGenre(genre)}
-              </Link>
-            ))}
-
-            {game.playerModes.map((mode) => (
-              <Link
-                key={mode}
-                href={`/?playerModes=${encodeURIComponent(mode)}`}
-                className="hn-tag-mode"
-              >
-                {mode === "single" ? "singleplayer" : "multiplayer"}
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex items-center justify-between gap-2 text-sm pt-1">
-            <Link
-              href={`/?author=${encodeURIComponent(game.author)}`}
-              className="hn-link"
-            >
-              by {game.author}
-            </Link>
-
-            <span className="text-gray-500 text-sm">{publicationYear}</span>
-          </div>
+          <a
+            href={game.hnUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="game-points"
+            aria-label={`${game.hnPoints} Hacker News points; open discussion`}
+          >
+            ▲ {game.hnPoints.toLocaleString("en-US")}
+          </a>
+          <span className="game-year">
+            {new Date(game.releaseDate).getUTCFullYear()}
+          </span>
         </div>
-
-        {game.isActive && (
-          <div className="mt-4 pt-3 border-t border-white/5">
+        <div className="game-card-bottom">
+          <Link
+            href={`${filterPath}?author=${encodeURIComponent(game.author)}`}
+            className="game-author"
+            title={`Games by ${game.author}`}
+          >
+            by {game.author}
+          </Link>
+          {game.isActive ? (
             <a
               href={game.playUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="block w-full hn-btn-primary px-4 py-2.5 rounded-md text-center"
+              className="game-play"
+              aria-label={`Play ${game.name}`}
             >
-              Play
+              Play <span aria-hidden="true">↗</span>
             </a>
-          </div>
-        )}
+          ) : (
+            <Link href={`/game/${game.id}`} className="game-play">
+              Details ↗
+            </Link>
+          )}
+        </div>
       </div>
-    </div>
+    </article>
   );
 }

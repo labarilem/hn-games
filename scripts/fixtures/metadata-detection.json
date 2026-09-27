@@ -1,0 +1,321 @@
+[
+  {
+    "id": "42640941",
+    "source": "https://news.ycombinator.com/item?id=42640941",
+    "input": {
+      "name": "Show HN: 3D-Fractal Game on WebGPU (Desktop Chrome)",
+      "description": "Ported Marble Marcher over to WebGPU, so no download required. Open source code is on GitHub: https://github.com/grinstead/MarbleMarcherWebGPU WebGPU is cool. It's exciting to me to see these things working with no download. The actual js for this game is 130kb in all, though the music and sound effects bring the whole distribution to 10mb. The original game is from CodeParade: https://www.youtube.com/watch?v=9U0XVdvQwAI It can be a bit of a gpu buster, though it runs fine on my M1 Mac. I'm experimenting with SolidJS+WebGPU+Vite as a game engine (https://github.com/grinstead/ambush). It's a pretty cool environment to develop in, but building everything from scratch is slow and developing at a hobbyist pace.",
+      "playUrl": "https://codefiddler.itch.io/marble-marcher"
+    },
+    "expected": {
+      "platforms": ["web"]
+    }
+  },
+  {
+    "id": "42797295",
+    "source": "https://news.ycombinator.com/item?id=42797295",
+    "input": {
+      "name": "Show HN: 100 Depth tree search on your iPhone with Rust",
+      "description": "I made this app with Rust + React Native. It combines a puzzle game with a solver. While quite a lot of work went into UX, the solver is what I’m most proud of and was the first functional piece of the app. Originally, it solved one layer at a time, but when I added the undo feature I decided to try to go deeper and try to answer “What if the solver has perfect knowledge of the RNG?”. Going from computer CPU to phone and from search depth of 36 to 108 was obviously not going to get good brute force coverage considering I could only explore 30ish moves in a reasonable time which is a small percentage of all paths even before tripling the length of a solution. It ended up being a rabbit hole that led to what might be a novel search strategy that finds higher scores despite eliminating most of the pruning that made the single layer so fast. Rust was chosen because I like it and already had success using it for game solving. I also had written another iOS app using Rust for the business logic. React Native as the UI was something I wanted to evaluate after their ability to interface with Rust code vastly improved last year with the release of uniffi-bindgen-react-native. The only reason it isn’t also available for Android is procrastination. The rules of the puzzle come from an old Java game, which means that by reading the decompiled source and porting the RNG from Java, the app is a pretty faithful reproduction. In fact, if you sniff the seed from the game’s network traffic or dump it from the game’s memory, you can replay the same game.",
+      "playUrl": "https://apps.apple.com/us/app/chesstiles/id6737867924"
+    },
+    "expected": {
+      "platforms": ["ios"]
+    }
+  },
+  {
+    "id": "42877155",
+    "source": "https://news.ycombinator.com/item?id=42877155",
+    "input": {
+      "name": "Show HN: OG Snake game on your Terminal",
+      "description": "Play the snake game on your terminal. Built with Python and curses.",
+      "playUrl": "https://github.com/abishekvenkat/terminal-snake"
+    },
+    "expected": {
+      "platforms": ["desktop"]
+    }
+  },
+  {
+    "id": "42855732",
+    "source": "https://news.ycombinator.com/item?id=42855732",
+    "input": {
+      "name": "Show HN: 2222 is a 2048 like swipe to match game",
+      "description": "Android: https://play.google.com/store/apps/details?id=com.semihaykut... iOS: https://apps.apple.com/us/app/2222-swipe-to-match/id67410004...",
+      "playUrl": "https://apps.apple.com/us/app/2222-swipe-to-match/id6741000451"
+    },
+    "expected": {
+      "platforms": ["ios", "android"]
+    }
+  },
+  {
+    "id": "42722148",
+    "source": "https://news.ycombinator.com/item?id=42722148",
+    "input": {
+      "name": "Show HN: Multiplayer Wordle",
+      "description": "This is a kid friendly multi player or single player Wordle type game. There’s an easy mode (ninja mode) which accepts any 3 letter word and a category mode. Also, it allows up to eight letters. 1-4 players. Hope you enjoy :)",
+      "playUrl": "https://guesstheword-eoj0.onrender.com/"
+    },
+    "expected": {
+      "playerModes": ["single", "multi"]
+    }
+  },
+  {
+    "id": "42692963",
+    "source": "https://news.ycombinator.com/item?id=42692963",
+    "input": {
+      "name": "Show HN: Idle Cosmos – A realtime multiplayer web game build in Crystal",
+      "description": "",
+      "playUrl": "https://idlecosmos.com"
+    },
+    "expected": {
+      "platforms": ["web"],
+      "playerModes": ["multi"]
+    }
+  },
+  {
+    "id": "42775436",
+    "source": "https://news.ycombinator.com/item?id=42775436",
+    "input": {
+      "name": "Show HN: Abstractionary",
+      "description": "This is a taboo-like game where you have to make other players guess a target word or phrase. When you use words that aren't among the most common English words, they are \"censored\" and replaced with nonsense. Find a friend and try it out! :-)",
+      "playUrl": "https://abstract1.narfnilk.com/"
+    },
+    "expected": {
+      "playerModes": ["multi"]
+    }
+  },
+  {
+    "id": "42727105",
+    "source": "https://news.ycombinator.com/item?id=42727105",
+    "input": {
+      "name": "Show HN: Play tag against an opponent trained with reinforcement learning",
+      "description": "This is a little prototype I made recently while learning about reinforcement learning and to explore the use of machine learning in games. The learned model that the computer-controlled opponent uses is by no means optimal, but I think it still gives an interesting experience. Enjoy!",
+      "playUrl": "https://adamheins.com/projects/shadows/web/"
+    },
+    "expected": {
+      "platforms": [],
+      "playerModes": ["single"]
+    }
+  },
+  {
+    "id": "42723443",
+    "source": "https://news.ycombinator.com/item?id=42723443",
+    "input": {
+      "name": "Show HN: WasmBots – A WebAssembly-powered programming game",
+      "description": "I've been working on a browser-based programming game where you write bots to explore procedurally generated dungeons in any WebAssembly-compatible language. It's like a minimalist roguelike where your character's brain is a program you write. There are pre-made libraries for C, Rust, Zig, Go, and AssemblyScript. The game mechanics are intentionally simple for now, but the challenge comes from building up your bot's understanding of the world from limited local information. Your code needs to handle mapping, pathfinding, and strategy while dealing with monsters and potentially hostile other players. Some interesting technical bits: * Pure WebAssembly modules with no JavaScript dependencies (not even using wasm-bindgen for Rust) * Cross-language development with native debugging support via language-specific trainer builds * Custom messaging protocol implemented across the five example languages using code generation The project started as a way for me to poke around WebAssembly, especially exploring its potential as a universal plug-in language. There were a lot of yaks to be shaved as I went, though, and I ended up also learning a bunch about various build systems, roguelike exploration mechanics, procedural generation, etc. It's been a fun experience so far and I feel like it's hit a nice point (decently polished presentation of bots exploring the dungeon) before I start the next phase of adding actual game mechanics. Intro Video: https://www.youtube.com/watch?v=DGkkTYJrflI Deployed site: https://shaneliesegang.com/projects/wasmbots Auto-built: https://sjml.github.io/wasmbots/ Source (Monorepo): https://github.com/sjml/wasmbots The whole thing so far has been a one-person show, and I was often learning bits of tech as I was building with them, so feedback (technical or otherwise) is very welcome.",
+      "playUrl": "https://shaneliesegang.com/projects/wasmbots/"
+    },
+    "expected": {
+      "platforms": ["web"],
+      "playerModes": []
+    }
+  },
+  {
+    "id": "42733905",
+    "source": "https://news.ycombinator.com/item?id=42733905",
+    "input": {
+      "name": "Show HN: Play brick breaker using webcam and hand tracking (open source)",
+      "description": "I built this game to test out the MediaPipe hand-tracking API. Play brick breaker using your webcam + hand movement -- levels get progressively harder with faster speed / smaller paddle. All processing is done in real-time within your browser. This project is built using javascript, html canvas, and mediapipe hand tracking. This game is free and open source, offered under an MIT license. Github repo: https://github.com/collidingScopes/manual-brick-breaker Hope it's fun for you -- would love to hear feedback and suggestions for improvement.",
+      "playUrl": "https://collidingscopes.github.io/manual-brick-breaker/"
+    },
+    "expected": {
+      "platforms": ["web"],
+      "pricing": "free"
+    }
+  },
+  {
+    "id": "42771258",
+    "source": "https://news.ycombinator.com/item?id=42771258",
+    "input": {
+      "name": "Show HN: Morse Man – Learn Morse Code While Playing Hangman",
+      "description": "I built a Hangman variant that teaches you Morse code while you play. Instead of typing letters directly, you enter them using dots and dashes. Features include: - Interactive Morse code input with visual feedback\n- Built-in cheatsheet (costs an attempt)\n- 100+ word dictionary\n- Animated hangman visualization Play it here: https://morseman.vercel.app Perfect for anyone interested in learning Morse code through gameplay. Would love feedback from the HN community!",
+      "playUrl": "https://morseman.vercel.app"
+    },
+    "expected": {
+      "pricing": null
+    }
+  },
+  {
+    "id": "42694202",
+    "source": "https://news.ycombinator.com/item?id=42694202",
+    "input": {
+      "name": "Show HN: ParaGopher, a retro-style arcade game inspired by Paratrooper (1982)",
+      "description": "",
+      "playUrl": "https://github.com/ystepanoff/ParaGopher"
+    },
+    "expected": {
+      "platforms": [],
+      "pricing": null
+    }
+  },
+  {
+    "id": "42599818",
+    "source": "https://news.ycombinator.com/item?id=42599818",
+    "input": {
+      "name": "Show HN: Infinite Adventure Simulator: A Unique AI RPG for Android",
+      "description": "I'm the sole dev behind the app, and just released it today. Unlike basic AI storytelling apps, it integrates a variety of RPG mechanics into the game, making it feel more like a table-top experience.",
+      "playUrl": "https://play.google.com/store/apps/details?id=com.ArcticSkyGames.ChooseYourAIAdventure&hl=en_US"
+    },
+    "expected": {
+      "platforms": ["android"],
+      "pricing": null
+    }
+  },
+  {
+    "id": "42645218",
+    "source": "https://news.ycombinator.com/item?id=42645218",
+    "input": {
+      "name": "Show HN: Tetris in a PDF",
+      "description": "I realized that the PDF engines of modern desktop browsers (PDFium and PDF.js) support JavaScript with enough I/O primitives to make a basic game like Tetris. It was a bit tricky to find a union of features that work in both engines, but in the end it turns out that showing/hiding annotation \"fields\" works well to make monochrome pixels, and keyboard input can be achieved by typing in a text input box. All in all it's quite janky but a nice reminder of how general purpose PDF scripting can be. The linked PDF is all ASCII so you can just open it in a text editor, or have a look at the source code here: https://github.com/ThomasRinsma/pdftris/blob/main/gengrid.py",
+      "playUrl": "https://th0mas.nl/downloads/pdftris.pdf"
+    },
+    "expected": {
+      "platforms": ["web"]
+    }
+  },
+  {
+    "id": "42605425",
+    "source": "https://news.ycombinator.com/item?id=42605425",
+    "input": {
+      "name": "Show HN: GNC Trainer – A Landing Simulator for Tinkering with Control Systems",
+      "description": "I built a small game where you write control algorithms to land a spacecraft in increasingly challenging scenarios. The game starts simple - just control vertical thrust to hover. Later levels introduce rotational dynamics, thrust vectoring, and 2D movement. Each level saves your working solution for reference. The user input to be written using Rhai-script (https://rhai.rs/). Note that it is a bit heavy at ~38MiB and may not work well on mobile. Try it at: https://www.thomasantony.com/gnc-trainer/\nCode: https://github.com/thomasantony/gnc-trainer/ The code can also be built natively and run directly on your machine. This is something I hack on at random times and so feedback is welcome for things I can add/change. As time permits, I'm considering adding levels for more advanced concepts like precision landing and state estimation (including atmospheric flight).",
+      "playUrl": "https://www.thomasantony.com/gnc-trainer/"
+    },
+    "expected": {
+      "platforms": ["desktop"]
+    }
+  },
+  {
+    "id": "42866904",
+    "source": "https://news.ycombinator.com/item?id=42866904",
+    "input": {
+      "name": "Show HN: State Sandbox – An AI-powered political simulation game",
+      "description": "Hi all, I built a political simulation game that uses AI reasoning models to let you run a country through arbitrary executive actions. Think of it as an \"executive order simulator\" inspired by games like Civilization and NationStates, but where you can take any action you want - even copying real executive orders into the game. The game generates a unique country for you with detailed characteristics (culture, economy, crime rates, etc). Each turn, you face natural events like protests, sanctions, or disasters, and can respond with any policy decisions via free-form text. The AI then simulates complex ripple effects - for example, a policy promoting domestic oil might affect your CO2 emissions, international trade relations, and even traffic fatality rates. Technical details:\n- Built with Next.js + FastAPI\n- Uses OpenAI's reasoning models (o1 and o1-mini) to handle simulation\n- Structured as a multi-agent system where o1 orchestrates key changes and o1-mini handles detailed updates\n- Everything including the country flags is AI generated The source code is available at: https://github.com/sshh12/state-sandbox I wrote up my learnings about working with reasoning models and the technical challenges in building this at: https://blog.sshh.io/p/socioeconomic-modeling-with-reasoning",
+      "playUrl": "https://state.sshh.io/"
+    },
+    "expected": {
+      "pricing": null
+    }
+  },
+  {
+    "id": "42730846",
+    "source": "https://news.ycombinator.com/item?id=42730846",
+    "input": {
+      "name": "Show HN: Trash Talk Arena – werewolf meets Turing test and PUBG",
+      "description": "This is a WIP, so UX sucks. Basically, you are thrown into a chat with other players and/or AIs, and the goal is to eliminate everyone else. You trash talk to each other. To eliminate someone you click their message and then must guess both: if they are a bot and if their ELO is bigger than yours. Example round (unlike playing the game, does not require login): https://trashtalk.borg.games/game/36",
+      "playUrl": "https://trashtalk.borg.games/"
+    },
+    "expected": {
+      "playerModes": ["multi"]
+    }
+  },
+  {
+    "id": "42783545",
+    "source": "https://news.ycombinator.com/item?id=42783545",
+    "input": {
+      "name": "Show HN: A submarine combat game in the browser",
+      "description": "",
+      "playUrl": "https://bearingsonly.net/"
+    },
+    "expected": {
+      "platforms": ["web"]
+    }
+  },
+  {
+    "id": "42783545",
+    "source": "Reviewed new.json description",
+    "input": {
+      "name": "Bearings Only",
+      "description": "A submarine combat simulator with single-player and multiplayer modes.",
+      "playUrl": "https://bearingsonly.net/"
+    },
+    "expected": {
+      "playerModes": ["single", "multi"]
+    }
+  },
+  {
+    "id": "42716809",
+    "source": "Reviewed new.json description",
+    "input": {
+      "name": "S-ARGAME",
+      "description": "A collection of projected arcade games for walls, tables, and floors. Requires a projector and a PC or Mac; players join with mobile controllers or gamepads.",
+      "playUrl": "https://s-argame.com/"
+    },
+    "expected": {
+      "platforms": ["desktop"],
+      "playerModes": ["multi"]
+    }
+  },
+  {
+    "id": "42722148",
+    "source": "Reviewed new.json description",
+    "input": {
+      "name": "Multiplayer Wordle",
+      "description": "A Wordle-style game for one to four players, with multiplayer and solo modes, category clues, and word lengths of up to eight letters.",
+      "playUrl": "https://guesstheword-eoj0.onrender.com/"
+    },
+    "expected": {
+      "playerModes": ["single", "multi"]
+    }
+  },
+  {
+    "id": "42640941",
+    "source": "Reviewed new.json description",
+    "input": {
+      "name": "Marble Marcher",
+      "description": "Race a marble across shifting fractal landscapes to reach the goal. Requires WebGPU; designed for desktop Chrome.",
+      "playUrl": "https://codefiddler.itch.io/marble-marcher"
+    },
+    "expected": {
+      "platforms": ["web"]
+    }
+  },
+  {
+    "id": "42877155",
+    "source": "Reviewed new.json description",
+    "input": {
+      "name": "Snake",
+      "description": "A Snake game for the terminal, built with Python and curses.",
+      "playUrl": "https://github.com/abishekvenkat/terminal-snake"
+    },
+    "expected": {
+      "platforms": ["desktop"]
+    }
+  },
+  {
+    "id": "42727105",
+    "source": "Reviewed new.json description",
+    "input": {
+      "name": "Shadow Tag",
+      "description": "A prototype of tag against an opponent trained with reinforcement learning.",
+      "playUrl": "https://adamheins.com/projects/shadows/web/"
+    },
+    "expected": {
+      "playerModes": ["single"]
+    }
+  },
+  {
+    "id": "42775436",
+    "source": "Reviewed new.json description",
+    "input": {
+      "name": "Abstractionary",
+      "description": "Help other players guess a word or phrase using only common English words. Uncommon words are replaced with nonsense.",
+      "playUrl": "https://abstract.narfnilk.com/"
+    },
+    "expected": {
+      "playerModes": ["multi"]
+    }
+  },
+  {
+    "id": "42730846",
+    "source": "Reviewed new.json description",
+    "input": {
+      "name": "Trash Talk Arena",
+      "description": "A social deduction game where players chat with people and AI, then eliminate opponents by guessing whether they are bots and if their ELO is higher.",
+      "playUrl": "https://trashtalk.borg.games/"
+    },
+    "expected": {
+      "playerModes": ["multi"]
+    }
+  }
+]

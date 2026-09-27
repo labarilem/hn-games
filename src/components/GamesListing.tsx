@@ -1,6 +1,8 @@
+import Link from "next/link";
 import GameCard from "./GameCard";
 import GameFilters from "./GameFilters";
 import Pagination from "./Pagination";
+import CatalogHero from "./CatalogHero";
 import { GameSearchParams } from "@/lib/games";
 import { Game } from "@/types/game";
 
@@ -11,11 +13,14 @@ interface GamesListingProps {
   totalGamesCount: number;
   pagination: {
     totalPages: number;
+    totalGames: number;
     hasNextPage: boolean;
     hasPreviousPage: boolean;
   };
   currentPage: number;
   searchParams: GameSearchParams;
+  featured?: Game;
+  archive?: boolean;
 }
 
 export default function GamesListing({
@@ -26,29 +31,60 @@ export default function GamesListing({
   pagination,
   currentPage,
   searchParams,
+  featured,
+  archive = false,
 }: GamesListingProps) {
+  const filtered = Object.entries(searchParams).some(
+    ([key, value]) => key !== "page" && key !== "sortBy" && Boolean(value),
+  );
+  const path = archive ? "/rip" : "/";
   return (
-    <div className="max-w-[1280px] mx-auto">
-      <h1 className="text-5xl font-bold mb-4 text-center bg-gradient-to-r from-hn-accent to-hn-accent-hover text-transparent bg-clip-text py-2">
-        {title}
-      </h1>
-      <p className="text-gray-400 mb-8 text-center max-w-2xl mx-auto">
-        {subtitle.replace("{count}", totalGamesCount.toString())}
-      </p>
-
-      <GameFilters />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
-        {games.map((game: Game) => (
-          <GameCard key={game.id} game={game} />
-        ))}
-      </div>
-
-      <Pagination
-        pagination={pagination}
-        currentPage={currentPage}
-        searchParams={searchParams}
-      />
-    </div>
+    <>
+      {!archive && !filtered && currentPage === 1 ? (
+        <CatalogHero count={totalGamesCount} featured={featured} />
+      ) : (
+        <header className="catalog-page-heading">
+          <p className="eyebrow">
+            {archive
+              ? "THE OFFLINE COLLECTION"
+              : "THE HACKER NEWS GAME CATALOG"}
+          </p>
+          <h1>{archive ? "Gone, but worth remembering." : title}</h1>
+          <p>
+            {subtitle.replace(
+              "{count}",
+              totalGamesCount.toLocaleString("en-US"),
+            )}
+          </p>
+        </header>
+      )}
+      <GameFilters resultCount={pagination.totalGames}>
+        {games.length ? (
+          <div className="games-grid">
+            {games.map((game) => (
+              <GameCard key={game.id} game={game} filterPath={path} />
+            ))}
+          </div>
+        ) : (
+          <div className="empty-catalog">
+            <span className="eyebrow">NO MATCHES THIS TIME</span>
+            <h2>
+              {pagination.totalGames
+                ? "This page is empty."
+                : "A different search might do it."}
+            </h2>
+            <p>Try another keyword or give your filters a little more room.</p>
+            <Link href={path} className="hn-btn-primary">
+              Explore all games ↗
+            </Link>
+          </div>
+        )}
+        <Pagination
+          pagination={pagination}
+          currentPage={currentPage}
+          searchParams={searchParams}
+        />
+      </GameFilters>
+    </>
   );
 }

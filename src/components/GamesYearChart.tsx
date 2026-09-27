@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   CategoryScale,
@@ -19,17 +19,19 @@ ChartJS.register(
   LineElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
 
 type GamesYearChartProps = {
   gamesCountByYear: Record<string, number>;
 };
 
-export default function GamesYearChart({ gamesCountByYear }: GamesYearChartProps) {
+export default function GamesYearChart({
+  gamesCountByYear,
+}: GamesYearChartProps) {
   // Sort years and create data for the chart
   const years = Object.keys(gamesCountByYear).sort(
-    (a, b) => Number(a) - Number(b)
+    (a, b) => Number(a) - Number(b),
   );
   const counts = years.map((year) => gamesCountByYear[year]);
 
@@ -39,8 +41,8 @@ export default function GamesYearChart({ gamesCountByYear }: GamesYearChartProps
       {
         label: "Number of games",
         data: counts,
-        borderColor: "rgb(59, 130, 246)", // blue-500
-        backgroundColor: "rgba(59, 130, 246, 0.5)",
+        borderColor: "rgb(255, 138, 76)", // blue-500
+        backgroundColor: "rgba(255, 138, 76, 0.2)",
         tension: 0.1,
       },
     ],

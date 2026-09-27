@@ -1,60 +1,77 @@
-'use client';
+"use client";
 
-import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 
-interface GameImageModalProps {
+export default function GameImageModal({
+  imageUrl,
+  name,
+}: {
   imageUrl: string;
   name: string;
-}
-
-export default function GameImageModal({ imageUrl, name }: GameImageModalProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
+}) {
+  const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const previousOverflow = useRef("");
+  function close() {
+    dialog.current?.close();
+  }
   useEffect(() => {
-    if (isModalOpen) {
-      const handleEscape = (e: KeyboardEvent) => {
-        if (e.key === "Escape") setIsModalOpen(false);
-      };
-      document.addEventListener("keydown", handleEscape);
-      return () => document.removeEventListener("keydown", handleEscape);
-    }
-  }, [isModalOpen]);
-
+    const element = dialog.current;
+    return () => {
+      if (element?.open)
+        document.body.style.overflow = previousOverflow.current;
+    };
+  }, []);
   return (
     <>
-      <div 
-        className="aspect-video w-full cursor-pointer"
-        onClick={() => setIsModalOpen(true)}
+      <button
+        ref={trigger}
+        className="screenshot-trigger"
+        aria-label={`Enlarge ${name} screenshot`}
+        onClick={() => {
+          previousOverflow.current = document.body.style.overflow;
+          document.body.style.overflow = "hidden";
+          dialog.current?.showModal();
+        }}
       >
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src={imageUrl}
-          alt={name}
-          className="w-full h-full object-fill"
-          priority
+          alt={`${name} screenshot`}
           width={1280}
           height={720}
+          fetchPriority="high"
         />
-      </div>
-
-      {isModalOpen && (
-        <div
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <div className="h-[70vh] relative">
-            <Image
-              src={imageUrl}
-              alt={name}
-              className="w-auto h-full object-contain max-w-[90vw]"
-              onClick={(e) => e.stopPropagation()}
-              width={1920}
-              height={1080}
-              priority
-            />
+        <span aria-hidden="true">View screenshot ↗</span>
+      </button>
+      <dialog
+        ref={dialog}
+        className="image-dialog"
+        aria-label={`${name} screenshot`}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) close();
+        }}
+        onClose={() => {
+          document.body.style.overflow = previousOverflow.current;
+          trigger.current?.focus();
+        }}
+      >
+        <div>
+          <div className="image-dialog-bar">
+            <span>{name}</span>
+            <button onClick={close} aria-label="Close screenshot">
+              ×
+            </button>
           </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={imageUrl}
+            alt={`${name} enlarged screenshot`}
+            width={1280}
+            height={720}
+          />
         </div>
-      )}
+      </dialog>
     </>
   );
 }

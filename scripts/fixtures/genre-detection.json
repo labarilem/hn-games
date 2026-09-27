@@ -1,0 +1,258 @@
+[
+  {
+    "id": "42572654",
+    "name": "Show HN: Cohesion – Create custom connection games",
+    "description": "",
+    "expected": [
+      "word",
+      "puzzle"
+    ]
+  },
+  {
+    "id": "42585831",
+    "name": "Show HN: Knotilus–uncover hidden Fibonacci-like sequences",
+    "description": "Hi HN, I'm new to Hacker News, but a friend suggested this would be a great place to share my project and get some feedback. I’ve been working on Knotilus, a daily puzzle game where the challenge is to find three hidden Fibonacci-like sequences among a set of numbers. Each daily puzzle includes between four and ten possible sequences, and the goal is to identify the three solution sequences that share only one number, the “knot,” while all other numbers in the solution are unique. I’m a hobbyist when it comes to web design and development, so I built Knotilus as a fun way to learn more about creating web applications while sharing a new puzzle concept. I built Knotilus using: Frontend: Vue 3 Backend: Flask Database: PostgreSQL Here’s what makes Knotilus interesting: Daily Puzzle: A fresh challenge every day, a new puzzle is made available everyday at midnight based on the user's timezone. Customizable Difficulty: Adjust the puzzle level (how many numbers are available to make sequences) and mode (with or without helpful visual indicators). The solution remains the same, regardless of difficulty. Community Benchmarks: Compare your performance (time, hints used, etc.) with others anonymously. Though this feature depends on whether or not I'm able to draw enough of an audience Unique Concept: Inspired by Fibonacci sequences, the game offers what I believe is a unique idea for a daily puzzle.\nAccessible Design: Play directly in your browser, no downloads or installations required. I’d love to hear what the HN community thinks, would you give it a try? Do you have ideas for improving the gameplay or user experience? You can check it out here: https://knotil.us/ Thanks for taking a look!",
+    "expected": [
+      "puzzle",
+      "math",
+      "daily"
+    ]
+  },
+  {
+    "id": "42599818",
+    "name": "Show HN: Infinite Adventure Simulator: A Unique AI RPG for Android",
+    "description": "I'm the sole dev behind the app, and just released it today. Unlike basic AI storytelling apps, it integrates a variety of RPG mechanics into the game, making it feel more like a table-top experience.",
+    "expected": [
+      "adventure",
+      "rpg"
+    ]
+  },
+  {
+    "id": "42605425",
+    "name": "Show HN: GNC Trainer – A Landing Simulator for Tinkering with Control Systems",
+    "description": "I built a small game where you write control algorithms to land a spacecraft in increasingly challenging scenarios. The game starts simple - just control vertical thrust to hover. Later levels introduce rotational dynamics, thrust vectoring, and 2D movement. Each level saves your working solution for reference. The user input to be written using Rhai-script (https://rhai.rs/). Note that it is a bit heavy at ~38MiB and may not work well on mobile. Try it at: https://www.thomasantony.com/gnc-trainer/\nCode: https://github.com/thomasantony/gnc-trainer/ The code can also be built natively and run directly on your machine. This is something I hack on at random times and so feedback is welcome for things I can add/change. As time permits, I'm considering adding levels for more advanced concepts like precision landing and state estimation (including atmospheric flight).",
+    "expected": [
+      "coding",
+      "simulation"
+    ]
+  },
+  {
+    "id": "42617816",
+    "name": "Show HN: Promptact – Learn system prompting by reverse-engineering conversations",
+    "description": "Hey everyone,\nBuilt a simple game to help people understand and learn prompting through practice. It's like reverse engineering meets chatbot building - you observe a conversation and try to figure out what system prompt generated it. How it works:\n- You see a conversation between a user and an AI\n- Your goal is to write a system prompt that would generate similar AI responses\n- Get instant feedback through (embedding) similarity scoring\n- Progress through levels that teach different techniques\n- No sign-up is required - just visit and start playing The game is built with Next.js, TypeScript, and uses OpenAI for response generation and similarity scoring. You can try it right now at https://promptact.vercel.app/ I'd love feedback from the community. This project was primarily developed for teaching about LLM to friends from non-AI fields -- Hence the limited number of levels for the time being. The source code is open and available on GitHub  (https://github.com/detextit/promptact). You'll need your own OpenAI API key to run it locally.",
+    "expected": [
+      "puzzle",
+      "educational"
+    ]
+  },
+  {
+    "id": "42620115",
+    "name": "Show HN: Multiply your binary math skill with 24bitsa.day",
+    "description": "A fun little game idea I had last year after building a personal kb based bit manipulator to have a better sense of the binary space. All sounds and graphics are my own.",
+    "expected": [
+      "math"
+    ]
+  },
+  {
+    "id": "42640941",
+    "name": "Show HN: 3D-Fractal Game on WebGPU (Desktop Chrome)",
+    "description": "Ported Marble Marcher over to WebGPU, so no download required. Open source code is on GitHub: https://github.com/grinstead/MarbleMarcherWebGPU WebGPU is cool. It's exciting to me to see these things working with no download. The actual js for this game is 130kb in all, though the music and sound effects bring the whole distribution to 10mb. The original game is from CodeParade: https://www.youtube.com/watch?v=9U0XVdvQwAI It can be a bit of a gpu buster, though it runs fine on my M1 Mac. I'm experimenting with SolidJS+WebGPU+Vite as a game engine (https://github.com/grinstead/ambush). It's a pretty cool environment to develop in, but building everything from scratch is slow and developing at a hobbyist pace.",
+    "expected": []
+  },
+  {
+    "id": "42645218",
+    "name": "Show HN: Tetris in a PDF",
+    "description": "I realized that the PDF engines of modern desktop browsers (PDFium and PDF.js) support JavaScript with enough I/O primitives to make a basic game like Tetris. It was a bit tricky to find a union of features that work in both engines, but in the end it turns out that showing/hiding annotation \"fields\" works well to make monochrome pixels, and keyboard input can be achieved by typing in a text input box. All in all it's quite janky but a nice reminder of how general purpose PDF scripting can be. The linked PDF is all ASCII so you can just open it in a text editor, or have a look at the source code here: https://github.com/ThomasRinsma/pdftris/blob/main/gengrid.py",
+    "expected": [
+      "puzzle",
+      "arcade"
+    ]
+  },
+  {
+    "id": "42674104",
+    "name": "Show HN: Tower defense clicker game built with Svelte 5, without canvas",
+    "description": "",
+    "expected": [
+      "strategy",
+      "incremental",
+      "tower_defense"
+    ]
+  },
+  {
+    "id": "42692963",
+    "name": "Show HN: Idle Cosmos – A realtime multiplayer web game build in Crystal",
+    "description": "",
+    "expected": [
+      "idle"
+    ]
+  },
+  {
+    "id": "42711248",
+    "name": "Show HN: Mongo Murder Mystery – Can You Find Out Whodunnit?",
+    "description": "What: So I built this small (and ofc free) web-based interactive game where folks solve a murder mystery while learning MongoDB commands and concepts. It combines a fun storyline with practical lessons to help you practice querying and navigating data. It’s not a full tutorial—more like a self-directed exercise with an optional walkthrough to guide you. Motivation: Over the holidays, I wanted to teach MongoDB basics to my 8th-grade nephew in an interactive and exciting way. I was inspired by the popular SQL Murder Mystery and thought, “Why not create something similar for MongoDB?” I tested it with my nephew and some friends, so here it goes. The ask:\nGive it a try! Feedback is most welcome—let me know if the mystery stumps you or if you have ideas for future cases! I'm also more than happy to answer any questions about how I put this project together, e.g., the tech stack used. Thank you very much for stopping by and taking a look. Cheers\nDiana",
+    "expected": [
+      "puzzle",
+      "coding",
+      "educational"
+    ]
+  },
+  {
+    "id": "42723443",
+    "name": "Show HN: WasmBots – A WebAssembly-powered programming game",
+    "description": "I've been working on a browser-based programming game where you write bots to explore procedurally generated dungeons in any WebAssembly-compatible language. It's like a minimalist roguelike where your character's brain is a program you write. There are pre-made libraries for C, Rust, Zig, Go, and AssemblyScript. The game mechanics are intentionally simple for now, but the challenge comes from building up your bot's understanding of the world from limited local information. Your code needs to handle mapping, pathfinding, and strategy while dealing with monsters and potentially hostile other players. Some interesting technical bits: * Pure WebAssembly modules with no JavaScript dependencies (not even using wasm-bindgen for Rust) * Cross-language development with native debugging support via language-specific trainer builds * Custom messaging protocol implemented across the five example languages using code generation The project started as a way for me to poke around WebAssembly, especially exploring its potential as a universal plug-in language. There were a lot of yaks to be shaved as I went, though, and I ended up also learning a bunch about various build systems, roguelike exploration mechanics, procedural generation, etc. It's been a fun experience so far and I feel like it's hit a nice point (decently polished presentation of bots exploring the dungeon) before I start the next phase of adding actual game mechanics. Intro Video: https://www.youtube.com/watch?v=DGkkTYJrflI Deployed site: https://shaneliesegang.com/projects/wasmbots Auto-built: https://sjml.github.io/wasmbots/ Source (Monorepo): https://github.com/sjml/wasmbots The whole thing so far has been a one-person show, and I was often learning bits of tech as I was building with them, so feedback (technical or otherwise) is very welcome.",
+    "expected": [
+      "roguelike",
+      "coding",
+      "strategy"
+    ]
+  },
+  {
+    "id": "42736594",
+    "name": "Show HN: Botnet of Ares, an incremental hacking game",
+    "description": "Botnet of Ares is an incremental hacking game where you exploit millions of devices. I first made a prototype of the core mechanic back in 2020. For a while I did not have too much time to dedicate to the project, but the idea had been in the back of my mind ever since. After befriending Tobi, who now contributes to the game's development, and performing several playtests with very positive results, I've decided to commit to the development of Botnet of Ares. Botnet of Ares is meant as a critique of security practices in some consumer electronics and IoT devices. It is also a response to the excitement & anxiety many of us feel regarding recent developments in generative AI & large language models. Real life botnets are very much a thing, and so is automatic exploitation of such devices. Botnet of Ares asks the question: what would happen if an AI Agent were trained to exploit and uncover vulnerabilities across the entire Internet?",
+    "expected": [
+      "incremental"
+    ]
+  },
+  {
+    "id": "42737778",
+    "name": "Show HN: Interactive game teaching dark patterns in UX design",
+    "description": "I built this educational game to help people identify and understand dark patterns in digital products. It features 10 interactive scenarios based on real-world examples. The game includes: • Interactive pattern recognition scenarios\n• Explanations of psychological principles\n• Simulated real-world examples with guided feedback Built with Next.js, TypeScript, and Tailwind. I'd especially appreciate feedback on the educational approach and scenario design.",
+    "expected": [
+      "educational"
+    ]
+  },
+  {
+    "id": "42746084",
+    "name": "Show HN: Periodic Table and Wordle = Elemendle",
+    "description": "Hey HN, I've been working on a little side project - a daily guessing game called Elemendle. It's similar to Wordle, but instead of guessing a word, you guess a chemical element. You get hints based on various properties like its place on the periodic table (Period, Group, Block), Type (e.g., Transition Metal, Noble Gas), Phase (Solid, Liquid, Gas), atomic number and mass. I'm sharing it here because I'm curious what you think of it. Let me know if you enjoy it or have ideas for improvements.",
+    "expected": [
+      "puzzle",
+      "educational",
+      "daily"
+    ]
+  },
+  {
+    "id": "42757807",
+    "name": "Show HN: Minimalistic Hashi Bridges",
+    "description": "As a part of our computer vision lab, we're trying to understand optimal pathfinding solutions in confined lattices, where we came across the game of Hashi. Here is the online version that I built, go give it a try! I'd love to hear your feedback!",
+    "expected": [
+      "puzzle"
+    ]
+  },
+  {
+    "id": "42766914",
+    "name": "Show HN: Typing Granny Footsteps",
+    "description": "My first JavaScript game that I put together with Cursor with only updating a few lines of code manually. Funny how AI brings out product thinking and I can confirm the dopamine dose comes from making and shipping, not from writing code.",
+    "expected": [
+      "typing"
+    ]
+  },
+  {
+    "id": "42775436",
+    "name": "Show HN: Abstractionary",
+    "description": "This is a taboo-like game where you have to make other players guess a target word or phrase. When you use words that aren't among the most common English words, they are \"censored\" and replaced with nonsense. Find a friend and try it out! :-)",
+    "expected": [
+      "word"
+    ]
+  },
+  {
+    "id": "42797295",
+    "name": "Show HN: 100 Depth tree search on your iPhone with Rust",
+    "description": "I made this app with Rust + React Native. It combines a puzzle game with a solver. While quite a lot of work went into UX, the solver is what I’m most proud of and was the first functional piece of the app. Originally, it solved one layer at a time, but when I added the undo feature I decided to try to go deeper and try to answer “What if the solver has perfect knowledge of the RNG?”. Going from computer CPU to phone and from search depth of 36 to 108 was obviously not going to get good brute force coverage considering I could only explore 30ish moves in a reasonable time which is a small percentage of all paths even before tripling the length of a solution. It ended up being a rabbit hole that led to what might be a novel search strategy that finds higher scores despite eliminating most of the pruning that made the single layer so fast. Rust was chosen because I like it and already had success using it for game solving. I also had written another iOS app using Rust for the business logic. React Native as the UI was something I wanted to evaluate after their ability to interface with Rust code vastly improved last year with the release of uniffi-bindgen-react-native. The only reason it isn’t also available for Android is procrastination. The rules of the puzzle come from an old Java game, which means that by reading the decompiled source and porting the RNG from Java, the app is a pretty faithful reproduction. In fact, if you sniff the seed from the game’s network traffic or dump it from the game’s memory, you can replay the same game.",
+    "expected": [
+      "puzzle"
+    ]
+  },
+  {
+    "id": "42813239",
+    "name": "Show HN: Pick-a-Potty – A game based on the optimal urinal selection algorithm",
+    "description": "A multiplayer strategy game based on the classic computer science problem of optimal urinal selection, built with React, TypeScript, and Tailwind. Play against a friend and learn about spacing algorithms while competing to make the optimal choice. Play here: https://pick-a-potty.vercel.app/\nGitHub: https://github.com/abishekvenkat/pick-a-potty",
+    "expected": [
+      "strategy",
+      "educational"
+    ]
+  },
+  {
+    "id": "42840109",
+    "name": "Show HN: Retro text adventure game built using V0 and OpenAI",
+    "description": "I created a classic text-based adventure game inspired by Zork using Vercel's v0. Each refresh generates a unique game title, setting, and context, with AI handling the dynamic storytelling and gameplay. It features a retro terminal-style UI, simple text commands, and endless possibilities for exploration.",
+    "expected": [
+      "adventure",
+      "text"
+    ]
+  },
+  {
+    "id": "42855732",
+    "name": "Show HN: 2222 is a 2048 like swipe to match game",
+    "description": "Android: https://play.google.com/store/apps/details?id=com.semihaykut... iOS: https://apps.apple.com/us/app/2222-swipe-to-match/id67410004...",
+    "expected": [
+      "puzzle"
+    ]
+  },
+  {
+    "id": "42858733",
+    "name": "Show HN: Classic game Paradroid revamped in browser",
+    "description": "Play with keyboard + mouse or gamepad. Here is a video of the gameplay\nhttps://www.youtube.com/watch?v=afczPpvoGjM",
+    "expected": [
+      "action",
+      "arcade",
+      "shooter"
+    ]
+  },
+  {
+    "id": "42866904",
+    "name": "Show HN: State Sandbox – An AI-powered political simulation game",
+    "description": "Hi all, I built a political simulation game that uses AI reasoning models to let you run a country through arbitrary executive actions. Think of it as an \"executive order simulator\" inspired by games like Civilization and NationStates, but where you can take any action you want - even copying real executive orders into the game. The game generates a unique country for you with detailed characteristics (culture, economy, crime rates, etc). Each turn, you face natural events like protests, sanctions, or disasters, and can respond with any policy decisions via free-form text. The AI then simulates complex ripple effects - for example, a policy promoting domestic oil might affect your CO2 emissions, international trade relations, and even traffic fatality rates. Technical details:\n- Built with Next.js + FastAPI\n- Uses OpenAI's reasoning models (o1 and o1-mini) to handle simulation\n- Structured as a multi-agent system where o1 orchestrates key changes and o1-mini handles detailed updates\n- Everything including the country flags is AI generated The source code is available at: https://github.com/sshh12/state-sandbox I wrote up my learnings about working with reasoning models and the technical challenges in building this at: https://blog.sshh.io/p/socioeconomic-modeling-with-reasoning",
+    "expected": [
+      "strategy",
+      "simulation",
+      "sandbox"
+    ]
+  },
+  {
+    "id": "42578312",
+    "name": "Show HN: A game to calibrate your confidence",
+    "description": "Hi HN, I've been into confidence calibration for a while now and ended up making a customizable variant of a trivia game that avoids certain pitfalls of the standard game and also allows you to be more fine-grained in understanding your calibration. Also linked some of my thoughts, looking for more ideas for similar games, and personal experiences with such games!",
+    "expected": [
+      "educational",
+      "quiz"
+    ]
+  },
+  {
+    "id": "42654092",
+    "name": "Show HN: Bleachdle – A Wordle variant for guessing Bleach anime characters",
+    "description": "I built a daily puzzle game for Bleach fans where players guess characters based on multiple attributes like height, race, profession, location, and affiliation. It's similar to Wordle, but with character-specific properties that Bleach fans would recognize. any comments are welcome",
+    "expected": [
+      "puzzle",
+      "quiz",
+      "daily"
+    ]
+  },
+  {
+    "id": "42712367",
+    "name": "Show HN: Time Portal – Get dropped into history, guess where you landed",
+    "description": "Hi HN! I love imagining the past, so I made Time Portal, a game where you are dropped into a historical event and see AI video footage from that moment. You have to guess where you are in time and on the map. It’s like GeoGuessr (and heavily inspired by it!) but for historical events. The videos are all created with AI. It’s a pipeline of Flux (images), Kling (video), and mmaudio (audio). The videos aren’t always historically accurate to the last detail. They might incorporate elements of folklore or have details from popular beliefs about the way things looked rather than the latest academic research on how they looked. I’m thinking a lot about how to make the game more interactive. One thing that makes Geoguessr so fun for me is that you can move infinitely and always find more details to help you pinpoint the location. I want Time Portal to have a similar quality. I have a few ideas to try soon that will hopefully make the game more interactive and infinite.",
+    "expected": [
+      "quiz",
+      "geography"
+    ]
+  },
+  {
+    "id": "42717674",
+    "name": "Show HN: I Put Snake in my Resume [pdf]",
+    "description": "I'm sure you've seen the post about putting Tetris in a PDF (https://news.ycombinator.com/item?id=42645218) and putting DOOM in a PDF (https://news.ycombinator.com/item?id=42678754). Someone suggested using this technique in a resume to potentially demonstrate your engineering skills, and being chronically unemployed, I had the chance to try that out. The vision is that some recruiter out there will take a break from work, enjoy a game of snake, before inevitably pressing reject. Take a look if you like. Like the others, it requires chromium based browsers.",
+    "expected": [
+      "action",
+      "arcade"
+    ]
+  },
+  {
+    "id": "42768171",
+    "name": "Show HN: Sudoku Web Game",
+    "description": "This is a Sudoku game that I wrote in JavaScript, since I didn't really like most of the web-based Sudoku games I found. It can generate boards of varying difficulty, or you may input a board of your own. You may play the actual game on my site at https://parkscomputing.com/page/sudoku",
+    "expected": [
+      "puzzle"
+    ]
+  }
+]

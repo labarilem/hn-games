@@ -5,6 +5,7 @@ import { Game } from "../src/types/game";
 // Paths
 const ARCHIVE_PATH = path.join(__dirname, "data/archive.json");
 const RIP_PATH = path.join(__dirname, "data/rip.json");
+const NEW_PATH = path.join(__dirname, "data/new.json");
 const IMAGES_PATH = path.join(__dirname, "../public/images/games");
 
 // Load archive.json
@@ -13,8 +14,11 @@ const archive: Game[] = JSON.parse(fs.readFileSync(ARCHIVE_PATH, "utf-8"));
 // Load rip.json
 const rip: Game[] = JSON.parse(fs.readFileSync(RIP_PATH, "utf-8"));
 
-// Get all game ids from archive.json
-const gameIds = new Set(archive.concat(rip).map((g) => g.id));
+// Load new.json
+const newGames: Game[] = JSON.parse(fs.readFileSync(NEW_PATH, "utf-8"));
+
+// Get all game ids across every catalog
+const gameIds = new Set(archive.concat(rip, newGames).map((game) => game.id));
 
 // Get all image filenames in the images directory
 const imageFiles = fs.readdirSync(IMAGES_PATH).filter((f) => f.endsWith(".jpg"));

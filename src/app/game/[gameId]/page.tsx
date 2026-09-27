@@ -2,168 +2,157 @@ import GameImageModal from "@/components/GameImageModal";
 import PlatformIcon from "@/components/PlatformIcon";
 import { formatGenre } from "@/lib/formatters";
 import { getGameById } from "@/lib/games";
+import { Platform } from "@/types/game";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { createReportUrl } from "../../../lib/issues";
+import { createReportUrl } from "@/lib/issues";
 
-interface GamePageProps {
+export default async function GamePage({
+  params,
+}: {
   params: Promise<{ gameId: string }>;
-}
-
-export default async function GamePage(props: GamePageProps) {
-  const params = await props.params;
-  const game = getGameById(params.gameId);
-
+}) {
+  const { gameId } = await params;
+  const game = getGameById(gameId);
   if (!game) notFound();
-
+  const path = game.isActive ? "/" : "/rip";
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <div className="hn-surface w-full overflow-hidden">
-        <GameImageModal imageUrl={game.imageUrl} name={game.name} />
-
-        <div className="p-8 space-y-8">
-          <div>
-            <h1 className="text-3xl font-bold mb-3">{game.name}</h1>
-            <p className="text-gray-400 leading-relaxed">{game.description}</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-4 sm:gap-6">
-            <div>
-              <h2 className="text-sm text-gray-400 mb-1">Platforms</h2>
-              <div className="flex flex-wrap gap-2">
-                {game.platforms.map((platform) => (
-                  <Link
-                    key={platform}
-                    href={`/?platform=${encodeURIComponent(platform)}`}
-                    className="hn-tag-platform"
-                  >
-                    <PlatformIcon platform={platform} className="w-4 h-4" />
-                    {platform}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-sm text-gray-400 mb-1">Genres</h2>
-              <div className="flex flex-wrap gap-2">
-                {game.genres.map((genre) => (
-                  <Link
-                    key={genre}
-                    href={`/?genre=${encodeURIComponent(genre)}`}
-                    className="hn-tag-genre"
-                  >
-                    {formatGenre(genre)}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-sm text-gray-400 mb-1">Player Mode</h2>
-              <div className="flex flex-wrap gap-2">
-                {game.playerModes.map((mode) => (
-                  <Link
-                    key={mode}
-                    href={`/?playerModes=${encodeURIComponent(mode)}`}
-                    className="hn-tag-mode"
-                  >
-                    {mode === "single" ? "singleplayer" : "multiplayer"}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-sm text-gray-400 mb-1">Pricing</h2>
-              <Link
-                href={`/?pricing=${encodeURIComponent(game.pricing)}`}
-                className="hn-tag-genre inline-block"
-              >
-                {game.pricing}
-              </Link>
-            </div>
-
-            <div>
-              <h2 className="text-sm text-gray-400 mb-1">Author</h2>
-              <Link
-                href={`/?author=${encodeURIComponent(game.author)}`}
-                className="hn-tag-genre inline-block"
-              >
-                {game.author}
-              </Link>
-            </div>
-
-            <div>
-              <h2 className="text-sm text-gray-400 mb-1">Published</h2>
-              <div className="hn-meta-pill">
-                <span className="hidden sm:inline">
-                  {new Date(game.releaseDate).toLocaleDateString("en-US", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}
-                </span>
-                <span className="sm:hidden">
-                  {new Date(game.releaseDate).toLocaleDateString("en-US", {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric",
-                  })}
-                </span>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-sm text-gray-400 mb-1">HN Points</h2>
-              <div className="hn-meta-pill">
-                {game.hnPoints} point{game.hnPoints === 1 ? "" : "s"}
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-white/5 pt-8 mt-8">
-            <div className="flex flex-wrap gap-4">
-              {game.isActive && (
-                <a
-                  href={game.playUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:flex-1 hn-btn-primary px-4 py-2.5 rounded flex items-center justify-center"
-                >
-                  Play Game
-                </a>
-              )}
-              <a
-                href={game.hnUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 hn-btn-secondary px-4 py-2.5"
-              >
-                View on HN
-              </a>
-              {game.sourceCodeUrl && (
-                <a
-                  href={game.sourceCodeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 hn-btn-secondary px-4 py-2.5"
-                >
-                  Source Code
-                </a>
-              )}
-              <a
-                href={createReportUrl(game.id)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 bg-red-900/30 text-red-400 px-4 py-2.5 rounded text-center hover:bg-red-900/40 transition-colors border border-red-900"
-              >
-                Report
-              </a>
-            </div>
-          </div>
+    <article className="game-detail">
+      <Link href={path} className="back-link">
+        ← Back to {game.isActive ? "the catalog" : "the archive"}
+      </Link>
+      <header className="detail-heading">
+        <div>
+          <p className="eyebrow">
+            {game.isActive ? "FROM THE HN COMMUNITY" : "THE OFFLINE COLLECTION"}
+            <span aria-hidden="true"> / </span>
+            {new Date(game.releaseDate).getUTCFullYear()}
+          </p>
+          <h1>{game.name}</h1>
         </div>
+        <a href={game.hnUrl} target="_blank" rel="noopener noreferrer">
+          ▲ {game.hnPoints.toLocaleString("en-US")} HN points ↗
+        </a>
+      </header>
+      <div className="detail-layout">
+        <div>
+          <GameImageModal imageUrl={game.imageUrl} name={game.name} />
+          <section className="detail-about">
+            <h2>About the game</h2>
+            <p>
+              {game.description ||
+                "Explore this game and its original Hacker News discussion."}
+            </p>
+            <div className="detail-genres">
+              {game.genres.map((genre) => (
+                <Link
+                  key={genre}
+                  href={`${path}?genre=${genre}`}
+                  className="hn-tag-genre"
+                >
+                  {formatGenre(genre)}
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
+        <aside className="detail-panel" aria-label="Game information">
+          <div className="detail-price">
+            {game.isActive ? game.pricing : "Currently offline"}
+          </div>
+          <p className="detail-price-note">
+            {!game.isActive
+              ? "This game is preserved in the catalog for reference."
+              : game.pricing === "freemium"
+                ? "Free to start, with optional paid content."
+                : game.pricing === "free"
+                  ? "Explore the game on its creator’s site."
+                  : "Visit the creator’s site for current pricing."}
+          </p>
+          {game.isActive && (
+            <a
+              href={game.playUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hn-btn-primary detail-play"
+            >
+              {game.platforms.includes(Platform.WEB)
+                ? "Play game"
+                : "Get the game"}
+              <span aria-hidden="true">↗</span>
+            </a>
+          )}
+          <dl className="detail-facts">
+            <div>
+              <dt>Platforms</dt>
+              <dd>
+                {game.platforms.map((platform) => (
+                  <Link key={platform} href={`${path}?platform=${platform}`}>
+                    <PlatformIcon platform={platform} className="w-4 h-4" />
+                    {platform === "web"
+                      ? "Browser"
+                      : platform === "ios"
+                        ? "iOS"
+                        : platform.charAt(0).toUpperCase() + platform.slice(1)}
+                  </Link>
+                ))}
+              </dd>
+            </div>
+            <div>
+              <dt>Players</dt>
+              <dd>
+                {game.playerModes.map((mode) => (
+                  <Link key={mode} href={`${path}?playerModes=${mode}`}>
+                    {mode === "single" ? "Single player" : "Multiplayer"}
+                  </Link>
+                ))}
+              </dd>
+            </div>
+            <div>
+              <dt>Created by</dt>
+              <dd>
+                <Link
+                  href={`${path}?author=${encodeURIComponent(game.author)}`}
+                >
+                  {game.author}
+                </Link>
+              </dd>
+            </div>
+            <div>
+              <dt>Shared on Hacker News</dt>
+              <dd>
+                {new Date(game.releaseDate).toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                  timeZone: "UTC",
+                })}
+              </dd>
+            </div>
+          </dl>
+          <div className="detail-links">
+            <a href={game.hnUrl} target="_blank" rel="noopener noreferrer">
+              Read the HN discussion <span aria-hidden="true">↗</span>
+            </a>
+            {typeof game.sourceCodeUrl === "string" && (
+              <a
+                href={game.sourceCodeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore the source code <span aria-hidden="true">↗</span>
+              </a>
+            )}
+            <a
+              href={createReportUrl(game.id)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Report an issue <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </aside>
       </div>
-    </div>
+    </article>
   );
 }

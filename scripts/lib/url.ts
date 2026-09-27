@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getGamePageError, getGamePageRedirect } from "./link-page";
 
 const BROWSER_HEADERS = {
   "User-Agent":
@@ -9,6 +10,7 @@ const BROWSER_HEADERS = {
 const REQUEST_TIMEOUT_MS = 15000;
 const MAX_RETRIES = 3;
 const RETRY_DELAY_MS = 1000;
+const MAX_PAGE_REDIRECTS = 5;
 
 // Host is reachable but blocks bots or rate-limits automated checks.
 const REACHABLE_BLOCKED_STATUSES = new Set([401, 403, 429]);
@@ -25,8 +27,6 @@ const TRANSIENT_ERROR_PATTERNS = [
   "timeout of",
   "network timeout",
 ];
-
-const PARKED_DOMAIN_MARKERS = ["Porkbun Marketplace"];
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -50,10 +50,6 @@ function isTlsOrCertError(message: string): boolean {
     lower.includes("tls") ||
     lower.includes("ssl")
   );
-}
-
-function isCertHostnameMismatch(message: string): boolean {
-  return message.toLowerCase().includes("altnames");
 }
 
 function isExpiredCertificate(message: string): boolean {
@@ -81,10 +77,6 @@ function getUrlVariants(url: string): string[] {
   return Array.from(new Set(variants));
 }
 
-function isParkedDomain(content: string): boolean {
-  return PARKED_DOMAIN_MARKERS.some((marker) => content.includes(marker));
-}
-
 type RequestResult =
   | { ok: true; status: number; responseText: string }
   | {
@@ -95,8 +87,20 @@ type RequestResult =
       tryNextVariant: boolean;
     };
 
-async function requestUrl(url: string): Promise<RequestResult> {
+async function requestUrl(
+  url: string,
+  visited = new Set<string>(),
+  pageRedirects = 0,
+): Promise<RequestResult> {
   try {
+    const parsed = new URL(url);
+    if (!["http:", "https:"].includes(parsed.protocol)) {
+      throw new Error("Expected an HTTP or HTTPS game URL");
+    }
+    const normalized = normalizeUrl(url);
+    if (visited.has(normalized)) throw new Error("Redirect loop");
+    visited.add(normalized);
+
     const res = await axios.get(url, {
       headers: BROWSER_HEADERS,
       timeout: REQUEST_TIMEOUT_MS,
@@ -126,7 +130,8 @@ async function requestUrl(url: string): Promise<RequestResult> {
         ok: false,
         status: res.status,
         error: `HTTP ${res.status}`,
-        transient: res.status === 502 || res.status === 503 || res.status === 504,
+        transient:
+          res.status === 502 || res.status === 503 || res.status === 504,
         tryNextVariant: false,
       };
     }
@@ -150,10 +155,33 @@ async function requestUrl(url: string): Promise<RequestResult> {
       };
     }
 
-    if (isParkedDomain(responseText)) {
+    const responseUrl: string = res.request?.res?.responseUrl ?? url;
+    visited.add(normalizeUrl(responseUrl));
+    const contentType = String(res.headers["content-type"] ?? "");
+    const isHtml =
+      /(?:text\/html|application\/xhtml\+xml)/i.test(contentType) ||
+      (!contentType && /^\s*(?:<!doctype html|<html\b)/i.test(responseText));
+    const redirect = getGamePageRedirect(
+      isHtml ? responseText : "",
+      responseUrl,
+      typeof res.headers.refresh === "string" ? res.headers.refresh : undefined,
+    );
+    if (redirect !== undefined) {
+      if (pageRedirects >= MAX_PAGE_REDIRECTS)
+        throw new Error("Too many page redirects");
+      // A fragment-only redirect stays on the same document (e.g. SPA routing).
+      if (normalizeUrl(redirect) !== normalizeUrl(responseUrl)) {
+        return await requestUrl(redirect, visited, pageRedirects + 1);
+      }
+      if (new URL(redirect).hash === new URL(responseUrl).hash)
+        throw new Error("Redirect loop");
+    }
+
+    const pageError = isHtml ? getGamePageError(responseText) : undefined;
+    if (pageError) {
       return {
         ok: false,
-        error: "parked domain",
+        error: pageError,
         transient: false,
         tryNextVariant: false,
       };
@@ -162,14 +190,6 @@ async function requestUrl(url: string): Promise<RequestResult> {
     return { ok: true, status: res.status, responseText };
   } catch (error) {
     const errorMsg = getErrorMessage(error);
-
-    if (isCertHostnameMismatch(errorMsg)) {
-      return {
-        ok: true,
-        status: 0,
-        responseText: "",
-      };
-    }
 
     return {
       ok: false,
@@ -181,9 +201,10 @@ async function requestUrl(url: string): Promise<RequestResult> {
 }
 
 export async function isValidGameUrl(
-  url: string
-): Promise<{ isValid: boolean; responseText: string }> {
-  if (!url) return { isValid: true, responseText: "" };
+  url: string,
+): Promise<{ isValid: boolean; responseText: string; reason?: string }> {
+  if (!url?.trim())
+    return { isValid: false, responseText: "", reason: "Missing URL" };
 
   const variants = getUrlVariants(url);
   let lastError = "Unknown error";
@@ -200,12 +221,12 @@ export async function isValidGameUrl(
 
       if (isExpiredCertificate(result.error)) {
         console.log(`Invalid URL (${result.error}): ${url}`);
-        return { isValid: false, responseText: "" };
+        return { isValid: false, responseText: "", reason: result.error };
       }
 
-      if (result.status && DEAD_STATUSES.has(result.status)) {
+      if (!result.transient && !result.tryNextVariant) {
         console.log(`Invalid URL (${result.error}): ${url}`);
-        return { isValid: false, responseText: "" };
+        return { isValid: false, responseText: "", reason: result.error };
       }
 
       if (result.tryNextVariant) {
@@ -224,5 +245,5 @@ export async function isValidGameUrl(
   }
 
   console.log(`Invalid URL (${lastError}): ${url}`);
-  return { isValid: false, responseText: "" };
+  return { isValid: false, responseText: "", reason: lastError };
 }

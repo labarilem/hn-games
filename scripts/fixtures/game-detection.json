@@ -1,0 +1,426 @@
+[
+  {
+    "id": "42572654",
+    "name": "Cohesion - Create custom connection games",
+    "description": "",
+    "playUrl": "https://cohesion-game.vercel.app",
+    "author": "tejasbhovad",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42585831",
+    "name": "Knotilus-uncover hidden Fibonacci-like sequences",
+    "description": "Hi HN, I'm new to Hacker News, but a friend suggested this would be a great place to share my project and get some feedback. I’ve been working on Knotilus, a daily puzzle game where the challenge is to find three hidden Fibonacci-like sequences among a set of numbers. Each daily puzzle includes between four and ten possible sequences, and the goal is to identify the three solution sequences that share only one number, the “knot,” while all other numbers in the solution are unique. I’m a hobbyist when it comes to web design and development, so I built Knotilus as a fun way to learn more about creating web applications while sharing a new puzzle concept. I built Knotilus using: Frontend: Vue 3 Backend: Flask Database: PostgreSQL Here’s what makes Knotilus interesting: Daily Puzzle: A fresh challenge every day, a new puzzle is made available everyday at midnight based on the user's timezone. Customizable Difficulty: Adjust the puzzle level (how many numbers are available to make sequences) and mode (with or without helpful visual indicators). The solution remains the same, regardless of difficulty. Community Benchmarks: Compare your performance (time, hints used, etc.) with others anonymously. Though this feature depends on whether or not I'm able to draw enough of an audience Unique Concept: Inspired by Fibonacci sequences, the game offers what I believe is a unique idea for a daily puzzle.\nAccessible Design: Play directly in your browser, no downloads or installations required. I’d love to hear what the HN community thinks, would you give it a try? Do you have ideas for improving the gameplay or user experience? You can check it out here: https://knotil.us/ Thanks for taking a look!",
+    "playUrl": "https://knotil.us/",
+    "author": "mdduar",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42605425",
+    "name": "GNC Trainer - A Landing Simulator for Tinkering with Control Systems",
+    "description": "I built a small game where you write control algorithms to land a spacecraft in increasingly challenging scenarios. The game starts simple - just control vertical thrust to hover. Later levels introduce rotational dynamics, thrust vectoring, and 2D movement. Each level saves your working solution for reference. The user input to be written using Rhai-script (https://rhai.rs/). Note that it is a bit heavy at ~38MiB and may not work well on mobile. Try it at: https://www.thomasantony.com/gnc-trainer/\nCode: https://github.com/thomasantony/gnc-trainer/ The code can also be built natively and run directly on your machine. This is something I hack on at random times and so feedback is welcome for things I can add/change. As time permits, I'm considering adding levels for more advanced concepts like precision landing and state estimation (including atmospheric flight).",
+    "playUrl": "https://www.thomasantony.com/gnc-trainer/",
+    "author": "tantony",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42617816",
+    "name": "Promptact - Learn system prompting by reverse-engineering conversations",
+    "description": "Hey everyone,\nBuilt a simple game to help people understand and learn prompting through practice. It's like reverse engineering meets chatbot building - you observe a conversation and try to figure out what system prompt generated it. How it works:\n- You see a conversation between a user and an AI\n- Your goal is to write a system prompt that would generate similar AI responses\n- Get instant feedback through (embedding) similarity scoring\n- Progress through levels that teach different techniques\n- No sign-up is required - just visit and start playing The game is built with Next.js, TypeScript, and uses OpenAI for response generation and similarity scoring. You can try it right now at https://promptact.vercel.app/ I'd love feedback from the community. This project was primarily developed for teaching about LLM to friends from non-AI fields -- Hence the limited number of levels for the time being. The source code is open and available on GitHub  (https://github.com/detextit/promptact). You'll need your own OpenAI API key to run it locally.",
+    "playUrl": "https://promptact.vercel.app/",
+    "author": "shekkizh",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42640941",
+    "name": "3D-Fractal Game on WebGPU (Desktop Chrome)",
+    "description": "Ported Marble Marcher over to WebGPU, so no download required. Open source code is on GitHub: https://github.com/grinstead/MarbleMarcherWebGPU WebGPU is cool. It's exciting to me to see these things working with no download. The actual js for this game is 130kb in all, though the music and sound effects bring the whole distribution to 10mb. The original game is from CodeParade: https://www.youtube.com/watch?v=9U0XVdvQwAI It can be a bit of a gpu buster, though it runs fine on my M1 Mac. I'm experimenting with SolidJS+WebGPU+Vite as a game engine (https://github.com/grinstead/ambush). It's a pretty cool environment to develop in, but building everything from scratch is slow and developing at a hobbyist pace.",
+    "playUrl": "https://codefiddler.itch.io/marble-marcher",
+    "author": "grinstead",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42645218",
+    "name": "Tetris in a PDF",
+    "description": "I realized that the PDF engines of modern desktop browsers (PDFium and PDF.js) support JavaScript with enough I/O primitives to make a basic game like Tetris. It was a bit tricky to find a union of features that work in both engines, but in the end it turns out that showing/hiding annotation \"fields\" works well to make monochrome pixels, and keyboard input can be achieved by typing in a text input box. All in all it's quite janky but a nice reminder of how general purpose PDF scripting can be. The linked PDF is all ASCII so you can just open it in a text editor, or have a look at the source code here: https://github.com/ThomasRinsma/pdftris/blob/main/gengrid.py",
+    "playUrl": "https://th0mas.nl/downloads/pdftris.pdf",
+    "author": "ThomasRinsma",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42651301",
+    "name": "Playoffsgame.com - A Svelte(kit) Site",
+    "description": "I made this last year but added some new things recently. It's a fantasy football game for the NFL playoffs, so it's highly relevant right now. It's a static site using SvelteKit, Tailwind (partly via Flowbite), and Firebase. Putting it out here mainly to share how much I enjoy Svelte's reactivity system. You can see it mostly in the lineup builder demo from the home page. If you actually want to participate in a free pool and see how the rest of the site works after the playoffs start, use this link: https://playoffsgame.com/create-lineup?pool=the-goat It's free, beginner-friendly, and you don't have to create an account so it's a quick. Though, you can log in for a couple extra features if you want.",
+    "playUrl": "https://playoffsgame.com/create-lineup?pool=the-goat",
+    "author": "pjbrown11",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42694202",
+    "name": "ParaGopher, a retro-style arcade game inspired by Paratrooper (1982)",
+    "description": "",
+    "playUrl": "https://github.com/ystepanoff/ParaGopher",
+    "author": "ystepanoff",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42711248",
+    "name": "Mongo Murder Mystery - Can You Find Out Whodunnit?",
+    "description": "What: So I built this small (and ofc free) web-based interactive game where folks solve a murder mystery while learning MongoDB commands and concepts. It combines a fun storyline with practical lessons to help you practice querying and navigating data. It’s not a full tutorial—more like a self-directed exercise with an optional walkthrough to guide you. Motivation: Over the holidays, I wanted to teach MongoDB basics to my 8th-grade nephew in an interactive and exciting way. I was inspired by the popular SQL Murder Mystery and thought, “Why not create something similar for MongoDB?” I tested it with my nephew and some friends, so here it goes. The ask:\nGive it a try! Feedback is most welcome—let me know if the mystery stumps you or if you have ideas for future cases! I'm also more than happy to answer any questions about how I put this project together, e.g., the tech stack used. Thank you very much for stopping by and taking a look. Cheers\nDiana",
+    "playUrl": "https://mongomurdermystery.com",
+    "author": "diana-e",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42727105",
+    "name": "Play tag against an opponent trained with reinforcement learning",
+    "description": "This is a little prototype I made recently while learning about reinforcement learning and to explore the use of machine learning in games. The learned model that the computer-controlled opponent uses is by no means optimal, but I think it still gives an interesting experience. Enjoy!",
+    "playUrl": "https://adamheins.com/projects/shadows/web/",
+    "author": "adamheins",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42730846",
+    "name": "Trash Talk Arena - werewolf meets Turing test and PUBG",
+    "description": "This is a WIP, so UX sucks. Basically, you are thrown into a chat with other players and/or AIs, and the goal is to eliminate everyone else. You trash talk to each other. To eliminate someone you click their message and then must guess both: if they are a bot and if their ELO is bigger than yours. Example round (unlike playing the game, does not require login): https://trashtalk.borg.games/game/36",
+    "playUrl": "https://trashtalk.borg.games/",
+    "author": "lostmsu",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42757807",
+    "name": "Minimalistic Hashi Bridges",
+    "description": "As a part of our computer vision lab, we're trying to understand optimal pathfinding solutions in confined lattices, where we came across the game of Hashi. Here is the online version that I built, go give it a try! I'd love to hear your feedback!",
+    "playUrl": "https://haashi.vercel.app/",
+    "author": "hetdv",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42766914",
+    "name": "Typing Granny Footsteps",
+    "description": "My first JavaScript game that I put together with Cursor with only updating a few lines of code manually. Funny how AI brings out product thinking and I can confirm the dopamine dose comes from making and shipping, not from writing code.",
+    "playUrl": "https://typinggrannyfootsteps.com/",
+    "author": "boros2me",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42775436",
+    "name": "Abstractionary",
+    "description": "This is a taboo-like game where you have to make other players guess a target word or phrase. When you use words that aren't among the most common English words, they are \"censored\" and replaced with nonsense. Find a friend and try it out! :-)",
+    "playUrl": "https://abstract1.narfnilk.com/",
+    "author": "franklin_p_dyer",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42778877",
+    "name": "An automation game inspired by Factorio, Bomberman and Lemmings",
+    "description": "",
+    "playUrl": "https://themarelle.itch.io/fabolem",
+    "author": "Eagle64",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42797295",
+    "name": "100 Depth tree search on your iPhone with Rust",
+    "description": "I made this app with Rust + React Native. It combines a puzzle game with a solver. While quite a lot of work went into UX, the solver is what I’m most proud of and was the first functional piece of the app. Originally, it solved one layer at a time, but when I added the undo feature I decided to try to go deeper and try to answer “What if the solver has perfect knowledge of the RNG?”. Going from computer CPU to phone and from search depth of 36 to 108 was obviously not going to get good brute force coverage considering I could only explore 30ish moves in a reasonable time which is a small percentage of all paths even before tripling the length of a solution. It ended up being a rabbit hole that led to what might be a novel search strategy that finds higher scores despite eliminating most of the pruning that made the single layer so fast. Rust was chosen because I like it and already had success using it for game solving. I also had written another iOS app using Rust for the business logic. React Native as the UI was something I wanted to evaluate after their ability to interface with Rust code vastly improved last year with the release of uniffi-bindgen-react-native. The only reason it isn’t also available for Android is procrastination. The rules of the puzzle come from an old Java game, which means that by reading the decompiled source and porting the RNG from Java, the app is a pretty faithful reproduction. In fact, if you sniff the seed from the game’s network traffic or dump it from the game’s memory, you can replay the same game.",
+    "playUrl": "https://apps.apple.com/us/app/chesstiles/id6737867924",
+    "author": "cheepin",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42840109",
+    "name": "Retro text adventure game built using V0 and OpenAI",
+    "description": "I created a classic text-based adventure game inspired by Zork using Vercel's v0. Each refresh generates a unique game title, setting, and context, with AI handling the dynamic storytelling and gameplay. It features a retro terminal-style UI, simple text commands, and endless possibilities for exploration.",
+    "playUrl": "https://piliwtfcobjhsczp.vercel.app/",
+    "author": "Sai_Praneeth",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42840668",
+    "name": "Built a retro text adventure using V0 and OpenAI",
+    "description": "I created a classic text-based adventure game inspired by Zork using Vercel's v0. Each refresh generates a unique game title, setting, and context, with AI handling the dynamic storytelling and gameplay. It features a retro terminal-style UI, simple text commands, and endless possibilities for exploration. Check it out and let me know what you think: https://uj0gnt8ewsnqdwnf.vercel.app/",
+    "playUrl": "https://uj0gnt8ewsnqdwnf.vercel.app",
+    "author": "Sai_Praneeth",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42866904",
+    "name": "State Sandbox - An AI-powered political simulation game",
+    "description": "Hi all, I built a political simulation game that uses AI reasoning models to let you run a country through arbitrary executive actions. Think of it as an \"executive order simulator\" inspired by games like Civilization and NationStates, but where you can take any action you want - even copying real executive orders into the game. The game generates a unique country for you with detailed characteristics (culture, economy, crime rates, etc). Each turn, you face natural events like protests, sanctions, or disasters, and can respond with any policy decisions via free-form text. The AI then simulates complex ripple effects - for example, a policy promoting domestic oil might affect your CO2 emissions, international trade relations, and even traffic fatality rates. Technical details:\n- Built with Next.js + FastAPI\n- Uses OpenAI's reasoning models (o1 and o1-mini) to handle simulation\n- Structured as a multi-agent system where o1 orchestrates key changes and o1-mini handles detailed updates\n- Everything including the country flags is AI generated The source code is available at: https://github.com/sshh12/state-sandbox I wrote up my learnings about working with reasoning models and the technical challenges in building this at: https://blog.sshh.io/p/socioeconomic-modeling-with-reasoning",
+    "playUrl": "https://github.com/sshh12/state-sandbox",
+    "author": "sshh12",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42877155",
+    "name": "OG Snake game on your Terminal",
+    "description": "Play the snake game on your terminal. Built with Python and curses.",
+    "playUrl": "https://github.com/abishekvenkat/terminal-snake",
+    "author": "abishekvenkat",
+    "expected": "likely-game"
+  },
+  {
+    "id": "42575966",
+    "name": "Custom Leagues for Word(le) Game Results",
+    "description": "A friend has created an app within which you can create league tables for friends for common games like Wordle, Quordle (daily, extreme & sequence), Octordle (daily & rescue), Fastdle and Connections. Just create the league, choose the games then distribute the league URL. You approve members to stop gatecrashers. All you have to do is paste the game results each day. It's a lot of fund competing. There are world leagues for each too and whole bunch of stats screen to to see how you're improving etc.",
+    "playUrl": "https://www.wordleague.io/",
+    "author": "aaronrobinson",
+    "expected": "not-game"
+  },
+  {
+    "id": "42590290",
+    "name": "AI that generates 3blue1brown-style explainer videos",
+    "description": "I've been building prototypes of new AI learning tools for months, but I recently learned that 3blue1brown open sourced his incredible math animation library, Manim, and that LLMs could generate code for it without any fine-tuning. So I made a tool that automatically generates animated math/science explanations in the style of 3blue1brown using Manim from any text prompt. Try it yourself at https://TMA.live (no signup required) or see the demo video here: https://x.com/i/status/1874948287759081608 The UX is pretty simple right now, you just write a text prompt and then start watching the video as it's generated. Once it's done generating you can download it. I built this because I kept finding myself spending 30+ minutes in AI chats trying to understand very specific concepts that would have clicked instantly if there were a visual explanations on YouTube. Technical Implementation: - LLM + prompt to use Manim well, right now this uses Gemini with grounding to ensure some level of factuality, but it works equally well with Claude - Manim for animation generation - OpenAI TTS for the voiceovers - Fly.io for hosting the web app - Modal.com for fast serverless GPUs to render the videos - HLS protocol for streaming the videos as they are rendered Note: This is focused on STEM education and visualization, and it is particularly good for math, but get creative and try it with anything! I used it recently to teach my partner's parents a new board game in Mandarin (which I don't speak!) I'll be around to answer questions. Happy learning!",
+    "playUrl": "https://x.com/i/status/1874948287759081608",
+    "author": "zan2434",
+    "expected": "not-game"
+  },
+  {
+    "id": "42593366",
+    "name": "tirreno ~ open-source security user analytic",
+    "description": "Our team worked for 1,000 days to create and open-source a web user analytics platform. It is a lightweight (~5 dependencies), “low-tech” PHP/PostgreSQL software that answers the question of what logged-in users are doing on your web application and helps mitigate some risks. Online demo: https://play.tirreno.com\nSource code: https://github.com/TirrenoTechnologies/tirreno\nOfficial website: https://www.tirreno.com If that's not of interest, there's also a game by @KilledByAPixel: https://play.tirreno.com/game, which has some sentimental flavour. Dedication: thanks to my dad, who brought an 8086 home.",
+    "playUrl": "https://play.tirreno.com/login",
+    "author": "reconnecting",
+    "expected": "not-game"
+  },
+  {
+    "id": "42594896",
+    "name": "Pretty-print your chess games using Prettier",
+    "description": "Hi, As an enthusiast chess player, I like to manage my games and my opening repertoire as a set of PGN files stored in a Git repository (PGN is a text file format for recording chess games). So I wanted a way to pretty-print PGN files using a CLI and integrating in my editor. Today, it looks like most people use GUI-based software. So I decided to create a Prettier plugin that formats PGN files. Prettier is a well-known pretty-printer in the Node.js ecosystem, used to ensure consistent source code formatting in software projects. One upside of implementing this PGN formatter as a Prettier plugin is that it benefits from its editor integration. The plugin is currently near complete, even if the project is still at an early stage. It's usable, even if there might be some bugs. Hope you find this useful. Comments and ideas are welcome. Have a nice weekend.",
+    "playUrl": "https://github.com/gmasclet/prettier-plugin-pgn",
+    "author": "gmasclet",
+    "expected": "not-game"
+  },
+  {
+    "id": "42603451",
+    "name": "A fully automated poker stream system [video]",
+    "description": "RFID Poker Table for streaming and analytics, we've recently introduced a bet tracking system that can automate the full flow of the game. Public analytics on: cloud.smartpokertable.com\nYou can contact me at: ivofreelance@gmail.com",
+    "playUrl": "https://www.youtube.com/watch?v=K3YsDGHLLms",
+    "author": "ivo_ovcharov",
+    "expected": "not-game"
+  },
+  {
+    "id": "42618161",
+    "name": "Master OAuth 2.0 with Hands-On: Visualize, Debug and Play with Flows",
+    "description": "OAuth 2.0 is powerful but often feels like a beast to tame. We believe developers learn best by doing—and when it comes to building secure systems, understanding OAuth 2.0 is critical. That’s why we created this free toolkit: to make learning OAuth more interactive, intuitive, and accessible. # Why We Built This OAuth 2.0 is everywhere—from securing APIs to enabling third-party integrations. But let’s be honest: - Learning it often starts with deciphering dense RFCs. - Debugging flows can feel like solving a puzzle in the dark. - The stakes are high—get it wrong, and you risk building insecure systems. For many developers, the gap between theory and practice in OAuth is huge. We’ve been there too, spending hours debugging broken flows or trying to decode tokens manually. We thought, what if there were a tool that didn’t just explain OAuth but let developers experience it in action? That’s how this toolkit was born. It’s designed to help developers of all levels do OAuth, not just read about it. By visualizing flows, inspecting tokens, and testing knowledge interactively. # What’s Inside? - Dynamic OAuth Flow Visualizer: Watch requests and responses dance in real-time, giving you a clear picture of each step. - Real-Time Token Inspector (Token Whispers): Decode JWTs without JSON tantrums. Peek into tokens, understand claims, and debug effortlessly. - OAuth 2.0 Resource Hub: Centralized info on provider details, endpoints, and configurations—all in one place. - Gamified Learning (OAuth Ninja Challenges): Test your skills and master OAuth flows through interactive mini-games. - Live OAuth Logs Viewer: Track, debug, and analyze OAuth 2.0 logs seamlessly in real time. # How You Can Help We want to make OAuth approachable and actionable for everyone, but we need your help: - Try it out: [https://authplay.io/](https://authplay.io/) (no signup required). - Tell us:\n- Does this approach help you better understand OAuth?\n- Are there features you’d like to see that could make the learning process even better? - Share your perspective:\n- What challenges have you faced learning OAuth?\n- How do you handle OAuth in your projects today? # Why This Matters OAuth 2.0 isn’t just a technical skill—it’s a cornerstone of modern secure system design. Whether you’re building your first API integration or architecting a complex system, understanding OAuth is essential for protecting user data and building trust. Let’s make learning security concepts like OAuth 2.0 engaging, interactive, and impactful. We’d love your feedback to make this toolkit even better! Thanks for taking a look!",
+    "playUrl": "https://authplay.io/",
+    "author": "netham91",
+    "expected": "not-game"
+  },
+  {
+    "id": "42619326",
+    "name": "My Freelance Journey - From Zero to Building and Running My Own Agency",
+    "description": "Today, I’m going to share the story of my freelancing journey—how I earned my first dollar online and eventually built my own web development and design agency. --- ## Discovering Freelancing It all started four years ago. Back then, I was just playing around with HTML and CSS, creating simple websites and showing off to my friends. I had no clue about freelancing. One day, while scrolling through YouTube, I stumbled upon a video explaining freelancing: how you could get paid for building websites for others. That video was a game-changer. I realized there was a world where my skills could be valuable. I was determined, excited, and ready to dive in. I started out on platforms like Fiverr and Upwork, spending an entire year messaging potential clients, sending emails, and pitching my services. But after a year, the results were... _zero_. Zero clients. Zero money. I was frustrated and burned out. I gave up. --- ## Hitting Rock Bottom After abandoning freelancing, I spent the next six to seven months playing video games, doing nothing productive. I was stuck in a rut, convinced I was done. Then one day, as I sat on my balcony watching the sunset, something clicked. It was like one of those protagonist moments in a movie. I realized I couldn’t stop here. Giving up wasn’t the answer. I had wasted time feeling sorry for myself instead of improving my skills and focusing on what truly mattered. --- ## I'm protagonist That day, I made a decision: I was going to turn my freelancing journey around. I got back to learning, but this time, I focused on modern frameworks like React.js and Next.js instead of just HTML and CSS. I joined freelancing communities and Discord servers, posted about my services, and connected with as many people as possible. For almost a year, I hustled relentlessly, doing everything I could to get noticed. --- ## Landing My First Client One day, I received a message on Discord:  \n_\"Hey, I like your designs and your work. Can we talk?\"_ That single message changed everything. After nearly three years of struggle and self-doubt, I landed my first client. I poured my heart into the project, delivering my absolute best. The deal closed for $70—not much, but it was a start. A few days later, the same client returned with another project. This time, I charged $100. Slowly but surely, word of mouth began to spread. I started earning $150 per project, then $1,200 over the course of a year. --- ## Building HextaStudio Fast forward to today, I’m a solo entrepreneur running HextaStudio, my own web development agency. I’ve also created over 10 startup and SaaS projects. None of them have been monetized or widely recognized yet, but I’m not giving up. I’m constantly refining my skills, shipping projects, and pushing forward because I know hard work never goes to waste. --- ## Lesson If there’s one thing my journey has taught me, it’s that success doesn’t come easy. It requires time, effort, and resilience. I’ve faced countless rejections, burnouts, and self-doubts, but each struggle has made me stronger. To anyone out there struggling with freelancing or feeling stuck, remember this: *It’s not about how many times you fail—it’s about getting back up every time. Your hard work will always pay off. Just keep going.*",
+    "playUrl": "https://preetsuthar.me/writing/my-freelance-journey",
+    "author": "preetsuthar17",
+    "expected": "not-game"
+  },
+  {
+    "id": "42635007",
+    "name": "Reconfigured - Video game-inspired journal for analysts",
+    "description": "",
+    "playUrl": "https://reconfigured.io",
+    "author": "thesnappingdog",
+    "expected": "not-game"
+  },
+  {
+    "id": "42635049",
+    "name": "Free TCG Proxy Manager for Magic, Yugioh, and Pokemon",
+    "description": "Trading cards are awesome, but paying $30 for some cardboard isn’t. I’ve upscaled 60,000 cards from the entire catalog of Yugioh, Magic, Pokemon, & a newer game, https://elestrals.com. I've made it easy to build a decklist, download it, and then print at home. Modern inkjet printers got really good when nobody was looking. While it’s clear they’re not real cards, the upscaling makes them look great for casual play (these are not tournament legal). It’s totally free, give it a try! Supplies: [url-redacted]\nPrinter Settings: [url-redacted]\nInstructions: [url-redacted] Overview: I built [name-redacted] because I had some scripts to do this lying around, and wanted to explore the new Rails 8 magic. Kamal 2 (kamal-deploy.org/) is a game changer, SQLite in production is fine, and the database backed solid family of gems work like a charm. Compute: I am renting a box on https://hetzner.com located in VA for $15/mo. This box has 8 gigs of ram and 2 vCPU's. This is such a deal compared to compute prices on https://render.com. Kamal 2: This thing is amazing. Kamal gives me everything I could want (easy console access, easy shell access, a way to manage secrets, a way to see my logs, and letsencrypt support for DNS), all without a PaaS tax. The best part is the accessories feature: https://kamal-deploy.org/docs/commands/accessory/. I am running my main app with two accessories: Meilisearch(https://meilisearch.com) and OpenObserve (https://openobserve.ai). Instead of paying Algolia to host search infrastructure and sentry to host monitoring infrastructure, I’m hosting my own OSS without any fanfare. Upscaling: To upscale the trading cards (a mandatory part of this build, scans are never high enough DPI). I am using this (https://replicate.com/nightmareai/real-esrgan) model. For upscaling every card, I've used under a hundred bucks of compute. This model was picked on a whim, but worked well enough that I didn’t compare other models. SQLite: I used SQLite combined with Litestream (litestream.io) for my database. While I considered Postgres, I hesitated due to uncertainties around handling backups on self-hosted infrastructure. This was my first time using SQLite in production, and it was functional but with some minor annoyances. Here’s what I encountered: 1. No Default UUID Primary Key Type I had to set primary keys as strings and assign IDs manually from the application record. It’s an annoying workaround but manageable. 2. No Native Array Columns Because SQLite doesn’t support array columns, I had to use its native JSON column type, which just felt icky. If I were working with something like embeddings, this would be especially annoying, because you couldn’t enforce all the records to have the same number of dimensions. 3. Cryptic Errors At one point, a migration failed silently, leaving a cryptic error in schema.rb. The issue was resolved by rolling back the migration and redoing it, but it was once again, annoying. 4. Litestream Defaults Litestream deletes snapshots after 24 hours by default, which is far too short. When I tried to recover some data, I found it had already been deleted. Adjusting these defaults fixed the problem. Solid Queue/Cache/Cable: The solid family of gems are all backed by the database and were a pleasure to work with. Goal was to prevent needing to reach for redis, so you have one less thing to worry about. You end up with a little more latency, which is a totally reasonable tradeoff. Conclusions: We are moving into a post platform as a service world. Instead of buying a bespoke render.com or heroku, you just buy commodity compute and use Kamal to manage. It's like, pretty much all there, excited to see how this space matures.",
+    "playUrl": "https://elestrals.com",
+    "author": "_zfsy",
+    "expected": "not-game"
+  },
+  {
+    "id": "42644168",
+    "name": "Factorio Blueprint Visualizer",
+    "description": "Hey there, I'm a big fan of the game Factorio and the beauty of factories in the game. That's why I created a website to artfully visualize Factorio blueprints a few years ago. With the new 2.0 update, a few things broke. I took the opportunity to rewrite everything from Python to JavaScript and support Factorio 2.0 and the Space Age DLC. It's now also possible to easily modify the style of the drawings. Let me know if you find any bugs or if you have ideas for features.",
+    "playUrl": "https://github.com/piebro/factorio-blueprint-visualizer",
+    "author": "piebro",
+    "expected": "not-game"
+  },
+  {
+    "id": "42651382",
+    "name": "Never let friends forget who is the winner",
+    "description": "Hi HN, I made a simple little app to keep track of game rankings with friends. It uses the Elo system (like in chess) to adjust scores after each game. Works for board games, chess, padel, tennis, or anything that’s competitive. It’s free — give it a try",
+    "playUrl": "https://www.shmelo.io/",
+    "author": "itsikap",
+    "expected": "not-game"
+  },
+  {
+    "id": "42662366",
+    "name": "My Literate System Configuration",
+    "description": "This is version 3 of my tinkering with an immutable configuration for my computers. This time around I used emacs' org + nixos to settle on this. The README is the single source of truth for my computer. It is then \"tangled\" into nix source files, which can then be used by nixos to build my system. This allows me to keep a living document as my system configuration, especially reminding me (hopefully) of certain decisions.",
+    "playUrl": "https://github.com/gamedolphin/system",
+    "author": "sandeep-nambiar",
+    "expected": "not-game"
+  },
+  {
+    "id": "42673941",
+    "name": "Auto Generate Viral Clips",
+    "description": "You can use it to make clips with captions and gameplay, which used to get 30k views on an account I created last week (https:// www.tiktok.com/@daily.clips.comedy?\n_t=ZT-8t0SdMn8mdi&_r=1) Many social media platforms like TikTok pay creators for viral content in various ways, and this site could be a way for you to get started in a somewhat passive way! I'm also working on posting on all platforms to make it fully automated! Keeping it free for now to get some feedback and feature suggestions! I may run out of OpenAl credits soon, however. A known issue is that the editing takes a longish time, which I want to speed up with a GPU once I can fund the project more. If you have suggestions or would like to support, please comment!",
+    "playUrl": "https://clippify.me",
+    "author": "tusrs",
+    "expected": "not-game"
+  },
+  {
+    "id": "42675662",
+    "name": "Professional Headshots Using AI",
+    "description": "Hey HN! Launching portraitmaker.ai - pro headshots generated uniquely for your face. Instead of using a generic model, I actually train a unique Flux LoRA model on your specific selfies. The idea is pretty simple: 1. Upload 10-35 selfies\n2. Within 30 mins while the model finishes training\n3. Call the trained model with a bunch of custom prompts for perfect headshots The results are pretty WILD - check out some examples on the site. Flux models have really changed the game. You can do this with almost anything - for example, cat portraits, dog portraits, etc. Btw, $20 gets you:\n- Custom model trained on your face using Flux LoRA\n- 40 headshots that actually look CRAZY GOOD Traditional photographers charge you app the a*. $200-1000+ and require scheduling weeks out. Sometimes, they even charge you for custom outfits and photo retouching. But most of us don't have that kind of money to splurge on a headshot.",
+    "playUrl": "https://www.portraitmaker.ai",
+    "author": "blueapple30",
+    "expected": "not-game"
+  },
+  {
+    "id": "42688009",
+    "name": "DiceCentral - A Dead Simple API for Rolling Any Type of Dice",
+    "description": "I built a minimalist RESTful API for rolling polyhedral dice (d4-d100) with a clean Swagger UI. Great for game developers, discord bots, or anyone needing quick random number generation. No authentication required, CORS enabled. Try it out: https://dicecentral.vercel.app",
+    "playUrl": "https://dicecentral.vercel.app",
+    "author": "abishekvenkat",
+    "expected": "not-game"
+  },
+  {
+    "id": "42726657",
+    "name": "Screensnap Screenshot - A extension for making polished screenshots",
+    "description": "Hey HN, I've been working on a small side project called Screensnap, a suite of browser extensions designed to elevate your screen capture game. The first extension, Screensnap Screenshot, is now available and lets you take beautiful and polished screenshots with features like: - Custom backgrounds (gradients and images)\n- Adjustable padding & rounded corners\n- Shadow effect\n- Multiple formats: PNG, WebP, AVIF, JPEG\n- Save visible area, custom area or full page\n- Limit exported file size\n- YouTube video screenshot *Transparency Note:* Screensnap Screenshot is a paid extension.  I've poured a lot of effort into making it a valuable tool, and I believe the features justify the cost.  However, I'm very interested in your feedback!  Let me know what you think about the concept, the features of Screensnap Screenshot, and even the pricing model.  Is this something you'd find useful?  Would you consider paying for it? *Here's what I'm especially interested in:* - Feedback on Screensnap Screenshot's features and functionality.\n- Thoughts on the pricing model for Screensnap Screenshot. I appreciate any insights you can offer! Below is the link to the extension, which is now supported on Google Chrome: https://chromewebstore.google.com/detail/screensnap-screensh...",
+    "playUrl": "https://chromewebstore.google.com/detail/screensnap-screensh",
+    "author": "Smiler_",
+    "expected": "not-game"
+  },
+  {
+    "id": "42732016",
+    "name": "Random Positive Reward App for iPhone",
+    "description": "I built an iPhone app that is now available in the App Store. Its purpose is to make it easy and effective to use intermittent positive reinforcement as a motivation tool - the psychological phenomenon behind doom-scrolling, gambling, and animal training, now finally purposed for your benefit. It provides the tools to manage the little treats your brain needs to move in the right direction, combined with gamification designed to support your journey and encourage healthy usage. This is the outgrowth of a “scratch your own itch” project when I learned about how variable reward schedules and wanted to be able to use it to break through times of lower motivation. While simpler alternatives like rolling a (virtual) d20 worked to prove the concept, there was a lot of room for improvement. There’s a system for dynamically weighting outcomes inspired by how RNG-heavy video games avoid big streaks of wins/losses. The other big idea was building anticipation into the app itself in the form of gamification so even if your rewards themselves aren’t really getting you into the right headspace at some time, there’s something to work towards in-app to add an extra boost. SwiftUI for presentation, Rust for business logic in case it ever pencils out business-wise to port to another platform. If I was doing it again starting today, I would probably do React Native for the UI, but the integration story with Rust was pretty weak when I was evaluating options (they work together well enough now, and I have another project combining them, but not able to justify a UI rewrite yet). CTA: this is a niche product in a (currently) non-existent market category. I’m starving for feedback, so if you have opinions about the app or even just the problem space, please let me know (comments here, App Support link from App Store, or messages to TantalusPath on social media), and I’ll eat it up! TantalusPath\nhttps://apps.apple.com/us/app/tantaluspath/id6504832898",
+    "playUrl": "https://apps.apple.com/us/app/tantaluspath/id6504832898",
+    "author": "cheepin",
+    "expected": "not-game"
+  },
+  {
+    "id": "42736384",
+    "name": "ZX Spectrum SCR to PNG Converter",
+    "description": "Scratching my own itch. I had to do this for showing information on ZX Spectrum games. So thought I'd turn it into a useful tool for other people to use.",
+    "playUrl": "https://www.esp32rainbow.com/tools/scr-to-png",
+    "author": "iamflimflam1",
+    "expected": "not-game"
+  },
+  {
+    "id": "42770747",
+    "name": "Spark Stack",
+    "description": "Hi all, the other day I decided to build my own open-source subscriptionless AI to site/game builder. Thought it came out pretty well and nearly half of it is written by AI (Cursor). More details: https://blog.sshh.io/p/building-v0-in-a-weekend",
+    "playUrl": "https://sparkstack.app/",
+    "author": "sshh12",
+    "expected": "not-game"
+  },
+  {
+    "id": "42788769",
+    "name": "What if you could \"Prompt\" the UX of any App?",
+    "description": "I saw Pietro Schirano on X demo a chat app that could change its UI tone(dark mode, mario, windows 98, etc) through prompts, and it got me thinking: what if you could go beyond UI and actually change the UX on demand without losing state? So, I built a to-do list app that lets you prompt it to completely transform the UI and UX. For example: - Want a Gameboy-style console UI where the tasks show up one at a time, sorted alphabetically? - Prefer a Tinder-style interface? Prompt and you get it! The magic here is that the app preserves your state (e.g., completed tasks, pending ones, etc.) while letting you experiment with disposable, malleable interfaces. Although I demoed this with a to-do list, the possibilities are much broader: A browser with a Tinder-style interface to quickly swipe through tabs when you've got too many. The broader goal is to explore malleable software: if your data models and operations are well-defined, then the UI and UX can be a flexible function over that, shaped by user intent. This was a fun experiment in letting people play with software, creating interfaces that adapt to their immediate needs. I'd love to hear your thoughts—especially on where you think this idea could be pushed further.",
+    "playUrl": "https://gen-ux.vercel.app/",
+    "author": "13point5",
+    "expected": "not-game"
+  },
+  {
+    "id": "42799640",
+    "name": "I made a video game tracker for iOS",
+    "description": "I'm the creator of Winston, a simple yet powerful video game tracker for iPhone and iPad. Today I updated the app with one of its biggest updates yet. Version 2.2 features a redesigned search experience and redesigned game detail views. Check it out and let me know what you think!",
+    "playUrl": "https://apps.apple.com/us/app/winston-game-tracker/id6448645963",
+    "author": "handelmax",
+    "expected": "not-game"
+  },
+  {
+    "id": "42854220",
+    "name": "One-Click\" Game Server Hosting Integrated with Discord",
+    "description": "Hi HN, My study partner and I have developed SLASHPLAY, a game server hosting platform seamlessly integrated into Discord. Our goal is to provide casual gamers with a one-click solution to play with friends, eliminating the need for account creation or technical expertise. SLASHPLAY utilizes AWS infrastructure to dynamically spin up EC2 instances on demand. We welcome all feedback and are here to discuss any questions or suggestions you may have. Thank you for your time! GG & HF",
+    "playUrl": "https://slashplay.gg",
+    "author": "hackerkarlos",
+    "expected": "not-game"
+  },
+  {
+    "id": "42868258",
+    "name": "Build a Visual Novel with AI",
+    "description": "Hey HN, I built a simple visual novel creator using a combination of tools such as Flux, LLM APIs and three.js. You can describe your game concept (\"I am a knight sitting in a bar with a mysterious witch who only speaks in riddles\") and mangobox will generate the characters, plot, environment, etc. Current solutions to build VNs such as Ren'Py involve using a python library and distributing an executable. It requires a decent amount of technical knowledge which makes building VNs difficult unless you are a programmer. While my MVP doesn't cover even a small fraction of what Ren'Py does, my hope is to slowly achieve feature parity. After an early access launch, my average session time across all users is ~1 hour. Hope you enjoy!",
+    "playUrl": "https://www.mangobox.ai/",
+    "author": "masterspy7",
+    "expected": "not-game"
+  },
+  {
+    "id": "42871796",
+    "name": "Insert Coin: An iOS / Android / web app to locate arcade locations",
+    "description": "Hello everyone! Six months ago, I took over the the Pinmyballs app, which is mainly known in the French-speaking world for locating public places with pinball machines. Initially, I wanted to shut it down and transfer the data to Pinballmap, but I felt like doing something different. I love arcade games as much as pinball, and there was no app to track arcade locations. So I decided to continue developing Pinmyballs by adding arcade games, as well as darts, billiards, and foosball. The app was rewritten from the ground up, using Ionic framework (will be rewritten in React Native by the end of the year), and Symfony as back-end. And for obvious reasons, I also renamed it to Insert Coin. Everyone can contribute and add locations and their game to the app. As the app launched recently, it misses a lot of locations, so don't hesitate to contribute and share the app around you if you want to! - The app is available in six languages (English, Dutch, French, German, Italian, Spanish) and is completely free (no ads, no subscriptions) - You can easily add locations you know about, games and comment about their state / condition - You can find places around you for a particular game - The games database may not be complete, so if you notice any games missing, feel free to let me know, and I’ll add them! - You can save your favorite locations and receive notifications when games are added or removed from them! - And more features to come! The app is available on: - Web: https://www.insert-coin.app - iOS: https://apps.apple.com/app/insert-coin/id6664072981 - Android: https://play.google.com/store/apps/details?id=com.insertcoin... Currently, there are 2,700 locations and 12,000 games listed.",
+    "playUrl": "https://www.insert-coin.app",
+    "author": "Elitius",
+    "expected": "not-game"
+  },
+  {
+    "id": "42884056",
+    "name": "1M+ animated GPU sprites in JavaScript",
+    "description": "We added a new feature to our open-source HTML5 game engine today that allows you to create Sprite GPU Layers. These pack together simple JS object definitions onto the GPU and renders them using a custom vertex shader. This skips all CPU computation and GPU upload operations, resulting in vastly increased performance. For objects that don't need to be updated by input, physics, or other interactive behaviors, we found it to be a great solution. In testing, we've easily managed to blast millions of sprites around on moderate desktop-grade GPUs. Indeed, we hit the fill rate limitation of the GPU far sooner than we hit any other type of limitation. But as with all hardware-related things, ymmv. Frankly, we'd love to get our hands on a 5090 to see what we could do. The link includes 4 demos to play with, and the full source is on GitHub and npm under the MIT license.",
+    "playUrl": "https://phaser.io/news/2025/01/phaser-v4-beta-5-released",
+    "author": "phaser-studio",
+    "expected": "not-game"
+  },
+  {
+    "id": "42886079",
+    "name": "Ldump - serialize any Lua data",
+    "description": "Some time ago, I was implementing saves for my LOVE2D game. I wanted to do a full dump of the game state -- which included closures (AI), complex graphs, sets with tables as keys and also fundamentally non-serializable data (coroutines and userdata), that require user-defined serialization/deserialization logic. I went through every Lua serialization library -- none covered all data types/cases. So I wrote my own. It is a polished version, thoroughly annotated, tested and documented. It is made to be as functional and customizable as possible (or at least I did everything I could think of). I would be happy to hear suggestions/corrections for both code and documentation -- even nitpicky ones.",
+    "playUrl": "https://github.com/girvel/ldump",
+    "author": "girvel",
+    "expected": "not-game"
+  },
+  {
+    "id": "42888530",
+    "name": "LightCombatManager 3.0 - A simple combat manager for d20-based RPGs",
+    "description": "Hi HN, almost two years ago, I presented LightCombatManager (or LCM) to you [0]. Since then, I've added countless new features and other improvements. In short, LCM is a tool to manage combats for all sorts of d20-based role playing games. Via a simple and intuitive dialog, characters can be easily created and added to a combat table. The combat table can then be edited in all sorts of ways - dragging and dropping rows if characters move their initiative, deleting entries for killed characters or enemies, apply status effects... many convenience features such as undoing changes, shortcuts and context menu entries are also supported. LCM supports many different d20-based RPG systems, for example DnD 3.0E/3.5E/5E or the Pathfinder games. It runs on all major desktop platforms, which are Linux, Windows and MacOS. Since my first post, I've added many more use- and powerful features, such as an enhanced status effects display, storing characters as templates so they can be added into a combat even faster, the ability to add multiple characters (for example minions) at once, a nice new toolbar and logging widget showing the most recent actions done, custom icons and many more things. I've also did tons of work for the infrastructure behind the code. LCM now supports MacOS, Qt6 and a few C++20-based features. Additional CI was also added for all three major platforms. For the future, even more features are planned, such as storing custom status effects. If you want to tryout LCM, check the most recent releases under [1]. If you want to build it yourself, you need Qt6 or Qt5, Catch2 and CMake. On Ubuntu, the following command will install all dependencies at once: sudo apt install qt6-base-dev libqt6svg6 libqt6svg6-dev catch2 uncrustify cmake\n\nThen, follow these steps: 1. Clone the repository [2]. 2. Open a terminal and cd into the repository dir. 3. Hit mkdir build\ncd build\ncmake ..\nmake\n\n[0] https://news.ycombinator.com/item?id=34949396 [1] https://github.com/MaxFleur/LightCombatManager/releases [2] https://github.com/MaxFleur/LightCombatManager",
+    "playUrl": "https://github.com/MaxFleur/LightCombatManager",
+    "author": "bakefish",
+    "expected": "not-game"
+  },
+  {
+    "id": "42607923",
+    "name": "I made an app so that you don't feel nervous at online interview",
+    "description": "The idea is come from https://x.com/JPT_Struggles/status/1869650142456125880 When you open the application, it will add a transparent layer on top of the online interview window, to simulate romance simulation game where the interviewer shows big interest on you, and giving you an offer.",
+    "playUrl": "https://github.com/jwenjian/coverfun",
+    "author": "wenjian",
+    "expected": "review"
+  },
+  {
+    "id": "42647430",
+    "name": "Autonomous AI Agent Societies Game Demo [video]",
+    "description": "Our team has been doing research on making practical use of autonomous AI agents within UGC game platforms. We've done some work on Roblox, and recently built a demo on top of HYTOPIA, which is this video. In the demo we have 3 agents, each able to interact with one another when they come into proximity, have relative awareness of different areas of the world, and can even take directions and interact with players. We'll be shipping this soon as a plugin on top of the HYTOPIA SDK so others can play with quickly creating their own agents in their own HYTOPIA games for fun, research, etc. It's definitely early, but something we're pretty excited about and thought HN would like it too!",
+    "playUrl": "https://www.youtube.com/watch?v=-Eyae2dl0IA",
+    "author": "braydo25",
+    "expected": "review"
+  },
+  {
+    "id": "42717674",
+    "name": "I Put Snake in my Resume [pdf]",
+    "description": "I'm sure you've seen the post about putting Tetris in a PDF (https://news.ycombinator.com/item?id=42645218) and putting DOOM in a PDF (https://news.ycombinator.com/item?id=42678754). Someone suggested using this technique in a resume to potentially demonstrate your engineering skills, and being chronically unemployed, I had the chance to try that out. The vision is that some recruiter out there will take a break from work, enjoy a game of snake, before inevitably pressing reject. Take a look if you like. Like the others, it requires chromium based browsers.",
+    "playUrl": "https://news.ycombinator.com/item?id=42645218)",
+    "author": "swiftc",
+    "expected": "review"
+  },
+  {
+    "id": "42804678",
+    "name": "Qurania, Your Friendly AI Tutor",
+    "description": "Meet Qurania: Your AI-powered buddy for mastering Arabic!  Play engaging games, Chat like a pro, Dive into Quranic stories, and ace interactive quizzes—all at your pace. Say goodbye to boring lessons and hello to fun, personalized learning! We’re thrilled to introduce Qurania, an AI-powered tutor that makes learning Arabic as engaging as it is meaningful! Whether you're a complete beginner or looking to deepen your connection with the Quran, Qurania offers a unique learning experience packed with fun and value. Why Qurania?\nChat & Converse: Practice Arabic with your friendly AI tutor—ask questions, learn phrases, and enjoy interactive conversations.\nDive into Quranic Stories: From Nuh (AS) and the great flood to Musa (AS) and Pharaoh, discover captivating narratives while enriching your vocabulary.\nMaster Core Vocabulary: Learn the 75 most-used words in the Quran, unlocking over 50% of its sacred text.\nAI-Generated Visuals: Stunning illustrations bring Quranic stories to life, making learning vivid and memorable.\nGamified Quizzes & Tools: Reinforce your knowledge with interactive quizzes and spaced repetition that keep you motivated.\nPersonalized Progress: Track your learning journey and stay consistent with reminders tailored just for you. Qurania isn’t just an app—it’s a transformative journey where spiritual enrichment meets effective language learning. Ready to make Arabic simple, engaging, and fun?",
+    "playUrl": "https://play.google.com/store/apps/details?id=com.neuralworks.quran75&hl=en_US",
+    "author": "qurania",
+    "expected": "review"
+  },
+  {
+    "id": "42815673",
+    "name": "Using aerospace projects to teach maths [video]",
+    "description": "Hi, my name is Aditya, and I’m working on teaching math through a mission-based approach. I’ve provided a video link that serves as a trailer for one of my challenges. Here’s how it works: 1. Understand the Challenge: In this mission, the goal is to design a UAV that can fly between mountains to avoid enemy radar. 2. Create Your Solution: Students create a basic design—either on paper or using Blender—while doing calculations. Topics like algebra, geometry, etc., come into play. Once ready, they upload their design. 3. AI Analysis: The AI analyzes the design, runs a simulation, and provides results in the form of expected output and points. The aim is simple: give students a project to work on so they can practice math while also learning about aerospace and science. I’m looking for feedback and beta users to test this approach. Any help or suggestions would be much appreciated! About me: I’ve been working on game-based learning for the past three years. I’ve built a few games to teach topics like trigonometry and algebra, and I’m constantly trying to push the boundaries of how students engage with STEM topics.",
+    "playUrl": "https://www.youtube.com/watch?v=yJ-ovZGp-D0",
+    "author": "firepegasus11",
+    "expected": "review"
+  },
+  {
+    "id": "42818581",
+    "name": "I recovered one of my earliest ZX-Spectrum games from an audio cassette",
+    "description": "Recently, I managed to recover some of my earliest work from the ZX Spectrum era from an old audio cassette. It is a mini-game, that I created as a teen, called \"Atomix,\" written in BASIC with a mix of Z80 assembly — some of which I coded myself, while other parts were disassembled from existing games. I put the game in an modern emulator and recorded a screencast. See the video in my linkedin post: https://www.linkedin.com/feed/update/urn:li:activity:7288665...",
+    "playUrl": "https://linkedin.com/feed/update/urn:li:activity:7288665",
+    "author": "codeguppy",
+    "expected": "review"
+  }
+]

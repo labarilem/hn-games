@@ -41,7 +41,7 @@ async function checkGameUrl(game: Game): Promise<{ isValid: boolean; reason: str
       return { isValid: true, reason: "URL is valid" };
     } else {
       console.log(`  ❌ URL is invalid for ${game.id}: ${game.playUrl}`);
-      return { isValid: false, reason: "URL validation failed" };
+      return { isValid: false, reason: result.reason ?? "URL validation failed" };
     }
   } catch (error) {
     const errorMsg = error instanceof Error ? error.message : "Unknown error";

@@ -23,6 +23,635 @@
     "sourceCodeUrl": null
   },
   {
+    "id": "42855732",
+    "name": "2222",
+    "description": "A 2048-style mobile game where players swipe to match tiles.",
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "releaseDate": "2025-01-28T18:09:07.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "smih",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42855732",
+    "hnPoints": 1,
+    "playUrl": "https://apps.apple.com/us/app/2222-swipe-to-match/id6741000451",
+    "pricing": "free",
+    "imageUrl": "/images/games/42855732.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42840109",
+    "name": "Retro Text Adventure",
+    "description": "A Zork-inspired text adventure that generates a new title, setting, and context on each refresh, with AI-driven storytelling and gameplay.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-27T11:53:34.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "Sai_Praneeth",
+    "genres": [
+      "adventure",
+      "text"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42840109",
+    "hnPoints": 4,
+    "playUrl": "https://piliwtfcobjhsczp.vercel.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42840109.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42837055",
+    "name": "Flagle Explorer",
+    "description": "Identify a region from fragments of its flag in six guesses, using distance and direction clues to narrow down the answer.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-27T03:21:00.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "horushe",
+    "genres": [
+      "puzzle",
+      "educational",
+      "quiz",
+      "geography"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42837055",
+    "hnPoints": 9,
+    "playUrl": "https://flagle.fun/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42837055.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42813239",
+    "name": "Pick-a-Potty",
+    "description": "A multiplayer strategy game based on optimal urinal selection, where players compete while learning about spacing algorithms.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-24T14:18:53.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "abishekvenkat",
+    "genres": [
+      "strategy",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42813239",
+    "hnPoints": 1,
+    "playUrl": "https://pick-a-potty.vercel.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42813239.jpg",
+    "sourceCodeUrl": "https://github.com/abishekvenkat/pick-a-potty"
+  },
+  {
+    "id": "42797295",
+    "name": "ChessTiles",
+    "description": "Clear three layers of tiles by following chess-piece and number-based movement rules. Play unaided or use the built-in solver.",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2025-01-22T20:44:41.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "cheepin",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42797295",
+    "hnPoints": 3,
+    "playUrl": "https://apps.apple.com/us/app/chesstiles/id6737867924",
+    "pricing": "freemium",
+    "imageUrl": "/images/games/42797295.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42783545",
+    "name": "Bearings Only",
+    "description": "A submarine combat simulator with single-player and multiplayer modes.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-21T18:24:10.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "cckolon",
+    "genres": [
+      "strategy",
+      "simulation"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42783545",
+    "hnPoints": 58,
+    "playUrl": "https://bearingsonly.net/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42783545.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42778877",
+    "name": "Fabolem",
+    "description": "Place action tiles to guide rovers through resource gathering, construction, and automation. Optimize routes to make your production system more efficient.",
+    "platforms": [
+      "web",
+      "desktop"
+    ],
+    "releaseDate": "2025-01-21T11:17:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "Eagle64",
+    "genres": [
+      "strategy",
+      "simulation"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42778877",
+    "hnPoints": 2,
+    "playUrl": "https://themarelle.itch.io/fabolem",
+    "pricing": "free",
+    "imageUrl": "/images/games/42778877.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42775436",
+    "name": "Abstractionary",
+    "description": "Help other players guess a word or phrase using only common English words. Uncommon words are replaced with nonsense.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-21T01:41:30.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "franklin_p_dyer",
+    "genres": [
+      "word"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42775436",
+    "hnPoints": 1,
+    "playUrl": "https://abstract.narfnilk.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42775436.jpg",
+    "sourceCodeUrl": "https://github.com/franklindyer/abstractionary"
+  },
+  {
+    "id": "42771258",
+    "name": "Morse Man",
+    "description": "A Hangman variant where players enter letters in Morse code using dots and dashes. It includes a cheatsheet that costs an attempt.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-20T17:57:37.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "abishekvenkat",
+    "genres": [
+      "word",
+      "puzzle",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42771258",
+    "hnPoints": 3,
+    "playUrl": "https://morseman.vercel.app",
+    "pricing": "free",
+    "imageUrl": "/images/games/42771258.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42768171",
+    "name": "Sudoku",
+    "description": "A Sudoku game with puzzles at several difficulty levels and an option to enter your own board.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-20T12:49:46.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "paulmooreparks",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42768171",
+    "hnPoints": 1,
+    "playUrl": "https://parkscomputing.com/page/sudoku",
+    "pricing": "free",
+    "imageUrl": "/images/games/42768171.jpg",
+    "sourceCodeUrl": "https://github.com/parkscomputing/sudoku"
+  },
+  {
+    "id": "42766914",
+    "name": "Typing Granny Footsteps",
+    "description": "Type words to advance while Granny looks away, then stop when she turns around. Reach 100 points within 120 seconds without getting caught.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-20T09:54:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "boros2me",
+    "genres": [
+      "typing"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42766914",
+    "hnPoints": 2,
+    "playUrl": "https://typinggrannyfootsteps.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42766914.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42746084",
+    "name": "Elemendle",
+    "description": "A daily guessing game where clues about an element's properties help you identify the target from the periodic table.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-18T05:23:26.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "lyl_003",
+    "genres": [
+      "puzzle",
+      "educational",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42746084",
+    "hnPoints": 2,
+    "playUrl": "https://elemendle.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42746084.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42744760",
+    "name": "Catch That Pizza!",
+    "description": "Chase a randomly teleporting pizza through a hedge maze, then race to the exit.",
+    "platforms": [
+      "ios"
+    ],
+    "releaseDate": "2025-01-18T00:47:24.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sharieskenas",
+    "genres": [
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42744760",
+    "hnPoints": 1,
+    "playUrl": "https://apps.apple.com/us/app/catch-that-pizza-maze-game/id6739455204",
+    "pricing": "freemium",
+    "imageUrl": "/images/games/42744760.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42737778",
+    "name": "Dark Patterns Detective",
+    "description": "An educational game with 10 interactive scenarios that teach players to recognize dark patterns and explain the psychology behind them.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-17T14:23:56.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "rohandehal",
+    "genres": [
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42737778",
+    "hnPoints": 179,
+    "playUrl": "https://games.productartistry.com/games/dark-patterns",
+    "pricing": "free",
+    "imageUrl": "/images/games/42737778.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42733905",
+    "name": "Manual Brick Breaker",
+    "description": "Play brick breaker by moving your hand in front of a webcam. The levels get harder with faster play and a smaller paddle.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-17T03:56:40.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "getToTheChopin",
+    "genres": [
+      "action",
+      "arcade"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42733905",
+    "hnPoints": 22,
+    "playUrl": "https://collidingscopes.github.io/manual-brick-breaker/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42733905.jpg",
+    "sourceCodeUrl": "https://github.com/collidingScopes/manual-brick-breaker"
+  },
+  {
+    "id": "42725132",
+    "name": "Triplit",
+    "description": "A daily word game mixing crossword-style clues, word building, and Wordle-like feedback. Clues appear in random order, with multiple difficulty levels.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-16T13:56:30.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "glezer",
+    "genres": [
+      "word",
+      "puzzle",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42725132",
+    "hnPoints": 6,
+    "playUrl": "https://triplit.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/42725132.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42723443",
+    "name": "WasmBots",
+    "description": "Program WebAssembly bots to explore procedurally generated dungeons, map their surroundings, and plan around monsters and other players.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-16T10:03:29.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "sjml",
+    "genres": [
+      "coding",
+      "strategy"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42723443",
+    "hnPoints": 5,
+    "playUrl": "https://shaneliesegang.com/projects/wasmbots/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42723443.jpg",
+    "sourceCodeUrl": "https://github.com/sjml/wasmbots"
+  },
+  {
+    "id": "42722148",
+    "name": "Multiplayer Wordle",
+    "description": "A Wordle-style game for one to four players, with multiplayer and solo modes, category clues, and word lengths of up to eight letters.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-16T06:48:37.000Z",
+    "playerModes": [
+      "single",
+      "multi"
+    ],
+    "author": "mrsmee89",
+    "genres": [
+      "word",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42722148",
+    "hnPoints": 1,
+    "playUrl": "https://guesstheword-eoj0.onrender.com/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42722148.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42711248",
+    "name": "Mongo Murder Mystery",
+    "description": "Solve a murder mystery by practicing MongoDB queries in an interactive case, with an optional walkthrough.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-15T14:39:06.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "diana-e",
+    "genres": [
+      "puzzle",
+      "coding",
+      "educational"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42711248",
+    "hnPoints": 6,
+    "playUrl": "https://mongomurdermystery.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/42711248.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42692963",
+    "name": "Idle Cosmos",
+    "description": "Build production chains, trade goods, and expand your business in a multiplayer space economy. Your facilities keep producing while you are offline.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-14T02:58:04.000Z",
+    "playerModes": [
+      "multi"
+    ],
+    "author": "max0563",
+    "genres": [
+      "strategy",
+      "simulation",
+      "mmo",
+      "idle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42692963",
+    "hnPoints": 1,
+    "playUrl": "https://idlecosmos.com",
+    "pricing": "free",
+    "imageUrl": "/images/games/42692963.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42674104",
+    "name": "Svelte Space",
+    "description": "Defend your base by clicking enemies and building and upgrading towers. Spend resources carefully to survive each wave.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-12T15:11:30.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "baterson",
+    "genres": [
+      "strategy",
+      "tower_defense"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42674104",
+    "hnPoints": 13,
+    "playUrl": "https://svelte-tower-defence.vercel.app/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42674104.jpg",
+    "sourceCodeUrl": "https://github.com/baterson/svelte-tower-defence"
+  },
+  {
+    "id": "42645218",
+    "name": "PDFTris",
+    "description": "Play Tetris inside a PDF, using a text input field for keyboard controls. Requires a compatible desktop browser PDF viewer.",
+    "platforms": [
+      "web",
+      "desktop"
+    ],
+    "releaseDate": "2025-01-09T13:31:33.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "ThomasRinsma",
+    "genres": [
+      "puzzle",
+      "arcade"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42645218",
+    "hnPoints": 1289,
+    "playUrl": "https://th0mas.nl/downloads/pdftris.pdf",
+    "pricing": "free",
+    "imageUrl": "/images/games/42645218.jpg",
+    "sourceCodeUrl": "https://github.com/ThomasRinsma/pdftris/blob/main/gengrid.py"
+  },
+  {
+    "id": "42620115",
+    "name": "24 Bits a Day",
+    "description": "Work out how much a changing binary number increases in decimal. You have three attempts before the counter runs out.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-07T07:10:15.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "xerox13ster",
+    "genres": [
+      "puzzle",
+      "educational",
+      "math"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42620115",
+    "hnPoints": 5,
+    "playUrl": "https://24bitsa.day",
+    "pricing": "free",
+    "imageUrl": "/images/games/42620115.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42599818",
+    "name": "Infinite Adventure Simulator",
+    "description": "An Android RPG that combines AI-driven storytelling with role-playing mechanics for a tabletop-style adventure.",
+    "platforms": [
+      "android"
+    ],
+    "releaseDate": "2025-01-05T04:40:07.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "IndeterminateR",
+    "genres": [
+      "adventure",
+      "rpg"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42599818",
+    "hnPoints": 1,
+    "playUrl": "https://play.google.com/store/apps/details?id=com.ArcticSkyGames.ChooseYourAIAdventure&hl=en_US",
+    "pricing": "freemium",
+    "imageUrl": "/images/games/42599818.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42585831",
+    "name": "Knotilus",
+    "description": "A daily number puzzle: find three Fibonacci-like sequences that share exactly one number, called the knot. Adjust the difficulty and use optional visual hints.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-03T14:17:31.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "mdduar",
+    "genres": [
+      "puzzle",
+      "math",
+      "daily"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42585831",
+    "hnPoints": 3,
+    "playUrl": "https://knotil.us/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42585831.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42578312",
+    "name": "Confidence Calibration",
+    "description": "A customizable trivia game for practicing confidence calibration, with finer-grained feedback than standard trivia.",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-02T20:12:39.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "norxornor",
+    "genres": [
+      "educational",
+      "quiz"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42578312",
+    "hnPoints": 2,
+    "playUrl": "https://confidence-calibration.pages.dev/",
+    "pricing": "free",
+    "imageUrl": "/images/games/42578312.jpg",
+    "sourceCodeUrl": null
+  },
+  {
+    "id": "42572654",
+    "name": "Cohesion",
+    "description": "Create and play custom connection games",
+    "platforms": [
+      "web"
+    ],
+    "releaseDate": "2025-01-02T08:05:49.000Z",
+    "playerModes": [
+      "single"
+    ],
+    "author": "tejasbhovad",
+    "genres": [
+      "word",
+      "puzzle"
+    ],
+    "hnUrl": "https://news.ycombinator.com/item?id=42572654",
+    "hnPoints": 1,
+    "playUrl": "https://cohesion-game.vercel.app",
+    "pricing": "free",
+    "imageUrl": "/images/games/42572654.jpg",
+    "sourceCodeUrl": null
+  },
+  {
     "id": "42560933",
     "name": "Connect Dots",
     "description": "Connect dots without crossing any lines in minimalist spatial puzzles",
