@@ -1,186 +1,129 @@
-#!/usr/bin/env tsx
+﻿#!/usr/bin/env tsx
 
 import * as fs from "fs";
 import * as path from "path";
-import { isValidGameUrl } from "./lib/url";
-
-/**
- * Script to check playUrls of games in archive.json and move invalid ones to rip.json
- */
+import { checkGameUrlForRemoval } from "./lib/url";
 
 const ARCHIVE_FILE_PATH = path.join(__dirname, "data", "archive.json");
 const RIP_FILE_PATH = path.join(__dirname, "data", "rip.json");
-const NUM_BATCHES = 5;
 const DELAY_MS = 500;
-const DRY_RUN =
-  process.env.DRY_RUN === "1" || process.argv.includes("--dry-run");
 
 interface Game {
   id: string;
   name: string;
   playUrl: string;
-  [key: string]: any;
+  releaseDate: string;
+  [key: string]: unknown;
 }
 
-// Sleep utility function
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Check if a game's URL is valid
-async function checkGameUrl(game: Game): Promise<{ isValid: boolean; reason: string }> {
-  if (!game.playUrl) {
-    return { isValid: true, reason: "No URL to check" }; // Skip games without URLs
-  }
-
-  console.log(`  🔗 Checking URL for ${game.id} (${game.name}): ${game.playUrl}`);
-
-  try {
-    const result = await isValidGameUrl(game.playUrl);
-    
-    if (result.isValid) {
-      console.log(`  ✅ URL is valid for ${game.id}`);
-      return { isValid: true, reason: "URL is valid" };
-    } else {
-      console.log(`  ❌ URL is invalid for ${game.id}: ${game.playUrl}`);
-      return { isValid: false, reason: result.reason ?? "URL validation failed" };
-    }
-  } catch (error) {
-    const errorMsg = error instanceof Error ? error.message : "Unknown error";
-    console.log(`  ❌ Error checking URL for ${game.id}: ${errorMsg}`);
-    return { isValid: false, reason: `Error: ${errorMsg}` };
-  }
-}
-
-// Process a batch of games
-async function processBatch(games: Game[], batchIndex: number): Promise<Game[]> {
-  console.log(
-    `\n🔄 Processing batch ${batchIndex + 1} (${games.length} games)`
-  );
-
-  const invalidGames: Game[] = [];
-
-  for (let i = 0; i < games.length; i++) {
-    const game = games[i];
-
-    const { isValid, reason } = await checkGameUrl(game);
-    
-    if (!isValid && game.playUrl) {
-      console.log(`  💀 Game ${game.id} will be moved to RIP: ${reason}`);
-      invalidGames.push(game);
-    }
-
-    // Wait between requests (except for the last item)
-    if (i < games.length - 1) {
-      await sleep(DELAY_MS);
-    }
-  }
-
-  console.log(`  📊 Batch ${batchIndex + 1} complete: ${invalidGames.length} invalid URLs found`);
-  return invalidGames;
-}
-
-// Split array into chunks
-function chunkArray<T>(array: T[], size: number): T[][] {
-  const chunks: T[][] = [];
-  for (let i = 0; i < array.length; i += size) {
-    chunks.push(array.slice(i, i + size));
-  }
-  return chunks;
-}
-
 async function checkGameLinks() {
-  try {
-    console.log("🔍 Starting game URL validation...");
-
-    // Read archive.json
-    console.log("📖 Reading archive.json...");
-    const archiveContent = fs.readFileSync(ARCHIVE_FILE_PATH, "utf8");
-    const archiveGames: Game[] = JSON.parse(archiveContent);
-
-    // Read rip.json
-    console.log("📖 Reading rip.json...");
-    const ripContent = fs.readFileSync(RIP_FILE_PATH, "utf8");
-    const ripGames: Game[] = JSON.parse(ripContent);
-
-    // Filter games that have playUrls to check
-    const gamesWithUrls = archiveGames.filter(game => game.playUrl && game.playUrl.trim() !== "");
-
-    console.log(`🎮 Found ${gamesWithUrls.length} games with URLs to check out of ${archiveGames.length} total games`);
-
-    if (gamesWithUrls.length === 0) {
-      console.log("ℹ️  No games with URLs found to check. Exiting.");
-      return;
-    }
-
-    // Split games into batches
-    const batchSize = Math.ceil(gamesWithUrls.length / NUM_BATCHES);
-    const batches = chunkArray(gamesWithUrls, batchSize);
-
-    console.log(
-      `\n📦 Split ${gamesWithUrls.length} games into ${batches.length} batches (≈${batchSize} games per batch)`
-    );
-
-    // Process batches sequentially to avoid rate-limiting store and CDN hosts
-    console.log("\n🚀 Starting batch processing...");
-    const allInvalidGames: Game[] = [];
-
-    for (let index = 0; index < batches.length; index++) {
-      const invalidGames = await processBatch(batches[index], index);
-      allInvalidGames.push(...invalidGames);
-    }
-
-    console.log(`\n📊 URL checking complete:`);
-    console.log(`  ❌ Invalid URLs found: ${allInvalidGames.length}`);
-    console.log(`  ✅ Games checked: ${gamesWithUrls.length}`);
-
-    // Move invalid games from archive to rip
-    if (allInvalidGames.length > 0) {
-      if (DRY_RUN) {
-        console.log(
-          `\n🧪 Dry run: would move ${allInvalidGames.length} games from archive to RIP`
-        );
-      } else {
-        console.log(`\n🔄 Moving ${allInvalidGames.length} games from archive to RIP...`);
-
-        // Remove invalid games from archive
-        const invalidGameIds = new Set(allInvalidGames.map(g => g.id));
-        const updatedArchiveGames = archiveGames.filter(game => !invalidGameIds.has(game.id)).sort(
-          (a, b) =>
-            new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
-        );
-
-        // Add invalid games to RIP
-        const updatedRipGames = [...ripGames, ...allInvalidGames].sort(
-          (a, b) =>
-            new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime()
-        );
-
-        // Write updated files
-        console.log("💾 Updating archive.json...");
-        const updatedArchiveContent = JSON.stringify(updatedArchiveGames, null, 2);
-        fs.writeFileSync(ARCHIVE_FILE_PATH, updatedArchiveContent, "utf8");
-        console.log(`✅ archive.json updated (${updatedArchiveGames.length} games remaining)`);
-
-        console.log("💾 Updating rip.json...");
-        const updatedRipContent = JSON.stringify(updatedRipGames, null, 2);
-        fs.writeFileSync(RIP_FILE_PATH, updatedRipContent, "utf8");
-        console.log(`✅ rip.json updated (${updatedRipGames.length} total games)`);
-
-        console.log("\n🎉 Successfully moved games with invalid URLs to RIP");
-      }
-
-      // Log moved games
-      console.log("\n📋 Games moved to RIP:");
-      allInvalidGames.forEach(game => {
-        console.log(`  - ${game.id}: ${game.name} (${game.playUrl})`);
-      });
-    } else {
-      console.log("\n✅ All checked URLs are valid - no games moved to RIP");
-    }
-  } catch (error) {
-    console.error("❌ Error checking game links:", error);
-    process.exit(1);
+  let dryRun = process.env.DRY_RUN === "1";
+  const ids = new Set<string>();
+  const args = process.argv.slice(2);
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === "--dry-run") dryRun = true;
+    else if (args[i] === "--id") {
+      const value = args[++i];
+      if (!value || !/^\d+(?:,\d+)*$/.test(value))
+        throw new Error("--id requires a game ID or comma-separated IDs");
+      value.split(",").forEach((id) => ids.add(id));
+    } else throw new Error(`Unknown option: ${args[i]}`);
   }
+
+  const archiveGames: Game[] = JSON.parse(
+    fs.readFileSync(ARCHIVE_FILE_PATH, "utf8"),
+  );
+  const ripGames: Game[] = JSON.parse(fs.readFileSync(RIP_FILE_PATH, "utf8"));
+  if (!Array.isArray(archiveGames) || !Array.isArray(ripGames))
+    throw new Error("Expected archive.json and rip.json to contain arrays");
+  const missingIds = Array.from(ids).filter(
+    (id) => !archiveGames.some((game) => game.id === id),
+  );
+  if (missingIds.length)
+    throw new Error(`IDs not found in archive: ${missingIds.join(", ")}`);
+
+  const games = archiveGames.filter(
+    (game) =>
+      typeof game.playUrl === "string" &&
+      game.playUrl.trim() &&
+      (!ids.size || ids.has(game.id)),
+  );
+  console.log(`Checking ${games.length} games${dryRun ? " (dry run)" : ""}...`);
+  const dead: Game[] = [];
+  const unknown: { game: Game; reason: string }[] = [];
+  let alive = 0;
+
+  // Sequential checks avoid flooding shared store/CDN hosts. The validator
+  // retries temporary failures and confirms explicit dead responses twice.
+  for (let index = 0; index < games.length; index++) {
+    const game = games[index];
+    console.log(
+      `[${index + 1}/${games.length}] ${game.id} (${game.name}): ${game.playUrl}`,
+    );
+    const result = await checkGameUrlForRemoval(game.playUrl);
+    if (result.status === "dead") {
+      dead.push(game);
+      console.log(`  DEAD: ${result.reason}`);
+    } else if (result.status === "unknown") {
+      const reason =
+        result.reason ?? "Could not establish whether this game is available";
+      unknown.push({ game, reason });
+      console.log(`  INCONCLUSIVE, keeping in archive: ${reason}`);
+    } else {
+      alive++;
+      console.log("  ALIVE");
+    }
+    if (index < games.length - 1) await sleep(DELAY_MS);
+  }
+
+  console.log(
+    `\nResults: ${alive} alive, ${dead.length} confirmed dead, ${unknown.length} inconclusive.`,
+  );
+  if (unknown.length) {
+    console.log("\nKept in archive; review or retry these links:");
+    unknown.forEach(({ game, reason }) =>
+      console.log(`  ${game.id}: ${game.name} - ${reason}`),
+    );
+  }
+  if (!dead.length) {
+    console.log("No games moved to RIP.");
+    return;
+  }
+
+  console.log(`\nGames ${dryRun ? "that would move" : "to move"} to RIP:`);
+  dead.forEach((game) =>
+    console.log(`  ${game.id}: ${game.name} (${game.playUrl})`),
+  );
+  if (dryRun) return;
+
+  const deadIds = new Set(dead.map((game) => game.id));
+  const sortByDate = (a: Game, b: Game) =>
+    new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime();
+  const updatedArchive = archiveGames
+    .filter((game) => !deadIds.has(game.id))
+    .sort(sortByDate);
+  const ripIds = new Set(ripGames.map((game) => game.id));
+  const updatedRip = [
+    ...ripGames,
+    ...dead.filter((game) => !ripIds.has(game.id)),
+  ].sort(sortByDate);
+
+  // Save the destination first so a failed second write cannot lose a game.
+  // De-duplication above makes a retry safe if only the first write succeeds.
+  fs.writeFileSync(RIP_FILE_PATH, JSON.stringify(updatedRip, null, 2), "utf8");
+  fs.writeFileSync(
+    ARCHIVE_FILE_PATH,
+    JSON.stringify(updatedArchive, null, 2),
+    "utf8",
+  );
+  console.log(
+    `Moved ${dead.length} confirmed dead games to RIP. Run npm run compile to update site data.`,
+  );
 }
 
-// Run the script
-checkGameLinks();
+checkGameLinks().catch((error) => {
+  console.error("Error checking game links:", error);
+  process.exitCode = 1;
+});

@@ -133,15 +133,21 @@ Check all links:
 npm run check-links
 ```
 
-games with invalid links will be moved to RIP games.
+Only games with explicit dead-page responses on two checks are moved to RIP.
+These include HTTP 404/410, clear page-not-found titles, and recognized parked pages.
 
 Use `npm run check-links -- --dry-run` to preview the results. Scraping and
 link checking share a validator that follows HTTP redirects, HTML meta refresh,
-HTTP Refresh headers, and simple literal JavaScript redirects. Redirect loops,
-unreachable destinations, certificate errors, parked pages, and clear
-page-not-found titles are rejected. Bot-blocked or rate-limited responses
-(401, 403, 429) remain inconclusive and are kept. Dynamic JavaScript redirects
-and game functionality are not evaluated by this HTTP check.
+HTTP Refresh headers (including empty redirect pages), and simple literal
+JavaScript redirects. Temporary server/network failures are retried. Timeouts,
+DNS failures, certificate errors, redirect loops, empty pages, and blocked or
+rate-limited responses remain **inconclusive** and are kept in the archive for
+review. Recognized bot challenge pages are also inconclusive, even with HTTP 200.
+The summary separates alive, confirmed dead, and inconclusive results.
+Dynamic JavaScript redirects and game functionality are not evaluated by this
+HTTP check; an alive result means the page was reachable, not that gameplay works.
+
+Check specific archived games with `npm run check-links -- --dry-run --id 123,456`.
 
 Screenshot capture uses the same parked/error-page checks after rendering.
 Run `npm run test:links` for the local link-validation regression tests.

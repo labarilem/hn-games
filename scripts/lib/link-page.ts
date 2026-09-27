@@ -88,18 +88,47 @@ export function getGamePageRedirect(
 export function getGamePageError(html: string): string | undefined {
   const markup = html
     .replace(/<!--[\s\S]*?-->/g, "")
-    .replace(/<(script|style|template)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, "");
-  if (/porkbun marketplace/i.test(stripHtml(markup).result))
-    return "parked domain";
+    .replace(
+      /<(script|style|template|textarea|noscript)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,
+      "",
+    );
   const title = stripHtml(
     markup.match(/<title\b[^>]*>([\s\S]*?)<\/title\s*>/i)?.[1] ?? "",
-  ).result;
+  ).result.trim();
+  const headings = Array.from(
+    markup.matchAll(/<h[12]\b[^>]*>([\s\S]*?)<\/h[12]\s*>/gi),
+    (match) => stripHtml(match[1]).result.trim(),
+  );
+  // A game's credits or blog can mention a registrar without being a parked page.
+  if ([title, ...headings].some((text) => /^porkbun marketplace$/i.test(text)))
+    return "parked domain";
   if (
     /^(?:404\s*[-:|]\s*)?(?:page not found|site not found|404 not found)(?:\s*[-|\u00b7]\s*(?:github pages|netlify|vercel))?$/i.test(
       title,
     )
   ) {
     return "page-not-found response (HTTP success status)";
+  }
+  return undefined;
+}
+
+/** A challenge page proves neither that the game works nor that it is gone. */
+export function getGamePageBlockReason(html: string): string | undefined {
+  const markup = html
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(
+      /<(script|style|template|textarea|noscript)\b[^>]*>[\s\S]*?<\/\1\s*>/gi,
+      "",
+    );
+  const title = stripHtml(
+    markup.match(/<title\b[^>]*>([\s\S]*?)<\/title\s*>/i)?.[1] ?? "",
+  ).result.trim();
+  if (
+    /^(?:just a moment\.{0,3}|attention required!?\s*[|–-]\s*cloudflare|verify (?:you are|you're) human|vercel security checkpoint)$/i.test(
+      title,
+    )
+  ) {
+    return "Bot challenge";
   }
   return undefined;
 }

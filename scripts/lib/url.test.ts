@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { createServer } from "node:http";
 import { test } from "node:test";
 import axios from "axios";
-import { isValidGameUrl } from "./url";
+import { checkGameUrlForRemoval, isValidGameUrl } from "./url";
 
 test("validates redirect destinations and page content with a local HTTP server", async (t) => {
   const requested: string[] = [];
@@ -26,7 +26,7 @@ test("validates redirect destinations and page content with a local HTTP server"
       );
     if (route === "/header") {
       response.setHeader("Refresh", "0; url=/gone");
-      return void response.end("Redirecting");
+      return void response.end();
     }
     if (route === "/binary") {
       response.setHeader("Content-Type", "application/pdf");
@@ -58,6 +58,10 @@ test("validates redirect destinations and page content with a local HTTP server"
         '<title>Game</title><!-- <meta http-equiv="refresh" content="0;url=/gone"> -->',
       "/mentions-404":
         '<title>Error 404 Game</title><p>Page not found is a puzzle clue.</p><script>const message = "Porkbun Marketplace";</script>',
+      "/mentions-registrar":
+        "<title>My game</title><p>Thanks to Porkbun Marketplace for the domain.</p>",
+      "/inert-error":
+        "<title>My game</title><textarea><title>Page not found</title><h1>Porkbun Marketplace</h1></textarea>",
       "/soft404":
         "<title>Site not found &middot; GitHub Pages</title><h1>404</h1>",
       "/parked": "<title>Domain</title><h1>Porkbun Marketplace</h1>",
@@ -103,6 +107,8 @@ test("validates redirect destinations and page content with a local HTTP server"
       "/template",
       "/comment",
       "/mentions-404",
+      "/mentions-registrar",
+      "/inert-error",
       "/fragment",
       "/binary",
       "/blocked",
@@ -145,5 +151,119 @@ test("certificate hostname errors are not treated as successful game pages", asy
   });
   const result = await isValidGameUrl("https://game.example/");
   assert.equal(result.isValid, false);
+  assert.equal(result.status, "unknown");
   assert.match(result.reason!, /altnames/);
+});
+
+test("keeps uncertain HTTP responses out of RIP and retries temporary failures", async (t) => {
+  for (const status of [
+    204, 302, 400, 401, 403, 408, 425, 429, 451, 500, 502, 503, 504, 521,
+  ]) {
+    await t.test(`HTTP ${status}`, async (t) => {
+      const request = t.mock.method(axios, "get", async () => ({
+        status,
+        data: status === 204 ? "" : "Unavailable",
+        headers: { "content-type": "text/html" },
+      }));
+      const result = await checkGameUrlForRemoval("https://game.example/", {
+        retryDelayMs: 0,
+      });
+      assert.equal(result.status, "unknown");
+      const retried = status >= 500 || status === 408 || status === 425;
+      assert.equal(request.mock.callCount(), retried ? 3 : 1);
+    });
+  }
+});
+
+test("network and TLS failures are inconclusive, never evidence for RIP", async (t) => {
+  for (const code of [
+    "ENOTFOUND",
+    "EAI_AGAIN",
+    "ECONNRESET",
+    "ETIMEDOUT",
+    "ECONNREFUSED",
+    "CERT_HAS_EXPIRED",
+    "ERR_CERT_AUTHORITY_INVALID",
+  ]) {
+    await t.test(code, async (t) => {
+      t.mock.method(axios, "get", async () => {
+        throw Object.assign(new Error("Request failed"), { code });
+      });
+      const result = await checkGameUrlForRemoval("https://game.example/", {
+        retryDelayMs: 0,
+      });
+      assert.equal(result.status, "unknown");
+      assert.match(result.reason!, new RegExp(code));
+    });
+  }
+});
+
+test("confirms dead pages twice and keeps games that recover or become inconclusive", async (t) => {
+  for (const [statuses, expected] of [
+    [[404, 404], "dead"],
+    [[410, 410], "dead"],
+    [[404, 200], "alive"],
+    [[404, 403], "unknown"],
+    [[404, 429], "unknown"],
+    [[404, 503, 503, 503], "unknown"],
+    [[500, 200], "alive"],
+  ] as const) {
+    await t.test(statuses.join(" -> "), async (t) => {
+      let index = 0;
+      const request = t.mock.method(axios, "get", async () => ({
+        status: statuses[index++],
+        data: "<title>Game</title><canvas></canvas>",
+        headers: { "content-type": "text/html" },
+      }));
+      const result = await checkGameUrlForRemoval("https://game.example/", {
+        retryDelayMs: 0,
+      });
+      assert.equal(result.status, expected);
+      assert.equal(request.mock.callCount(), statuses.length);
+    });
+  }
+});
+
+test("recognizes bot challenges even with success or not-found HTTP status", async (t) => {
+  for (const fixture of [
+    { status: 200, data: "<title>Just a moment...</title>", headers: {} },
+    {
+      status: 404,
+      data: "<title>Page not found</title>",
+      headers: { "cf-mitigated": "challenge" },
+    },
+    {
+      status: 200,
+      data: "<title>Vercel Security Checkpoint</title>",
+      headers: {},
+    },
+  ]) {
+    await t.test(fixture.data + fixture.status, async (t) => {
+      t.mock.method(axios, "get", async () => ({
+        ...fixture,
+        headers: { "content-type": "text/html", ...fixture.headers },
+      }));
+      const result = await checkGameUrlForRemoval("https://game.example/", {
+        retryDelayMs: 0,
+      });
+      assert.equal(result.status, "unknown");
+      assert.equal(result.reason, "Bot challenge");
+    });
+  }
+});
+
+test("tries HTTPS when an old HTTP URL has a connection failure", async (t) => {
+  const request = t.mock.method(axios, "get", async (url: string) => {
+    if (url.startsWith("http:")) throw new Error("ECONNREFUSED");
+    return {
+      status: 200,
+      data: "<title>Game</title>",
+      headers: { "content-type": "text/html" },
+    };
+  });
+  const result = await checkGameUrlForRemoval("http://game.example/", {
+    retryDelayMs: 0,
+  });
+  assert.equal(result.status, "alive");
+  assert.equal(request.mock.callCount(), 4);
 });
