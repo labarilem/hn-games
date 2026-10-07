@@ -38972,5 +38972,5 @@ pricing: Pricing.FREE,
 releaseDate: new Date("2010-05-19T00:40:36.000Z"),
 isActive: true,
 sourceCodeUrl: null,}
-    ];
+    ] as unknown as Game[];
     

@@ -80,7 +80,7 @@ function generateTypeScriptFile(games: ToStrings<Game>[]): string {
     
     export const games: Game[] = [
         {${serializedGames}}
-    ];
+    ] as unknown as Game[];
     `;
 }
 
