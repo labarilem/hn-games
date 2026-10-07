@@ -43,7 +43,7 @@ function getSourceCodeUrl(item: any, playUrl: string, responseText: string) {
     const isOs = indicators.some((indicator) =>
       lowerStoryText.includes(indicator),
     );
-    if (isOs) return true;
+    if (isOs) return null;
   }
 
   // check response text
@@ -62,7 +62,7 @@ function getSourceCodeUrl(item: any, playUrl: string, responseText: string) {
       !negativeIndicators.some((indicator) =>
         lowerResponseText.includes(indicator),
       );
-    if (isOs) return true;
+    if (isOs) return null;
   }
 
   return sourceCodeUrl;
@@ -94,21 +94,35 @@ async function scrapeInTimeRange() {
 
     // Fetch data from Algolia Hacker News API
     // docs https://hn.algolia.com/api#:~:text=%7D-,Search,-Sorted%20by%20relevance
-    const { data } = await axios.get(
-      `https://hn.algolia.com/api/v1/search_by_date`,
-      {
+    const endpoint = `https://hn.algolia.com/api/v1/search_by_date`;
+    const fetchRange = async (
+      rangeFrom: number,
+      rangeTo: number,
+    ): Promise<any[]> => {
+      const { data } = await axios.get(endpoint, {
         params: {
           query: "game",
           tags: "show_hn",
           page: 0,
-          hitsPerPage: 1000, // max page size
-          numericFilters: `created_at_i>${from},created_at_i<${to}`,
-          // created_at_i>X
-          // created_at_i>X,created_at_i<Y
+          hitsPerPage: 1000,
+          numericFilters: `created_at_i>${rangeFrom},created_at_i<${rangeTo}`,
         },
-      },
+      });
+      if (data.nbHits <= data.hits.length || rangeTo - rangeFrom <= 1)
+        return data.hits;
+      const midpoint = Math.floor((rangeFrom + rangeTo) / 2);
+      const [older, newer] = await Promise.all([
+        fetchRange(rangeFrom, midpoint),
+        fetchRange(midpoint, rangeTo),
+      ]);
+      return [...older, ...newer];
+    };
+    const hits = await fetchRange(from, to);
+    const uniqueHits = Array.from(
+      new Map(hits.map((hit) => [String(hit.objectID), hit])).values(),
     );
-    await scrapeGames(data.hits);
+    console.log(`Fetched ${uniqueHits.length} unique Show HN stories.`);
+    await scrapeGames(uniqueHits);
   } catch (error) {
     console.error("Error scraping games: ", error);
     process.exitCode = 1;
@@ -156,6 +170,7 @@ async function scrapeGames(apiItems: any[]) {
     }),
     rejectionReason: "",
   }));
+  const needsUrlValidation: { itemValidation: any; index: number }[] = [];
   for (let i = 0; i < itemsValidations.length; i++) {
     const itemValidation = itemsValidations[i];
 
@@ -182,25 +197,54 @@ async function scrapeGames(apiItems: any[]) {
       continue;
     }
 
-    // validate urls
-    let hasValidUrl = false;
-    // item is considered valid if at least one URL is valid
-    for (const urlInDesc of itemValidation.item.candidateGameUrls) {
-      console.log("Validating " + i + "/" + itemsValidations.length, urlInDesc);
-      // filter out items with invalid URLs
-      const urlValidation = await isValidGameUrl(urlInDesc);
-      if (urlValidation.isValid) {
-        hasValidUrl = true;
-        itemValidation.validUrl = urlInDesc;
-        itemValidation.responseText = urlValidation.responseText;
-        break;
-      }
-      await new Promise((resolve) => setTimeout(resolve, 200));
-    }
-    itemValidation.isValid = hasValidUrl;
-    if (!hasValidUrl)
-      itemValidation.rejectionReason =
-        "No reachable game or source link (discussion and video links are excluded)";
+    needsUrlValidation.push({ itemValidation, index: i });
+  }
+
+  // URL checks are independent after duplicate/non-game screening. Cache
+  // repeated links and keep a bounded concurrency so a large catch-up does
+  // not overwhelm hosts.
+  const URL_CONCURRENCY = 32;
+  const urlValidationCache = new Map<
+    string,
+    ReturnType<typeof isValidGameUrl>
+  >();
+  for (
+    let offset = 0;
+    offset < needsUrlValidation.length;
+    offset += URL_CONCURRENCY
+  ) {
+    const batch = needsUrlValidation.slice(offset, offset + URL_CONCURRENCY);
+    await Promise.all(
+      batch.map(async ({ itemValidation, index }) => {
+        let hasValidUrl = false;
+        for (const urlInDesc of itemValidation.item.candidateGameUrls) {
+          console.log(
+            "Validating " + index + "/" + itemsValidations.length,
+            urlInDesc,
+          );
+          let validation = urlValidationCache.get(urlInDesc);
+          if (!validation) {
+            validation = isValidGameUrl(urlInDesc, {
+              requestTimeoutMs: 8000,
+              retryDelayMs: 200,
+            });
+            urlValidationCache.set(urlInDesc, validation);
+          }
+          const urlValidation = await validation;
+          if (urlValidation.isValid) {
+            hasValidUrl = true;
+            itemValidation.validUrl = urlInDesc;
+            itemValidation.responseText = urlValidation.responseText;
+            break;
+          }
+          await new Promise((resolve) => setTimeout(resolve, 200));
+        }
+        itemValidation.isValid = hasValidUrl;
+        if (!hasValidUrl)
+          itemValidation.rejectionReason =
+            "No reachable game or source link (discussion and video links are excluded)";
+      }),
+    );
   }
 
   //  transform into Game entities

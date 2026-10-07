@@ -29,7 +29,8 @@ async function main() {
     }
   }
 
-  const data: unknown = JSON.parse(await fs.readFile(inputPath, "utf8"));
+  const json = (await fs.readFile(inputPath, "utf8")).replace(/^\uFEFF/, "");
+  const data: unknown = JSON.parse(json);
   if (!Array.isArray(data)) throw new Error("Expected a JSON array of games");
   const games = data
     .map((game) => {

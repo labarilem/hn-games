@@ -38,6 +38,8 @@ const TRANSIENT_ERROR_PATTERNS = [
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+type CheckOptions = { retryDelayMs?: number; requestTimeoutMs?: number };
+
 function getErrorMessage(error: unknown): string {
   if (error && typeof error === "object" && "message" in error) {
     const code = "code" in error ? String(error.code) : "";
@@ -102,6 +104,7 @@ async function requestUrl(
   url: string,
   visited = new Set<string>(),
   pageRedirects = 0,
+  options: CheckOptions = {},
 ): Promise<RequestResult> {
   try {
     const parsed = new URL(url);
@@ -114,7 +117,7 @@ async function requestUrl(
 
     const res = await axios.get(url, {
       headers: BROWSER_HEADERS,
-      timeout: REQUEST_TIMEOUT_MS,
+      timeout: options.requestTimeoutMs ?? REQUEST_TIMEOUT_MS,
       maxRedirects: 5,
       responseType: "text",
       // Bound unexpectedly large downloads instead of buffering them indefinitely.
@@ -188,7 +191,7 @@ async function requestUrl(
         throw new Error("Too many page redirects");
       // A fragment-only redirect stays on the same document (e.g. SPA routing).
       if (normalizeUrl(redirect) !== normalizeUrl(responseUrl)) {
-        return await requestUrl(redirect, visited, pageRedirects + 1);
+        return await requestUrl(redirect, visited, pageRedirects + 1, options);
       }
       if (new URL(redirect).hash === new URL(responseUrl).hash)
         throw new Error("Redirect loop");
@@ -237,8 +240,6 @@ export type GameUrlResult = {
   reason?: string;
 };
 
-type CheckOptions = { retryDelayMs?: number };
-
 export async function isValidGameUrl(
   url: string,
   options: CheckOptions = {},
@@ -256,7 +257,7 @@ export async function isValidGameUrl(
 
   for (const variant of variants) {
     for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
-      const result = await requestUrl(variant);
+      const result = await requestUrl(variant, new Set<string>(), 0, options);
 
       if (result.ok) {
         return {
