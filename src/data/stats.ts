@@ -5,4 +5,4 @@ import { games as ripGames } from "./ripGames";
 export const totalGamesCount = games.length;
 export const totalRipGamesCount = ripGames.length;
     
-export const gamesCountByYear = {"2010":2,"2011":5,"2012":11,"2013":9,"2014":33,"2015":23,"2016":16,"2017":26,"2018":34,"2019":34,"2020":43,"2021":49,"2022":95,"2023":120,"2024":166,"2025":466,"2026":1460};
+export const gamesCountByYear = {"2010":2,"2011":4,"2012":10,"2013":8,"2014":32,"2015":23,"2016":16,"2017":26,"2018":32,"2019":34,"2020":40,"2021":43,"2022":91,"2023":117,"2024":159,"2025":265,"2026":880};
