@@ -20,9 +20,11 @@ export default function GenreMultiSelect({
   className = "",
 }: GenreMultiSelectProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [query, setQuery] = useState("");
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const listboxId = useId();
+  const searchRef = useRef<HTMLInputElement>(null);
+  const panelId = useId();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -33,12 +35,14 @@ export default function GenreMultiSelect({
         !containerRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false);
+        setQuery("");
       }
     };
 
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         setIsOpen(false);
+        setQuery("");
         buttonRef.current?.focus();
       }
     };
@@ -54,6 +58,21 @@ export default function GenreMultiSelect({
     };
   }, [isOpen]);
 
+  // There are 36 genres, so the panel opens ready to type rather than to scroll.
+  useEffect(() => {
+    if (isOpen) searchRef.current?.focus();
+  }, [isOpen]);
+
+  const openPanel = () => {
+    setQuery("");
+    setIsOpen(true);
+  };
+
+  const closePanel = () => {
+    setQuery("");
+    setIsOpen(false);
+  };
+
   const toggleGenre = (genre: GameGenre) => {
     const isSelected = selectedGenres.includes(genre);
     const nextGenres = isSelected
@@ -64,8 +83,20 @@ export default function GenreMultiSelect({
 
   const clearGenres = () => {
     onSelectionChange([]);
-    setIsOpen(false);
+    closePanel();
   };
+
+  const clearQuery = () => {
+    setQuery("");
+    searchRef.current?.focus();
+  };
+
+  const normalizedQuery = query.trim().toLowerCase();
+  const visibleGenres = normalizedQuery
+    ? SORTED_GENRES.filter((genre) =>
+        formatGenreForFilter(genre).toLowerCase().includes(normalizedQuery),
+      )
+    : SORTED_GENRES;
 
   const buttonLabel =
     selectedGenres.length === 0
@@ -81,8 +112,8 @@ export default function GenreMultiSelect({
         type="button"
         aria-haspopup="dialog"
         aria-expanded={isOpen}
-        aria-controls={listboxId}
-        onClick={() => setIsOpen((prev) => !prev)}
+        aria-controls={panelId}
+        onClick={() => (isOpen ? closePanel() : openPanel())}
         className="hn-filter-control w-full min-w-[120px] flex items-center justify-between gap-2 text-left"
       >
         <span className="truncate">{buttonLabel}</span>
@@ -104,14 +135,77 @@ export default function GenreMultiSelect({
 
       {isOpen && (
         <div
-          id={listboxId}
+          id={panelId}
           role="dialog"
           aria-label="Genre filter"
-          className="genre-popover absolute z-50 mt-1 w-full min-w-[220px] max-h-[min(320px,50vh)] overflow-y-auto overscroll-contain bg-hn-surface border border-hn-border rounded shadow-xl"
+          className="filter-popover absolute z-50 mt-1 w-full min-w-[220px] max-h-[min(320px,50vh)] overflow-y-auto overscroll-contain bg-hn-surface border border-hn-border rounded shadow-xl"
         >
-          <div className="sticky top-0 z-10 flex items-center justify-between gap-2 px-3 py-2 border-b border-hn-border bg-hn-surface">
-            <span className="text-sm text-gray-400">Select genres</span>
-            {selectedGenres.length > 0 && (
+          <div className="sticky top-0 z-10 border-b border-hn-border bg-hn-surface px-3 py-2">
+            <div className="relative">
+              <svg
+                className="pointer-events-none absolute left-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <circle cx="10.5" cy="10.5" r="6.5" strokeWidth="1.5" />
+                <path d="m16 16 5 5" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <input
+                ref={searchRef}
+                type="text"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Filter genres…"
+                aria-label="Filter genres"
+                className="w-full rounded border border-hn-border bg-hn-bg pl-8 pr-8 py-1.5 text-sm text-gray-200 placeholder:text-gray-500 outline-none transition-colors focus:border-hn-accent"
+              />
+              {query && (
+                <button
+                  type="button"
+                  onClick={clearQuery}
+                  aria-label="Clear filter text"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 rounded px-1.5 py-0.5 text-gray-400 hover:text-gray-200"
+                >
+                  ×
+                </button>
+              )}
+            </div>
+          </div>
+
+          {visibleGenres.length === 0 ? (
+            <p className="px-4 py-3 text-sm text-gray-400">
+              No genres match “{query.trim()}”.
+            </p>
+          ) : (
+            <ul className="py-1">
+              {visibleGenres.map((genre) => {
+                const isSelected = selectedGenres.includes(genre);
+                return (
+                  <li key={genre} role="presentation">
+                    <label className="flex items-center gap-3 px-4 py-2.5 cursor-pointer hover:bg-hn-elevated active:bg-hn-border select-none">
+                      <input
+                        type="checkbox"
+                        checked={isSelected}
+                        onChange={() => toggleGenre(genre)}
+                        className="w-4 h-4 shrink-0 accent-hn-accent"
+                      />
+                      <span className="text-sm">
+                        {formatGenreForFilter(genre)}
+                      </span>
+                    </label>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+
+          {selectedGenres.length > 0 && (
+            <div className="sticky bottom-0 z-10 flex items-center justify-between gap-2 border-t border-hn-border bg-hn-surface px-3 py-2">
+              <span className="text-sm text-gray-400">
+                {selectedGenres.length} selected
+              </span>
               <button
                 type="button"
                 onClick={clearGenres}
@@ -119,29 +213,8 @@ export default function GenreMultiSelect({
               >
                 Clear
               </button>
-            )}
-          </div>
-
-          <ul className="py-1">
-            {SORTED_GENRES.map((genre) => {
-              const isSelected = selectedGenres.includes(genre);
-              return (
-                <li key={genre} role="presentation">
-                  <label className="flex items-center gap-3 px-4 py-2.5 cursor-pointer hover:bg-hn-elevated active:bg-hn-border select-none">
-                    <input
-                      type="checkbox"
-                      checked={isSelected}
-                      onChange={() => toggleGenre(genre)}
-                      className="w-4 h-4 shrink-0 accent-hn-accent"
-                    />
-                    <span className="text-sm">
-                      {formatGenreForFilter(genre)}
-                    </span>
-                  </label>
-                </li>
-              );
-            })}
-          </ul>
+            </div>
+          )}
         </div>
       )}
     </div>

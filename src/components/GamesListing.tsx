@@ -45,9 +45,7 @@ export default function GamesListing({
       ) : (
         <header className="catalog-page-heading">
           <p className="eyebrow">
-            {archive
-              ? "THE OFFLINE COLLECTION"
-              : "THE HACKER NEWS GAME CATALOG"}
+            {archive ? "THE RIP COLLECTION" : "THE HACKER NEWS GAME CATALOG"}
           </p>
           <h1>{archive ? "Gone, but worth remembering." : title}</h1>
           <p>

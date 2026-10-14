@@ -5,14 +5,20 @@ import path from "path";
 
 // Paths
 const SCHEMA_PATH = path.join(__dirname, "../.vscode/game-schema.json");
-const DATA_PATH = path.join(__dirname, "data/new.json");
+// Optional first argument targets another data file, e.g.
+// `npm run lint-new-games -- scripts/data/archive.json`
+const DATA_PATH = process.argv[2]
+  ? path.resolve(process.cwd(), process.argv[2])
+  : path.join(__dirname, "data/new.json");
 
 // Load schema and data
 const schema = JSON.parse(fs.readFileSync(SCHEMA_PATH, "utf-8"));
 const data = JSON.parse(fs.readFileSync(DATA_PATH, "utf-8"));
 
-// Initialize AJV validator with format support
-const ajv = new Ajv({ allowUnionTypes: true });
+// Initialize AJV validator with format support.
+// allErrors matters: without it AJV stops at the first failure and reports a
+// single error, which hides every later one.
+const ajv = new Ajv({ allowUnionTypes: true, allErrors: true });
 addFormats(ajv);
 const validate = ajv.compile(schema);
 

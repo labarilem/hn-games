@@ -19,12 +19,12 @@ export default async function GamePage({
   return (
     <article className="game-detail">
       <Link href={path} className="back-link">
-        ← Back to {game.isActive ? "the catalog" : "the archive"}
+        ← Back to {game.isActive ? "the catalog" : "RIP"}
       </Link>
       <header className="detail-heading">
         <div>
           <p className="eyebrow">
-            {game.isActive ? "FROM THE HN COMMUNITY" : "THE OFFLINE COLLECTION"}
+            {game.isActive ? "FROM THE HN COMMUNITY" : "THE RIP COLLECTION"}
             <span aria-hidden="true"> / </span>
             {new Date(game.releaseDate).getUTCFullYear()}
           </p>
@@ -58,7 +58,7 @@ export default async function GamePage({
         </div>
         <aside className="detail-panel" aria-label="Game information">
           <div className="detail-price">
-            {game.isActive ? game.pricing : "Currently offline"}
+            {game.isActive ? game.pricing : "RIP’d — no longer available"}
           </div>
           <p className="detail-price-note">
             {!game.isActive

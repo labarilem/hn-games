@@ -25,7 +25,7 @@ export default function StatsPage() {
             />
             <StatsCard
               value={totalRipGamesCount}
-              label="RIP Games"
+              label="RIP"
               color="text-red-400"
             />
           </div>

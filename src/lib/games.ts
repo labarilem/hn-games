@@ -129,13 +129,22 @@ export function filterGames(gamesList: Game[], searchParams: GameSearchParams) {
   };
 }
 
+// The archive's median submission has 3 points, so this drops the long tail of
+// posts that never got any traction while still leaving a few hundred games to
+// pick from. Keep in sync with the copy on /random.
+const RANDOM_GAME_MIN_HN_POINTS = 5;
+
+const randomCandidateGames = immediatelyPlayableGames.filter(
+  (game) => game.hnPoints >= RANDOM_GAME_MIN_HN_POINTS,
+);
+
 // IDEA: provide a random game which can be immediately played
 export function getRandomFreeWebGame() {
   // No eligible games, shouldn't happen but just in case
-  if (immediatelyPlayableGames.length === 0) return null;
+  if (randomCandidateGames.length === 0) return null;
 
   // Pick a random game
-  return immediatelyPlayableGames[
-    Math.floor(Math.random() * immediatelyPlayableGames.length)
+  return randomCandidateGames[
+    Math.floor(Math.random() * randomCandidateGames.length)
   ];
 }

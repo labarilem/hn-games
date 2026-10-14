@@ -15,8 +15,8 @@ export default async function RipPage(props: {
 
   return (
     <GamesListing
-      title="RIP Games"
-      subtitle="A catalog of {count} games from the Hacker News community that are no longer available."
+      title="RIP"
+      subtitle="A collection of {count} games from the Hacker News community that are no longer available."
       games={filteredGames}
       totalGamesCount={allRipGamesCount}
       pagination={pagination}

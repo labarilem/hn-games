@@ -13,7 +13,7 @@ export default async function Random() {
       <div className="editorial-page">
         <h1 className="text-4xl font-bold mb-4 text-center">Random Game</h1>
         <p className="text-gray-400 mb-8">
-          No free web games available at the moment.
+          No free web games have enough Hacker News points at the moment.
         </p>
       </div>
     );
@@ -24,7 +24,7 @@ export default async function Random() {
       <h1 className="text-4xl font-bold mb-4 text-center">Random Game</h1>
       <p className="text-gray-400 mb-8 text-center">
         Discover a random free game that you can play directly in your web
-        browser.
+        browser. Every pick has earned at least 5 points on Hacker News.
       </p>
 
       <div className="flex justify-center mb-8">

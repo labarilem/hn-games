@@ -12,42 +12,49 @@ const filterOptions = [
     key: "platform",
     label: "Platform",
     options: [
-      ["", "All platforms"],
-      ["web", "Browser"],
-      ["desktop", "Desktop"],
-      ["console", "Console"],
-      ["ios", "iOS"],
-      ["android", "Android"],
+      { value: "", label: "All platforms" },
+      { value: "web", label: "Browser" },
+      { value: "desktop", label: "Desktop" },
+      { value: "console", label: "Console" },
+      { value: "ios", label: "iOS" },
+      { value: "android", label: "Android" },
     ],
   },
   {
     key: "playerModes",
     label: "Players",
     options: [
-      ["", "Any player mode"],
-      ["single", "Single player"],
-      ["multi", "Multiplayer"],
+      { value: "", label: "Any player mode" },
+      { value: "single", label: "Single player" },
+      { value: "multi", label: "Multiplayer" },
     ],
   },
   {
     key: "pricing",
     label: "Price",
     options: [
-      ["", "Any price"],
-      ["free", "Free"],
-      ["freemium", "Freemium"],
-      ["paid", "Paid"],
+      { value: "", label: "Any price" },
+      { value: "free", label: "Free" },
+      { value: "freemium", label: "Freemium" },
+      { value: "paid", label: "Paid" },
     ],
   },
   {
     key: "license",
     label: "Source code",
     options: [
-      ["", "Any availability"],
-      ["open", "Open source"],
-      ["closed", "Closed source"],
+      { value: "", label: "Any availability" },
+      { value: "open", label: "Open source" },
+      { value: "closed", label: "Closed source" },
     ],
   },
+];
+
+const sortOptions = [
+  { value: "releaseDate-desc", label: "Newest first" },
+  { value: "releaseDate-asc", label: "Oldest first" },
+  { value: "hnPoints-desc", label: "Most HN points" },
+  { value: "hnPoints-asc", label: "Fewest HN points" },
 ];
 
 export default function GameFilters({
@@ -174,21 +181,15 @@ export default function GameFilters({
             className={`filter-fields ${expanded ? "is-expanded" : ""}`}
           >
             {filterOptions.slice(0, 1).map(({ key, label, options }) => (
-              <label className="filter-field" key={key}>
+              <div className="filter-field" key={key}>
                 <span>{label}</span>
                 <FilterSelect
-                  name={key}
                   aria-label={label}
                   value={params.get(key) ?? ""}
-                  onChange={(e) => setFilter(key, e.target.value)}
-                >
-                  {options.map(([value, title]) => (
-                    <option key={value} value={value}>
-                      {title}
-                    </option>
-                  ))}
-                </FilterSelect>
-              </label>
+                  options={options}
+                  onChange={(value) => setFilter(key, value)}
+                />
+              </div>
             ))}
             <div className="filter-field">
               <span>Genre</span>
@@ -203,21 +204,15 @@ export default function GameFilters({
               />
             </div>
             {filterOptions.slice(1).map(({ key, label, options }) => (
-              <label className="filter-field" key={key}>
+              <div className="filter-field" key={key}>
                 <span>{label}</span>
                 <FilterSelect
-                  name={key}
                   aria-label={label}
                   value={params.get(key) ?? ""}
-                  onChange={(e) => setFilter(key, e.target.value)}
-                >
-                  {options.map(([value, title]) => (
-                    <option key={value} value={value}>
-                      {title}
-                    </option>
-                  ))}
-                </FilterSelect>
-              </label>
+                  options={options}
+                  onChange={(value) => setFilter(key, value)}
+                />
+              </div>
             ))}
             {params.get("author") && (
               <div className="author-filter">
@@ -287,17 +282,12 @@ export default function GameFilters({
               />
             </div>
             <FilterSelect
-              name="sortBy"
               aria-label="Sort games"
               wrapperClassName="sort-control"
               value={params.get("sortBy") ?? "releaseDate-desc"}
-              onChange={(e) => setFilter("sortBy", e.target.value)}
-            >
-              <option value="releaseDate-desc">Newest first</option>
-              <option value="releaseDate-asc">Oldest first</option>
-              <option value="hnPoints-desc">Most HN points</option>
-              <option value="hnPoints-asc">Fewest HN points</option>
-            </FilterSelect>
+              options={sortOptions}
+              onChange={(value) => setFilter("sortBy", value)}
+            />
           </div>
           <div className="results-caption" role="status" aria-live="polite">
             <span>

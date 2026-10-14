@@ -7,7 +7,7 @@ export default function Footer() {
           <Link href="/" className="footer-brand">
             HN / GAMES<span aria-hidden="true">■</span>
           </Link>
-          <p>Independent games. A shared curiosity.</p>
+          <p>Hacker-made games. Unexpected finds.</p>
         </div>
         <nav aria-label="Footer navigation" className="footer-nav">
           <Link href="/about">About the catalog</Link>
@@ -28,9 +28,9 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          An independent project
+          Made with love by
           <br />
-          by Marco Labarile ↗
+          Marco Labarile ↗
         </a>
       </div>
     </footer>

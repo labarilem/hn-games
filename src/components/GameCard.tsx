@@ -35,7 +35,7 @@ export default function GameCard({
         <span className="game-art-action" aria-hidden="true">
           View game ↗
         </span>
-        {!game.isActive && <span className="unavailable-label">Offline</span>}
+        {!game.isActive && <span className="unavailable-label">RIP</span>}
       </Link>
       <div className="game-card-body">
         <div className="game-card-heading">

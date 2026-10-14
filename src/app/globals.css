@@ -1492,8 +1492,15 @@ select {
 }
 
 @media (max-width: 760px) {
-  .genre-popover {
+  .filter-popover {
     right: 0;
     min-width: min(240px, calc(100vw - 40px));
   }
+}
+
+/* The sort control sits at the right edge of the toolbar, so anchor its panel
+   to the same edge instead of letting it overflow the viewport. */
+.sort-control .filter-popover {
+  right: 0;
+  left: auto;
 }

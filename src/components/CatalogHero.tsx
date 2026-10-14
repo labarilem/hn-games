@@ -15,7 +15,7 @@ export default function CatalogHero({
           <span className="status-dot" /> THE HACKER NEWS GAME CATALOG
         </p>
         <h1 id="catalog-title">
-          Independent games.
+          Hacker-made games.
           <br />
           <span>Unexpected finds.</span>
         </h1>
