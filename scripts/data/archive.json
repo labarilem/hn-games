@@ -219,30 +219,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "49829179",
-    "name": "XHTML",
-    "description": "Collect a free daily pack of HTML tags, attributes and CSS, then build a website using only the cards you own",
-    "releaseDate": "2026-09-24T11:32:11.000Z",
-    "author": "plaguna",
-    "genres": [
-      "card",
-      "coding",
-      "daily"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49829179",
-    "hnPoints": 5,
-    "playUrl": "https://xhtml.es/",
-    "imageUrl": "/images/games/49829179.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "49824899",
     "name": "Posting Puzzle",
     "description": "Sorting puzzle based on Post's Correspondence Problem: pair up envelopes and stamps to reach the mailbox.",
@@ -278,26 +254,6 @@
     "hnPoints": 2,
     "playUrl": "https://varkos.party/",
     "imageUrl": "/images/games/49821592.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49818882",
-    "name": "Chromafolk",
-    "description": "Storytime! One day I came to the office and showed a friend a literal bot that I was working on for a game project.",
-    "releaseDate": "2026-09-23T16:46:13.000Z",
-    "author": "bcorigliano",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49818882",
-    "hnPoints": 1,
-    "playUrl": "https://chromafolk.world/",
-    "imageUrl": "/images/games/49818882.jpg",
     "sourceCodeUrl": null
   },
   {
@@ -492,26 +448,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49786497",
-    "name": "M0saic",
-    "description": "I'm Quentin. I've just published my longterm project - excited to share!",
-    "releaseDate": "2026-09-21T12:36:26.000Z",
-    "author": "m0saic-dev",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49786497",
-    "hnPoints": 2,
-    "playUrl": "https://m0saic.io/",
-    "imageUrl": "/images/games/49786497.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -584,49 +520,6 @@
     "playerModes": [
       "single"
     ],
-    "pricing": "free",
-    "id": "49773400",
-    "name": "WideMelon",
-    "description": "",
-    "releaseDate": "2026-09-20T07:32:28.000Z",
-    "author": "pruefsumme",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49773400",
-    "hnPoints": 4,
-    "playUrl": "https://github.com/pruefsumme/widemelon",
-    "imageUrl": "/images/games/49773400.jpg",
-    "sourceCodeUrl": "https://github.com/pruefsumme/widemelon"
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49765740",
-    "name": "Gravitype",
-    "description": "Terminal typing game where words fall from the sky: type each word before it reaches the bottom, or lose a life.",
-    "releaseDate": "2026-09-19T11:46:28.000Z",
-    "author": "kanakOS01",
-    "genres": [
-      "typing",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49765740",
-    "hnPoints": 5,
-    "playUrl": "https://github.com/kanakOS01/gravitype",
-    "imageUrl": "/images/games/49765740.jpg",
-    "sourceCodeUrl": "https://github.com/kanakOS01/gravitype"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
     "pricing": "freemium",
     "id": "49760044",
     "name": "World Explorer",
@@ -641,26 +534,6 @@
     "hnPoints": 2,
     "playUrl": "https://explorer.tadget.net/",
     "imageUrl": "/images/games/49760044.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49757790",
-    "name": "Signal",
-    "description": "",
-    "releaseDate": "2026-09-18T17:48:28.000Z",
-    "author": "LevelTenMedia",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49757790",
-    "hnPoints": 3,
-    "playUrl": "https://signal.skipthecritics.com/",
-    "imageUrl": "/images/games/49757790.jpg",
     "sourceCodeUrl": null
   },
   {
@@ -854,26 +727,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "49723554",
-    "name": "Musslop",
-    "description": "",
-    "releaseDate": "2026-09-16T08:28:54.000Z",
-    "author": "s131ph",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49723554",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/Siziff/musslop",
-    "imageUrl": "/images/games/49723554.jpg",
-    "sourceCodeUrl": "https://github.com/Siziff/musslop"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "49721246",
     "name": "Breakdown",
     "description": "Daily game where you guess how real-world data is divided, then reveal how close your estimate was",
@@ -888,28 +741,6 @@
     "playUrl": "https://breakdown.today/",
     "imageUrl": "/images/games/49721246.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49720669",
-    "name": "chess analyzer that runs in the browser",
-    "description": "I play chess casually and usually struggle to figure out why Lichess analysis say my move is a blunder. Almost all the analysis tools will just suggest the best variant for a position, and you will have to follow the suggested engine lines, or play them out manually to analyze it better.",
-    "releaseDate": "2026-09-16T00:28:30.000Z",
-    "author": "huydotnet",
-    "genres": [
-      "board"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49720669",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/huytd/whyblunder/",
-    "imageUrl": "/images/games/49720669.jpg",
-    "sourceCodeUrl": "https://github.com/huytd/whyblunder/"
   },
   {
     "platforms": [
@@ -934,30 +765,6 @@
     "playUrl": "https://run.world/lthrjckrjckr/deadspeaker-inc",
     "imageUrl": "/images/games/49717488.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49712697",
-    "name": "Password Dungeon",
-    "description": "8-bit dungeon-crawler puzzle that teaches C memory basics; read code and exploit in-game programs to escape 10 rooms.",
-    "releaseDate": "2026-09-15T14:04:04.000Z",
-    "author": "udbhavs",
-    "genres": [
-      "puzzle",
-      "educational",
-      "coding"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49712697",
-    "hnPoints": 2,
-    "playUrl": "https://password-dungeon.netlify.app/",
-    "imageUrl": "/images/games/49712697.jpg",
-    "sourceCodeUrl": "https://github.com/udbhav-s/password-dungeon"
   },
   {
     "platforms": [
@@ -1471,29 +1278,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49637100",
-    "name": "cursed-tetris",
-    "description": "Terminal Tetris game written in Rust, with powerups; runs offline on Linux, macOS and Windows, or over SSH.",
-    "releaseDate": "2026-09-10T01:25:25.000Z",
-    "author": "orangishcat",
-    "genres": [
-      "puzzle",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49637100",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/orangishcat/cursed-tetris",
-    "imageUrl": "/images/games/49637100.jpg",
-    "sourceCodeUrl": "https://github.com/orangishcat/cursed-tetris"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -1515,29 +1299,6 @@
     "playUrl": "https://moral.games/",
     "imageUrl": "/images/games/49628812.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49625715",
-    "name": "I rewrite my game while it is still",
-    "description": "Blast enemies in a compact arcade shooter whose code and variables can be rewritten while it runs",
-    "releaseDate": "2026-09-09T12:49:30.000Z",
-    "author": "atomijd",
-    "genres": [
-      "shooter",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49625715",
-    "hnPoints": 4,
-    "playUrl": "https://github.com/AtomiJD/jdBasic",
-    "imageUrl": "/images/games/49625715.jpg",
-    "sourceCodeUrl": "https://github.com/AtomiJD/jdBasic"
   },
   {
     "platforms": [
@@ -1951,26 +1712,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "49565499",
-    "name": "Unofficial 3DS Port of F-Zero X Written",
-    "description": "Sharing this because I think it's mind blowing, but I was able to port F-Zero X to 3DS using Claude Code. I learned quite a bit about how to guide Claude Code towards completing such a large project, but it's also filled me with quite a bit of dread.",
-    "releaseDate": "2026-09-04T14:49:38.000Z",
-    "author": "coffeesoda",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49565499",
-    "hnPoints": 1,
-    "playUrl": "https://cruxxxxxx.github.io/gdx-3ds/postmortem/index.html",
-    "imageUrl": "/images/games/49565499.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "49565298",
     "name": "Learn/Practice Sudoku",
     "description": "Solve Sudoku puzzles while learning strategies with Learn, Show-me and auto-notes features",
@@ -2078,30 +1819,6 @@
     "playUrl": "https://lightcone-webmcp.netlify.app/",
     "imageUrl": "/images/games/49548526.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49545945",
-    "name": "Simpsons Hit and Run Revamped",
-    "description": "Fan source port bringing The Simpsons: Hit and Run to modern 64-bit Windows",
-    "releaseDate": "2026-09-03T04:30:54.000Z",
-    "author": "xaskasdf",
-    "genres": [
-      "action",
-      "adventure",
-      "driving"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49545945",
-    "hnPoints": 4,
-    "playUrl": "https://github.com/xaskasdf/The-Simpsons-Hit-and-Run",
-    "imageUrl": "/images/games/49545945.jpg",
-    "sourceCodeUrl": "https://github.com/xaskasdf/The-Simpsons-Hit-and-Run"
   },
   {
     "platforms": [
@@ -2419,26 +2136,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "49509649",
-    "name": "DogLM",
-    "description": "",
-    "releaseDate": "2026-08-31T13:37:10.000Z",
-    "author": "mikeushakov",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49509649",
-    "hnPoints": 6,
-    "playUrl": "https://mikeushakov.github.io/doglm/",
-    "imageUrl": "/images/games/49509649.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "49504150",
     "name": "Break 5",
     "description": "Turn one five-letter word into another by changing one letter at a time in this daily puzzle",
@@ -2453,26 +2150,6 @@
     "hnPoints": 4,
     "playUrl": "https://break5.co.uk/",
     "imageUrl": "/images/games/49504150.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49501587",
-    "name": "MyTops",
-    "description": "",
-    "releaseDate": "2026-08-30T18:46:35.000Z",
-    "author": "Zartof",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49501587",
-    "hnPoints": 3,
-    "playUrl": "https://mytops.io/",
-    "imageUrl": "/images/games/49501587.jpg",
     "sourceCodeUrl": null
   },
   {
@@ -2742,26 +2419,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "49450662",
-    "name": "Highball",
-    "description": "",
-    "releaseDate": "2026-08-26T15:16:51.000Z",
-    "author": "gauthierpiarret",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49450662",
-    "hnPoints": 5,
-    "playUrl": "https://github.com/gauthierpiarrette/highball",
-    "imageUrl": "/images/games/49450662.jpg",
-    "sourceCodeUrl": "https://github.com/gauthierpiarrette/highball"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "49448164",
     "name": "Witstep",
     "description": "Solve short pattern and logic puzzles in themed journeys with a shared daily challenge",
@@ -2939,29 +2596,6 @@
     "playUrl": "https://apps.apple.com/us/app/slab-zen-stack/id6790939204",
     "imageUrl": "/images/games/49437648.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web",
-      "android"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49436871",
-    "name": "Player vs. Computer",
-    "description": "Mini-game collection: challenge your computer at rock-paper-scissors, clicking duels and trivia",
-    "releaseDate": "2026-08-25T16:40:30.000Z",
-    "author": "PolishDevelop22",
-    "genres": [
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49436871",
-    "hnPoints": 3,
-    "playUrl": "https://rubinoslaw.github.io/Player-vs-Computer/",
-    "imageUrl": "/images/games/49436871.jpg",
-    "sourceCodeUrl": "https://github.com/Rubinoslaw/Player-vs-Computer/"
   },
   {
     "platforms": [
@@ -3367,29 +3001,6 @@
       "web"
     ],
     "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49343029",
-    "name": "Loft Day",
-    "description": "Point-and-click browser adventure across ten rooms with mini-games, built as a wedding website.",
-    "releaseDate": "2026-08-18T08:40:21.000Z",
-    "author": "behdad",
-    "genres": [
-      "adventure",
-      "puzzle"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49343029",
-    "hnPoints": 9,
-    "playUrl": "https://marketa.behdad.org/loft-day",
-    "imageUrl": "/images/games/49343029.jpg",
-    "sourceCodeUrl": "https://github.com/behdad/marketa.behdad.org"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
       "single",
       "multi"
     ],
@@ -3739,29 +3350,6 @@
     "playUrl": "https://wild.space/atlas",
     "imageUrl": "/images/games/49298614.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49297179",
-    "name": "Harmless",
-    "description": "Browser tribute to Elite: trade, fight and dock across 2,048 wireframe worlds while rising to the rank of Elite",
-    "releaseDate": "2026-08-14T11:08:42.000Z",
-    "author": "iamflimflam1",
-    "genres": [
-      "simulation",
-      "action"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49297179",
-    "hnPoints": 1,
-    "playUrl": "https://harmless.atomic14.com/",
-    "imageUrl": "/images/games/49297179.jpg",
-    "sourceCodeUrl": "https://github.com/atomic14/harmless"
   },
   {
     "platforms": [
@@ -4169,30 +3757,6 @@
       "web"
     ],
     "playerModes": [
-      "single",
-      "multi"
-    ],
-    "pricing": "free",
-    "id": "49233912",
-    "name": "TUI Tetris",
-    "description": "NES-style Tetris for the terminal, with solo play plus peer-to-peer versus matches.",
-    "releaseDate": "2026-08-09T18:10:46.000Z",
-    "author": "ramoz",
-    "genres": [
-      "puzzle",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49233912",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/backnotprop/tuitetris",
-    "imageUrl": "/images/games/49233912.jpg",
-    "sourceCodeUrl": "https://github.com/backnotprop/tuitetris"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
       "single"
     ],
     "pricing": "free",
@@ -4305,26 +3869,6 @@
     "playUrl": "https://laviejacontraeldibu.app/",
     "imageUrl": "/images/games/49205048.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49203059",
-    "name": "PokÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢",
-    "description": "PokÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â©mon Emerald ported to the RP2350 microcontroller. No emulator, 60 fps HDMI output. Recompiled from ARMv4T to Cortex-M33 and the Game Boy Advance's video hardware is reimplemented in software on the seco",
-    "releaseDate": "2026-08-06T21:49:07.000Z",
-    "author": "mdeeds",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49203059",
-    "hnPoints": 58,
-    "playUrl": "https://github.com/mattdeeds/pokeemerald-rp2350",
-    "imageUrl": "/images/games/49203059.jpg",
-    "sourceCodeUrl": "https://github.com/mattdeeds/pokeemerald-rp2350"
   },
   {
     "platforms": [
@@ -4511,28 +4055,6 @@
     "playUrl": "https://playdowntime.com/",
     "imageUrl": "/images/games/49168567.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49165187",
-    "name": "Fruman",
-    "description": "A 2D souls-like action demo where you fight enemies and build your own maps in an editor",
-    "releaseDate": "2026-08-04T07:03:24.000Z",
-    "author": "Kholin",
-    "genres": [
-      "action"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49165187",
-    "hnPoints": 1,
-    "playUrl": "https://fruman.baklab.app/",
-    "imageUrl": "/images/games/49165187.jpg",
-    "sourceCodeUrl": "https://github.com/oodzchen/fruman"
   },
   {
     "platforms": [
@@ -4782,29 +4304,6 @@
     "playUrl": "https://schmess.com/",
     "imageUrl": "/images/games/49146098.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49143176",
-    "name": "CaLLMar",
-    "description": "",
-    "releaseDate": "2026-08-02T10:45:02.000Z",
-    "author": "lascauje",
-    "genres": [
-      "adventure",
-      "text"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=49143176",
-    "hnPoints": 4,
-    "playUrl": "https://github.com/lascauje/callmar",
-    "imageUrl": "/images/games/49143176.jpg",
-    "sourceCodeUrl": "https://github.com/lascauje/callmar"
   },
   {
     "platforms": [
@@ -5775,26 +5274,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "49009595",
-    "name": "Vifu",
-    "description": "",
-    "releaseDate": "2026-07-22T16:41:26.000Z",
-    "author": "DR_MING",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=49009595",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/vifudotdev/vifu",
-    "imageUrl": "/images/games/49009595.jpg",
-    "sourceCodeUrl": "https://github.com/vifudotdev/vifu"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -6076,29 +5555,6 @@
       "web"
     ],
     "playerModes": [
-      "single",
-      "multi"
-    ],
-    "pricing": "free",
-    "id": "48986313",
-    "name": "Ground Control",
-    "description": "Chess played inside the Claude Code CLI, where Claude suggests three candidate moves and an engine keeps play legal.",
-    "releaseDate": "2026-07-20T23:40:49.000Z",
-    "author": "goawaygeek",
-    "genres": [
-      "board"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48986313",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/goawaygeek/ground-control",
-    "imageUrl": "/images/games/48986313.jpg",
-    "sourceCodeUrl": "https://github.com/goawaygeek/ground-control"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
       "single"
     ],
     "pricing": "free",
@@ -6172,28 +5628,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "48979593",
-    "name": "We let Muse Spark 1.1 vibe code itself",
-    "description": "We provided our harness with a single objective - 2048 with a twist - and 2 days later it delivered. The run is recorded end to end, so the code can be checked against the process that produced it. Our app is drivable via replay here:",
-    "releaseDate": "2026-07-20T14:44:32.000Z",
-    "author": "favurdev",
-    "genres": [
-      "puzzle"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48979593",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/awesoftsolutions/idea_meta-muse-2048-game",
-    "imageUrl": "/images/games/48979593.jpg",
-    "sourceCodeUrl": "https://github.com/awesoftsolutions/idea_meta-muse-2048-game"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "48979155",
     "name": "Grid Words",
     "description": "A 5x5 word grid where color-coded clues reveal letter matches as you fill in every word",
@@ -6233,28 +5667,6 @@
     "playUrl": "https://pathology.thinky.gg/",
     "imageUrl": "/images/games/48978946.jpg",
     "sourceCodeUrl": "https://github.com/sspenst/thinky.gg"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48976704",
-    "name": "deterministic arena where AI agents",
-    "description": "I have been interested in BattleBots and programming games for years. With recent AI coding agents, I wanted to see what happens if the strategy itself becomes code written by humans or AI.",
-    "releaseDate": "2026-07-20T10:14:27.000Z",
-    "author": "agentduel",
-    "genres": [
-      "coding"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48976704",
-    "hnPoints": 1,
-    "playUrl": "https://www.agentduel.app/b/cru8E9nG",
-    "imageUrl": "/images/games/48976704.jpg",
-    "sourceCodeUrl": null
   },
   {
     "platforms": [
@@ -6352,30 +5764,6 @@
     "playUrl": "https://tow.urbanodx.com/",
     "imageUrl": "/images/games/48969834.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48968127",
-    "name": "Escape Run",
-    "description": "Free browser math game for ages 6-8: steer a car into the lane holding the correct answer while dodging cones.",
-    "releaseDate": "2026-07-19T13:38:39.000Z",
-    "author": "redcat99",
-    "genres": [
-      "math",
-      "educational",
-      "kids"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48968127",
-    "hnPoints": 2,
-    "playUrl": "https://abhas9.github.io/escape-run/",
-    "imageUrl": "/images/games/48968127.jpg",
-    "sourceCodeUrl": "https://github.com/abhas9/escape-run"
   },
   {
     "platforms": [
@@ -6778,29 +6166,6 @@
       "desktop"
     ],
     "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48917239",
-    "name": "Lean64",
-    "description": "Barebones Doom-style first-person shooter with a two-map campaign, written entirely in Lean 4",
-    "releaseDate": "2026-07-15T07:06:10.000Z",
-    "author": "threepts",
-    "genres": [
-      "shooter",
-      "action"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48917239",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/aouxwoux/lean64",
-    "imageUrl": "/images/games/48917239.jpg",
-    "sourceCodeUrl": "https://github.com/aouxwoux/lean64"
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
       "multi",
       "single"
     ],
@@ -6888,29 +6253,6 @@
     "playUrl": "https://raftig.seldoncortex.com/",
     "imageUrl": "/images/games/48899593.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48897235",
-    "name": "Psycho",
-    "description": "Steer a 3D roller-coaster course generated from your own song, chaining colors and dodging hazards",
-    "releaseDate": "2026-07-13T19:04:25.000Z",
-    "author": "modinfo",
-    "genres": [
-      "music",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48897235",
-    "hnPoints": 3,
-    "playUrl": "https://sekor.eu.org/psycho-odin",
-    "imageUrl": "/images/games/48897235.jpg",
-    "sourceCodeUrl": "https://github.com/skorotkiewicz/psycho-odin"
   },
   {
     "platforms": [
@@ -7061,26 +6403,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "48873486",
-    "name": "Earth Game",
-    "description": "",
-    "releaseDate": "2026-07-11T16:37:02.000Z",
-    "author": "modinfo",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=48873486",
-    "hnPoints": 55,
-    "playUrl": "https://github.com/skorotkiewicz/earth-game",
-    "imageUrl": "/images/games/48873486.jpg",
-    "sourceCodeUrl": "https://github.com/skorotkiewicz/earth-game"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "48873246",
     "name": "Combo.gg",
     "description": "",
@@ -7115,28 +6437,6 @@
     "playUrl": "https://whatpetshouldiget.com/play.html",
     "imageUrl": "/images/games/48872300.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48871581",
-    "name": "Mtg",
-    "description": "Rust terminal arcade collection: Breakout, Pong, Snake, and Space Invaders style games run in the terminal.",
-    "releaseDate": "2026-07-11T12:46:00.000Z",
-    "author": "funnyfoobar",
-    "genres": [
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48871581",
-    "hnPoints": 4,
-    "playUrl": "https://github.com/modern-terminal-games/mtg",
-    "imageUrl": "/images/games/48871581.jpg",
-    "sourceCodeUrl": "https://github.com/modern-terminal-games/mtg"
   },
   {
     "platforms": [
@@ -7444,26 +6744,6 @@
   },
   {
     "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48822349",
-    "name": "Bike4Mind",
-    "description": "For the last 3 years I have been building Bike4Mind and now I have to put my big boy pants on and 'go to market'. Ugh, it would be so much more cozy to fire up a few more agents and fix a few more bugs, polish some more UX - or hey how about a new feature that does Q, R or S?",
-    "releaseDate": "2026-07-07T19:17:34.000Z",
-    "author": "erikbethke",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=48822349",
-    "hnPoints": 5,
-    "playUrl": "https://github.com/Bike4Mind/bike4mind",
-    "imageUrl": "/images/games/48822349.jpg",
-    "sourceCodeUrl": "https://github.com/Bike4Mind/bike4mind"
-  },
-  {
-    "platforms": [
       "desktop"
     ],
     "playerModes": [
@@ -7723,26 +7003,6 @@
       "web"
     ],
     "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48796620",
-    "name": "GameFork",
-    "description": "",
-    "releaseDate": "2026-07-05T18:28:27.000Z",
-    "author": "TakayukiKomada",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=48796620",
-    "hnPoints": 3,
-    "playUrl": "https://gamefork.io/",
-    "imageUrl": "/images/games/48796620.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
       "multi"
     ],
     "pricing": "free",
@@ -7806,26 +7066,6 @@
     "playUrl": "https://neiltheseal.app/",
     "imageUrl": "/images/games/48794042.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48794031",
-    "name": "CAVS",
-    "description": "",
-    "releaseDate": "2026-07-05T13:10:08.000Z",
-    "author": "orelvis15",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=48794031",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/orelvis15/cavs-oss",
-    "imageUrl": "/images/games/48794031.jpg",
-    "sourceCodeUrl": "https://github.com/orelvis15/cavs-oss"
   },
   {
     "platforms": [
@@ -8585,52 +7825,6 @@
     "playerModes": [
       "single"
     ],
-    "pricing": "free",
-    "id": "48647133",
-    "name": "OpenSoccer",
-    "description": "Open-source browser soccer game: pick one of 48 World Cup teams and play 11v11 matches vs CPU.",
-    "releaseDate": "2026-06-23T16:04:26.000Z",
-    "author": "artahian",
-    "genres": [
-      "sport",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48647133",
-    "hnPoints": 3,
-    "playUrl": "https://worldcup2026.modelence.ai/",
-    "imageUrl": "/images/games/48647133.jpg",
-    "sourceCodeUrl": "https://github.com/modelence/open-soccer"
-  },
-  {
-    "platforms": [
-      "console"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48646201",
-    "name": "Superbounce64",
-    "description": "Claim territory by drawing walls while dodging bouncing balls in this N64 homebrew puzzle",
-    "releaseDate": "2026-06-23T15:06:53.000Z",
-    "author": "Cyd0n1a",
-    "genres": [
-      "puzzle",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48646201",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/Cyd0n1a/Superbounce64",
-    "imageUrl": "/images/games/48646201.jpg",
-    "sourceCodeUrl": "https://github.com/Cyd0n1a/Superbounce64"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
     "pricing": "freemium",
     "id": "48637202",
     "name": "WorldOS",
@@ -8647,56 +7841,6 @@
     "playUrl": "https://worldos.cc/",
     "imageUrl": "/images/games/48637202.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48635911",
-    "name": "Continuum",
-    "description": "Fork of the Xash3D engine that plays Half-Life start to finish with no loading screens",
-    "releaseDate": "2026-06-22T20:44:13.000Z",
-    "author": "bishopdynamics",
-    "genres": [
-      "shooter",
-      "action",
-      "adventure"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48635911",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/bishopdynamics/Continuum",
-    "imageUrl": "/images/games/48635911.jpg",
-    "sourceCodeUrl": "https://github.com/bishopdynamics/Continuum"
-  },
-  {
-    "platforms": [
-      "web",
-      "desktop"
-    ],
-    "playerModes": [
-      "single",
-      "multi"
-    ],
-    "pricing": "free",
-    "id": "48635731",
-    "name": "Blocks Beyond the Stars",
-    "description": "Explore procedurally generated voxel planets, mine resources, build ships and bases, and tame creatures",
-    "releaseDate": "2026-06-22T20:31:40.000Z",
-    "author": "marceld23",
-    "genres": [
-      "sandbox",
-      "survival",
-      "adventure"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48635731",
-    "hnPoints": 1,
-    "playUrl": "https://play.blocksbeyondthestars.de/?lang=en",
-    "imageUrl": "/images/games/48635731.jpg",
-    "sourceCodeUrl": "https://github.com/marceld23/BlocksBeyondTheStars"
   },
   {
     "platforms": [
@@ -8999,29 +8143,6 @@
     "playUrl": "https://drive-game.pages.dev/",
     "imageUrl": "/images/games/48570074.jpg",
     "sourceCodeUrl": "https://github.com/esc5221/drive-game"
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48569728",
-    "name": "TermType",
-    "description": "Terminal typing arcade: type falling words before they reach the water line; Python, no GUI.",
-    "releaseDate": "2026-06-17T12:48:35.000Z",
-    "author": "J_cst",
-    "genres": [
-      "typing",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48569728",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/GiovanniCst/termtype",
-    "imageUrl": "/images/games/48569728.jpg",
-    "sourceCodeUrl": "https://github.com/GiovanniCst/termtype"
   },
   {
     "platforms": [
@@ -9366,29 +8487,6 @@
       "web"
     ],
     "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48505246",
-    "name": "Golazo '26",
-    "description": "Fill out a World Cup 2026 bracket, track the matches, and compare picks on the leaderboard",
-    "releaseDate": "2026-06-12T15:16:53.000Z",
-    "author": "fellowplayer",
-    "genres": [
-      "sport",
-      "strategy"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48505246",
-    "hnPoints": 1,
-    "playUrl": "https://golazo.giitaayan.com/",
-    "imageUrl": "/images/games/48505246.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
       "single",
       "multi"
     ],
@@ -9555,26 +8653,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "48479887",
-    "name": "Meadow Mind",
-    "description": "",
-    "releaseDate": "2026-06-10T17:41:53.000Z",
-    "author": "akaiHuang",
-    "genres": [],
-    "hnUrl": "https://news.ycombinator.com/item?id=48479887",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/Hey-Meadow/meadow-mind",
-    "imageUrl": "/images/games/48479887.jpg",
-    "sourceCodeUrl": "https://github.com/Hey-Meadow/meadow-mind"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "48478230",
     "name": "Chip's Challenge",
     "description": "Browser port of the 1992 puzzle game: guide Chip through tile-based levels, collect microchips and reach the exit",
@@ -9634,30 +8712,6 @@
     "playUrl": "https://wc26.ossy.dev/",
     "imageUrl": "/images/games/48469473.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single",
-      "multi"
-    ],
-    "pricing": "free",
-    "id": "48461500",
-    "name": "Hires Chess Trainer",
-    "description": "Desktop chess trainer: imports your Chess.com/lichess games, finds your mistakes, and drills them with spaced repetition.",
-    "releaseDate": "2026-06-09T14:19:00.000Z",
-    "author": "gaelazzo",
-    "genres": [
-      "board",
-      "strategy"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48461500",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/gaelazzo/python_chess",
-    "imageUrl": "/images/games/48461500.jpg",
-    "sourceCodeUrl": "https://github.com/gaelazzo/python_chess"
   },
   {
     "platforms": [
@@ -9804,29 +8858,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48433784",
-    "name": "Strataris",
-    "description": "First-person colony-defence shoot-’em-up with procedurally generated terrain and a retro pixelated style",
-    "releaseDate": "2026-06-07T11:21:57.000Z",
-    "author": "jonathan_hollin",
-    "genres": [
-      "shooter",
-      "action"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48433784",
-    "hnPoints": 3,
-    "playUrl": "https://jorviksoftware.cc/games/strataris",
-    "imageUrl": "/images/games/48433784.jpg",
-    "sourceCodeUrl": "https://github.com/PerpetualBeta/Strataris"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -9964,29 +8995,6 @@
     "playUrl": "https://oofinsprouts.itch.io/gridiculous",
     "imageUrl": "/images/games/48358006.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "48356261",
-    "name": "Scrapland",
-    "description": "Top-down survival shooter inspired by Rust: scavenge scrap, build a base and outlast seven rival AI teams",
-    "releaseDate": "2026-06-01T13:00:03.000Z",
-    "author": "jmtame",
-    "genres": [
-      "survival",
-      "shooter"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48356261",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/jmtame/scrapland",
-    "imageUrl": "/images/games/48356261.jpg",
-    "sourceCodeUrl": "https://github.com/jmtame/scrapland"
   },
   {
     "platforms": [
@@ -10362,31 +9370,6 @@
     "playUrl": "https://memalign.github.io/m/taptoypia/index.html",
     "imageUrl": "/images/games/48255525.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single",
-      "multi"
-    ],
-    "pricing": "free",
-    "id": "48253318",
-    "name": "NBSDGames",
-    "description": "Collection of 21 text-based terminal games, from sudoku and reversi to original arcade titles",
-    "releaseDate": "2026-05-24T01:13:12.000Z",
-    "author": "abakh",
-    "genres": [
-      "board",
-      "puzzle",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=48253318",
-    "hnPoints": 7,
-    "playUrl": "https://github.com/abakh/nbsdgames",
-    "imageUrl": "/images/games/48253318.jpg",
-    "sourceCodeUrl": "https://github.com/abakh/nbsdgames"
   },
   {
     "platforms": [
