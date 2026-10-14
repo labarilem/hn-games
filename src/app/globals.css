@@ -355,7 +355,16 @@ select {
 .collection-nav {
   display: flex;
   gap: 30px;
-  border-block: 1px solid var(--line);
+  border-top: 1px solid var(--line);
+  /* Tabs stretch to the row and carry a -1px bottom margin so their border box
+     hangs 1px past the content box: that overhang is how the active tab's
+     underline lands on the rule. The overhang has to fall inside the nav's own
+     padding. With a real bottom border it sits outside the scrollport, and the
+     nav gains 1px of vertical overflow — which renders a stray vertical
+     scrollbar next to the tabs. So the rule is an inset shadow in the padding
+     that absorbs the overhang. */
+  padding-bottom: 1px;
+  box-shadow: inset 0 -1px 0 var(--line);
   overflow-x: auto;
   scrollbar-width: thin;
 }
