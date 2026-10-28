@@ -19094,29 +19094,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "46446829",
-    "name": "Vector Defense",
-    "description": "Retro vector-style tower defense where you place towers to stop creeps reaching your base",
-    "releaseDate": "2025-12-31T18:27:37.000Z",
-    "author": "michaelteter",
-    "genres": [
-      "strategy",
-      "tower_defense"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46446829",
-    "hnPoints": 2,
-    "playUrl": "https://michaelteter.com/vector.html",
-    "imageUrl": "/images/games/46446829.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "46443058",
     "name": "Spelling Bee Unlimited",
     "description": "Build words of four or more letters from a hive, always including the center letter",
@@ -19344,28 +19321,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "46402813",
-    "name": "gh-kusa-breaker",
-    "description": "Breakout played in the terminal where the bricks are your GitHub contribution graph, each block as a day.",
-    "releaseDate": "2025-12-27T16:16:19.000Z",
-    "author": "r4mimu",
-    "genres": [
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46402813",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/fchimpan/gh-kusa-breaker",
-    "imageUrl": "/images/games/46402813.jpg",
-    "sourceCodeUrl": "https://github.com/fchimpan/gh-kusa-breaker"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -19528,29 +19483,6 @@
     "playUrl": "https://bcjordan.com/regexman/",
     "imageUrl": "/images/games/46376821.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "46376342",
-    "name": "Invaders",
-    "description": "Space Invaders clone written in 8086 assembly; builds to a tiny DOS .com and runs in DOSBox.",
-    "releaseDate": "2025-12-24T15:21:50.000Z",
-    "author": "20wenty",
-    "genres": [
-      "arcade",
-      "shooter"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46376342",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/jbnunn/Invaders",
-    "imageUrl": "/images/games/46376342.jpg",
-    "sourceCodeUrl": "https://github.com/jbnunn/Invaders"
   },
   {
     "platforms": [
@@ -20057,50 +19989,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "46270571",
-    "name": "Termrex",
-    "description": "Terminal-based endless runner inspired by the Chrome Dino game; written in C++ for Linux, macOS and POSIX terminals.",
-    "releaseDate": "2025-12-15T04:39:59.000Z",
-    "author": "__spd__",
-    "genres": [
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46270571",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/SATYADAHAL/termrex",
-    "imageUrl": "/images/games/46270571.jpg",
-    "sourceCodeUrl": "https://github.com/SATYADAHAL/termrex"
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "multi"
-    ],
-    "pricing": "free",
-    "id": "46265970",
-    "name": "duel",
-    "description": "Terminal-based 1v1 sword-fighting game; connect to an online server for matchmaking or host a local LAN match.",
-    "releaseDate": "2025-12-14T19:28:23.000Z",
-    "author": "clarkfannin",
-    "genres": [
-      "action"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46265970",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/clarkfannin/cli-duel",
-    "imageUrl": "/images/games/46265970.jpg",
-    "sourceCodeUrl": "https://github.com/clarkfannin/cli-duel"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -20196,29 +20084,6 @@
   },
   {
     "platforms": [
-      "ios"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "46243965",
-    "name": "Beat Kanji",
-    "description": "iOS rhythm game for learning Japanese: draw kanji strokes to the beat and get scored on accuracy; 2000+ kanji.",
-    "releaseDate": "2025-12-12T13:32:54.000Z",
-    "author": "surrTurr",
-    "genres": [
-      "music",
-      "educational"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46243965",
-    "hnPoints": 1,
-    "playUrl": "https://apps.apple.com/lv/app/beat-kanji/id6756133868",
-    "imageUrl": "/images/games/46243965.jpg",
-    "sourceCodeUrl": "https://github.com/AlexW00/Beat-Kanji"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -20285,30 +20150,6 @@
     "playUrl": "https://endless-wordsearch.com/",
     "imageUrl": "/images/games/46231460.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single",
-      "multi"
-    ],
-    "pricing": "free",
-    "id": "46230930",
-    "name": "chess-tui",
-    "description": "Terminal chess written in Rust; play locally, against UCI engines like Stockfish, or online via Lichess.",
-    "releaseDate": "2025-12-11T13:09:53.000Z",
-    "author": "Thomalloc",
-    "genres": [
-      "board",
-      "strategy"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46230930",
-    "hnPoints": 5,
-    "playUrl": "https://github.com/thomas-mauran/chess-tui",
-    "imageUrl": "/images/games/46230930.jpg",
-    "sourceCodeUrl": "https://github.com/thomas-mauran/chess-tui"
   },
   {
     "platforms": [
@@ -20751,30 +20592,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "46112845",
-    "name": "Adulting Simulator",
-    "description": "Terminal life-sim: steer a character through school, college and work stages, dodging debt and prison via minigames.",
-    "releaseDate": "2025-12-01T20:37:05.000Z",
-    "author": "GeldiBey",
-    "genres": [
-      "simulation",
-      "arcade",
-      "typing"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46112845",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/farukalpay/adulting-simulator",
-    "imageUrl": "/images/games/46112845.jpg",
-    "sourceCodeUrl": "https://github.com/farukalpay/adulting-simulator"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -21015,31 +20832,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "46020935",
-    "name": "Server Survival",
-    "description": "Browser tower-defense game where you build cloud infrastructure and scale it to survive growing traffic and attacks.",
-    "releaseDate": "2025-11-23T05:10:10.000Z",
-    "author": "pshenok",
-    "genres": [
-      "strategy",
-      "tower_defense",
-      "simulation",
-      "educational"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46020935",
-    "hnPoints": 6,
-    "playUrl": "https://pshenok.github.io/server-survival/",
-    "imageUrl": "/images/games/46020935.jpg",
-    "sourceCodeUrl": "https://github.com/pshenok/server-survival"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "46020701",
     "name": "Wolfrominoes",
     "description": "Puzzle game built around Wolfram's rule 30 cellular automaton",
@@ -21099,28 +20891,6 @@
     "playUrl": "https://twinonyms.vercel.app/",
     "imageUrl": "/images/games/46017884.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "46014012",
-    "name": "CursorBird",
-    "description": "Flappy Bird-style arcade game packaged as a Cursor extension; it opens while the AI agent runs and you press Tab to flap.",
-    "releaseDate": "2025-11-22T11:41:03.000Z",
-    "author": "iamnoamg",
-    "genres": [
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=46014012",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/i-am-noamg/cursorbird",
-    "imageUrl": "/images/games/46014012.jpg",
-    "sourceCodeUrl": "https://github.com/i-am-noamg/cursorbird"
   },
   {
     "platforms": [
@@ -21191,28 +20961,6 @@
     "playUrl": "https://apps.apple.com/us/app/veloland-indoor-cycling/id6755203221",
     "imageUrl": "/images/games/45967677.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45958169",
-    "name": "BlackJack Casino AI",
-    "description": "Real-time blackjack vs an AI opponent with Easy/Medium/Hard levels; Flask SocketIO, self-hosted.",
-    "releaseDate": "2025-11-17T20:55:33.000Z",
-    "author": "tarocha1019",
-    "genres": [
-      "card"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45958169",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/EMMA019/black-jackgames",
-    "imageUrl": "/images/games/45958169.jpg",
-    "sourceCodeUrl": "https://github.com/EMMA019/black-jackgames"
   },
   {
     "platforms": [
@@ -21554,30 +21302,6 @@
     "playUrl": "https://justinpaulson.com/projects/turing-twist",
     "imageUrl": "/images/games/45837011.jpg",
     "sourceCodeUrl": "https://github.com/justinpaulson/turing_twist"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45834764",
-    "name": "Elden Stack",
-    "description": "Browser platformer that teaches C programming: solve pointer, malloc and buffer-overflow challenges across 5 levels.",
-    "releaseDate": "2025-11-06T13:03:18.000Z",
-    "author": "clt_skew",
-    "genres": [
-      "platformer",
-      "coding",
-      "educational"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45834764",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/sukanto-m/elden-stack",
-    "imageUrl": "/images/games/45834764.jpg",
-    "sourceCodeUrl": "https://github.com/sukanto-m/elden-stack"
   },
   {
     "platforms": [
@@ -22051,28 +21775,6 @@
   },
   {
     "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45706285",
-    "name": "Ant and Apples",
-    "description": "Short 2D browser game: play an ant collecting apples across procedurally generated scenery.",
-    "releaseDate": "2025-10-25T19:20:22.000Z",
-    "author": "aanthonymax",
-    "genres": [
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45706285",
-    "hnPoints": 4,
-    "playUrl": "https://aanthonymax.github.io/ant-and-apples/",
-    "imageUrl": "/images/games/45706285.jpg",
-    "sourceCodeUrl": "https://github.com/aanthonymax/ant-and-apples"
-  },
-  {
-    "platforms": [
       "ios",
       "android",
       "web"
@@ -22141,29 +21843,6 @@
     "playUrl": "https://musicminigames.com/",
     "imageUrl": "/images/games/45697650.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45693467",
-    "name": "Digital Virus",
-    "description": "Terminal logic puzzle in which you deduce how a 4-digit code mutates after each wrong guess.",
-    "releaseDate": "2025-10-24T11:24:36.000Z",
-    "author": "DenisDolya",
-    "genres": [
-      "puzzle",
-      "math"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45693467",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/Ferki-git-creator/Digital-Virus",
-    "imageUrl": "/images/games/45693467.jpg",
-    "sourceCodeUrl": "https://github.com/Ferki-git-creator/Digital-Virus"
   },
   {
     "platforms": [
@@ -22355,29 +22034,6 @@
   },
   {
     "platforms": [
-      "ios"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45599914",
-    "name": "retro Tron inspired lightcycle game",
-    "description": "Retro Tron-inspired lightcycle game: ride an ever-growing light trail and cut off enemies as speed ramps up.",
-    "releaseDate": "2025-10-16T00:02:54.000Z",
-    "author": "GabrielMMMM",
-    "genres": [
-      "arcade",
-      "action"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45599914",
-    "hnPoints": 3,
-    "playUrl": "https://testflight.apple.com/join/xwwP4fa6",
-    "imageUrl": "/images/games/45599914.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -22470,76 +22126,6 @@
     "playUrl": "https://clashle.app/",
     "imageUrl": "/images/games/45576158.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45572984",
-    "name": "Vanilla Roguelike",
-    "description": "Terminal roguelike written in pure Ruby: procedurally generated mazes, turn-based combat, monsters and loot.",
-    "releaseDate": "2025-10-13T20:27:42.000Z",
-    "author": "davidslv",
-    "genres": [
-      "roguelike",
-      "rpg"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45572984",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/Davidslv/vanilla-roguelike",
-    "imageUrl": "/images/games/45572984.jpg",
-    "sourceCodeUrl": "https://github.com/Davidslv/vanilla-roguelike"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45561889",
-    "name": "Watts Up",
-    "description": "Bike-trainer arcade game: pedal a smart trainer while the target wattage climbs; last rider pedaling wins.",
-    "releaseDate": "2025-10-12T21:03:06.000Z",
-    "author": "jsattler",
-    "genres": [
-      "fitness",
-      "sport",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45561889",
-    "hnPoints": 1,
-    "playUrl": "https://jsattler.github.io/wattsup/",
-    "imageUrl": "/images/games/45561889.jpg",
-    "sourceCodeUrl": "https://github.com/jsattler/wattsup"
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45556117",
-    "name": "Zerorain",
-    "description": "Terminal typing game: type falling streams of 0s and 1s before they reach the bottom of the screen.",
-    "releaseDate": "2025-10-12T07:38:06.000Z",
-    "author": "ugotsta",
-    "genres": [
-      "typing",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45556117",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/maddestlabs/zerorain",
-    "imageUrl": "/images/games/45556117.jpg",
-    "sourceCodeUrl": "https://github.com/maddestlabs/zerorain"
   },
   {
     "platforms": [
@@ -22829,50 +22415,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "45436949",
-    "name": "Pips game website",
-    "description": "IÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¾ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ve been a long-time Sudoku player and recently discovered NYT game Pips ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ",
-    "releaseDate": "2025-10-01T12:34:51.000Z",
-    "author": "pipsgame",
-    "genres": [
-      "puzzle"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45436949",
-    "hnPoints": 2,
-    "playUrl": "https://www.pipsgamefree.online/",
-    "imageUrl": "/images/games/45436949.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45436853",
-    "name": "Razer Keyboard Snake",
-    "description": "Snake game displayed on a Razer keyboard's RGB lighting; needs OpenRazer on Linux.",
-    "releaseDate": "2025-10-01T12:25:26.000Z",
-    "author": "lightofshadow",
-    "genres": [
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45436853",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/lightoshadow/razer-keyboard-snake",
-    "imageUrl": "/images/games/45436853.jpg",
-    "sourceCodeUrl": "https://github.com/lightoshadow/razer-keyboard-snake"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "45429769",
     "name": "Quad",
     "description": "Solve a daily tile puzzle where every board has exactly one solution",
@@ -23002,29 +22544,6 @@
     "playUrl": "https://lizardbutton.net/",
     "imageUrl": "/images/games/45401568.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "multi"
-    ],
-    "pricing": "free",
-    "id": "45392053",
-    "name": "Family Chess",
-    "description": "Real-time online chess for two players via a shareable link, no login required.",
-    "releaseDate": "2025-09-26T23:24:09.000Z",
-    "author": "kelvinquee",
-    "genres": [
-      "board",
-      "strategy"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45392053",
-    "hnPoints": 58,
-    "playUrl": "https://family-chess.quee.org",
-    "imageUrl": "/images/games/45392053.jpg",
-    "sourceCodeUrl": "https://github.com/kelvinq/family-chess"
   },
   {
     "platforms": [
@@ -23326,28 +22845,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45239662",
-    "name": "Flappy Lid",
-    "description": "Flappy Bird clone for MacBooks controlled by the laptop lid angle sensor, with arrow keys as fallback.",
-    "releaseDate": "2025-09-14T13:35:27.000Z",
-    "author": "flappylid",
-    "genres": [
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45239662",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/flappylid/FlappyLid",
-    "imageUrl": "/images/games/45239662.jpg",
-    "sourceCodeUrl": "https://github.com/flappylid/FlappyLid"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -23579,30 +23076,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45159395",
-    "name": "GitType",
-    "description": "Terminal typing game that turns functions from your own Git repositories into typing practice with WPM stats.",
-    "releaseDate": "2025-09-07T16:04:54.000Z",
-    "author": "unhappychoice",
-    "genres": [
-      "typing",
-      "coding",
-      "educational"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45159395",
-    "hnPoints": 5,
-    "playUrl": "https://github.com/unhappychoice/gittype",
-    "imageUrl": "/images/games/45159395.jpg",
-    "sourceCodeUrl": "https://github.com/unhappychoice/gittype"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -23699,100 +23172,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "45118870",
-    "name": "Tetris finesse inspired Vim game",
-    "description": "Since VIM seems to be inspired by efficiency, I was curious what the \"most efficient\" way to solve any particular challenge would be. It was really nontrivial to make significant progress on a proof based approach so it seemed like a leetcode style community ranking driven leaderboard would be a",
-    "releaseDate": "2025-09-03T18:18:09.000Z",
-    "author": "isomierism",
-    "genres": [
-      "puzzle",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45118870",
-    "hnPoints": 3,
-    "playUrl": "https://www.vimfinesse.com/play",
-    "imageUrl": "/images/games/45118870.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45113160",
-    "name": "Vim Finesse",
-    "description": "Practice Vim motions by completing editing challenges with the fewest keystrokes; leaderboards and diffs.",
-    "releaseDate": "2025-09-03T07:27:15.000Z",
-    "author": "isomierism",
-    "genres": [
-      "puzzle",
-      "arcade",
-      "coding"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45113160",
-    "hnPoints": 2,
-    "playUrl": "https://www.vimfinesse.com/",
-    "imageUrl": "/images/games/45113160.jpg",
-    "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45113131",
-    "name": "AddVenture",
-    "description": "Browser mental-math game: solve rapid-fire addition problems in 5-second rounds and build up best streaks.",
-    "releaseDate": "2025-09-03T07:21:21.000Z",
-    "author": "sarthaksoni",
-    "genres": [
-      "math",
-      "quiz"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45113131",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/sarthaksoni25/AddVenture",
-    "imageUrl": "/images/games/45113131.jpg",
-    "sourceCodeUrl": "https://github.com/sarthaksoni25/AddVenture"
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single",
-      "multi"
-    ],
-    "pricing": "free",
-    "id": "45110748",
-    "name": "LightCycle",
-    "description": "Tron-inspired light cycle game in Rust; last cycle standing wins",
-    "releaseDate": "2025-09-03T00:08:54.000Z",
-    "author": "DavidCanHelp",
-    "genres": [
-      "arcade",
-      "action"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45110748",
-    "hnPoints": 49,
-    "playUrl": "https://github.com/Tortured-Metaphor/LightCycle",
-    "imageUrl": "/images/games/45110748.jpg",
-    "sourceCodeUrl": "https://github.com/Tortured-Metaphor/LightCycle"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "45093347",
     "name": "The Daily Baffle",
     "description": "Solve a daily mix of original word and logic puzzles in a newspaper-style page",
@@ -23807,29 +23186,6 @@
     "playUrl": "https://dailybaffle.com/",
     "imageUrl": "/images/games/45093347.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45088427",
-    "name": "NeuroPriest",
-    "description": "Turn-based roguelite that runs inside the Notepad++ editor",
-    "releaseDate": "2025-09-01T00:51:50.000Z",
-    "author": "lowsun",
-    "genres": [
-      "roguelike",
-      "rpg"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45088427",
-    "hnPoints": 155,
-    "playUrl": "https://github.com/thelowsunoverthemoon/NeuroPriest",
-    "imageUrl": "/images/games/45088427.jpg",
-    "sourceCodeUrl": "https://github.com/thelowsunoverthemoon/NeuroPriest"
   },
   {
     "platforms": [
@@ -23865,29 +23221,6 @@
       "single"
     ],
     "pricing": "free",
-    "id": "45079067",
-    "name": "Freyren's Funeral Procession",
-    "description": "Fan-made turn-based RPG inspired by Frieren: Beyond Journey's End",
-    "releaseDate": "2025-08-30T23:53:48.000Z",
-    "author": "imshota1009",
-    "genres": [
-      "rpg",
-      "adventure"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45079067",
-    "hnPoints": 1,
-    "playUrl": "https://github.com/imshota1009/Prototype-of-Freiren-the-Funeral",
-    "imageUrl": "/images/games/45079067.jpg",
-    "sourceCodeUrl": "https://github.com/imshota1009/Prototype-of-Freiren-the-Funeral"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
     "id": "45077254",
     "name": "wotd",
     "description": "Find the daily word that uses every given letter at least once, plus bonus words",
@@ -23903,30 +23236,6 @@
     "playUrl": "https://wotd.is/2025-08-30",
     "imageUrl": "/images/games/45077254.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45065625",
-    "name": "WASM Quest",
-    "description": "Retro 8-bit medieval platformer: slash goblins and collect hearts across endless procedurally generated levels",
-    "releaseDate": "2025-08-29T15:48:35.000Z",
-    "author": "DavidCanHelp",
-    "genres": [
-      "platformer",
-      "action",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45065625",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/Tortured-Metaphor/WASM-Quest",
-    "imageUrl": "/images/games/45065625.jpg",
-    "sourceCodeUrl": "https://github.com/Tortured-Metaphor/WASM-Quest"
   },
   {
     "platforms": [
@@ -24093,30 +23402,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "45005524",
-    "name": "Lode Runner NG",
-    "description": "Open-source remake of the classic Apple II Lode Runner: collect gold, dig traps, and dodge guards across 150 levels.",
-    "releaseDate": "2025-08-24T16:28:14.000Z",
-    "author": "vchimishuk",
-    "genres": [
-      "platformer",
-      "puzzle",
-      "action"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=45005524",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/vchimishuk/loderunner-ng",
-    "imageUrl": "/images/games/45005524.jpg",
-    "sourceCodeUrl": "https://github.com/vchimishuk/loderunner-ng"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -24160,29 +23445,6 @@
     "playUrl": "https://mordenstar.itch.io/the-twins-of-caduceus",
     "imageUrl": "/images/games/44984922.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "44983428",
-    "name": "Guess It!",
-    "description": "Browser game where you identify objects shown in photos; modes include timed, classic, multiple-choice and survival.",
-    "releaseDate": "2025-08-22T11:56:46.000Z",
-    "author": "chistev",
-    "genres": [
-      "puzzle",
-      "quiz"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=44983428",
-    "hnPoints": 2,
-    "playUrl": "https://arrow-duh-game.onrender.com/",
-    "imageUrl": "/images/games/44983428.jpg",
-    "sourceCodeUrl": "https://github.com/chistev/arrow-duh-game"
   },
   {
     "platforms": [
@@ -24319,29 +23581,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "44935824",
-    "name": "Da-Chess",
-    "description": "Chess game built in C++ and SFML; play against a computer opponent with material and position evaluation.",
-    "releaseDate": "2025-08-17T23:25:14.000Z",
-    "author": "Drimiteros",
-    "genres": [
-      "board",
-      "strategy"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=44935824",
-    "hnPoints": 3,
-    "playUrl": "https://github.com/Drimiteros/Da-Chess",
-    "imageUrl": "/images/games/44935824.jpg",
-    "sourceCodeUrl": "https://github.com/Drimiteros/Da-Chess"
-  },
-  {
-    "platforms": [
       "web"
     ],
     "playerModes": [
@@ -24387,29 +23626,6 @@
   },
   {
     "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "44909900",
-    "name": "Tetris (PHP CLI)",
-    "description": "Terminal Tetris clone in PHP: rotate and drop falling blocks to clear lines, rendered in the console at ~30 fps.",
-    "releaseDate": "2025-08-15T08:32:02.000Z",
-    "author": "al3rez",
-    "genres": [
-      "puzzle",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=44909900",
-    "hnPoints": 4,
-    "playUrl": "https://gist.github.com/al3rez/e43f4bc86e50a79fca14529d4f2f2b8c",
-    "imageUrl": "/images/games/44909900.jpg",
-    "sourceCodeUrl": "https://gist.github.com/al3rez/e43f4bc86e50a79fca14529d4f2f2b8c"
-  },
-  {
-    "platforms": [
       "web",
       "android"
     ],
@@ -24430,52 +23646,6 @@
     "playUrl": "https://claire-bomb.itch.io/rubiks-cube-2d",
     "imageUrl": "/images/games/44902534.jpg",
     "sourceCodeUrl": null
-  },
-  {
-    "platforms": [
-      "desktop"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "44901099",
-    "name": "Reptil en Peligro",
-    "description": "Terminal snake game in Rust: steer a growing snake to eat fruit without hitting walls or yourself.",
-    "releaseDate": "2025-08-14T14:51:26.000Z",
-    "author": "aguacero7",
-    "genres": [
-      "action",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=44901099",
-    "hnPoints": 2,
-    "playUrl": "https://github.com/aguacero7/reptil-en-peligro",
-    "imageUrl": "/images/games/44901099.jpg",
-    "sourceCodeUrl": "https://github.com/aguacero7/reptil-en-peligro"
-  },
-  {
-    "platforms": [
-      "web"
-    ],
-    "playerModes": [
-      "single"
-    ],
-    "pricing": "free",
-    "id": "44898659",
-    "name": "Diffusion Tetris",
-    "description": "Browser demo of a diffusion model that generates Tetris-like frames; you steer the pieces with the arrow keys.",
-    "releaseDate": "2025-08-14T10:01:15.000Z",
-    "author": "wimaxs",
-    "genres": [
-      "puzzle",
-      "arcade"
-    ],
-    "hnUrl": "https://news.ycombinator.com/item?id=44898659",
-    "hnPoints": 2,
-    "playUrl": "https://wimacs.github.io/diffusion_tetris/",
-    "imageUrl": "/images/games/44898659.jpg",
-    "sourceCodeUrl": "https://github.com/Wimacs/diffusion_tetris"
   },
   {
     "id": "44878044",

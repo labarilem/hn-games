@@ -5,6 +5,7 @@ import Link from "next/link";
 import Analytics from "@/components/Analytics";
 import Footer from "@/components/Footer";
 import NavLinks from "@/components/NavLinks";
+import { EditModeBar, EditModeProvider, EditModeToggle } from "@/dev/edit-mode";
 
 const inter = localFont({
   src: "./fonts/inter-100-900.woff2",
@@ -39,28 +40,36 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${inter.className} ${display.variable}`}>
         <Analytics />
-        <a href="#main-content" className="skip-link">
-          Skip to content
-        </a>
-        <header className="site-header">
-          <div className="site-width header-inner">
-            <Link href="/" className="brand" aria-label="HN Games home">
-              <span className="brand-mark" aria-hidden="true">
-                <span />
-              </span>
-              <span>
-                HN<span className="brand-divider">/</span>GAMES
-              </span>
-            </Link>
-            <NavLinks />
-            <Link href="/submit" className="header-submit">
-              Submit a game <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-        </header>
-        <main id="main-content" tabIndex={-1} className="site-width site-main">
-          {children}
-        </main>
+        <EditModeProvider>
+          <a href="#main-content" className="skip-link">
+            Skip to content
+          </a>
+          <header className="site-header">
+            <div className="site-width header-inner">
+              <Link href="/" className="brand" aria-label="HN Games home">
+                <span className="brand-mark" aria-hidden="true">
+                  <span />
+                </span>
+                <span>
+                  HN<span className="brand-divider">/</span>GAMES
+                </span>
+              </Link>
+              <NavLinks />
+              <Link href="/submit" className="header-submit">
+                Submit a game <span aria-hidden="true">↗</span>
+              </Link>
+              <EditModeToggle />
+            </div>
+          </header>
+          <main
+            id="main-content"
+            tabIndex={-1}
+            className="site-width site-main"
+          >
+            {children}
+          </main>
+          <EditModeBar />
+        </EditModeProvider>
         <Footer />
       </body>
     </html>

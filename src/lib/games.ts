@@ -23,6 +23,7 @@ export type GameSearchParams = {
   playerModes?: PlayerMode;
   pricing?: Pricing;
   license?: LicenseType;
+  year?: string;
   sortBy?: string;
 };
 
@@ -36,6 +37,20 @@ export function getGenresFromSearchParams(
 export function parsePage(page?: string): number {
   const parsed = page ? parseInt(page, 10) : 1;
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
+}
+
+export function parseYear(year?: string): number | undefined {
+  if (!year || !/^\d{4}$/.test(year)) return undefined;
+  const parsed = parseInt(year, 10);
+  return parsed >= 1000 && parsed <= 9999 ? parsed : undefined;
+}
+
+export function getReleaseYears(gamesList: Game[]): number[] {
+  return Array.from(
+    new Set(
+      gamesList.map((game) => new Date(game.releaseDate).getUTCFullYear()),
+    ),
+  ).sort((a, b) => b - a);
 }
 
 // Generic function to filter any array of games
@@ -85,6 +100,12 @@ export function filterGames(gamesList: Game[], searchParams: GameSearchParams) {
       searchParams.license === LicenseType.OPEN
         ? game.sourceCodeUrl !== null
         : game.sourceCodeUrl === null,
+    );
+
+  const releaseYear = parseYear(searchParams.year);
+  if (releaseYear !== undefined)
+    filteredGames = filteredGames.filter(
+      (game) => new Date(game.releaseDate).getUTCFullYear() === releaseYear,
     );
 
   // Apply sorting

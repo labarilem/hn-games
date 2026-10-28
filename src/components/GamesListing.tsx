@@ -5,6 +5,7 @@ import Pagination from "./Pagination";
 import CatalogHero from "./CatalogHero";
 import { GameSearchParams } from "@/lib/games";
 import { Game } from "@/types/game";
+import { CatalogPageRegistration, SelectableGameCard } from "@/dev/edit-mode";
 
 interface GamesListingProps {
   title: string;
@@ -19,6 +20,7 @@ interface GamesListingProps {
   };
   currentPage: number;
   searchParams: GameSearchParams;
+  years: number[];
   featured?: Game;
   archive?: boolean;
 }
@@ -31,6 +33,7 @@ export default function GamesListing({
   pagination,
   currentPage,
   searchParams,
+  years,
   featured,
   archive = false,
 }: GamesListingProps) {
@@ -56,11 +59,18 @@ export default function GamesListing({
           </p>
         </header>
       )}
-      <GameFilters resultCount={pagination.totalGames}>
+      <CatalogPageRegistration ids={games.map((game) => game.id)} />
+      <GameFilters resultCount={pagination.totalGames} years={years}>
         {games.length ? (
           <div className="games-grid">
             {games.map((game) => (
-              <GameCard key={game.id} game={game} filterPath={path} />
+              <SelectableGameCard
+                key={game.id}
+                gameId={game.id}
+                gameName={game.name}
+              >
+                <GameCard game={game} filterPath={path} />
+              </SelectableGameCard>
             ))}
           </div>
         ) : (

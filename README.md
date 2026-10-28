@@ -10,6 +10,27 @@ Start the development server with:
 npm run dev
 ```
 
+The development server is bound to `127.0.0.1`, so it is only reachable from
+the local machine.
+
+### Local edit mode
+
+When the dev server is running, an **Edit mode** button appears in the site
+header. It is a local authoring tool:
+
+- Select one or more games in the catalog with the **Select** buttons (or
+  **Select all** in the bottom bar), then delete them. Deletion invokes the
+  existing `delete-game` script, removes unshared images, and runs `compile`.
+- Open a game detail page and edit its text fields (name, description, author,
+  dates, and URLs). The game ID is fixed. Saving updates the matching
+  `scripts/data/*.json` file and reruns `compile`.
+
+Edit mode only exists while `next dev` is running. The production build
+replaces the editor UI and the mutation API with inert stubs via
+`next.config.js`, so no edit controls or filesystem code are shipped to the
+public site. Requests to the edit API are also rejected unless the request
+comes from localhost in development.
+
 ## Scraping
 
 1. Scrape new games based on time range checkpoints:

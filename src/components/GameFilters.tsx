@@ -60,9 +60,11 @@ const sortOptions = [
 export default function GameFilters({
   children,
   resultCount,
+  years,
 }: {
   children: ReactNode;
   resultCount: number;
+  years: number[];
 }) {
   const router = useRouter();
   const params = useSearchParams();
@@ -118,6 +120,7 @@ export default function GameFilters({
     "playerModes",
     "pricing",
     "license",
+    "year",
     "author",
     "search",
     "genre",
@@ -201,6 +204,21 @@ export default function GameFilters({
                   genres.forEach((genre) => next.append("genre", genre));
                   navigate(next);
                 }}
+              />
+            </div>
+            <div className="filter-field">
+              <span>Year</span>
+              <FilterSelect
+                aria-label="Year"
+                value={params.get("year") ?? ""}
+                options={[
+                  { value: "", label: "All years" },
+                  ...years.map((year) => ({
+                    value: String(year),
+                    label: String(year),
+                  })),
+                ]}
+                onChange={(value) => setFilter("year", value)}
               />
             </div>
             {filterOptions.slice(1).map(({ key, label, options }) => (

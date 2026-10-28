@@ -6,6 +6,7 @@ import { Platform } from "@/types/game";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createReportUrl } from "@/lib/issues";
+import { GameDetailEditor } from "@/dev/edit-mode";
 
 export default async function GamePage({
   params,
@@ -34,6 +35,7 @@ export default async function GamePage({
           ▲ {game.hnPoints.toLocaleString("en-US")} HN points ↗
         </a>
       </header>
+      <GameDetailEditor game={game} />
       <div className="detail-layout">
         <div>
           <GameImageModal imageUrl={game.imageUrl} name={game.name} />

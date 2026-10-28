@@ -1,0 +1,349 @@
+/* Local-only edit mode UI. The production build replaces the importing
+   component with a stub, so this stylesheet is not part of the live site. */
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  margin-left: 10px;
+  padding: 9px 12px;
+  border: 1px dashed #5b6154;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--muted);
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+.toggle:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+.toggleActive {
+  border-style: solid;
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #101110;
+}
+.toggleActive:hover {
+  color: #101110;
+  background: #ffa274;
+}
+.toggleDot {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  background: currentColor;
+}
+
+.bar {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 60;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  max-width: calc(100vw - 28px);
+  padding: 10px 12px;
+  transform: translateX(-50%);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: #141613f5;
+  box-shadow: 0 14px 38px #000000a6;
+  font-size: 12px;
+}
+.badge {
+  padding: 4px 7px;
+  background: var(--accent);
+  color: #101110;
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+.count {
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.barButton {
+  padding: 6px 9px;
+  border: 1px solid #454a40;
+  border-radius: 2px;
+  background: #1b1e1a;
+  color: var(--ink);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.barButton:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.barButton:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+.danger {
+  border-color: #7a3d2a;
+  color: #ffb08a;
+}
+.danger:hover:not(:disabled) {
+  border-color: #ff8a4c;
+  color: #ffd4b9;
+}
+.hint {
+  color: var(--muted);
+  font-size: 11px;
+}
+.status {
+  max-width: 360px;
+  color: var(--muted);
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.error {
+  color: #ff9c7a;
+}
+
+.cardWrap {
+  position: relative;
+  display: flex;
+  min-width: 0;
+}
+.cardWrap > * {
+  flex: 1;
+  min-width: 0;
+}
+.cardWrapSelected {
+  border-radius: 6px;
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.selectToggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border: 1px solid #5b6154;
+  border-radius: 3px;
+  background: #101110e8;
+  color: var(--ink);
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.selectToggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.selectToggleActive {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #101110;
+}
+.selectToggleActive:hover {
+  color: #101110;
+  background: #ffa274;
+}
+.checkbox {
+  display: grid;
+  place-items: center;
+  width: 11px;
+  height: 11px;
+  border: 1px solid currentColor;
+  font-size: 9px;
+  line-height: 1;
+}
+
+.editor {
+  margin-bottom: 28px;
+  padding: 20px 22px 22px;
+  border: 1px solid #4b5245;
+  border-left: 3px solid var(--accent);
+  border-radius: 3px;
+  background: #141613;
+}
+.editorHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+.editorTitle {
+  margin-top: 4px;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.note {
+  max-width: 720px;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+}
+.note code {
+  color: #c9cec1;
+  font-family: Consolas, "Liberation Mono", monospace;
+}
+.dirty {
+  flex: none;
+  padding: 4px 7px;
+  border: 1px solid #41463d;
+  color: var(--muted);
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.dirtyOn {
+  border-color: #7a3d2a;
+  color: #ffd4b9;
+}
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px 16px;
+  margin-top: 17px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+.fieldFull {
+  grid-column: 1 / -1;
+}
+.label {
+  color: var(--muted);
+  font-family: Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.input,
+.textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #3a4036;
+  border-radius: 2px;
+  background: #0f110f;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.input:focus,
+.textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 0;
+  border-color: var(--accent);
+}
+.input:disabled,
+.textarea:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.textarea {
+  min-height: 82px;
+  resize: vertical;
+}
+.fieldHint {
+  color: #777e71;
+  font-size: 10px;
+  line-height: 1.5;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.primary {
+  padding: 8px 14px;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  background: var(--accent);
+  color: #101110;
+  font-size: 12px;
+  font-weight: 600;
+}
+.primary:hover:not(:disabled) {
+  background: #ffa274;
+}
+.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.secondary {
+  padding: 8px 12px;
+  border: 1px solid #454a40;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+}
+.secondary:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.secondary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+@media (max-width: 760px) {
+  .fields {
+    grid-template-columns: 1fr;
+  }
+  .fieldFull {
+    grid-column: auto;
+  }
+  .bar {
+    bottom: 10px;
+    gap: 7px;
+    padding: 9px 10px;
+  }
+  .status {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+  .toggle {
+    margin-left: 8px;
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+}

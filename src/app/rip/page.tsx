@@ -1,6 +1,11 @@
 import GamesListing from "@/components/GamesListing";
 import { games as ripGames } from "@/data/ripGames";
-import { GameSearchParams, filterGames, parsePage } from "@/lib/games";
+import {
+  GameSearchParams,
+  filterGames,
+  getReleaseYears,
+  parsePage,
+} from "@/lib/games";
 
 export default async function RipPage(props: {
   searchParams: Promise<GameSearchParams>;
@@ -22,6 +27,7 @@ export default async function RipPage(props: {
       pagination={pagination}
       currentPage={currentPage}
       searchParams={searchParams}
+      years={getReleaseYears(ripGames)}
       archive
     />
   );
