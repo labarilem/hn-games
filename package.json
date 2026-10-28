@@ -34,7 +34,7 @@
     "lint-new-games": "tsx scripts/lint-new-games.ts"
   },
   "dependencies": {
-    "@vercel/og": "^0.6.5",
+    "@vercel/og": "^1.0.3",
     "chart.js": "^4.5.0",
     "date-fns": "^3.3.1",
     "lodash.debounce": "^4.0.8",
