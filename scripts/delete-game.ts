@@ -83,7 +83,7 @@ async function main() {
   const foundIds = new Set(matches.map(({ game }) => game.id));
   const missingIds = ids.filter((id) => !foundIds.has(id));
   if (missingIds.length) {
-    throw new Error(
+    console.log(
       `No game found for ID${missingIds.length === 1 ? "" : "s"}: ${missingIds.join(", ")}.`,
     );
   }
